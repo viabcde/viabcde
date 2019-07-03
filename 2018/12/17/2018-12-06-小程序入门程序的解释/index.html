@@ -1,0 +1,1072 @@
+<!DOCTYPE HTML>
+<html lang="">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="（道）小程序入门程序的解释, viabcde">
+    <meta name="description" content="程序的组成app.js：小程序的逻辑     必须app.json  ：小程序的公共设置   必须app.wxss：小程序的公共样式表   非必须每个文件夹表示一个页面，一个页面由4个文件组成js：页面逻辑   必须wxml：页面结构   ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>（道）小程序入门程序的解释 | Fox</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Fox</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Index</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>Tags</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>Categories</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>Archives</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>Friends</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Fox</div>
+        <div class="logo-desc">
+            
+            好眉目生来本该住山巅
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Index
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                Tags
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                Categories
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                Archives
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                About
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                Friends
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/viacbde" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/viacbde" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        （道）小程序入门程序的解释
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/基础知识/" target="_blank">
+                                <span class="chip bg-color">基础知识</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/编程/" class="post-category" target="_blank">
+                                编程
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2018-12-17
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>程序的组成<br><img src="https://github.com/54321decba/tu/blob/master/201812/44.png?raw=true" alt=""><br><strong>app.js</strong>：小程序的逻辑     必须<br><strong>app.json</strong>  ：小程序的公共设置   必须<br><strong>app.wxss</strong>：小程序的公共样式表   非必须<br>每个文件夹表示一个页面，一个页面由4个文件组成<br><strong>js</strong>：页面逻辑   必须<br><strong>wxml</strong>：页面结构   必须<br><strong>json</strong>：页面配置  非必须<br><strong>wxss</strong>：页面样式表   非必须    </p>
+<h3 id="app-js"><a href="#app-js" class="headerlink" title="app.js"></a><strong>app.js</strong></h3><pre><code>//app.js
+
+App({
+
+  onLaunch: function () {
+
+    //当小程序初始化完成时，会触发onLaunch（全局只触发一次）
+
+  },
+
+  onShow: function () {
+
+  //当小程序启动，或从后台进入前台显示，会触发onShow
+
+  },
+
+  onHide: function () {
+
+  //当小程序从前台进入后台，会触发onHide
+
+  },
+
+  onError: function (msg) {
+
+  //当小程序发生脚本错误，或者api调用失败时，会触发onError并带上错误信息
+
+  },
+
+  other:function(){
+
+//全局函数，可以被项目上的其他js文件调用
+
+  },
+
+  globalData:{
+
+//全局对象
+
+  },
+
+})
+</code></pre><p>使用App()函数，指定小程序的生命周期属性，如初始化：onLaunch等函数<br><strong>onLaunch</strong>：初始化，只触发一次<br><strong>onShow</strong>：监听小程序显示，  在启动，或从后台进入前台时会触发onShow<br><strong>onHide</strong>：监听小程序隐藏，   在从前台进入后台时触发onHide<br><strong>onError</strong>：错误监听函数，  脚本发生错误/api调用失败触发inError<br><strong>onLoad</strong>：页面加载之后立即执行一段<br><strong>其他</strong>：自定义函数，使用this访问<br><strong>前台、后台定义：</strong> 当用户点击左上角关闭，或者按了设备 Home 键离开微信，小程序并没有直接销毁，而是进入了后台；当再次进入微信或再次打开小程序，又会从后台进入前台。需要注意的是：只有当小程序进入后台一定时间，或者系统资源占用过高，才会被真正的销毁。   </p>
+<h3 id="app-json"><a href="#app-json" class="headerlink" title="app.json"></a><strong>app.json</strong></h3><pre><code>{
+  &quot;pages&quot;:[
+    &quot;pages/index/index&quot;,
+    &quot;pages/logs/logs&quot;
+  ],
+  &quot;window&quot;:{
+    &quot;backgroundTextStyle&quot;:&quot;light&quot;,
+    &quot;navigationBarBackgroundColor&quot;: &quot;#fff&quot;,
+    &quot;navigationBarTitleText&quot;: &quot;WeChat&quot;,
+    &quot;navigationBarTextStyle&quot;:&quot;black&quot;
+  }
+}
+
+</code></pre><p><strong>pages</strong>：来指定小程序由哪些页面组成    pages内只需要写wxml文件的路径，其他文件不用写<br><strong>window</strong>：<br><strong>navigationBarBackgroundColor</strong>    HexColor    导航栏背景颜色，如 #000000<br><strong>navigationBarTextStyle</strong>    String        导航栏标题颜色，仅支持 black / white<br><strong>navigationBarTitleText</strong>    String        导航栏标题文字内容<br><strong>navigationStyle</strong>    String    default    导航栏样式，仅支持以下值：default 默认样式custom 自定义导航栏，只保留右上角胶囊按钮    微信版本 6.6.0<br><strong>backgroundColor</strong>    HexColor    #ffffff    窗口的背景色<br><strong>backgroundTextStyle</strong>    String    dark    下拉 loading 的样式，仅支持 dark / light<br><strong>backgroundColorTop</strong>    String    #ffffff    顶部窗口的背景色，仅 iOS 支持    微信版本 6.5.16<br><strong>backgroundColorBottom</strong>    String    #ffffff    底部窗口的背景色，仅 iOS 支持    微信版本 6.5.16<br><strong>enablePullDownRefresh</strong>    Boolean    false    是否开启当前页面的下拉刷新。详见 Page.onPullDownRefresh<br><strong>onReachBottomDistance</strong>    Number    50    页面上拉触底事件触发时距页面底部距离，单位为px。详见 Page.onReachBottom<br><strong>pageOrientation</strong>    String    portrait    屏幕旋转设置，仅支持 auto / portrait 详见 响应显示区域变化    微信版本 6.7.3<br><img src="https://github.com/54321decba/tu/blob/master/201812/45.png?raw=true" alt="">       </p>
+<h2 id="一个页面目录内的文件"><a href="#一个页面目录内的文件" class="headerlink" title="一个页面目录内的文件"></a><strong>一个页面目录内的文件</strong></h2><h3 id="xx-js"><a href="#xx-js" class="headerlink" title="xx.js"></a><strong>xx.js</strong></h3><h1 id="事件绑定bindtap"><a href="#事件绑定bindtap" class="headerlink" title="事件绑定bindtap"></a>事件绑定bindtap</h1><p><code>&lt;view class=&quot;menuList menuList2&quot; bindtap=&quot;toFoodDetail&quot; data-id=&#39;&#39;&gt;</code> 绑定js文件中的逻辑</p>
+<h1 id="在class使用判断来切换样式"><a href="#在class使用判断来切换样式" class="headerlink" title="在class使用判断来切换样式"></a>在class使用判断来切换样式</h1><pre class=" language-axapta"><code class="language-axapta"><view class="{{orderOrBusiness=='order'?'P_order P_active':'P_order'}}" bindtap="tabChange" data-id="order">  
+</view></code></pre>
+<p>orderOrBusiness在js文件里已经定义好了</p>
+<pre class=" language-java"><code class="language-java">data<span class="token operator">:</span> <span class="token punctuation">{</span>
+
+    scrolltop<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//菜页面滑动每次加载时置顶</span>
+
+    pageType<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">// index</span>
+    userInfo<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    orderOrBusiness<span class="token operator">:</span> <span class="token string">'order'</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre>
+<p>orderOrBusiness==’order’?’P_order P_active’:’P_order’是判断orderOrBusiness是否等于order的判断来决定使用哪个样式</p>
+<h1 id="bindscrolltolower"><a href="#bindscrolltolower" class="headerlink" title="bindscrolltolower"></a>bindscrolltolower</h1><p>页面拖到底部或右部时触发lower方法<br>bindscrolltolower=”lower”</p>
+<h1 id="scroll-x-scroll-y"><a href="#scroll-x-scroll-y" class="headerlink" title="scroll-x scroll-y"></a>scroll-x scroll-y</h1><p>允许纵向、横向拖动</p>
+<h1 id="设置屏幕高度height-res-windowHeight-82-‘px’-菜单高度"><a href="#设置屏幕高度height-res-windowHeight-82-‘px’-菜单高度" class="headerlink" title="设置屏幕高度height: (res.windowHeight * .82) + ‘px’ //菜单高度"></a>设置屏幕高度height: (res.windowHeight * .82) + ‘px’ //菜单高度</h1><pre class=" language-java"><code class="language-java">wx<span class="token punctuation">.</span><span class="token function">getSystemInfo</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      success<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        _this<span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          height<span class="token operator">:</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>windowHeight <span class="token operator">*</span> <span class="token punctuation">.</span><span class="token number">82</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'px'</span> <span class="token comment" spellcheck="true">//菜单高度</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h1 id="js文件内容"><a href="#js文件内容" class="headerlink" title="js文件内容"></a>js文件内容</h1><p>data    onLoad()</p>
+<h1 id="获取地图经纬度等信息"><a href="#获取地图经纬度等信息" class="headerlink" title="获取地图经纬度等信息"></a>获取地图经纬度等信息</h1><pre class=" language-java"><code class="language-java">  getAddress<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    var _this <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    wx<span class="token punctuation">.</span><span class="token function">chooseLocation</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      success<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>address<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+          res<span class="token punctuation">.</span>address <span class="token operator">=</span> res<span class="token punctuation">.</span>address
+        <span class="token punctuation">}</span>
+        _this<span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          addr<span class="token operator">:</span> res<span class="token punctuation">.</span>address
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java">  <span class="token operator">&lt;</span>view <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"message2"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>view <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"iconfont icon-more"</span> bindtap<span class="token operator">=</span><span class="token string">"getAddress"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>text <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"width"</span> style<span class="token operator">=</span><span class="token string">'font-size:32rpx'</span><span class="token operator">></span>地区<span class="token operator">&lt;</span><span class="token operator">/</span>text<span class="token operator">></span>
+      <span class="token operator">&lt;</span>view <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"map"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>text <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"iconfont icon-map"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>text<span class="token operator">></span>
+        <span class="token operator">&lt;</span>input name<span class="token operator">=</span><span class="token string">"addr"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"width2"</span> placeholder<span class="token operator">=</span><span class="token string">"请选择"</span> placeholder<span class="token operator">-</span>style<span class="token operator">=</span><span class="token string">"text-align:right;"</span> disabled<span class="token operator">=</span><span class="token string">"true"</span> value<span class="token operator">=</span><span class="token string">"{{addr}}"</span> style<span class="token operator">=</span><span class="token string">'color:#999;'</span> <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">></span>
+</code></pre>
+<h1 id="微信小程序页面跳转-wx-navigateTo"><a href="#微信小程序页面跳转-wx-navigateTo" class="headerlink" title="微信小程序页面跳转 wx.navigateTo"></a>微信小程序页面跳转 wx.navigateTo</h1><pre class=" language-java"><code class="language-java"> addAddress<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    wx<span class="token punctuation">.</span><span class="token function">navigateTo</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      url<span class="token operator">:</span> <span class="token string">'../addAddress/addAddress'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<h1 id="微信小程序url请求wx-request"><a href="#微信小程序url请求wx-request" class="headerlink" title="微信小程序url请求wx.request"></a>微信小程序url请求wx.request</h1><pre class=" language-java"><code class="language-java">  reduce<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    var id <span class="token operator">=</span> e<span class="token punctuation">.</span>currentTarget<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>id
+    var _this <span class="token operator">=</span> <span class="token keyword">this</span>
+    wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      url<span class="token operator">:</span> app<span class="token punctuation">.</span><span class="token function">getHeader</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'/cart/substractCart'</span><span class="token punctuation">,</span>
+      data<span class="token operator">:</span> <span class="token punctuation">{</span>
+        openid<span class="token operator">:</span> app<span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>openid<span class="token punctuation">,</span>
+        diskId<span class="token operator">:</span> id
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      header<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">'content-type'</span><span class="token operator">:</span> <span class="token string">'application/json'</span> <span class="token comment" spellcheck="true">// 默认值</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      success<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          _this<span class="token punctuation">.</span><span class="token function">setCart</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          app<span class="token punctuation">.</span><span class="token function">showToast</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>msg<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token function">fail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        app<span class="token punctuation">.</span><span class="token function">showToast</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<h1 id="微信小程序弹出窗口wx-showModal"><a href="#微信小程序弹出窗口wx-showModal" class="headerlink" title="微信小程序弹出窗口wx.showModal"></a>微信小程序弹出窗口wx.showModal</h1><pre class=" language-java"><code class="language-java">delAddress<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    var _this <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    var id <span class="token operator">=</span> e<span class="token punctuation">.</span>currentTarget<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+    wx<span class="token punctuation">.</span><span class="token function">showModal</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      title<span class="token operator">:</span> <span class="token string">'提示'</span><span class="token punctuation">,</span>
+      content<span class="token operator">:</span> <span class="token string">'确定删除该地址吗？'</span><span class="token punctuation">,</span>
+      success<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">/**
+         * 请求根据用户openid和addId删除地址
+         */</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>confirm<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            url<span class="token operator">:</span> app<span class="token punctuation">.</span><span class="token function">getHeader</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'/address/delAddrByAddrId'</span><span class="token punctuation">,</span>
+            data<span class="token operator">:</span> <span class="token punctuation">{</span>
+              openid<span class="token operator">:</span> app<span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>openid<span class="token punctuation">,</span>
+              addrId<span class="token operator">:</span> id
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            header<span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token string">'content-type'</span><span class="token operator">:</span> <span class="token string">'application/json'</span> <span class="token comment" spellcheck="true">// 默认值</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            success<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                _this<span class="token punctuation">.</span><span class="token function">setAddr</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+              <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                app<span class="token punctuation">.</span><span class="token function">showToast</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>msg<span class="token punctuation">)</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token function">fail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              app<span class="token punctuation">.</span><span class="token function">showToast</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<h1 id="微信小程序if判断"><a href="#微信小程序if判断" class="headerlink" title="微信小程序if判断"></a>微信小程序if判断</h1><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>view <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"detailPic"</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span>image wx<span class="token operator">:</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"{{disk.status==3}}"</span> src<span class="token operator">=</span><span class="token string">"../../img/down.png"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>image<span class="token operator">></span>
+  <span class="token operator">&lt;</span>image wx<span class="token operator">:</span>elif<span class="token operator">=</span><span class="token string">"{{!disk.img}}"</span> src<span class="token operator">=</span><span class="token string">"../../img/nopic.jpg"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>image<span class="token operator">></span>
+  <span class="token operator">&lt;</span>image wx<span class="token operator">:</span><span class="token keyword">else</span> src<span class="token operator">=</span><span class="token string">"{{disk.img}}"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>image<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">></span>
+</code></pre>
+<h1 id="微信小程序获取js属性值"><a href="#微信小程序获取js属性值" class="headerlink" title="微信小程序获取js属性值"></a>微信小程序获取js属性值</h1><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>view <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"messageBlock"</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span>view <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"Message"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>view <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"detailMessage"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>text <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"name"</span><span class="token operator">></span><span class="token punctuation">{</span><span class="token punctuation">{</span>disk<span class="token punctuation">.</span>title<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>text<span class="token operator">></span>
+      <span class="token operator">&lt;</span>text <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"monthsell"</span><span class="token operator">></span>月售<span class="token punctuation">{</span><span class="token punctuation">{</span>disk<span class="token punctuation">.</span>sellnum<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>text<span class="token operator">></span>
+      <span class="token operator">&lt;</span>text <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"price"</span><span class="token operator">></span>¥<span class="token punctuation">{</span><span class="token punctuation">{</span>disk<span class="token punctuation">.</span>disPrice<span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">&lt;</span>text<span class="token operator">></span> ¥<span class="token punctuation">{</span><span class="token punctuation">{</span>disk<span class="token punctuation">.</span>price<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>text<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>text<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">></span>
+</code></pre>
+<h1 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h1><p>wx:for    这个是正常的循环，没什么可说的。<br>wx:for-item=‘变量名（随便起的）’   它是指定循环数据当前的变量名，可以通过   展示数组的元素。<br>wx:for-index=‘变量名（随便起）’，它是指向当前元素的下标名，可以在其他事件中定义自定义事件（data-xxx=’‘，，该自定义属性可以在参数e下面打印出来）获取该下标。  </p>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;Reprint please specify:
+                    </span>
+                    <a href="http://viabcde.github.io" class="b-link-green">Fox</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/12/17/2018-12-06-小程序入门程序的解释/" class="b-link-green">（道）小程序入门程序的解释</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2018/12/24/2018-12-24-开发工具/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="（道）开发工具">
+                        
+                        <span class="card-title">（道）开发工具</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">android-studio恢复默认布局window===restore default layout
+android-studio将当前布局设置为默认布局window—store current layout as default
+目录结</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-24
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/编程/" class="post-category" target="_blank">
+                                    编程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/android/" target="_blank">
+                        <span class="chip bg-color">android</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/11/22/2018-11-22-前端/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="（术）Easy-Ui">
+                        
+                        <span class="card-title">（术）Easy-Ui</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">jquery中datagrid中getSelected和getSelections的用法说明data是table表格的某一列的id选中一行：  
+var get = $(&quot;#dg&quot;).datagrid(&quot;get</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/编程/" class="post-category" target="_blank">
+                                    编程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/easy-ui/" target="_blank">
+                        <span class="chip bg-color">easy-ui</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:437230257@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=437230257" class="tooltipped" data-tooltip="QQ联系我: 437230257" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":60,"height":100},"mobile":{"show":true},"search":null,"path":"search.xml","field":"post","log":false});</script></body>
+</html>
