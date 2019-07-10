@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="（道）开发工具, viabcde">
+    <meta name="keywords" content="开发工具, viabcde">
     <meta name="description" content="android-studio恢复默认布局window===restore default layout
 android-studio将当前布局设置为默认布局window—store current layout as default
 目录结">
@@ -15,7 +15,7 @@ android-studio将当前布局设置为默认布局window—store current layout 
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>（道）开发工具 | Fox</title>
+    <title>开发工具 | Fox</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -121,7 +121,7 @@ android-studio将当前布局设置为默认布局window—store current layout 
         <div class="logo-name">Fox</div>
         <div class="logo-desc">
             
-            好眉目生来本该住山巅
+            写歌的人假正经，听歌的人最无情
             
         </div>
     </div>
@@ -272,13 +272,13 @@ android-studio将当前布局设置为默认布局window—store current layout 
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        （道）开发工具
+                        开发工具
                     </div>
                 </div>
             </div>
@@ -389,8 +389,8 @@ android-studio将当前布局设置为默认布局window—store current layout 
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/android/" target="_blank">
-                                <span class="chip bg-color">android</span>
+                            <a href="/tags/IDE/" target="_blank">
+                                <span class="chip bg-color">IDE</span>
                             </a>
                         
                     </div>
@@ -433,15 +433,17 @@ android-studio将当前布局设置为默认布局window—store current layout 
 <h3 id="android-studio将当前布局设置为默认布局"><a href="#android-studio将当前布局设置为默认布局" class="headerlink" title="android-studio将当前布局设置为默认布局"></a><strong>android-studio将当前布局设置为默认布局</strong></h3><p>window—store current layout as default</p>
 <h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a><strong>目录结构</strong></h3><p><strong>mainfests目录</strong>:有系统生成的文件AndroidNaibfest.xml，存储程序的重要信息<br><strong>java目录</strong>:系统自动生成1个默认的java文件MainActivity.java,存储java文件<br><strong>res目录</strong>：存放非程序文件，在drawable文件夹下存储图片等资源，layout文件夹下系统自动生成主显示控制文件activity_main.xml和主设计文件content_main.xml，<br>menu文件夹存储界面的菜单的设计文件，mipmpa文件夹存放根据分辨率划分的图片资源，values文件夹存放文字strings.xml，颜色colors.xml和样式styles.xml<br>Grad;e Scripts–build.gradle存放工程的架构信息     </p>
 <h3 id="界面文本"><a href="#界面文本" class="headerlink" title="界面文本"></a><strong>界面文本</strong></h3><p>①可以直接写在contain_main.xml等xml文件的android:text=”Hello world”的键值对中；<br>②也可以写在res/values的strings.xml文件中</p>
-<pre><code>&lt;reources&gt;
-    &lt;string name = &quot;str_button&quot;&gt;hello world&lt;/string&gt;
-&lt;/resources&gt;
-</code></pre><pre><code>android:id=&quot;@+id/textView&quot;         textView代表该控件的名字
-android:layout_width=&quot;wrap_content&quot;      控件宽度 wrap_content表示只包含所显示的字符即可
-android:text=&quot;江苏省GDP排名前三的城市有：&quot;         该控件显示的字
-android:textSize=&quot;22sp&quot; 显示的字符的大小
-android:layout_below=&quot;@+id/textView&quot;  表示该控件位于一个名为textView下方
-</code></pre><h3 id="获取控件示例"><a href="#获取控件示例" class="headerlink" title="获取控件示例"></a><strong>获取控件示例</strong></h3><p>findViewById(R.id.)<br>myTextView = (TextView) findViewById(R.id.textView); </p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>reources<span class="token operator">></span>
+    <span class="token operator">&lt;</span>string name <span class="token operator">=</span> <span class="token string">"str_button"</span><span class="token operator">></span>hello world<span class="token operator">&lt;</span><span class="token operator">/</span>string<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>resources<span class="token operator">></span>
+</code></pre>
+<pre class=" language-java"><code class="language-java">android<span class="token operator">:</span>id<span class="token operator">=</span><span class="token string">"@+id/textView"</span>         textView代表该控件的名字
+android<span class="token operator">:</span>layout_width<span class="token operator">=</span><span class="token string">"wrap_content"</span>      控件宽度 wrap_content表示只包含所显示的字符即可
+android<span class="token operator">:</span>text<span class="token operator">=</span><span class="token string">"江苏省GDP排名前三的城市有："</span>         该控件显示的字
+android<span class="token operator">:</span>textSize<span class="token operator">=</span><span class="token string">"22sp"</span> 显示的字符的大小
+android<span class="token operator">:</span>layout_below<span class="token operator">=</span><span class="token string">"@+id/textView"</span>  表示该控件位于一个名为textView下方
+</code></pre>
+<h3 id="获取控件示例"><a href="#获取控件示例" class="headerlink" title="获取控件示例"></a><strong>获取控件示例</strong></h3><p>findViewById(R.id.)<br>myTextView = (TextView) findViewById(R.id.textView); </p>
 <h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a><strong>hello world</strong></h3><p><strong>效果图</strong><br>app\src\main\res\values\strings.xml<br>\app\src\main\res\drawable\androidlover.jpg<br>app\src\main\res\layout\content_main.xml<br>\app\src\main\java\com\easybook\android\helloworld\MainActivity.java  </p>
 <h3 id="字符显示和编辑TextView-EditText"><a href="#字符显示和编辑TextView-EditText" class="headerlink" title="字符显示和编辑TextView/EditText"></a><strong>字符显示和编辑TextView/EditText</strong></h3><p><strong>效果图</strong><br>修改一下文件：<br>content_main.xml<br>MainActivity.java  </p>
 <h3 id="按钮和图片按钮"><a href="#按钮和图片按钮" class="headerlink" title="按钮和图片按钮"></a><strong>按钮和图片按钮</strong></h3><p>\app\src\main\res\values\strings.xml<br>\app\src\main\res\layout\content_main.xml<br>\app\src\main\java\com\easybook\android\helloworld\MainActivity.java  </p>
@@ -605,7 +607,7 @@ android:layout_below=&quot;@+id/textView&quot;  表示该控件位于一个名�
                     </span>
                     <a href="http://viabcde.github.io" class="b-link-green">Fox</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/24/2018-12-24-开发工具/" class="b-link-green">（道）开发工具</a>
+                    <a href="/2018/12/24/2018-12-24-开发工具/" class="b-link-green">开发工具</a>
                 </p>
             </div>
         </div>
@@ -628,25 +630,26 @@ android:layout_below=&quot;@+id/textView&quot;  表示该控件位于一个名�
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2019/01/10/2019-01-19-redis学习笔记/">
+                <a href="/2018/12/24/2018-12-24-开发工具/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="（术）Redis学习笔记">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="开发工具">
                         
-                        <span class="card-title">（术）Redis学习笔记</span>
+                        <span class="card-title">开发工具</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">作用*支持数据持久化、事务、缓存、监控等
-启动redis打开一个 cmd 窗口 使用 cd 命令切换目录到 C:\redis 运行：redis-server.exe redis.windows.conf
-检测 redis 服务是否启动red</div>
+                    <div class="summary">android-studio恢复默认布局window===restore default layout
+android-studio将当前布局设置为默认布局window—store current layout as default
+目录结</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -659,11 +662,12 @@ android:layout_below=&quot;@+id/textView&quot;  表示该控件位于一个名�
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/redis/" target="_blank">
-                        <span class="chip bg-color">redis</span>
+                    <a href="/tags/IDE/" target="_blank">
+                        <span class="chip bg-color">IDE</span>
                     </a>
                     
                 </div>
@@ -677,13 +681,13 @@ android:layout_below=&quot;@+id/textView&quot;  表示该控件位于一个名�
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/12/17/2018-12-06-小程序入门程序的解释/">
+                <a href="/2018/12/17/2018-12-06-小程序/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="（道）小程序入门程序的解释">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="小程序">
                         
-                        <span class="card-title">（道）小程序入门程序的解释</span>
+                        <span class="card-title">小程序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -908,5 +912,5 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":60,"height":100},"mobile":{"show":true},"search":null,"path":"search.xml","field":"post","log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"left","width":100,"height":250},"mobile":{"show":true},"search":null,"path":"search.xml","field":"post","log":false});</script></body>
 </html>

@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="（道）软件测试, viabcde">
+    <meta name="keywords" content="软件测试, viabcde">
     <meta name="description" content="瀑布模型适合于比较成熟，稳定的项目，即已经有类似，已经做烂到倒背如流的项目思路清晰 ，容易把控   但要求前期需求分析明确稳定，一旦需求变更，牵一发而动全身，会影响大部分流程改良：每个阶段的小迭代开发：每个阶段如需求分析阶段，设计阶段…等等">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>（道）软件测试 | Fox</title>
+    <title>软件测试 | Fox</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -119,7 +119,7 @@
         <div class="logo-name">Fox</div>
         <div class="logo-desc">
             
-            好眉目生来本该住山巅
+            写歌的人假正经，听歌的人最无情
             
         </div>
     </div>
@@ -270,13 +270,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        （道）软件测试
+                        软件测试
                     </div>
                 </div>
             </div>
@@ -455,23 +455,17 @@ here"><br>测试的时候边界值包括边界值左右的误差值也要测一�
 </code></pre>
 <p> b.project中 new一个JUnit Test Case，选择1.4版本，在Class under test中选择要测试的类<br> 下一步—&gt;选择要测试的方法—&gt;完成<br> 在下面代码的方法中写测试语句</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>ywjava<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>test<span class="token punctuation">;</span>
-
  <span class="token keyword">import</span> org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>Test<span class="token punctuation">;</span>
-
  <span class="token keyword">import</span> com<span class="token punctuation">.</span>ywjava<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>T<span class="token punctuation">;</span>
-
  <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TTest</span> <span class="token punctuation">{</span>
-
   <span class="token annotation punctuation">@Test</span>
   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testAdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
    <span class="token keyword">int</span> z <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">T</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
-
  <span class="token punctuation">}</span>
 </code></pre>
-<p> c.如果想运行这个类 Run As —&gt; JUnit Test<br> 控制台会打印出测试结果</p>
-<p>2.JUnit中常用的Annotation<br> @Test  需要测试的方法<br> @Test(expected=完整的异常name)  如果测试方法有异常则抛出异常<br> @Ignore 暂时不运行的测试方法<br> @Before 每个测试方法之前运行<br> @After   每个测试方法之后运行<br> @BeforeClass 测试类运行之前运行<br> @AfterClass   测试类运行之后运行</p>
+<p> c.如果想运行这个类 Run As —&gt; JUnit Test<br> 控制台会打印出测试结果<br>2.JUnit中常用的Annotation<br> @Test  需要测试的方法<br> @Test(expected=完整的异常name)  如果测试方法有异常则抛出异常<br> @Ignore 暂时不运行的测试方法<br> @Before 每个测试方法之前运行<br> @After   每个测试方法之后运行<br> @BeforeClass 测试类运行之前运行<br> @AfterClass   测试类运行之后运行</p>
 <h1 id="Hamcrest"><a href="#Hamcrest" class="headerlink" title="Hamcrest"></a>Hamcrest</h1><h3 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h3><p>JUnit框架用一组assert方法封装了一些常用的断言。这些assert方法可以帮我们简化单元测试的编写。这样的话，Junit就可以根据这些断言是否抛出 AssertionFailedError 错误来判断测试用例的执行结果。</p>
 <h3 id="Hamcrest-1"><a href="#Hamcrest-1" class="headerlink" title="Hamcrest"></a>Hamcrest</h3><p>使用过Junit 的应该有过体验：在实际开发中，一些基本的断言，如eqaul,null,true它们的可读性并不是很好。而且很多时候我们要比较对象、集合、Map等数据结构。这样我们要么进行大段的字段获取再断言。或者干脆自己编写表达式并断言其结果。<br>JUnit4.4引入了Hamcrest框架，Hamcest提供了一套匹配符Matcher，这些匹配符更接近自然语言，可读性高，更加灵活。<br>Hamcrest 提供了大量被称为“匹配器”的方法。其中每个匹配器都设计用于执行特定的比较操作。Hamcrest的可扩展性很好，让你能够创建自定义的匹配器。最重要的是，JUnit也包含了Hamcrest的核心，提供了对Hamcrest的原生支持，可以直接使用Hamcrest。当然要使用功能齐备的Hamcrest，还是要引入对它的依赖。<br>看个对比例子，前者使用Junit的 断言，后者使用 Hamcrest的断言。</p>
 <pre class=" language-java"><code class="language-java">        <span class="token annotation punctuation">@Test</span>
@@ -481,12 +475,10 @@ here"><br>测试的时候边界值包括边界值左右的误差值也要测一�
 
             <span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">"failure - They are not same!"</span><span class="token punctuation">,</span> expected<span class="token punctuation">,</span> actual<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-
         <span class="token annotation punctuation">@Test</span>
         <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test_with_hamcrest_assertThat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">int</span> expected <span class="token operator">=</span> <span class="token number">51</span><span class="token punctuation">;</span>
             <span class="token keyword">int</span> actual <span class="token operator">=</span> <span class="token number">51</span><span class="token punctuation">;</span>
-
             <span class="token function">assertThat</span><span class="token punctuation">(</span><span class="token string">"failure - They are not same!"</span><span class="token punctuation">,</span> actual<span class="token punctuation">,</span> <span class="token function">equalTo</span><span class="token punctuation">(</span>expected<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
 </code></pre>
@@ -642,7 +634,7 @@ here"><br>测试的时候边界值包括边界值左右的误差值也要测一�
                     </span>
                     <a href="http://viabcde.github.io" class="b-link-green">Fox</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/09/22/2018-09-22-软件测试/" class="b-link-green">（道）软件测试</a>
+                    <a href="/2018/09/22/2018-09-22-软件测试/" class="b-link-green">软件测试</a>
                 </p>
             </div>
         </div>
@@ -671,9 +663,9 @@ here"><br>测试的时候边界值包括边界值左右的误差值也要测一�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="（道）TCP/IP_1">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="TCP/IP_1">
                         
-                        <span class="card-title">（道）TCP/IP_1</span>
+                        <span class="card-title">TCP/IP_1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -717,18 +709,13 @@ ICMP是IP协议的附属协议。IP层用它来与其他主机或路由器交换
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="（术）Linux">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Linux">
                         
-                        <span class="card-title">（术）Linux</span>
+                        <span class="card-title">Linux</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Linux内核的功能系统内存管理  
-软件程序管理  
-硬件设备管理  
-文件系统管理  
-
-GNU coreutils软件包由三部分构成：用以处理文件、操作文本、管理进程的工具GNU/Linux shell是一种特殊的交互式工具。它为用户</div>
+                    <div class="summary">Linux内核的功能系统内存  软件  硬件  文件系统GNU coreutils软件包由三部分构成：用以处理文件、操作文本、管理进程的工具GNU/Linux shell是一种特殊的交互式工具。它为用户提供了启动程序、管理文件系统中的文件以</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-18
@@ -949,5 +936,5 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":60,"height":100},"mobile":{"show":true},"search":null,"path":"search.xml","field":"post","log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"left","width":100,"height":250},"mobile":{"show":true},"search":null,"path":"search.xml","field":"post","log":false});</script></body>
 </html>
