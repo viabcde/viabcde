@@ -1,11 +1,12 @@
 <!DOCTYPE HTML>
-<html lang="">
+<html lang="zh-CN">
 
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="SpringCloud, viabcde">
-    <meta name="description" content="SpringCloud分布式开发de五大神兽•服务发现——Netflix Eureka•服务网关——Netflix Zuul•客服端负载均衡——Netflix Ribbon•断路器——Netflix Hystrix•分布式配置——Sprin">
+    <meta name="description" content="使用微服务的原因每次更改都需要全部重新部署不同服务可以使用不同技术但服务启动快可以按不同服务的需求搭配电脑配置但是，出现bug不好定位，运维成本高 接口调整成本高 不同服务不能公用utils
+Eureka系使用Eureka替代Nginx做服">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>SpringCloud | Fox</title>
+    <title>SpringCloud | Made-In-China</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -41,7 +42,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Fox</span>
+                    <span class="logo-span">Made-In-China</span>
                 </a>
             </div>
             
@@ -54,7 +55,7 @@
             
             <i class="fa fa-home"></i>
             
-            <span>Index</span>
+            <span>首页</span>
         </a>
     </li>
     
@@ -63,7 +64,7 @@
             
             <i class="fa fa-tags"></i>
             
-            <span>Tags</span>
+            <span>标签</span>
         </a>
     </li>
     
@@ -72,7 +73,7 @@
             
             <i class="fa fa-bookmark"></i>
             
-            <span>Categories</span>
+            <span>分类</span>
         </a>
     </li>
     
@@ -81,7 +82,7 @@
             
             <i class="fa fa-archive"></i>
             
-            <span>Archives</span>
+            <span>归档</span>
         </a>
     </li>
     
@@ -90,7 +91,7 @@
             
             <i class="fa fa-user-circle-o"></i>
             
-            <span>About</span>
+            <span>关于</span>
         </a>
     </li>
     
@@ -99,13 +100,13 @@
             
             <i class="fa fa-address-book"></i>
             
-            <span>Friends</span>
+            <span>友情链接</span>
         </a>
     </li>
     
     <li>
         <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
         </a>
     </li>
 </ul>
@@ -116,7 +117,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Fox</div>
+        <div class="logo-name">Made-In-China</div>
         <div class="logo-desc">
             
             写歌的人假正经，听歌的人最无情
@@ -133,7 +134,7 @@
                 
                 <i class="fa fa-fw fa-home"></i>
                 
-                Index
+                首页
             </a>
         </li>
         
@@ -142,7 +143,7 @@
                 
                 <i class="fa fa-fw fa-tags"></i>
                 
-                Tags
+                标签
             </a>
         </li>
         
@@ -151,7 +152,7 @@
                 
                 <i class="fa fa-fw fa-bookmark"></i>
                 
-                Categories
+                分类
             </a>
         </li>
         
@@ -160,7 +161,7 @@
                 
                 <i class="fa fa-fw fa-archive"></i>
                 
-                Archives
+                归档
             </a>
         </li>
         
@@ -169,7 +170,7 @@
                 
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
-                About
+                关于
             </a>
         </li>
         
@@ -178,7 +179,7 @@
                 
                 <i class="fa fa-fw fa-address-book"></i>
                 
-                Friends
+                友情链接
             </a>
         </li>
         
@@ -270,7 +271,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -286,99 +287,10 @@
 
 
 
-<main class="post-container content">
+<main class="container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-<style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
-
-    #articleContent :focus {
-        outline: none;
-    }
-
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
-
-    .toc-widget {
-        padding-left: 20px;
-    }
-
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
-
-    #toc-content ol {
-        padding-left: 10px;
-    }
-
-    #toc-content ol li {
-        padding-left: 10px;
-    }
-
-    #toc-content .toc-link:hover {
-        color: #42b983;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
-
-    #toc-content .is-active-link {
-        color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
-    }
-
-    #floating-toc-btn {
-        position: fixed;
-        right: 20px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
-
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+    <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -410,7 +322,7 @@
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
-                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2018-10-29
                 </div>
 
@@ -418,7 +330,7 @@
 				
 				
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
@@ -427,8 +339,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="SpringCloud分布式开发de五大神兽"><a href="#SpringCloud分布式开发de五大神兽" class="headerlink" title="SpringCloud分布式开发de五大神兽"></a><strong>SpringCloud分布式开发de五大神兽</strong></h2><p><strong>•服务发现——Netflix Eureka</strong><br><strong>•服务网关——Netflix Zuul</strong><br><strong>•客服端负载均衡——Netflix Ribbon</strong><br><strong>•断路器——Netflix Hystrix</strong><br><strong>•分布式配置——Spring Cloud Config</strong>  </p>
-<h3 id="Eureka服务治理体系"><a href="#Eureka服务治理体系" class="headerlink" title="Eureka服务治理体系"></a><strong>Eureka服务治理体系</strong></h3><p><strong>服务注册</strong><br>在服务治理框架中，通常都会构建一个注册中心，每个服务单元向注册中心登记自己提供的服务，包括服务的主机与端口号、服务版本号、通讯协议等一些附加信息。注册中心按照服务名分类组织服务清单<br>同时还需要以心跳检测的方式去监测清单中的服务是否可用，若不可用需要从服务清单中剔除，以达到排除故障服务的效果<br> <strong>服务发现</strong><br>在服务治理框架下，服务间的调用不再通过指定具体的实例地址来实现，而是通过服务名发起请求调用实现。服务调用方通过服务名从服务注册中心的服务清单中获取服务实例的列表清单，通过指定的负载均衡策略取出一个服务实例位置来进行服务调用。</p>
+                <h3 id="使用微服务的原因"><a href="#使用微服务的原因" class="headerlink" title="使用微服务的原因"></a>使用微服务的原因</h3><p>每次更改都需要全部重新部署<br>不同服务可以使用不同技术<br>但服务启动快<br>可以按不同服务的需求搭配电脑配置<br>但是，出现bug不好定位，运维成本高 接口调整成本高 不同服务不能公用utils</p>
+<h3 id="Eureka系"><a href="#Eureka系" class="headerlink" title="Eureka系"></a><strong>Eureka系</strong></h3><p>使用Eureka替代Nginx做服务发现和注册<br><strong>服务注册</strong><br>在服务治理框架中，通常都会构建一个注册中心，每个服务单元向注册中心登记自己提供的服务，包括服务的主机与端口号、服务版本号、通讯协议等一些附加信息。注册中心按照服务名分类组织服务清单<br>同时还需要以心跳检测的方式去监测清单中的服务是否可用，若不可用需要从服务清单中剔除<br> <strong>服务发现</strong><br>在服务治理框架下，服务间的调用不再通过指定具体的实例地址来实现，而是通过服务名发起请求调用实现。服务调用方通过服务名从服务注册中心的服务清单中获取服务实例的列表清单，通过指定的负载均衡策略取出一个服务实例位置来进行服务调用。<br>第二次调用服务时会从缓存里获取，不会到服务提供者获取</p>
 <h2 id="Zuul路由网关"><a href="#Zuul路由网关" class="headerlink" title="Zuul路由网关"></a><strong>Zuul路由网关</strong></h2><h3 id="1-代理："><a href="#1-代理：" class="headerlink" title="1. 代理："></a><strong>1. 代理：</strong></h3><p>Zuul提供外部的请求转发到具体的微服务实例中的服务  </p>
 <h3 id="2-路由："><a href="#2-路由：" class="headerlink" title="2. 路由："></a><strong>2. 路由：</strong></h3><p>Zuul可以对外部访问实现统一的入口  </p>
 <h3 id="3-过滤："><a href="#3-过滤：" class="headerlink" title="3. 过滤："></a><strong>3. 过滤：</strong></h3><p>Zuul可以对外部访问进行干预，如请求校验、服务聚合等  </p>
@@ -521,10 +433,8 @@ info<span class="token operator">:</span>
         SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>Zuul_6001_App<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-
 </code></pre>
-<p><strong>第五步：启动测试，访问规则：步骤3中指定映射域名 + 端口号 + 微服务名称 + 访问路径。</strong><br>   例子：<a href="http://zuul.com:6001/springclouddemo-provider-dept/provider/dept/list" target="_blank" rel="noopener">http://zuul.com:6001/springclouddemo-provider-dept/provider/dept/list</a><br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101024.png?raw=true" alt="enter description
-here"> </p>
+<p><strong>第五步：启动测试，访问规则：步骤3中指定映射域名 + 端口号 + 微服务名称 + 访问路径。</strong><br>   例子：<a href="http://zuul.com:6001/springclouddemo-provider-dept/provider/dept/list" target="_blank" rel="noopener">http://zuul.com:6001/springclouddemo-provider-dept/provider/dept/list</a><br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101024.png?raw=true" alt=""> </p>
 <h3 id="路由访问映射规则"><a href="#路由访问映射规则" class="headerlink" title="路由访问映射规则"></a><strong>路由访问映射规则</strong></h3><p>服务名映射和统一公共前缀 : 当不想暴露真实的服务名时，可以对服务名进行映射，只需在application.yml中配置即可。配置如下：</p>
 <pre class=" language-java"><code class="language-java">zuul<span class="token operator">:</span>
    prefix<span class="token operator">:</span> <span class="token operator">/</span>wangcw        #设置统一公共前缀
@@ -534,14 +444,13 @@ here"> </p>
      mydept<span class="token punctuation">.</span>path<span class="token operator">:</span> <span class="token operator">/</span>zull<span class="token operator">-</span>dept<span class="token operator">/</span><span class="token operator">*</span><span class="token operator">*</span>          # 访问<span class="token operator">/</span>zull<span class="token operator">-</span>dept<span class="token operator">/</span><span class="token operator">*</span>相当于访问微服务【springclouddemo<span class="token operator">-</span>provider<span class="token operator">-</span>dept】
      #最终访问路径变成了 zuul<span class="token punctuation">.</span>com<span class="token operator">:</span><span class="token number">6001</span><span class="token operator">/</span>wangcw<span class="token operator">/</span>zull<span class="token operator">-</span>dept<span class="token operator">/</span><span class="token operator">*</span> 
 </code></pre>
-<p>经过上述配置，访问路径变成  <a href="http://zuul.com:6001/wangcw/zull-dept/provider/dept/list" target="_blank" rel="noopener">http://zuul.com:6001/wangcw/zull-dept/provider/dept/list</a><br>测试结果：<br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101025.png?raw=true" alt="enter description
-here"><br>注：因为Zuul是针对外部访问管理的，所以配置了隐藏的服务，在系统中其他模块进行服务名访问时依然可以正常运行的。</p>
-<h2 id="ribbon"><a href="#ribbon" class="headerlink" title="ribbon"></a><strong>ribbon</strong></h2><p>负载均衡：在微服务之前，客户端与服务端之间是存在专门的负载均衡的中间硬件的<br>微服务出现后，把负载均衡的功能以库的方式集成到客户端的进程中称为软负载均衡</p>
+<p>经过上述配置，访问路径变成  <a href="http://zuul.com:6001/wangcw/zull-dept/provider/dept/list" target="_blank" rel="noopener">http://zuul.com:6001/wangcw/zull-dept/provider/dept/list</a><br>测试结果：<br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101025.png?raw=true" alt=""><br>注：因为Zuul是针对外部访问管理的，所以配置了隐藏的服务，在系统中其他模块进行服务名访问时依然可以正常运行的。</p>
+<h2 id="ribbon"><a href="#ribbon" class="headerlink" title="ribbon"></a><strong>ribbon</strong></h2><p>负载均衡：在微服务之前，客户端与服务端之间是存在专门的负载均衡的中间硬件的<br>微服务出现后，把负载均衡的功能以库的方式集成到客户端的进程中称为软负载均衡<br>Eureka自动包含了ribbon 使用之后不需要配置固定的ip+端口 只需要配置好主机名称即可</p>
 <h2 id="Netflix-hystrix"><a href="#Netflix-hystrix" class="headerlink" title="Netflix hystrix"></a><strong>Netflix hystrix</strong></h2><p>想象这样一个情况：一个电子商务网站因为在黑色周五发生过载，因为过多访问负载，在线支付延迟半天都没有响应，用户的支付因为太多并发请求导致响应时间过长，在等待很长时间以后最终失败。这样的错误导致退出购物车的用户重新刷新或者再次尝试支付，更加增加了服务器的负载，如同滚雪球一样爆炸，导致更多长时间等待线程和网络拥塞。<br>hystrix用来设计隔离访问远程系统端点或微服务等，防止级联爆炸式的失败<br>如果它在一段时间内侦测到许多类似的错误，会强迫其以后的多个调用快速失败，也就是不让它们再次访问远程服务器了  </p>
 <h2 id="spring-cloud-config来统一管理配置文件"><a href="#spring-cloud-config来统一管理配置文件" class="headerlink" title="spring cloud config来统一管理配置文件"></a><strong>spring cloud config来统一管理配置文件</strong></h2><p>和Eureka有点你相似，即我们先把配置文件推送到git等服务中，当我们需要配置文件 ConfigClient系统可以通过ConfigServer去获取配置文件</p>
 <h3 id="分布式链路跟踪-Sleuth-与-Zipkin"><a href="#分布式链路跟踪-Sleuth-与-Zipkin" class="headerlink" title="分布式链路跟踪 Sleuth 与 Zipkin"></a><strong>分布式链路跟踪 Sleuth 与 Zipkin</strong></h3><p>随着业务发展，系统拆分导致系统调用链路愈发复杂一个前端请求可能最终需要调用很多次后端服务才能完成，当整个请求变慢或不可用时，我们是无法得知该请求是由某个或某些后端服务引起的，这时就需要解决如何快读定位服务故障点，以对症下药。于是就有了分布式系统调用跟踪的诞生。<br><strong>一般的，一个分布式服务跟踪系统主要由三部分构成</strong><br>数据收集<br>数据存储<br>数据展示<br>每个 trace 中会调用若干个服务，为了记录调用了哪些服务，以及每次调用的消耗时间等信息，在每次调用服务时，埋入一个调用记录，称为一个 span。这样，若干个有序的 span 就组成了一个 trace。<br>附带上 span 中的请求的服务的名称，响应时间，以及请求成功与否等信息，就可以在发生问题的时候，找到异常的服务；根据历史数据，还可以从系统整体层面分析出哪里性能差，定位性能优化的目标。<br>可以用于<br><strong>耗时分析:</strong> 通过 Sleuth 可以很方便的了解到每个采样请求的耗时，从而分析出哪些服务调用比较耗时;<br><strong>可视化错误:</strong> 对于程序未捕捉的异常，可以通过集成 Zipkin 服务界面上看到;<br><strong>链路优化:</strong> 对于调用比较频繁的服务，可以针对这些服务实施一些优化措施。  </p>
 <h2 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h2><p>服务拆分要适可，不是越小越好，太多的话管理和部署比较麻烦<br>团队独立<br>使用的技术独立<br>部署独立<br>前后端分离<br>数据库分离  </p>
-<h2 id="SpringCloud之Eureka"><a href="#SpringCloud之Eureka" class="headerlink" title="SpringCloud之Eureka"></a>SpringCloud之Eureka</h2><h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><p>引入jar包spring-cloud-starter-netfix-eureka-server<br>在SpringBootApplication上加@EnableEurekaServer注解<br>配置yml文件</p>
+<h2 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h2><h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><p>引入jar包spring-cloud-starter-netfix-eureka-server<br>在SpringBootApplication上加@EnableEurekaServer注解<br>配置yml文件</p>
 <pre class=" language-java"><code class="language-java">server<span class="token operator">:</span>
   port<span class="token operator">:</span> <span class="token number">10086</span>
 spring<span class="token operator">:</span>
@@ -576,7 +485,7 @@ spring<span class="token operator">:</span>
 <p>#90s无回复认为服务宕机,但不是立即清除，而是60s之后才清楚<br>lease-expiration-duration-in-seconds: 90</p>
 <h1 id="在客户端配置拉取服务列表的周期"><a href="#在客户端配置拉取服务列表的周期" class="headerlink" title="在客户端配置拉取服务列表的周期"></a>在客户端配置拉取服务列表的周期</h1><p>registry-fetch-interval-seconds: 3</p>
 <h1 id="Eureka的自我保护"><a href="#Eureka的自我保护" class="headerlink" title="Eureka的自我保护"></a>Eureka的自我保护</h1><p>当心跳超过30s比较多时 Eureka会统计，如果成功率低于85%时，会认为是网络不稳定，不剔除服务  </p>
-<h1 id="负载均衡-随机-轮询-哈希"><a href="#负载均衡-随机-轮询-哈希" class="headerlink" title="负载均衡=随机+轮询+哈希"></a>负载均衡=随机+轮询+哈希</h1><h2 id="SpringCloud之Zuul服务网关"><a href="#SpringCloud之Zuul服务网关" class="headerlink" title="SpringCloud之Zuul服务网关"></a>SpringCloud之Zuul服务网关</h2><p>在SpringBootapplication启动类的RestTemplate上加注解@EnableZuulProxy<br>配置yml文件 访问Zuul地址 再由Zuul转发到相应的服务器地址</p>
+<h1 id="负载均衡-随机-轮询-哈希"><a href="#负载均衡-随机-轮询-哈希" class="headerlink" title="负载均衡=随机+轮询+哈希"></a>负载均衡=随机+轮询+哈希</h1><h2 id="Zuul服务网关"><a href="#Zuul服务网关" class="headerlink" title="Zuul服务网关"></a>Zuul服务网关</h2><p>在SpringBootapplication启动类的RestTemplate上加注解@EnableZuulProxy<br>配置yml文件 访问Zuul地址 再由Zuul转发到相应的服务器地址</p>
 <pre class=" language-java"><code class="language-java">eureka<span class="token operator">:</span>
   client<span class="token operator">:</span>
     service<span class="token operator">-</span>url<span class="token operator">:</span>
@@ -587,9 +496,8 @@ spring<span class="token operator">:</span>
 zuul<span class="token operator">:</span>
   routes<span class="token operator">:</span>
     user<span class="token operator">-</span>service<span class="token operator">:</span> <span class="token operator">/</span>user<span class="token operator">-</span>service<span class="token operator">/</span><span class="token operator">*</span><span class="token operator">*</span> #当访问http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">10010</span>时，凡是<span class="token operator">/</span>user<span class="token operator">-</span>service<span class="token operator">/</span><span class="token operator">*</span><span class="token operator">*</span>都转发为http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">8081</span><span class="token operator">/</span><span class="token operator">*</span><span class="token operator">*</span>去Euraka根据ID拉去列表
-
 </code></pre>
-<h2 id="SpringCloud之Ribbon负载均衡-器默认是轮询"><a href="#SpringCloud之Ribbon负载均衡-器默认是轮询" class="headerlink" title="SpringCloud之Ribbon负载均衡 器默认是轮询"></a>SpringCloud之Ribbon负载均衡 器默认是轮询</h2><p>作用可以省略IP和端口 直接使用服务名称即可<br>在SpringBootapplication启动类的RestTemplate上加注解@LoadBalence<br>在Controller文件中<br>应用服务名由loadbalance拦截器根据服务名称获取ip和端口</p>
+<h2 id="Ribbon负载均衡-器默认是轮询"><a href="#Ribbon负载均衡-器默认是轮询" class="headerlink" title="Ribbon负载均衡 器默认是轮询"></a>Ribbon负载均衡 器默认是轮询</h2><p>作用可以省略IP和端口 直接使用服务名称即可<br>在SpringBootapplication启动类的RestTemplate上加注解@LoadBalence<br>在Controller文件中<br>应用服务名由loadbalance拦截器根据服务名称获取ip和端口</p>
 <pre class=" language-java"><code class="language-java">String url <span class="token operator">=</span> <span class="token string">"http://服务应用名（user-service）/user/"</span><span class="token operator">+</span>id<span class="token punctuation">;</span>
 User user <span class="token operator">=</span> restTemplate<span class="token punctuation">.</span><span class="token function">getForObject</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span>user<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
@@ -602,7 +510,7 @@ User user <span class="token operator">=</span> restTemplate<span class="token p
   ConnectionTimeOut<span class="token operator">:</span> <span class="token number">500</span>
   ReadTimeOut<span class="token operator">:</span> <span class="token number">2000</span>
 </code></pre>
-<h2 id="SpringCloud之Feign服务调用"><a href="#SpringCloud之Feign服务调用" class="headerlink" title="SpringCloud之Feign服务调用"></a>SpringCloud之Feign服务调用</h2><p>作用：在Ribbon的基础上升级，不用写请求的应用名加映射路径了 包含了Ribbon和Hystrix，所以当引入了Feign包就不需要引入Ribbon和Hystrix了<br>在SpringBootApplication启动类加入@EnableFeignClients注解<br>编写inteface文件 类上就加@FeignClient(“服务应用名”)  或@FeignClient(value = “user-service”,fallback = UserClientFallback.class) UserClientFallback.class必须实现UserClient接口<br>方法写好映射路径<br>在Controller文件注入这个interface即可使用，远程调用时直接interface的类名.interface的方法名即可<br>使用Feign需要手动开启Hystrix</p>
+<h2 id="Feign服务调用"><a href="#Feign服务调用" class="headerlink" title="Feign服务调用"></a>Feign服务调用</h2><p>作用：在Ribbon的基础上升级，不用写请求的应用名加映射路径了 包含了Ribbon和Hystrix，所以当引入了Feign包就不需要引入Ribbon和Hystrix了<br>在SpringBootApplication启动类加入@EnableFeignClients注解<br>编写inteface文件 类上就加@FeignClient(“服务应用名”)  或@FeignClient(value = “user-service”,fallback = UserClientFallback.class) UserClientFallback.class必须实现UserClient接口<br>方法写好映射路径<br>在Controller文件注入这个interface即可使用，远程调用时直接interface的类名.interface的方法名即可<br>使用Feign需要手动开启Hystrix<br>如果有多个参数使用如 findById（@RequestParam HashMap map）即可</p>
 <pre><code>feign:
   hystrix:
     enabled: true
@@ -749,7 +657,7 @@ User user <span class="token operator">=</span> restTemplate<span class="token p
 
 <div id="article-share">
     
-    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
     
 </div>
 
@@ -758,9 +666,9 @@ User user <span class="token operator">=</span> restTemplate<span class="token p
             <div class="reprint">
                 <p>
                     <span class="reprint-tip">
-                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;Reprint please specify:
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="http://viabcde.github.io" class="b-link-green">Fox</a>
+                    <a href="http://viabcde.github.io" class="b-link-green">Made-In-China</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/2018/10/29/2018-10-29-SpringCloud/" class="b-link-green">SpringCloud</a>
                 </p>
@@ -785,13 +693,13 @@ User user <span class="token operator">=</span> restTemplate<span class="token p
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2018/11/14/2018-11-14-数据库/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="数据库">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="数据库">
                         
                         <span class="card-title">数据库</span>
                     </div>
@@ -835,21 +743,21 @@ SQ</div>
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fa fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/10/29/2018-10-29-web服务器/">
+                <a href="/2018/10/29/java学习/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Web服务器">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Java学习">
                         
-                        <span class="card-title">Web服务器</span>
+                        <span class="card-title">Java学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Tomcat浏览器发出www.baidu.com 给DNS服务器—-服务器根据浏览器所在地区返回该地区的代理接收浏览器接下来的请求—代理先看自己的缓存有没有对应的资源，没有才请求真正的服务器去数据库里找
-测试某个端口如8080端口是否正在监</div>
+                    <div class="summary">要求：熟悉svn上传代码①在代码所在目录右键②其中http://zt.net.henu.edu.cn 是服务器名，svn是代码仓库的根目录，StartKit是在svn添加的一个代码库③下载代码①创建文件夹 右键checkout
+要求：精通I</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -857,10 +765,18 @@ SQ</div>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            泥巴巴
+                            viacbde
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -871,99 +787,6 @@ SQ</div>
 </div>
 
 
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
-            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fa fa-list"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
-
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).slideUp(500);
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).slideDown(500);
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
     
 
 </main>
@@ -1020,8 +843,8 @@ SQ</div>
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword" class="search-input">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
