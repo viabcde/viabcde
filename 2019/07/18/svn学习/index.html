@@ -4,10 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="开发工具, viabcde">
-    <meta name="description" content="android-studio恢复默认布局window===restore default layout
-android-studio将当前布局设置为默认布局window—store current layout as default
-目录结">
+    <meta name="keywords" content="Svn学习, viabcde">
+    <meta name="description" content="要求：熟悉svn上传代码①在代码所在目录右键②其中http://zt.net.henu.edu.cn 是服务器名，svn是代码仓库的根目录，StartKit是在svn添加的一个代码库③下载代码①创建文件夹 右键checkout
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +14,7 @@ android-studio将当前布局设置为默认布局window—store current layout 
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>开发工具 | Made-In-China</title>
+    <title>Svn学习 | Made-In-China</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -272,13 +271,13 @@ android-studio将当前布局设置为默认布局window—store current layout 
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        开发工具
+                        Svn学习
                     </div>
                 </div>
             </div>
@@ -300,8 +299,8 @@ android-studio将当前布局设置为默认布局window—store current layout 
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/IDE/" target="_blank">
-                                <span class="chip bg-color">IDE</span>
+                            <a href="/tags/svn/" target="_blank">
+                                <span class="chip bg-color">svn</span>
                             </a>
                         
                     </div>
@@ -309,22 +308,13 @@ android-studio将当前布局设置为默认布局window—store current layout 
                 </div>
                 <div class="col s5 right-align">
                     
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/编程/" class="post-category" target="_blank">
-                                编程
-                            </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-12-24
+                    2019-07-18
                 </div>
 
                 
@@ -340,37 +330,7 @@ android-studio将当前布局设置为默认布局window—store current layout 
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="android-studio恢复默认布局"><a href="#android-studio恢复默认布局" class="headerlink" title="android-studio恢复默认布局"></a><strong>android-studio恢复默认布局</strong></h3><p>window===restore default layout</p>
-<h3 id="android-studio将当前布局设置为默认布局"><a href="#android-studio将当前布局设置为默认布局" class="headerlink" title="android-studio将当前布局设置为默认布局"></a><strong>android-studio将当前布局设置为默认布局</strong></h3><p>window—store current layout as default</p>
-<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a><strong>目录结构</strong></h3><p><strong>mainfests目录</strong>:有系统生成的文件AndroidNaibfest.xml，存储程序的重要信息<br><strong>java目录</strong>:系统自动生成1个默认的java文件MainActivity.java,存储java文件<br><strong>res目录</strong>：存放非程序文件，在drawable文件夹下存储图片等资源，layout文件夹下系统自动生成主显示控制文件activity_main.xml和主设计文件content_main.xml，<br>menu文件夹存储界面的菜单的设计文件，mipmpa文件夹存放根据分辨率划分的图片资源，values文件夹存放文字strings.xml，颜色colors.xml和样式styles.xml<br>Grad;e Scripts–build.gradle存放工程的架构信息     </p>
-<h3 id="界面文本"><a href="#界面文本" class="headerlink" title="界面文本"></a><strong>界面文本</strong></h3><p>①可以直接写在contain_main.xml等xml文件的android:text=”Hello world”的键值对中；<br>②也可以写在res/values的strings.xml文件中</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>reources<span class="token operator">></span>
-    <span class="token operator">&lt;</span>string name <span class="token operator">=</span> <span class="token string">"str_button"</span><span class="token operator">></span>hello world<span class="token operator">&lt;</span><span class="token operator">/</span>string<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>resources<span class="token operator">></span>
-</code></pre>
-<pre class=" language-java"><code class="language-java">android<span class="token operator">:</span>id<span class="token operator">=</span><span class="token string">"@+id/textView"</span>         textView代表该控件的名字
-android<span class="token operator">:</span>layout_width<span class="token operator">=</span><span class="token string">"wrap_content"</span>      控件宽度 wrap_content表示只包含所显示的字符即可
-android<span class="token operator">:</span>text<span class="token operator">=</span><span class="token string">"江苏省GDP排名前三的城市有："</span>         该控件显示的字
-android<span class="token operator">:</span>textSize<span class="token operator">=</span><span class="token string">"22sp"</span> 显示的字符的大小
-android<span class="token operator">:</span>layout_below<span class="token operator">=</span><span class="token string">"@+id/textView"</span>  表示该控件位于一个名为textView下方
-</code></pre>
-<h3 id="获取控件示例"><a href="#获取控件示例" class="headerlink" title="获取控件示例"></a><strong>获取控件示例</strong></h3><p>findViewById(R.id.)<br>myTextView = (TextView) findViewById(R.id.textView); </p>
-<h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a><strong>hello world</strong></h3><p><strong>效果图</strong><br>app\src\main\res\values\strings.xml<br>\app\src\main\res\drawable\androidlover.jpg<br>app\src\main\res\layout\content_main.xml<br>\app\src\main\java\com\easybook\android\helloworld\MainActivity.java  </p>
-<h3 id="字符显示和编辑TextView-EditText"><a href="#字符显示和编辑TextView-EditText" class="headerlink" title="字符显示和编辑TextView/EditText"></a><strong>字符显示和编辑TextView/EditText</strong></h3><p><strong>效果图</strong><br>修改一下文件：<br>content_main.xml<br>MainActivity.java  </p>
-<h3 id="按钮和图片按钮"><a href="#按钮和图片按钮" class="headerlink" title="按钮和图片按钮"></a><strong>按钮和图片按钮</strong></h3><p>\app\src\main\res\values\strings.xml<br>\app\src\main\res\layout\content_main.xml<br>\app\src\main\java\com\easybook\android\helloworld\MainActivity.java  </p>
-<h3 id="复选框CheckBox"><a href="#复选框CheckBox" class="headerlink" title="复选框CheckBox"></a><strong>复选框CheckBox</strong></h3><p><strong>源代码地址：</strong><br><strong>效果图</strong><br>\app\src\main\res\layout\content_main.xml<br>\app\src\main\java\com\easybook\android\helloworld\MainActivity.java  </p>
-<h3 id="单选按钮RadioGroup里放置多个RadioButton"><a href="#单选按钮RadioGroup里放置多个RadioButton" class="headerlink" title="单选按钮RadioGroup里放置多个RadioButton"></a><strong>单选按钮RadioGroup里放置多个RadioButton</strong></h3><p><strong>效果图</strong><br>\app\src\main\res\layout\content_main.xml<br>\app\src\main\java\com\easybook\android\helloworld\MainActivity.java  </p>
-<h3 id="下拉列表Spinner"><a href="#下拉列表Spinner" class="headerlink" title="下拉列表Spinner"></a><strong>下拉列表Spinner</strong></h3><p><strong>效果图</strong><br>\app\src\main\res\layout\content_main.xml<br>\app\src\main\java\com\easybook\android\helloworld\MainActivity.java  </p>
-<h3 id="列表框ListView"><a href="#列表框ListView" class="headerlink" title="列表框ListView"></a><strong>列表框ListView</strong></h3><p><strong>效果图</strong><br>\app\src\main\res\layout\content_main.xml<br>\app\src\main\java\com\easybook\android\helloworld\MainActivity.java  </p>
-<h3 id="按键事件"><a href="#按键事件" class="headerlink" title="按键事件"></a><strong>按键事件</strong></h3><p><strong>效果图</strong><br>\app\src\main\res\layout\content_main.xml<br>\app\src\main\java\com\easybook\android\helloworld\MainActivity.java  </p>
-<h3 id="触摸事件"><a href="#触摸事件" class="headerlink" title="触摸事件"></a><strong>触摸事件</strong></h3><p><strong>效果图</strong><br>\app\src\main\res\layout\content_main.xml<br>\app\src\main\java\com\easybook\android\helloworld\MainActivity.java </p>
-<h3 id="触摸事件-1"><a href="#触摸事件-1" class="headerlink" title="触摸事件"></a><strong>触摸事件</strong></h3><p><strong>效果图</strong><br>\app\src\main\res\layout\content_main.xml<br>\app\src\main\java\com\easybook\android\helloworld\MainActivity.java<br>app\src\main\AndroidManifest.xml<br>app\src\main\res\drawable.png?raw=true</p>
-<h3 id="高级控件应用WebView"><a href="#高级控件应用WebView" class="headerlink" title="高级控件应用WebView"></a><strong>高级控件应用WebView</strong></h3><p><strong>效果图</strong><br>\app\src\main\res\layout\content_main.xml<br>\app\src\main\java\com\easybook\android\helloworld\MainActivity.java<br>app\src\main\AndroidManifest.xml<br>app\src\main\res\drawable.png?raw=true</p>
-<h3 id="滚动预览控件HorizontalScrollView"><a href="#滚动预览控件HorizontalScrollView" class="headerlink" title="滚动预览控件HorizontalScrollView"></a><strong>滚动预览控件HorizontalScrollView</strong></h3><p><strong>效果图</strong><br>\app\src\main\res\layout\content_main.xml<br>\app\src\main\java\com\easybook\android\helloworld\MainActivity.java<br>app\src\main\AndroidManifest.xml<br>app\src\main\res\drawable.png?raw=true</p>
-<h3 id="照片查看器ImageSwitcher"><a href="#照片查看器ImageSwitcher" class="headerlink" title="照片查看器ImageSwitcher"></a><strong>照片查看器ImageSwitcher</strong></h3><p><strong>效果图</strong><br>\app\src\main\res\layout\content_main.xml<br>\app\src\main\java\com\easybook\android\helloworld\MainActivity.java<br>app\src\main\res\drawable.png?raw=true</p>
-<h3 id="条类控制器SeekBar-RatingBar"><a href="#条类控制器SeekBar-RatingBar" class="headerlink" title="条类控制器SeekBar/RatingBar"></a><strong>条类控制器SeekBar/RatingBar</strong></h3><p><strong>效果图</strong><br>\app\src\main\res\layout\content_main.xml<br>\app\src\main\java\com\easybook\android\helloworld\MainActivity.java<br>app\src\main\res\drawable.png?raw=true</p>
-<h3 id="线性布局LinearLayout"><a href="#线性布局LinearLayout" class="headerlink" title="线性布局LinearLayout"></a><strong>线性布局LinearLayout</strong></h3><p><strong>效果图</strong><br>\app\src\main\res\layout\content_main.xml<br><strong>替换aaa文件即可</strong><br><strong>相对布局</strong><br><strong>表格布局</strong><br><strong>网格布局</strong>  </p>
-<h1 id="IDEA配置Maven仓库"><a href="#IDEA配置Maven仓库" class="headerlink" title="IDEA配置Maven仓库"></a>IDEA配置Maven仓库</h1><p>File-settings-搜索Maven<br><img src="https://images2015.cnblogs.com/blog/387466/201707/387466-20170721114346740-691745005.png" alt=""><br>在服务器的configuration的VM options中配置 -Dserver.port=8082即可(-D表示配置的是JVM参数)</p>
+                <h3 id="要求：熟悉svn"><a href="#要求：熟悉svn" class="headerlink" title="要求：熟悉svn"></a><font color="red">要求：熟悉svn</font></h3><p>上传代码<br>①在代码所在目录右键<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/svn1.jpg" alt=""><br>②其中<a href="http://zt.net.henu.edu.cn" target="_blank" rel="noopener">http://zt.net.henu.edu.cn</a> 是服务器名，svn是代码仓库的根目录，StartKit是在svn添加的一个代码库<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/snv2.jpg" alt=""><br>③<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/svn3.jpg" alt=""><br>下载代码<br>①创建文件夹 右键checkout<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/svn4.jpg" alt=""></p>
 
             </div>
             <hr>
@@ -475,7 +435,7 @@ android<span class="token operator">:</span>layout_below<span class="token opera
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fa fa-close"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <h4 class="reward-title">如果您是学生，请不要扫码</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -483,10 +443,10 @@ android<span class="token operator">:</span>layout_below<span class="token opera
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="如果您并非有点小钱">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="请不要扫码打赏">
                     </div>
                 </div>
             </div>
@@ -518,7 +478,7 @@ android<span class="token operator">:</span>layout_below<span class="token opera
                     </span>
                     <a href="http://viabcde.github.io" class="b-link-green">Made-In-China</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/24/2018-12-24-开发工具/" class="b-link-green">开发工具</a>
+                    <a href="/2019/07/18/svn学习/" class="b-link-green">Svn学习</a>
                 </p>
             </div>
         </div>
@@ -541,44 +501,84 @@ android<span class="token operator">:</span>layout_below<span class="token opera
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/12/24/2018-12-24-开发工具/">
+                <a href="/2019/07/18/编程题/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="开发工具">
+                        <img src="/medias/featureimages/2.gif" class="responsive-img" alt="编程题">
                         
-                        <span class="card-title">开发工具</span>
+                        <span class="card-title">编程题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">android-studio恢复默认布局window===restore default layout
-android-studio将当前布局设置为默认布局window—store current layout as default
-目录结</div>
+                    <div class="summary">编程题求二进制中1的个数先普及一哈位逻辑运算符的知识  
+
+
+
+OP1
+OP2
+&amp;
+
+
+
+
+0
+0
+0
+
+
+0
+1
+0
+
+
+1
+0
+0
+
+
+1
+1
+1
+
+
+
+同为1时结果才为1  
+
+
+
+OP1
+OP1
+I
+
+
+
+
+0
+0
+0
+
+
+</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-24
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-18
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/编程/" class="post-category" target="_blank">
-                                    编程
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            编程greenhand
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/IDE/" target="_blank">
-                        <span class="chip bg-color">IDE</span>
+                    <a href="/tags/编程题/" target="_blank">
+                        <span class="chip bg-color">编程题</span>
                     </a>
                     
                 </div>

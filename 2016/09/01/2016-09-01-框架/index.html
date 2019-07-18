@@ -803,25 +803,24 @@ web.xml 总结：
 <span class="token punctuation">}</span>
 </code></pre>
 <h2 id="任何一个标注了-Bean的方法，其返回值将作为一个bean定义注册到Spring的IoC容器，方法名将默认成该bean定义的id。"><a href="#任何一个标注了-Bean的方法，其返回值将作为一个bean定义注册到Spring的IoC容器，方法名将默认成该bean定义的id。" class="headerlink" title="任何一个标注了@Bean的方法，其返回值将作为一个bean定义注册到Spring的IoC容器，方法名将默认成该bean定义的id。"></a>任何一个标注了@Bean的方法，其返回值将作为一个bean定义注册到Spring的IoC容器，方法名将默认成该bean定义的id。</h2><p>为了表达bean与bean之间的依赖关系，在XML形式中一般是这样：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"mockService"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"..MockServiceImpl"</span><span class="token operator">></span>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"mockService"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"..MockServiceImpl"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>propery name <span class="token operator">=</span><span class="token string">"dependencyService"</span> ref<span class="token operator">=</span><span class="token string">"dependencyService"</span> <span class="token operator">/</span><span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
 <span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"dependencyService"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"DependencyServiceImpl"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
 </code></pre>
 <p>而基于JavaConfig的配置形式是这样的：</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MockConfiguration</span><span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> MockService <span class="token function">mockService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MockServiceImpl</span><span class="token punctuation">(</span><span class="token function">dependencyService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> DependencyService <span class="token function">dependencyService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">DependencyServiceImpl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>如果一个bean的定义依赖其他bean,则直接调用对应的JavaConfig类中依赖bean的创建方法就可以了。</p>
+<pre><code>@Configuration
+public class MockConfiguration{
+    @Bean
+    public MockService mockService(){
+        return new MockServiceImpl(dependencyService());
+    }
+    @Bean
+    public DependencyService dependencyService(){
+        return new DependencyServiceImpl();
+    }
+}
+</code></pre><p>如果一个bean的定义依赖其他bean,则直接调用对应的JavaConfig类中依赖bean的创建方法就可以了。</p>
 <h3 id="ComponentScan"><a href="#ComponentScan" class="headerlink" title="@ComponentScan"></a>@ComponentScan</h3><p>ComponentScan扫描有@Component、@Repository或bean的类加载到IoC容器中</p>
 <h3 id="SpringBoot启动类注解"><a href="#SpringBoot启动类注解" class="headerlink" title="SpringBoot启动类注解"></a>SpringBoot启动类注解</h3><h1 id="Configuration-Bean"><a href="#Configuration-Bean" class="headerlink" title="@Configuration+@Bean"></a>@Configuration+@Bean</h1><p>@Configuration用于定义配置类，可替换xml配置文件，被注解的类内部包含有一个或多个被@Bean注解的方法，这些方法将会被AnnotationConfigApplicationContext或AnnotationConfigWebApplicationContext类进行扫描，并用于构建bean定义，初始化Spring容器</p>
 <h1 id="ComponentScan-basePackages-“com-pipi”"><a href="#ComponentScan-basePackages-“com-pipi”" class="headerlink" title="@ComponentScan(basePackages = “com.pipi”)"></a>@ComponentScan(basePackages = “com.pipi”)</h1><p>不声明出来只有SpringBootApplication注解默认只扫描和主类处于同包下的Class  </p>
@@ -950,33 +949,24 @@ mvn spring-boot-demo
 java -jar target/demo-0.0.1-SNAPSHOT.jar  
 </code></pre><h3 id="部署spring-boot应用"><a href="#部署spring-boot应用" class="headerlink" title="部署spring boot应用"></a><strong>部署spring boot应用</strong></h3><p>要部署运行spring boot应用，首选要打包spring boot应用，你在pom文件中看到的spring-boot-maven-plugin插件就是打包spring boot应用的。<br>进入工程目录   运行mvn package 进行打包<br><img src="https://github.com/54321decba/tu/blob/master/201811/20181108.png?raw=true" alt=""><br>打包之后的文件在工程目录的target目录  使用java的原生命令执行生成的jar文件<br>java  -jar  spring-boot-demo01.jar –server.port=9090  启动spring boot 项目</p>
 <h1 id="注解EnableAutoConfiguration-和-SpringApplication"><a href="#注解EnableAutoConfiguration-和-SpringApplication" class="headerlink" title="注解EnableAutoConfiguration 和 SpringApplication"></a>注解EnableAutoConfiguration 和 SpringApplication</h1><h3 id="EnableAutoConfiguration"><a href="#EnableAutoConfiguration" class="headerlink" title="@EnableAutoConfiguration"></a><strong>@EnableAutoConfiguration</strong></h3><p>用于自动配置。根据你的pom配置（实际上应该是根据具体的依赖）来判断这是一个什么应用，并创建相应的环境。<br>在上面这个例子中，@EnableAutoConfiguration 会判断出这是一个web应用，所以会创建相应的web环境。  </p>
-<h3 id="SpringApplication"><a href="#SpringApplication" class="headerlink" title="SpringApplication"></a><strong>SpringApplication</strong></h3><p>用于从main方法启动Spring应用的类。默认，它会执行以下步骤：  </p>
-<pre><code>1.创建一个合适的ApplicationContext实例 （取决于classpath）。  
-2.注册一个CommandLinePropertySource，以便将命令行参数作为Spring properties。  
-3.刷新application context，加载所有单例beans。  
-4.激活所有CommandLineRunner beans。  
-默认，直接使用SpringApplication 的静态方法run()即可。但也可以创建实例，并自行配置需要的设置。
-# SpringBoot访问时怎么没有项目路径？
-### **按照之前的web项目习惯，你可能会问，SpringBoot怎么没有项目路径？**  
-这就是Spring Boot的默认设置了，将项目路径直接设为根路径。  
-当然，我们也可以设置自己的项目路径 -- 在classpath下的 application.properties 或者 application.yaml 文件中设置即可。  
-内容如下：  
-``` java
-# application.yaml
-# Server settings (ServerProperties)
-server:
-  port: 8080
-  address: 127.0.0.1
-  sessionTimeout: 30
-  contextPath: /aaa
+<h3 id="SpringApplication"><a href="#SpringApplication" class="headerlink" title="SpringApplication"></a><strong>SpringApplication</strong></h3><p>用于从main方法启动Spring应用的类。默认，它会执行以下步骤：<br>1.创建一个合适的ApplicationContext实例 （取决于classpath）。<br>2.注册一个CommandLinePropertySource，以便将命令行参数作为Spring properties。<br>3.刷新application context，加载所有单例beans。<br>4.激活所有CommandLineRunner beans。<br>默认，直接使用SpringApplication 的静态方法run()即可。但也可以创建实例，并自行配置需要的设置。</p>
+<h1 id="SpringBoot访问时怎么没有项目路径？"><a href="#SpringBoot访问时怎么没有项目路径？" class="headerlink" title="SpringBoot访问时怎么没有项目路径？"></a>SpringBoot访问时怎么没有项目路径？</h1><h3 id="按照之前的web项目习惯，你可能会问，SpringBoot怎么没有项目路径？"><a href="#按照之前的web项目习惯，你可能会问，SpringBoot怎么没有项目路径？" class="headerlink" title="按照之前的web项目习惯，你可能会问，SpringBoot怎么没有项目路径？"></a><strong>按照之前的web项目习惯，你可能会问，SpringBoot怎么没有项目路径？</strong></h3><p>这就是Spring Boot的默认设置了，将项目路径直接设为根路径。<br>当然，我们也可以设置自己的项目路径 – 在classpath下的 application.properties 或者 application.yaml 文件中设置即可。<br>内容如下：  </p>
+<pre class=" language-java"><code class="language-java"># application<span class="token punctuation">.</span>yaml
+# Server <span class="token function">settings</span> <span class="token punctuation">(</span>ServerProperties<span class="token punctuation">)</span>
+server<span class="token operator">:</span>
+  port<span class="token operator">:</span> <span class="token number">8080</span>
+  address<span class="token operator">:</span> <span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
+  sessionTimeout<span class="token operator">:</span> <span class="token number">30</span>
+  contextPath<span class="token operator">:</span> <span class="token operator">/</span>aaa
   # Tomcat specifics
-  tomcat:
-    accessLogEnabled: false
-    protocolHeader: x-forwarded-proto
-    remoteIpHeader: x-forwarded-for
-    basedir:
-    backgroundProcessorDelay: 30 # secs
-</code></pre><pre class=" language-java"><code class="language-java"># application<span class="token punctuation">.</span>properties
+  tomcat<span class="token operator">:</span>
+    accessLogEnabled<span class="token operator">:</span> <span class="token boolean">false</span>
+    protocolHeader<span class="token operator">:</span> x<span class="token operator">-</span>forwarded<span class="token operator">-</span>proto
+    remoteIpHeader<span class="token operator">:</span> x<span class="token operator">-</span>forwarded<span class="token operator">-</span><span class="token keyword">for</span>
+    basedir<span class="token operator">:</span>
+    backgroundProcessorDelay<span class="token operator">:</span> <span class="token number">30</span> # secs
+</code></pre>
+<pre class=" language-java"><code class="language-java"># application<span class="token punctuation">.</span>properties
 # Server <span class="token function">settings</span> <span class="token punctuation">(</span>ServerProperties<span class="token punctuation">)</span>
 server<span class="token punctuation">.</span>port<span class="token operator">=</span><span class="token number">8080</span>
 server<span class="token punctuation">.</span>address<span class="token operator">=</span><span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
@@ -2764,7 +2754,7 @@ here">  </p>
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fa fa-close"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <h4 class="reward-title">如果您是学生，请不要扫码</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -2772,10 +2762,10 @@ here">  </p>
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="如果您并非有点小钱">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="请不要扫码打赏">
                     </div>
                 </div>
             </div>
@@ -2807,7 +2797,7 @@ here">  </p>
                     </span>
                     <a href="http://viabcde.github.io" class="b-link-green">Made-In-China</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2016/09/01/2016-09-01-初识框架/" class="b-link-green">Web开发框架</a>
+                    <a href="/2016/09/01/2016-09-01-框架/" class="b-link-green">Web开发框架</a>
                 </p>
             </div>
         </div>
@@ -2887,8 +2877,7 @@ here">  </p>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">激活Windows自己动手，KMS激活win10 2016 长期服务版。步骤如下：命令提示符（管理员），依次输入以下3条命令
-slmgr /ipk DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJslmgr /skms xykz.</div>
+                    <div class="summary">激活Windows自己动手，KMS激活win10 2016 长期服务版。步骤如下：命令提示符（管理员），依次输入以下3条命令slmgr /ipk DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJslmgr /skms xykz.f</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2016-08-09

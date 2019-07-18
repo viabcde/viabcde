@@ -1147,13 +1147,11 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
     <span class="token keyword">static</span> <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-
     <span class="token keyword">public</span> <span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">class</span> <span class="token class-name">B</span> <span class="token keyword">extends</span> <span class="token class-name">A</span><span class="token punctuation">{</span>
-
     <span class="token keyword">static</span> <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
@@ -1438,8 +1436,8 @@ Double  dou<span class="token operator">=</span> Double<span class="token punctu
 i<span class="token operator">=</span>rand<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 初始化时25并没有起直接作用（注意：不是没有起作用）,rand.nextInt(100);中的100是随机数的上限,产生的随机数为0-100的整数,不包括100。<br>第二种：<br>调用这个Math.Random()函数能够返回带正号的double值，该值大于等于0.0且小于1.0，即取值范围是<code>[0.0,1.0)的左闭右开区间</code><pre class=" language-java"><code class="language-java">System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Math.random()="</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 结果是个double类型的值，区间为[0.0,1.0）</span>
-          <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 注意不要写成(int)Math.random()*3，这个结果为0，因为先执行了强制转换</span>
-          System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"num="</span> <span class="token operator">+</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 注意不要写成(int)Math.random()*3，这个结果为0，因为先执行了强制转换</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"num="</span> <span class="token operator">+</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 id="awt与Swing"><a href="#awt与Swing" class="headerlink" title="awt与Swing"></a><strong>awt与Swing</strong></h3>awt 会随系统而改变样式，Swing不会 但却消耗内存<h3 id="JFrame"><a href="#JFrame" class="headerlink" title="JFrame"></a><strong>JFrame</strong></h3>j.serTitle();<br>j.setSize();<br>j.setLocation();<br>j.setVisival();<br>j.setDefaultColseOperation(JFram_Exit_IN);  <h3 id="边界布局"><a href="#边界布局" class="headerlink" title="边界布局"></a><strong>边界布局</strong></h3>borderLayout 东西南北中<h3 id="流式布局"><a href="#流式布局" class="headerlink" title="流式布局"></a><strong>流式布局</strong></h3>FlowLayout 随窗口排列<h2 id="Anonymous-Inner-Class-匿名内部类-是否可以继承其它类？是否可以实现接口？"><a href="#Anonymous-Inner-Class-匿名内部类-是否可以继承其它类？是否可以实现接口？" class="headerlink" title="Anonymous Inner Class(匿名内部类)是否可以继承其它类？是否可以实现接口？"></a><strong>Anonymous Inner Class(匿名内部类)是否可以继承其它类？是否可以实现接口？</strong></h2>答：可以继承其他类或实现其他接口，在Swing编程和Android开发中常用此方式来实现事件监听和回调<h3 id="构造器（constructor）是否可被重写（override）？"><a href="#构造器（constructor）是否可被重写（override）？" class="headerlink" title="构造器（constructor）是否可被重写（override）？"></a><strong>构造器（constructor）是否可被重写（override）？</strong></h3>答：构造器不能被继承，因此不能被重写，但可以被重载。<h3 id="Java-中的构造器链是什么"><a href="#Java-中的构造器链是什么" class="headerlink" title="Java 中的构造器链是什么"></a><strong>Java 中的构造器链是什么</strong></h3>当你从一个构造器中调用另一个构造器，就是Java 中的构造器链。这种情况只在重载了类的构造器的时候才会出现<h1 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a><strong>动态代理</strong></h1><h2 id="使用代理的原因"><a href="#使用代理的原因" class="headerlink" title="使用代理的原因"></a><strong>使用代理的原因</strong></h2><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a><strong>原因</strong></h3>把业务代码和系统控制层代码分离，降低类的耦合度。<br><strong>因此产生了静态代理</strong>    <h3 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a><strong>静态代理</strong></h3>通过被代理类注入的方式，实现既可以使用增强逻辑，又可以通过类名.方法调用被代理类的方法  <pre class=" language-java"><code class="language-java">增强：System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"do some log"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 被代理类的方法：被代理类类名<span class="token punctuation">.</span>方法<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1708,7 +1706,7 @@ i<span class="token operator">=</span>rand<span class="token punctuation">.</spa
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fa fa-close"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <h4 class="reward-title">如果您是学生，请不要扫码</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -1716,10 +1714,10 @@ i<span class="token operator">=</span>rand<span class="token punctuation">.</spa
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="如果您并非有点小钱">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="请不要扫码打赏">
                     </div>
                 </div>
             </div>
@@ -1842,7 +1840,7 @@ i<span class="token operator">=</span>rand<span class="token punctuation">.</spa
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            viacbde
+                            Shiro学习
                             
                         </span>
                     </div>

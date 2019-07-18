@@ -5,7 +5,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Jsp笔记, viabcde">
-    <meta name="description" content="jsp 有哪些内置对象？作用分别是什么JSP共有9种基本内置组件（可与ASP的6种内部组件相对应）。 request：用户端请求，此请求会包含来自GET/POST请求的参数。response：网页传回用户端的回应。 pageContext：">
+    <meta name="description" content="隐含对象是什么意思？有哪些隐含对象？JSP隐含对象是页面中的一些Java对象，JSP容器让这些Java对象可以为开发者所使用。开发者不用明确的声明就可以直接使用他们。JSP隐含对象也叫做预定义变量。下面列出了JSP页面中的隐含对象：JSP共">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -329,9 +329,22 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="jsp-有哪些内置对象？作用分别是什么"><a href="#jsp-有哪些内置对象？作用分别是什么" class="headerlink" title="jsp 有哪些内置对象？作用分别是什么"></a>jsp 有哪些内置对象？作用分别是什么</h3><p>JSP共有9种基本内置组件（可与ASP的6种内部组件相对应）。<br> <strong>request：</strong>用户端请求，此请求会包含来自GET/POST请求的参数。<br><strong>response：</strong>网页传回用户端的回应。<br> <strong>pageContext：</strong>jsp的上下文对象,可以获取其他八个内置对象   <code>pageContext.getOut();</code><br> <strong>Session：</strong>与请求有关的会话。<br> <strong>application：</strong>Servlet正在执行的内容。<br> <strong>out：</strong>向客户端输出数据,字节流.<code>out.print(&quot; dgaweyr&quot;);</code><br> <strong>config：</strong>Servlet的构架部件。<br> <strong>Page：</strong>JSP网页本身。<br> <strong>Exception：</strong>针对错误网页，未 捕捉的例外。  </p>
+                <h3 id="隐含对象是什么意思？有哪些隐含对象？"><a href="#隐含对象是什么意思？有哪些隐含对象？" class="headerlink" title="隐含对象是什么意思？有哪些隐含对象？"></a><font color="red">隐含对象是什么意思？有哪些隐含对象？</font></h3><p>JSP隐含对象是页面中的一些Java对象，JSP容器让这些Java对象可以为开发者所使用。开发者不用明确的声明就可以直接使用他们。JSP隐含对象也叫做预定义变量。下面列出了JSP页面中的隐含对象：<br>JSP共有9种基本内置组件（可与ASP的6种内部组件相对应）。<br>request用户端请求，此请求会包含来自GET/POST请求的参数。<br>response网页传回用户端的回应。<br>pageContext jsp的上下文对象,可以获取其他八个内置对象   <code>pageContext.getOut();</code><br>Session与请求有关的会话。<br>applicationServlet正在执行的内容。<br>out向客户端输出数据,字节流.<code>out.print(&quot; dgaweyr&quot;);</code><br>configServlet的构架部件。<br>PageJSP网页本身。<br>Exception针对错误网页，未 捕捉的例外。  </p>
 <h3 id="jsp的4种作用域"><a href="#jsp的4种作用域" class="headerlink" title="jsp的4种作用域"></a>jsp的4种作用域</h3><p> page—request—session—Application</p>
 <h3 id="301和302跳转"><a href="#301和302跳转" class="headerlink" title="301和302跳转"></a>301和302跳转</h3><p>都是重定向 301旧地址消除 302不消除</p>
+<h2 id="jsp中四种传递参数的方法"><a href="#jsp中四种传递参数的方法" class="headerlink" title="jsp中四种传递参数的方法"></a>jsp中四种传递参数的方法</h2><pre class=" language-java"><code class="language-java"><span class="token number">1</span>、form表单  
+<span class="token number">2</span>、request<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>和request<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token number">3</span>、超链接  
+<span class="token operator">&lt;</span>a herf<span class="token operator">=</span><span class="token string">"index.jsp"</span><span class="token operator">?</span>a<span class="token operator">=</span>a<span class="token operator">&amp;</span>b<span class="token operator">=</span>b<span class="token operator">&amp;</span>c<span class="token operator">=</span>c<span class="token operator">></span>name<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+<span class="token number">4</span>、<span class="token operator">&lt;</span>jsp<span class="token operator">:</span>param<span class="token operator">></span>  
+</code></pre>
+<p>” ${pageContext.request.contextPath}”的作用是取出部署的应用程序名，这样不管如何部署，所用路径都是正确的  </p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ taglib uri<span class="token operator">=</span><span class="token string">"http://java.sun.com/jsp/jstl/core"</span> prefix<span class="token operator">=</span><span class="token string">"c"</span> <span class="token operator">%</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>c<span class="token operator">:</span>set var<span class="token operator">=</span><span class="token string">"rootPath"</span> value<span class="token operator">=</span><span class="token string">"${pageContext.request.contextPath}"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>c<span class="token operator">:</span>set<span class="token operator">></span>
+</code></pre>
+<p>在js中使用变量(不需要像在jsp中加${rootPath})</p>
+<pre class=" language-java"><code class="language-java">window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href <span class="token operator">=</span> rootPath <span class="token operator">+</span> <span class="token string">"/doLogout"</span><span class="token punctuation">;</span>
+</code></pre>
 
             </div>
             <hr>
@@ -436,7 +449,7 @@
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fa fa-close"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <h4 class="reward-title">如果您是学生，请不要扫码</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -444,10 +457,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="如果您并非有点小钱">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="请不要扫码打赏">
                     </div>
                 </div>
             </div>
@@ -504,18 +517,17 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/10/29/java笔记/">
+                <a href="/2018/10/29/mybatis笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Java笔记">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Mybatis笔记">
                         
-                        <span class="card-title">Java笔记</span>
+                        <span class="card-title">Mybatis笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Math.round(-1.5) 等于多少？四舍五入的函数，该结果为1
-java 中操作字符串都有哪些类String、StringBuffer、StringBuilderString是final类 StringBuffer是同步的 Stri</div>
+                    <div class="summary">dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗Dao接口里的方法，是不能重载的，因为是全限名+方法名的保存和寻找策略。Dao接口的工作原理是JDK动态代理，Mybatis运行时会使用JDK动态代理为Dao接口生成代</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -523,7 +535,7 @@ java 中操作字符串都有哪些类String、StringBuffer、StringBuilderStrin
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            泥巴巴
+                            viacbde
                             
                         </span>
                     </div>
@@ -531,8 +543,12 @@ java 中操作字符串都有哪些类String、StringBuffer、StringBuilderStrin
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/" target="_blank">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/mybatis/" target="_blank">
+                        <span class="chip bg-color">mybatis</span>
+                    </a>
+                    
+                    <a href="/tags/数据层框架/" target="_blank">
+                        <span class="chip bg-color">数据层框架</span>
                     </a>
                     
                 </div>
@@ -557,7 +573,7 @@ java 中操作字符串都有哪些类String、StringBuffer、StringBuilderStrin
                 </a>
                 <div class="card-content article-content">
                     <div class="summary">drop,delete与truncate的区别drop时删除表，剩下2个都是删除数据，但是delete要事务提交后生效可回滚而truncate则时立即生效，不可回滚
-</div>
+mysql 中 in 和 exists 区别。mysql中的in语句是把外</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -565,7 +581,7 @@ java 中操作字符串都有哪些类String、StringBuffer、StringBuilderStrin
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            泥巴巴
+                            mysql-greenhand
                             
                         </span>
                     </div>

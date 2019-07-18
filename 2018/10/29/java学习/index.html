@@ -5,8 +5,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Java学习, viabcde">
-    <meta name="description" content="要求：熟悉svn上传代码①在代码所在目录右键②其中http://zt.net.henu.edu.cn 是服务器名，svn是代码仓库的根目录，StartKit是在svn添加的一个代码库③下载代码①创建文件夹 右键checkout
-要求：精通I">
+    <meta name="description" content="要求：精通IOjava IO 是面向流的，除非使用缓冲区  ，否则不能边读边写java NIO是面向块的，可以动态移动缓冲区中的数据，可边读边写前者一个连接由一个线程处理，后者是多个连接由一个线程处理（更适合一台计算机连接多个网络设备的网络">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -330,8 +329,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="要求：熟悉svn"><a href="#要求：熟悉svn" class="headerlink" title="要求：熟悉svn"></a><font color="red">要求：熟悉svn</font></h3><p>上传代码<br>①在代码所在目录右键<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/svn1.jpg" alt=""><br>②其中<a href="http://zt.net.henu.edu.cn" target="_blank" rel="noopener">http://zt.net.henu.edu.cn</a> 是服务器名，svn是代码仓库的根目录，StartKit是在svn添加的一个代码库<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/snv2.jpg" alt=""><br>③<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/svn3.jpg" alt=""><br>下载代码<br>①创建文件夹 右键checkout<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/svn4.jpg" alt=""></p>
-<h3 id="要求：精通IO"><a href="#要求：精通IO" class="headerlink" title="要求：精通IO"></a><font color="red">要求：精通IO</font></h3><p>java IO 是面向流的，除非使用缓冲区  ，否则不能边读边写<br>java NIO是面向块的，可以动态移动缓冲区中的数据，可边读边写<br>前者一个连接由一个线程处理，后者是多个连接由一个线程处理（更适合一台计算机连接多个网络设备的网络环境）  </p>
+                <h3 id="要求：精通IO"><a href="#要求：精通IO" class="headerlink" title="要求：精通IO"></a><font color="red">要求：精通IO</font></h3><p>java IO 是面向流的，除非使用缓冲区  ，否则不能边读边写<br>java NIO是面向块的，可以动态移动缓冲区中的数据，可边读边写<br>前者一个连接由一个线程处理，后者是多个连接由一个线程处理（更适合一台计算机连接多个网络设备的网络环境）  </p>
 <h4 id="字节流-——-z"><a href="#字节流-——-z" class="headerlink" title="字节流  ——-z"></a>字节流  ——-z</h4><p>父类抽象类：OutputStream  InputStream<br>字节流  ：FileOutputStream FileInputStream<br>缓冲区：BufferedOutputStream  BufferedInputStream    </p>
 <h4 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h4><p>父类抽象类 Writer Reader<br>子类：FileWriter   FileReader<br>缓冲区：BufferedWriter  BufferedReader  </p>
 <h2 id="要求：多线程"><a href="#要求：多线程" class="headerlink" title="要求：多线程"></a><font color="red">要求：多线程</font></h2><h3 id="创建线程的2种方法"><a href="#创建线程的2种方法" class="headerlink" title="创建线程的2种方法"></a><strong>创建线程的2种方法</strong></h3><p>运用多态机制 创建Thread的子类对象 thread1 并且覆盖父类的run方法<br>Thread thread = new Thread(){public void run(){}}<br>多态的概念 thread 是 Thrad的一个子类<br>Thread 在start()后调用run()，该run方法 先判断是否有Runable 参数 有则 调用 Runable.run() 没有则往下执行其他代码<br>如果是 子类 覆盖了run() 则不会去找Runable 直接执行子类的run()<br>此时对象可以直接使用start方法启动线程</p>
@@ -409,110 +407,7 @@
 <h3 id="ArrayList与Vector区别"><a href="#ArrayList与Vector区别" class="headerlink" title="ArrayList与Vector区别"></a><strong>ArrayList与Vector区别</strong></h3><p>ArrayList用于异步 容量不足自动扩展为原来的1.5倍<br>Vector用于同步 容量不足自动扩展为原来的2倍<br>ArrayList 和Vector都是使用数组方式存储数据，此数组元素数大于实际存储的数据以便增加和插入元素<br>Vector是线程安全的容器，性能上较ArrayList差       </p>
 <h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a><strong>Set</strong></h3><p>元素是无序的(因为没有索引)，元素不可以重复。可以有null元素。<br><strong>HashSet(JDK1.2):</strong><br>底层数据结构是哈希表、存取速度快、元素唯一、线程不同步。<br><strong>TreeSet:</strong><br>底层数据结构式二叉树。可以对Set集合中的元素进行排序。元素有序、线程不同步。    </p>
 <h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a><strong>Map</strong></h3><p><strong>HashTable(JDK1.0):</strong><br>底层是哈希表数据结构；<br>    不可以使用null键和null值；<br>    用作键的对象必须实现hashCode和equals方法来保证键的唯一性<br>    线程同步，效率低<br><strong>HashMap(JDK1.2):</strong><br>底层是哈希表数据结构；<br>    允许使用null键和null值；    </p>
-<h2 id="要求：掌握servlet"><a href="#要求：掌握servlet" class="headerlink" title="要求：掌握servlet"></a><font color="red">要求：掌握servlet</font></h2><h2 id="Servlet-的请求流程？"><a href="#Servlet-的请求流程？" class="headerlink" title="Servlet 的请求流程？"></a><strong>Servlet 的请求流程？</strong></h2><h3 id="1-浏览器发出请求-http-localhost-80-xxx1-xxx2"><a href="#1-浏览器发出请求-http-localhost-80-xxx1-xxx2" class="headerlink" title="1.浏览器发出请求 http://localhost:80/xxx1/xxx2"></a><strong>1.浏览器发出请求</strong> <a href="http://localhost:80/xxx1/xxx2" target="_blank" rel="noopener">http://localhost:80/xxx1/xxx2</a></h3><p><strong>注：</strong>（80端口可以默认不写，因为这是http协议默认的端口，平时我们访问<a href="https://www.baidu.com/" target="_blank" rel="noopener">https://www.baidu.com/</a> 时其实访问的是<a href="https://www.baidu.com:80/）" target="_blank" rel="noopener">https://www.baidu.com:80/）</a></p>
-<h3 id="2-服务器解析请求信息"><a href="#2-服务器解析请求信息" class="headerlink" title="2.服务器解析请求信息"></a><strong>2.服务器解析请求信息</strong></h3><p>•http:协议名称<br>•localhost:访问的是互联网中的哪一台计算机<br>•80:从主机当中找到对应 80 端口的程序 （这里即为 Tomcat 服务器）<br>•/xxx1:当前项目的上下文路径 （即在 server.xml 中配置主机时配置的 path属性）<br>•/xxx2:当前请求的资源名  </p>
-<h3 id="3-解析-Tomcat-服务器根目录下的-config-server-xml-文件"><a href="#3-解析-Tomcat-服务器根目录下的-config-server-xml-文件" class="headerlink" title="3.解析 Tomcat 服务器根目录下的 /config/server.xml 文件"></a><strong>3.解析 Tomcat 服务器根目录下的 /config/server.xml 文件</strong></h3><pre><code>&lt;Context docBase=&quot;D:\javaPros\test\webapp&quot; path=&quot;xxx1&quot; /&gt;
-</code></pre><p>判断哪一个<context>元素的 path属性属性为 xxx1<br>•若找不到，则返回 404错误<br>•若找到了，则解析该<context>元素，得到docBase属性，获取当前访问 Web 项目的跟的绝对路径：D:\javaPros\test\webapp  </context></context></p>
-<h3 id="4-从D-javaPros-test-webapp下的-WEB-INF-下找到-web-xml-文件"><a href="#4-从D-javaPros-test-webapp下的-WEB-INF-下找到-web-xml-文件" class="headerlink" title="4.从D:\javaPros\test\webapp下的 WEB-INF 下找到 web.xml 文件"></a><strong>4.从D:\javaPros\test\webapp下的 WEB-INF 下找到 web.xml 文件</strong></h3><p> 判断 web.xml 文件中是否有 <url-pattern> 的文本内容为 /xxx2<br> •若找不到，则返回 404错误<br>•若找到了，则继续获取该资源对应 Servlet 类的全限名称： xxx.xxx    </url-pattern></p>
-<h3 id="5-判断-Servlet-实例缓存池中是否有-xxx-xxx-的对象"><a href="#5-判断-Servlet-实例缓存池中是否有-xxx-xxx-的对象" class="headerlink" title="5.判断 Servlet 实例缓存池中是否有 xxx.xxx 的对象"></a><strong>5.判断 Servlet 实例缓存池中是否有 xxx.xxx 的对象</strong></h3><p>Map&lt;String,Servlet&gt; cache = ……(Tomcat提供的);<br>    key:存Servlet类的全限定名称<br>    value:该Servlet类的对象.    </p>
-<pre class=" language-java"><code class="language-java">Servlet obj <span class="token operator">=</span> cache<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"xxx.xxx"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>obj<span class="token operator">==</span>null<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//Servlet实例缓存中没有该类的对象,第一次.</span>
-        GOTO <span class="token number">6</span><span class="token operator">:</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//有对象,非第一次.</span>
-        GOTO <span class="token number">8</span><span class="token operator">:</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h2 id="servlet的生命周期"><a href="#servlet的生命周期" class="headerlink" title="servlet的生命周期"></a><strong>servlet的生命周期</strong></h2><h3 id="1-使用反射调用构造器，创建对应的对象"><a href="#1-使用反射调用构造器，创建对应的对象" class="headerlink" title="1.使用反射调用构造器，创建对应的对象"></a><strong>1.使用反射调用构造器，创建对应的对象</strong></h3><p>obj = Class.forName(“xxx.xxx”).newInstance();<br>把当前创建的 Servlet 对象，存放在缓存之中，供给下一次的使用.<br>cache.put(“xxx.xxx”,obj);  </p>
-<h3 id="2-创建-ServletConfig-对象，并调用-init-方法"><a href="#2-创建-ServletConfig-对象，并调用-init-方法" class="headerlink" title="2.创建 ServletConfig 对象，并调用 init() 方法"></a><strong>2.创建 ServletConfig 对象，并调用 init() 方法</strong></h3><p>obj.init(config);  </p>
-<h3 id="3-创建-ServletRequest-对象和-ServletResponse-对象，并调用-service-方法"><a href="#3-创建-ServletRequest-对象和-ServletResponse-对象，并调用-service-方法" class="headerlink" title="3.创建 ServletRequest 对象和 ServletResponse 对象，并调用 service()方法"></a><strong>3.创建 ServletRequest 对象和 ServletResponse 对象，并调用 service()方法</strong></h3><p>obj.service(req,resp);</p>
-<h3 id="4-在-service-方法中对浏览器作出响应操作。"><a href="#4-在-service-方法中对浏览器作出响应操作。" class="headerlink" title="4.在 service() 方法中对浏览器作出响应操作。"></a><strong>4.在 service() 方法中对浏览器作出响应操作。</strong></h3><h2 id="要求：掌握JSP"><a href="#要求：掌握JSP" class="headerlink" title="要求：掌握JSP"></a><font color="red">要求：掌握JSP</font></h2><p>” ${pageContext.request.contextPath}”的作用是取出部署的应用程序名，这样不管如何部署，所用路径都是正确的  </p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ taglib uri<span class="token operator">=</span><span class="token string">"http://java.sun.com/jsp/jstl/core"</span> prefix<span class="token operator">=</span><span class="token string">"c"</span> <span class="token operator">%</span><span class="token operator">></span>
-<span class="token operator">&lt;</span>c<span class="token operator">:</span>set var<span class="token operator">=</span><span class="token string">"rootPath"</span> value<span class="token operator">=</span><span class="token string">"${pageContext.request.contextPath}"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>c<span class="token operator">:</span>set<span class="token operator">></span>
-</code></pre>
-<p>在js中使用变量(不需要像在jsp中加${rootPath})</p>
-<pre class=" language-java"><code class="language-java">window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href <span class="token operator">=</span> rootPath <span class="token operator">+</span> <span class="token string">"/doLogout"</span><span class="token punctuation">;</span>
-</code></pre>
-<p><strong>JSP全名为Java Server Pages，中文名叫java服务器页面，其根本是一个简化的Servlet设计。它是指在传统的HTML页面中可以插入Java代码段。</strong><br>在处理请求时，JSP引擎从磁盘载入JSP，将所有的JSP元素转为java代码，最终转化为Servlet  ，并将原始请求传递给Servlet引擎   ，执行过程中，Servlet产生的HTML格式的输出将内嵌于http response中交给web服务器  ，<br>服务器再以静态的HTML文件将http response返回到浏览器<br>编译后的JSP对应的Setvlet路径：tomcat7\work\Catalina\localhost文件里   </p>
-<h1 id="页码指令page"><a href="#页码指令page" class="headerlink" title="页码指令page"></a><strong>页码指令page</strong></h1><p>用于定义整个JSP页面的相关属性，这些属性在JSP被服务器解析成Servlet时会转换为相应的Java程序代码  </p>
-<h3 id="language属性"><a href="#language属性" class="headerlink" title="language属性"></a><strong>language属性</strong></h3><p>用于设置JSP页面使用的语言，目前只支持Java语言，默认值是Java<br><strong>示例</strong>   </p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page language<span class="token operator">=</span><span class="token string">"java"</span> <span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<h3 id="extends属性"><a href="#extends属性" class="headerlink" title="extends属性"></a><strong>extends属性</strong></h3><p>设置JSP页面继承的Java类，JSP和Servlet都可以继承指定的父类，有可能影响服务器的性能优化（不常用）   </p>
-<h3 id="import属性"><a href="#import属性" class="headerlink" title="import属性 "></a><strong>import属性 </strong></h3><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page <span class="token keyword">import</span><span class="token operator">=</span><span class="token string">"java.util.*"</span> <span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<h3 id="pageEccoding属性-1"><a href="#pageEccoding属性-1" class="headerlink" title="pageEccoding属性      1"></a><strong>pageEccoding属性 </strong>     1</h3><p> 定义JSP页面的编码格式</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page pageEncoding<span class="token operator">=</span><span class="token string">"GBK"</span><span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<h3 id="contentType属性"><a href="#contentType属性" class="headerlink" title="contentType属性"></a><strong>contentType属性</strong></h3><p>设置JSP页面的MIME类型和字符编码   </p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page contentType<span class="token operator">=</span><span class="token string">"text/html; charset=GBK"</span><span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<h3 id="session属性"><a href="#session属性" class="headerlink" title="session属性"></a><strong>session属性</strong></h3><p>指定JSP页面是否使用HTTP的session会话对象，默认值是true</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page session<span class="token operator">=</span><span class="token string">"false"</span><span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<h3 id="buffer属性"><a href="#buffer属性" class="headerlink" title="buffer属性"></a><strong>buffer属性</strong></h3><p>设置JSP的out输出对象使用的缓冲区大小，默认大小是8kb   </p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page buffer<span class="token operator">=</span><span class="token string">"128kb"</span><span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<h3 id="autoFlush属性"><a href="#autoFlush属性" class="headerlink" title="autoFlush属性"></a><strong>autoFlush属性</strong></h3><p>设置JSP页面缓存满的时候，是否自动刷新缓存，默认值为true       </p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page autoFlush<span class="token operator">=</span><span class="token string">"false"</span><span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<h3 id="info属性"><a href="#info属性" class="headerlink" title="info属性"></a><strong>info属性</strong></h3><p>设置JSP页面的相关信息，这个信息可以在Servlet接口的getServletInfo()方法中获取    </p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page info<span class="token operator">=</span><span class="token string">"这是一个登录页面，是系统的入口"</span><span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<h3 id="isErrorPage属性"><a href="#isErrorPage属性" class="headerlink" title="isErrorPage属性"></a><strong>isErrorPage属性</strong></h3><p>JSP页面设置成错误处理页面，错误处理页面用于处理另一个JSP页面的错误，也就是异常处理。这意味着当前JSP页面业务的改变   </p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page isELIgnored<span class="token operator">=</span><span class="token string">"true"</span><span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<h3 id="errorPage属性"><a href="#errorPage属性" class="headerlink" title="errorPage属性"></a><strong>errorPage属性</strong></h3><p>指定处理当前JSP页面异常错误的另一个JSP页面   </p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page errorPage<span class="token operator">=</span><span class="token string">"error/loginErrorPage.jsp"</span><span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<h3 id="isELIgnored属性"><a href="#isELIgnored属性" class="headerlink" title="isELIgnored属性"></a><strong>isELIgnored属性</strong></h3><p>定义JSP页面是否忽略EL表达式的使用</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page isELIgnored<span class="token operator">=</span><span class="token string">"false"</span><span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<h2 id="文件包含指令include"><a href="#文件包含指令include" class="headerlink" title="文件包含指令include"></a><strong>文件包含指令include</strong></h2><p>静态include的结果是把其他jsp引入当前jsp，两者合为一体;    动态include的结构是两者独立，直到输出时才合并  </p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span><span class="token annotation punctuation">@include</span> file<span class="token operator">=</span><span class="token string">"validate.jsp"</span> <span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<p>动态INCLUED用jsp:include动作实现，如下面这行代码它总是会检查所含文件中的变化，适合用于包含动态页面，并且可以带参数。</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>jsp<span class="token operator">:</span>include page<span class="token operator">=</span><span class="token string">"included.jsp"</span> flush<span class="token operator">=</span><span class="token string">"true"</span> <span class="token operator">/</span><span class="token operator">></span>
-</code></pre>
-<p>静态INCLUDE用include伪码实现，如下面这行代码不会检查所包含文件的变化，适用于包含静态页面。  </p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ include file<span class="token operator">=</span><span class="token string">"included.htm"</span> <span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<h2 id="引用标签库指令taglib"><a href="#引用标签库指令taglib" class="headerlink" title="引用标签库指令taglib"></a><strong>引用标签库指令taglib</strong></h2><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ taglib prefix<span class="token operator">=</span><span class="token string">"c"</span> uri<span class="token operator">=</span><span class="token string">"http://java.sun.com/jsp/jstl/core"</span> <span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<p>prefix属性：用于指定标签的前缀。该前缀不能命名为jsp、jspx、java、javax、sun、servlet和sunw<br>uri属性：用于指定标签库文件的存放位置     </p>
-<h2 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a><strong>代码片段</strong></h2><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>
-      Date now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      String dateStr<span class="token punctuation">;</span>
-      dateStr <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%tY年%tm月%td日"</span><span class="token punctuation">,</span> now<span class="token punctuation">,</span> now<span class="token punctuation">,</span> now<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<h2 id="JSP-表达式"><a href="#JSP-表达式" class="headerlink" title="JSP 表达式"></a><strong>JSP 表达式</strong></h2><p>表达式可以是任何Java语言的完整表达式。<br>例如，如果要在Jsp页面中将圆周率显示，可以在Jsp页面中添加如下代码。   </p>
-<pre class=" language-java"><code class="language-java">圆周率是：<span class="token operator">&lt;</span><span class="token operator">%=</span>Math<span class="token punctuation">.</span>PI <span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-<h2 id="JSP有哪些动作？它们的作用分别是什么？"><a href="#JSP有哪些动作？它们的作用分别是什么？" class="headerlink" title="JSP有哪些动作？它们的作用分别是什么？"></a><strong>JSP有哪些动作？它们的作用分别是什么？</strong></h2><p>// JSP共有以下6种基本动作。<br>// jsp:include： 在网页被请求的时候引入一个文件。<br>// jsp:userBean： 寻找或者实例化一个JavaBean。<br>// jsp:setProperty： 设置JavaBean的属性。<br>// jsp:getProperty： 输出某个JavaBean的属性。<br>// jsp:forward： 把请求转到一个新的页面。<br>// jsp:plugin： 根据浏览器类型为Java插件生成OBJECT或EMBED标记。  </p>
-<h2 id="JSP两种跳转方式分别是什么？有什么区别？"><a href="#JSP两种跳转方式分别是什么？有什么区别？" class="headerlink" title="JSP两种跳转方式分别是什么？有什么区别？"></a><strong>JSP两种跳转方式分别是什么？有什么区别？</strong></h2><p>// 两种跳转方式分别如下。  </p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>jsp<span class="token operator">:</span>include page<span class="token operator">=</span><span class="token string">"included.jsp"</span> flush<span class="token operator">=</span><span class="token string">"true"</span><span class="token operator">></span>
-<span class="token operator">&lt;</span>jsp<span class="token operator">:</span>forward page<span class="token operator">=</span><span class="token string">"nextpage.jsp"</span> <span class="token operator">/</span><span class="token operator">></span>
-</code></pre>
-<p>// 前者页面不会转向include所指的页面，只是显示该页的结果，主页面还是原来的页面。执行完以后还会回来，相当于函数调用，并且可以带参数。后者完全转向新页面，不会再回来，相当于GOTO语句。</p>
-<h2 id="使用JSP代码和使用JavaScript进行表单数据验证有什么不同？"><a href="#使用JSP代码和使用JavaScript进行表单数据验证有什么不同？" class="headerlink" title="使用JSP代码和使用JavaScript进行表单数据验证有什么不同？"></a><strong>使用JSP代码和使用JavaScript进行表单数据验证有什么不同？</strong></h2><p>// JavaScript为脚本程序，可以在表单提交前在客户端验证，提高了验证速度，不会使表单内信息丢失。JSP验证需要向服务器请求，服务器对请求页面进行重新编译，并验证数据的合法性，使得服务器负担加重，且验证结果返回较慢，容易使填写的表单信息丢失。</p>
-<h3 id="讲解JSP中的四种作用域。"><a href="#讲解JSP中的四种作用域。" class="headerlink" title="讲解JSP中的四种作用域。"></a><strong>讲解JSP中的四种作用域。</strong></h3><p>答：JSP中的四种作用域包括page、request、session和application，具体来说： </p>
-<ul>
-<li>page代表与一个页面相关的对象和属性。 </li>
-<li>request代表与Web客户机发出的一个请求相关的对象和属性。一个请求可能跨越多个页面，涉及多个Web组件；需要在页面显示的临时数据可以置于此作用域。 </li>
-<li>session代表与某个用户与服务器建立的一次会话相关的对象和属性。跟某个用户相关的数据应该放在用户自己的session中。 </li>
-<li>application代表与整个Web应用程序相关的对象和属性，它实质上是跨越整个Web应用程序，包括多个页面、请求和会话的一个全局作用域。<h3 id="如何实现JSP或Servlet的单线程模式？"><a href="#如何实现JSP或Servlet的单线程模式？" class="headerlink" title="如何实现JSP或Servlet的单线程模式？"></a><strong>如何实现JSP或Servlet的单线程模式？</strong></h3>答：<br>对于JSP页面，可以通过page指令进行设置。<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span><span class="token annotation punctuation">@page</span> isThreadSafe<span class="token operator">=</span>”<span class="token boolean">false</span>”<span class="token operator">%</span><span class="token operator">></span>
-</code></pre>
-对于Servlet，可以让自定义的Servlet实现SingleThreadModel标识接口。<br>说明：如果将JSP或Servlet设置成单线程工作模式，会导致每个请求创建一个Servlet实例，这种实践将导致严重的性能问题（服务器的内存压力很大，还会导致频繁的垃圾回收），所以通常情况下并不会这么做。<h2 id="jsp中四种传递参数的方法"><a href="#jsp中四种传递参数的方法" class="headerlink" title="jsp中四种传递参数的方法"></a>jsp中四种传递参数的方法</h2><pre class=" language-java"><code class="language-java"><span class="token number">1</span>、form表单  
-<span class="token number">2</span>、request<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>和request<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-<span class="token number">3</span>、超链接  
-<span class="token operator">&lt;</span>a herf<span class="token operator">=</span><span class="token string">"index.jsp"</span><span class="token operator">?</span>a<span class="token operator">=</span>a<span class="token operator">&amp;</span>b<span class="token operator">=</span>b<span class="token operator">&amp;</span>c<span class="token operator">=</span>c<span class="token operator">></span>name<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
-<span class="token number">4</span>、<span class="token operator">&lt;</span>jsp<span class="token operator">:</span>param<span class="token operator">></span>  
-</code></pre>
-<h3 id="常见的六种设计模式以及应用场景"><a href="#常见的六种设计模式以及应用场景" class="headerlink" title="常见的六种设计模式以及应用场景 "></a><font color="red">常见的六种设计模式以及应用场景 </font></h3>单例模式:希望在系统中某个类的对象只能存在一个<br>工厂模式：当调用者不需要知道具体实现细节，只需关心接口时<br>策略模式：系统的操作都要有日志记录，通常会把日志记录在数据库里面，方便后续的管理，但是在记录日志到数据库的时候，可能会发生错误，比如暂时连不上数据库了，那就先记录在文件里面。日志写到数据库与文件中是两种算法，但调用方不关心，只负责写就是。<br>观察者模式：对一个对象状态的更新，需要其他对象同步更新，而且其他对象的数量动态可变。<h3 id="mysql-中-in-和-exists-区别。"><a href="#mysql-中-in-和-exists-区别。" class="headerlink" title="mysql 中 in 和 exists 区别。"></a>mysql 中 in 和 exists 区别。</h3>mysql中的in语句是把外表和内表作hash 连接，而exists语句是对外表作loop循环，每次loop循环再对内表进行查询。一直大家都认为exists比in语句的效率要高，这种说法其实是不准确的。这个是要区分环境的。<br>如果查询的两个表大小相当，那么用in和exists差别不大。<br>如果两个表中一个较小，一个是大表，则子查询表大的用exists，子查询表小的用in<h3 id="隐含对象是什么意思？有哪些隐含对象？"><a href="#隐含对象是什么意思？有哪些隐含对象？" class="headerlink" title="隐含对象是什么意思？有哪些隐含对象？"></a><font color="red">隐含对象是什么意思？有哪些隐含对象？</font></h3>JSP隐含对象是页面中的一些Java对象，JSP容器让这些Java对象可以为开发者所使用。开发者不用明确的声明就可以直接使用他们。JSP隐含对象也叫做预定义变量。下面列出了JSP页面中的隐含对象：<br>application page request response pageContext<br>session exception out config<h2 id="HTTP响应的结构"><a href="#HTTP响应的结构" class="headerlink" title="HTTP响应的结构"></a>HTTP响应的结构</h2>HTTP响应由三个部分组成：状态码 HTTP头部 主体<h3 id="不能被序列化的数据"><a href="#不能被序列化的数据" class="headerlink" title="不能被序列化的数据"></a>不能被序列化的数据</h3>java中static、transient修饰的属性不能被序列化</li>
-</ul>
+<h3 id="不能被序列化的数据"><a href="#不能被序列化的数据" class="headerlink" title="不能被序列化的数据"></a>不能被序列化的数据</h3><p>java中static、transient修饰的属性不能被序列化</p>
 
             </div>
             <hr>
@@ -617,7 +512,7 @@
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fa fa-close"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <h4 class="reward-title">如果您是学生，请不要扫码</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -625,10 +520,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="如果您并非有点小钱">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="请不要扫码打赏">
                     </div>
                 </div>
             </div>
@@ -685,30 +580,26 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/10/29/2018-10-29-SpringCloud/">
+                <a href="/2018/10/29/java笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="SpringCloud">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Java笔记">
                         
-                        <span class="card-title">SpringCloud</span>
+                        <span class="card-title">Java笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">使用微服务的原因每次更改都需要全部重新部署不同服务可以使用不同技术但服务启动快可以按不同服务的需求搭配电脑配置但是，出现bug不好定位，运维成本高 接口调整成本高 不同服务不能公用utils
-Eureka系使用Eureka替代Nginx做服</div>
+                    <div class="summary">Math.round(-1.5) 等于多少？四舍五入的函数，该结果为1
+java 中操作字符串都有哪些类String、StringBuffer、StringBuilderString是final类 StringBuffer是同步的 Stri</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/编程/" class="post-category" target="_blank">
-                                    编程
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            viacbde
                             
                         </span>
                     </div>
@@ -716,8 +607,8 @@ Eureka系使用Eureka替代Nginx做服</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SpringCloud/" target="_blank">
-                        <span class="chip bg-color">SpringCloud</span>
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>

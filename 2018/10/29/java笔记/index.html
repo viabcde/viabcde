@@ -345,11 +345,13 @@ java 中操作字符串都有哪些类String、StringBuffer、StringBuilderStrin
 <h3 id="线程池中-submit-和-execute-方法有什么区别"><a href="#线程池中-submit-和-execute-方法有什么区别" class="headerlink" title="线程池中 submit()和 execute()方法有什么区别"></a>线程池中 submit()和 execute()方法有什么区别</h3><p>submit包含execute 只是比execute多了返回值这一段</p>
 <h3 id="锁的升级"><a href="#锁的升级" class="headerlink" title="锁的升级"></a>锁的升级</h3><p>synchronized是重量级锁，耗费资源<br>jvm优化出 偏向锁 轻量级锁 和 重量级锁<br>偏向锁是直接保存对象的ID到线程锁对象的对象头，每次值比较ID即可 在1个线程时使用<br>轻量级锁是存在2个线程 另一个线程通过自旋获取锁 在多个线程但访问错开使用<br>如果2个线程访问有冲突 升级为重量级锁 </p>
 <h3 id="如何避免死锁"><a href="#如何避免死锁" class="headerlink" title="如何避免死锁"></a>如何避免死锁</h3><p>按同一顺序访问对象 不会存在需要的资源被后面的对象调用从而发生互相等待的死锁<br>避免事务中的用户交互 防止用户没及时反馈造成<br>保持事务简短并在一个批处理中 事务越短 等待的对象越少<br>使用低隔离级别 允许对象读取未完成的对象的数据</p>
-<h3 id="ThreadLocal-是什么？有哪些使用场景"><a href="#ThreadLocal-是什么？有哪些使用场景" class="headerlink" title="ThreadLocal 是什么？有哪些使用场景"></a>ThreadLocal 是什么？有哪些使用场景</h3><p>线程共享变量 数据库连接时避免A连接关闭了B连接</p>
+<h3 id="ThreadLocal-是什么？有哪些使用场景"><a href="#ThreadLocal-是什么？有哪些使用场景" class="headerlink" title="ThreadLocal 是什么？有哪些使用场景"></a>ThreadLocal 是什么？有哪些使用场景</h3><p>线程共享变量 原理也是map键值对<br>用于做参数传递<br>在spring中用于管理数据库的连接<br>数据库连接时避免A连接关闭了B连接</p>
 <h3 id="synchronized原理"><a href="#synchronized原理" class="headerlink" title="synchronized原理"></a>synchronized原理</h3><p>每个对象由三部分组成：对象头 实例变量和填充数据<br>对象头中包含由monitor 当线程访问时会进入EntryLIst等待执行monitorenter获取monitor持有权以进入owner区 获取锁后进入owner中运行monitor计数器加1其他线程不能进入 退出时执行monitirexit计数器减1 如果调用wait方法会进入waitset中<br>而synchronized中只有一个常量供jvm判断是不是同步代码，是的话jvm才调用同步方法，不是则不调用</p>
 <h3 id="volatile和synchronized的区别"><a href="#volatile和synchronized的区别" class="headerlink" title="volatile和synchronized的区别"></a>volatile和synchronized的区别</h3><p>volatile本质是在告诉jvm当前变量在寄存器（工作内存）中的值是不确定的，需要从主存中读取； synchronized则是锁定当前变量，只有当前线程可以访问该变量，其他线程被阻塞住。<br>volatile仅能使用在变量级别；synchronized则可以使用在变量、方法、和类级别的<br>volatile仅能实现变量的修改可见性，不能保证原子性；而synchronized则可以保证变量的修改可见性和原子性<br>volatile不会造成线程的阻塞；synchronized可能会造成线程的阻塞。<br>volatile标记的变量不会被编译器优化；synchronized标记的变量可以被编译器优化</p>
 <h3 id="Lock与synchronized-的区别"><a href="#Lock与synchronized-的区别" class="headerlink" title="Lock与synchronized 的区别"></a>Lock与synchronized 的区别</h3><p>lock等待锁一段时间会停止等待 去干别的事情而synchronized会一直等<br>lock要手动释放 synchronized不用<br>lock一直等待  trylock获取不到立即返回 或者等待一段时间返回<br>在资源竞争不是很激烈的情况下，偶尔会有同步的情形下，synchronized是很合适的。</p>
 <h3 id="File类常用方法"><a href="#File类常用方法" class="headerlink" title="File类常用方法"></a>File类常用方法</h3><p>mkdirs renameTo isFile getPath getName</p>
+<h3 id="序列化问题"><a href="#序列化问题" class="headerlink" title="序列化问题"></a>序列化问题</h3><h1 id="为什么序列化对象通常要重写-hashCode-和-equals方法"><a href="#为什么序列化对象通常要重写-hashCode-和-equals方法" class="headerlink" title="为什么序列化对象通常要重写 hashCode 和 equals方法"></a>为什么序列化对象通常要重写 hashCode 和 equals方法</h1><p>2个内容完全一样的对象，在我们“人”看来就是一样的对象，但是计算机不这么认为，为了保证对象在进行比较时候符合人们的思维习惯，所以我们需要重写这2个方法。<br>在向 set 这种集合中添加对象的时候，set 要求对象都是不重复的，这个检查重复的过程，首先是检查对象的 hashCode() 值，如果这个值一致的话再去通过 equals 方法进行比较，如果 equals方法返回true，那么这个对象就不会被加入到 set 当中<br>对象的序列化主要有两种用途：<br>把对象的字节序列永久地保存到硬盘上，通常存放在一个文件中；<br>在网络上传送对象的字节序列。<br>在很多应用中，需要对某些对象进行序列化，让它们离开内存空间，入住物理硬盘，以便长期保存。比如最常见的是Web服务器中的Session对象，当有 10万用户并发访问，就有可能出现10万个Session对象，内存可能吃不消，于是Web容器就会把一些seesion先序列化到硬盘中，等要用了，再把保存在硬盘中的对象还原到内存中。<br>当两个进程在进行远程通信时，彼此可以发送各种类型的数据。无论是何种类型的数据，都会以二进制序列的形式在网络上传送。发送方需要把这个Java对象转换为字节序列，才能在网络上传送；接收方则需要把字节序列再恢复为Java对象  </p>
+<h1 id="为什么要使用SerialversionUID"><a href="#为什么要使用SerialversionUID" class="headerlink" title="为什么要使用SerialversionUID"></a>为什么要使用SerialversionUID</h1><p>如果用户没有自己声明一个serialVersionUID,接口会默认生成一个serialVersionUID<br>但是，如果我们不自己声明时，<br>当我们修改Person类的时候，Person类对应的SerialversionUID也变化了，而序列化和反序列化就是通过对比其SerialversionUID来进行的，一旦SerialversionUID不匹配，反序列化就无法成功。在实际的生产环境中，我们可能会建一系列的中间Object来反序列化我们的pojo，为了解决这个问题，我们就需要在实体类中自定义SerialversionUID<br>不管我们序列化之后如何更改我们的Person（不删除原有字段），最终都可以反序列化成功   </p>
 
             </div>
             <hr>
@@ -454,7 +456,7 @@ java 中操作字符串都有哪些类String、StringBuffer、StringBuilderStrin
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fa fa-close"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <h4 class="reward-title">如果您是学生，请不要扫码</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -462,10 +464,10 @@ java 中操作字符串都有哪些类String、StringBuffer、StringBuilderStrin
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="如果您并非有点小钱">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="请不要扫码打赏">
                     </div>
                 </div>
             </div>
@@ -522,19 +524,19 @@ java 中操作字符串都有哪些类String、StringBuffer、StringBuilderStrin
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/10/29/Servlet笔记/">
+                <a href="/2018/10/29/Spring笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Servlet笔记">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Spring笔记">
                         
-                        <span class="card-title">Servlet笔记</span>
+                        <span class="card-title">Spring笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">内嵌servlet容器Tomcat jetty等
-获取存储在servlet上下文的对象    &lt;context-param>
-        &lt;param-name>contextConfigLocation&lt;/param</div>
+                    <div class="summary">Spring常用的注入方式构造方法注入，setter注入，基于注解的注入
+bean是线程安全的吗bean一般是无状态的，即没有实例变量 不会有线程安全问题如果有实例变量，使用ThreadLocal
+Spring bean的作用域single</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -550,8 +552,8 @@ java 中操作字符串都有哪些类String、StringBuffer、StringBuilderStrin
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Servlet/" target="_blank">
-                        <span class="chip bg-color">Servlet</span>
+                    <a href="/tags/Spring/" target="_blank">
+                        <span class="chip bg-color">Spring</span>
                     </a>
                     
                 </div>
@@ -565,17 +567,17 @@ java 中操作字符串都有哪些类String、StringBuffer、StringBuilderStrin
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/10/29/jsp笔记/">
+                <a href="/2018/10/29/java学习/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.gif" class="responsive-img" alt="Jsp笔记">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Java学习">
                         
-                        <span class="card-title">Jsp笔记</span>
+                        <span class="card-title">Java学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">jsp 有哪些内置对象？作用分别是什么JSP共有9种基本内置组件（可与ASP的6种内部组件相对应）。 request：用户端请求，此请求会包含来自GET/POST请求的参数。response：网页传回用户端的回应。 pageContext：</div>
+                    <div class="summary">要求：精通IOjava IO 是面向流的，除非使用缓冲区  ，否则不能边读边写java NIO是面向块的，可以动态移动缓冲区中的数据，可边读边写前者一个连接由一个线程处理，后者是多个连接由一个线程处理（更适合一台计算机连接多个网络设备的网络</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -583,7 +585,7 @@ java 中操作字符串都有哪些类String、StringBuffer、StringBuilderStrin
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            泥巴巴
+                            viacbde
                             
                         </span>
                     </div>
@@ -591,8 +593,8 @@ java 中操作字符串都有哪些类String、StringBuffer、StringBuilderStrin
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/jsp/" target="_blank">
-                        <span class="chip bg-color">jsp</span>
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>

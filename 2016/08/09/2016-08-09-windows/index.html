@@ -5,8 +5,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Windows, viabcde">
-    <meta name="description" content="激活Windows自己动手，KMS激活win10 2016 长期服务版。步骤如下：命令提示符（管理员），依次输入以下3条命令
-slmgr /ipk DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJslmgr /skms xykz.">
+    <meta name="description" content="激活Windows自己动手，KMS激活win10 2016 长期服务版。步骤如下：命令提示符（管理员），依次输入以下3条命令slmgr /ipk DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJslmgr /skms xykz.f">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -335,32 +334,31 @@ slmgr /ipk DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJslmgr /skms xykz.">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="激活Windows"><a href="#激活Windows" class="headerlink" title="激活Windows"></a>激活Windows</h1><p>自己动手，KMS激活win10 2016 长期服务版。步骤如下：命令提示符（管理员），依次输入以下3条命令</p>
-<p>slmgr /ipk DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ<br>slmgr /skms xykz.f3322.org<br>slmgr /ato</p>
-<h1 id="win的dos命令"><a href="#win的dos命令" class="headerlink" title="win的dos命令"></a>win的dos命令</h1><h2 id="ping"><a href="#ping" class="headerlink" title="ping"></a><strong>ping</strong></h2><p><strong>原理：</strong>网络上的机器的唯一IP，给目标IP地址发送数据包，对方就要返回一个同样大小的数据包，根据返回的数据包我们可以确定目标主机的存在，可以初步判断目标主机的操作系统等<br>从<strong>TTL的返回值</strong>可以初步判断被ping主机的操作系统，之所以说“初步判断”是因为这个值是可以修改的。这里TTL=32表示操作系统可能是win98(小知识:如果TTL=128，则表示目标主机可能是Win2000;如果TTL=250，则目标主机可能是Unix)  </p>
-<h3 id="t"><a href="#t" class="headerlink" title="-t"></a><strong>-t</strong></h3><p>表示不间断向目标IP发送数据包，直到我们强迫其停止。<br>试想，使用100M的宽带接入，而目标IP是56K的小猫，要不了多久，目标IP就因承受不了这么多的数据而掉线，<strong>一次简单攻击的实现</strong>    </p>
-<h3 id="l"><a href="#l" class="headerlink" title="-l"></a><strong>-l</strong></h3><p>定义发送数据包的大小，默认为32字节，我们利用它可以最大定义到65500字节。结合上面介绍的-t参数一起使用，效果更好    </p>
-<h3 id="n"><a href="#n" class="headerlink" title="-n"></a><strong>-n</strong></h3><p>向目标IP发送数据包的次数，默认为3次。如果网络速度比较慢，3次对我们来说也浪费了不少时间，因为现在我们的目的仅仅是判断目标IP是否存在，那么就定义为一次吧。<br>说明一下，如果-t 参数和-n参数一起使用，ping命令就以放在后面的参数为标准，比如“ping IP -t -n 3”，虽然使用了-t参数，但并不是一直ping下去，而是只ping 3次。  </p>
-<h2 id="nbtstat"><a href="#nbtstat" class="headerlink" title="nbtstat"></a><strong>nbtstat</strong></h2><p>　　该命令使用TCP/IP上的NetBIOS显示协议统计和当前TCP/IP连接，这个命令可得到远程主机的NETBIOS信息，比如用户名、所属的工作组、网卡的MAC地址等  </p>
+                <h4 id="激活Windows"><a href="#激活Windows" class="headerlink" title="激活Windows"></a>激活Windows</h4><p>自己动手，KMS激活win10 2016 长期服务版。步骤如下：命令提示符（管理员），依次输入以下3条命令<br>slmgr /ipk DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ<br>slmgr /skms xykz.f3322.org<br>slmgr /ato</p>
+<h4 id="win的dos命令"><a href="#win的dos命令" class="headerlink" title="win的dos命令"></a>win的dos命令</h4><h4 id="ping"><a href="#ping" class="headerlink" title="ping"></a><strong>ping</strong></h4><p><strong>原理：</strong>网络上的机器的唯一IP，给目标IP地址发送数据包，对方就要返回一个同样大小的数据包，根据返回的数据包我们可以确定目标主机的存在，可以初步判断目标主机的操作系统等<br>从<strong>TTL的返回值</strong>可以初步判断被ping主机的操作系统，之所以说“初步判断”是因为这个值是可以修改的。这里TTL=32表示操作系统可能是win98(小知识:如果TTL=128，则表示目标主机可能是Win2000;如果TTL=250，则目标主机可能是Unix)  </p>
+<h4 id="t"><a href="#t" class="headerlink" title="-t"></a><strong>-t</strong></h4><p>表示不间断向目标IP发送数据包，直到我们强迫其停止。<br>试想，使用100M的宽带接入，而目标IP是56K的小猫，要不了多久，目标IP就因承受不了这么多的数据而掉线，<strong>一次简单攻击的实现</strong> </p>
+<h4 id="l"><a href="#l" class="headerlink" title="-l"></a><strong>-l</strong></h4><p>定义发送数据包的大小，默认为32字节，我们利用它可以最大定义到65500字节。结合上面介绍的-t参数一起使用，效果更好    </p>
+<h4 id="n"><a href="#n" class="headerlink" title="-n"></a><strong>-n</strong></h4><p>向目标IP发送数据包的次数，默认为3次。如果网络速度比较慢，3次对我们来说也浪费了不少时间，因为现在我们的目的仅仅是判断目标IP是否存在，那么就定义为一次吧。<br>说明一下，如果-t 参数和-n参数一起使用，ping命令就以放在后面的参数为标准，比如“ping IP -t -n 3”，虽然使用了-t参数，但并不是一直ping下去，而是只ping 3次。  </p>
+<h4 id="nbtstat"><a href="#nbtstat" class="headerlink" title="nbtstat"></a><strong>nbtstat</strong></h4><p>　　该命令使用TCP/IP上的NetBIOS显示协议统计和当前TCP/IP连接，这个命令可得到远程主机的NETBIOS信息，比如用户名、所属的工作组、网卡的MAC地址等  </p>
 <h3 id="a"><a href="#a" class="headerlink" title="-a"></a><strong>-a</strong></h3><p>只要知道远程主机的机器名称，就可以得到它的NETBIOS信息(下同)。 // nbtstat -a fei(计算机名)  </p>
-<h3 id="A"><a href="#A" class="headerlink" title="-A"></a><strong>-A</strong></h3><p>可得到远程主机的NETBIOS信息，但需要知道它的IP。<br>//nbtstat -a 192.168.1.100  </p>
-<h3 id="n-1"><a href="#n-1" class="headerlink" title="-n"></a><strong>-n</strong></h3><p>列出本地机器的NETBIOS信息。<br>当得到了对方的IP或者机器名后，可用nbtstat命令来进一步得到对方的信息了，这又增加了我们入侵的保险系数。  </p>
-<h2 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a><strong>netstat</strong></h2><p>用来查看网络状态的命令。  </p>
-<h3 id="a-1"><a href="#a-1" class="headerlink" title="-a"></a><strong>-a</strong></h3><p>查看本地机器的所有开放端口，可以知道机器所开的服务等信息，有效发现和预防木马。用法:netstat -a IP。  </p>
+<h4 id="A"><a href="#A" class="headerlink" title="-A"></a><strong>-A</strong></h4><p>可得到远程主机的NETBIOS信息，但需要知道它的IP。<br>//nbtstat -a 192.168.1.100  </p>
+<h4 id="n-1"><a href="#n-1" class="headerlink" title="-n"></a><strong>-n</strong></h4><p>列出本地机器的NETBIOS信息。<br>当得到了对方的IP或者机器名后，可用nbtstat命令来进一步得到对方的信息了，这又增加了我们入侵的保险系数。  </p>
+<h4 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a><strong>netstat</strong></h4><p>用来查看网络状态的命令。  </p>
+<h4 id="a-1"><a href="#a-1" class="headerlink" title="-a"></a><strong>-a</strong></h4><p>查看本地机器的所有开放端口，可以知道机器所开的服务等信息，有效发现和预防木马。用法:netstat -a IP。  </p>
 <h3 id="r"><a href="#r" class="headerlink" title="-r"></a><strong>-r</strong></h3><p> 列出当前的路由信息，获取本地机器的网关、子网掩码等信息。用法:netstat -r IP。  </p>
-<h2 id="tracert"><a href="#tracert" class="headerlink" title="tracert"></a><strong>tracert</strong></h2><p>跟踪路由信息，此命令可查出数据从本地机器传输到目标主机所经过的途径，了解网络布局和结构。<br>这里说明数据从本地机器传输到192.168.0.1的机器上，中间没有经过任何中转，说明这两台机器是在同一段局域网内。用法:tracert IP。  </p>
-<h2 id="net"><a href="#net" class="headerlink" title="net"></a><strong>net</strong></h2><h3 id="net-view"><a href="#net-view" class="headerlink" title="net view"></a><strong>net view</strong></h3><p>此命令查看远程主机的所以共享资源。命令格式为net view IP。  </p>
-<h3 id="net-start"><a href="#net-start" class="headerlink" title="net start"></a><strong>net start</strong></h3><p>用来启动远程主机上的服务。<br>用法:net start servername</p>
-<h3 id="net-stop"><a href="#net-stop" class="headerlink" title="net stop"></a><strong>net stop</strong></h3><p>用来关闭远程主机上的服务。<br>用法和net start同。  </p>
-<h3 id="net-user"><a href="#net-user" class="headerlink" title="net user"></a><strong>net user</strong></h3><p><strong>查看和帐户有关的情况，包括新建帐户、删除帐户、查看特定帐户、激活帐户、帐户禁用等</strong><br>这对我们入侵是很有利的，最重要的，它为我们克隆帐户提供了前提。键入不带参数的net user，可以查看所有用户，包括已经禁用的。下面分别讲解。<br>1，net user abcd1234/add，新建一个用户名为abcd，密码为1234的帐户，默认为user组成员。<br>2，net user abcd /del，将用户名为abcd的用户删除。<br>3，net user abcd /active:no，将用户名为abcd的用户禁用。<br>4，net user abcd /active:yes，激活用户名为abcd的用户。<br>5，net user abcd，查看用户名为abcd的用户的情况   </p>
-<h3 id="net-localgroup"><a href="#net-localgroup" class="headerlink" title="net localgroup"></a><strong>net localgroup</strong></h3><p>查看所有和用户组有关的信息和进行相关操作。键入不带参数的netlocalgroup即列出当前所有的用户组。<br>用法:net localgroup groupname username /add。    </p>
-<h2 id="at"><a href="#at" class="headerlink" title="at"></a><strong>at</strong></h2><p>这个命令的作用是安排在特定日期或时间执行某个特定的命令和程序(知道net time的重要了吧?)。当我们知道了远程主机的当前时间，就可以利用此命令让其在以后的某个时间(比如2分钟后)执行某个程序和命令。<br>用法:at time 命令\computer。</p>
-<h1 id="电脑故障"><a href="#电脑故障" class="headerlink" title="电脑故障"></a><strong>电脑故障</strong></h1><p>已经不记得多久没有关闭电脑了，今天停电想着没用时把电脑关了省电，网上开机发现连不上网络了    </p>
+<h4 id="tracert"><a href="#tracert" class="headerlink" title="tracert"></a><strong>tracert</strong></h4><p>跟踪路由信息，此命令可查出数据从本地机器传输到目标主机所经过的途径，了解网络布局和结构。<br>这里说明数据从本地机器传输到192.168.0.1的机器上，中间没有经过任何中转，说明这两台机器是在同一段局域网内。用法:tracert IP。  </p>
+<h4 id="net"><a href="#net" class="headerlink" title="net"></a><strong>net</strong></h4><h4 id="net-view"><a href="#net-view" class="headerlink" title="net view"></a><strong>net view</strong></h4><p>此命令查看远程主机的所以共享资源。命令格式为net view IP。  </p>
+<h4 id="net-start"><a href="#net-start" class="headerlink" title="net start"></a><strong>net start</strong></h4><p>用来启动远程主机上的服务。<br>用法:net start servername</p>
+<h4 id="net-stop"><a href="#net-stop" class="headerlink" title="net stop"></a><strong>net stop</strong></h4><p>用来关闭远程主机上的服务。<br>用法和net start同。  </p>
+<h4 id="net-user"><a href="#net-user" class="headerlink" title="net user"></a><strong>net user</strong></h4><p><strong>查看和帐户有关的情况，包括新建帐户、删除帐户、查看特定帐户、激活帐户、帐户禁用等</strong><br>这对我们入侵是很有利的，最重要的，它为我们克隆帐户提供了前提。键入不带参数的net user，可以查看所有用户，包括已经禁用的。下面分别讲解。<br>1，net user abcd1234/add，新建一个用户名为abcd，密码为1234的帐户，默认为user组成员。<br>2，net user abcd /del，将用户名为abcd的用户删除。<br>3，net user abcd /active:no，将用户名为abcd的用户禁用。<br>4，net user abcd /active:yes，激活用户名为abcd的用户。<br>5，net user abcd，查看用户名为abcd的用户的情况   </p>
+<h4 id="net-localgroup"><a href="#net-localgroup" class="headerlink" title="net localgroup"></a><strong>net localgroup</strong></h4><p>查看所有和用户组有关的信息和进行相关操作。键入不带参数的netlocalgroup即列出当前所有的用户组。<br>用法:net localgroup groupname username /add。    </p>
+<h4 id="at"><a href="#at" class="headerlink" title="at"></a><strong>at</strong></h4><p>这个命令的作用是安排在特定日期或时间执行某个特定的命令和程序(知道net time的重要了吧?)。当我们知道了远程主机的当前时间，就可以利用此命令让其在以后的某个时间(比如2分钟后)执行某个程序和命令。<br>用法:at time 命令\computer。</p>
+<h4 id="电脑故障"><a href="#电脑故障" class="headerlink" title="电脑故障"></a><strong>电脑故障</strong></h4><p>已经不记得多久没有关闭电脑了，今天停电想着没用时把电脑关了省电，网上开机发现连不上网络了    </p>
 <p>打开网络和共享中心—更改适配器设置，发现我的适配器找不到设备，也就是说网卡莫得了，找不到了   </p>
 <h2 id="于是马上反思"><a href="#于是马上反思" class="headerlink" title="于是马上反思"></a><strong>于是</strong>马上反思</h2><p>发现之前我删除linux引导系统时改了系统设置</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a><strong>解决方法</strong></h2><p>ctrl+ R     msconfig    回车<br>常规       有选择的启动    加载系统服务和加载启动项打勾  确定<br>重启    ojbk</p>
-<h2 id="关闭8080端口"><a href="#关闭8080端口" class="headerlink" title="关闭8080端口"></a><font color="red"><strong>关闭8080端口</strong></font></h2><p>netstat  -ano 显示所有的端口占用情况<br>netstat  -aon|findstr “8080” 查看8080的PID<br>taskkill /pid 6148 /f 假设8080端口的PID为 6148 </p>
-<h2 id="wifi"><a href="#wifi" class="headerlink" title="wifi"></a>wifi</h2><pre class=" language-java"><code class="language-java">netsh wlan show profiles
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a><strong>解决方法</strong></h4><p>ctrl+ R     msconfig    回车<br>常规       有选择的启动    加载系统服务和加载启动项打勾  确定<br>重启    ojbk</p>
+<h4 id="关闭8080端口"><a href="#关闭8080端口" class="headerlink" title="关闭8080端口"></a><font color="red"><strong>关闭8080端口</strong></font></h4><p>netstat  -ano 显示所有的端口占用情况<br>netstat  -aon|findstr “8080” 查看8080的PID<br>taskkill /pid 6148 /f 假设8080端口的PID为 6148 </p>
+<h4 id="wifi"><a href="#wifi" class="headerlink" title="wifi"></a>wifi</h4><pre class=" language-java"><code class="language-java">netsh wlan show profiles
 netsh wlan show profiles name<span class="token operator">=</span><span class="token string">""</span> key<span class="token operator">=</span>clear
 </code></pre>
 <p>手机：  </p>
@@ -471,7 +469,7 @@ netsh wlan show profiles name<span class="token operator">=</span><span class="t
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fa fa-close"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <h4 class="reward-title">如果您是学生，请不要扫码</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -479,10 +477,10 @@ netsh wlan show profiles name<span class="token operator">=</span><span class="t
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="如果您并非有点小钱">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="请不要扫码打赏">
                     </div>
                 </div>
             </div>
@@ -539,7 +537,7 @@ netsh wlan show profiles name<span class="token operator">=</span><span class="t
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2016/09/01/2016-09-01-初识框架/">
+                <a href="/2016/09/01/2016-09-01-框架/">
                     <div class="card-image">
                         
                         
