@@ -121,7 +121,7 @@
         <div class="logo-name">Made-In-China</div>
         <div class="logo-desc">
             
-            写歌的人假正经，听歌的人最无情
+            薛定谔的猫
             
         </div>
     </div>
@@ -428,8 +428,6 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 </code></pre>
 <p>对于第4条的原因： java在编译Integer i = 100 ;时，会翻译成为Integer i = Integer.valueOf(100)。而java API中对Integer类型的valueOf的定义如下，对于-128到127之间的数，会进行缓存，Integer i = 127时，会将127进行缓存，下次再写Integer j = 127时，就会直接从缓存中取，就不会new了。</p>
 <h3 id="什么是自动拆装箱？"><a href="#什么是自动拆装箱？" class="headerlink" title="什么是自动拆装箱？"></a><strong>什么是自动拆装箱？</strong></h3><p>自动装箱和拆箱就是基本类型和引用类型之间的转换，至于为什么要转换，因为基本类型转换为引用类型后，就可以new对象，从而调用包装类中封装好的方法进行基本类型之间的转换或者</p>
-<h3 id="排序问题"><a href="#排序问题" class="headerlink" title="排序问题"></a><strong>排序问题</strong></h3><p><img src="https://github.com/54321decba/tu/blob/master/2018-09-21/2018092101.png?raw=true" alt=""><br> 对于不同情况，即需要排序的数据的大小n<br> 当n较小时直接使用选择或插入排序<br> 若数据大部分有序的可以选择冒泡或快速排序<br> 但是，要判断是否基本有序的标准很难拿捏，所以…<br> 当n较大时，可以选择堆排序和归并排序等因为它们的时间复杂度为nlogn，从数学的角度来讲，n越大，其递增的速度比n^2慢<br>快些选堆不稳定<br>记忆：堆在北方的方言是坟墓的意思，不慎重考虑，快些选坟墓就不稳定，可能会诈尸！即使2个数是一样的，它还是会做一遍排序操作 </p>
-<h2 id="switch-是否能作用在byte-上，是否能作用在long-上，是否能作用在String上？"><a href="#switch-是否能作用在byte-上，是否能作用在long-上，是否能作用在String上？" class="headerlink" title="switch 是否能作用在byte 上，是否能作用在long 上，是否能作用在String上？"></a><strong>switch 是否能作用在byte 上，是否能作用在long 上，是否能作用在String上？</strong></h2><p>答：在Java 5以前，switch(expr)中，expr只能是byte、short、char、int。从Java 5开始，Java中引入了枚举类型，expr也可以是enum类型，从Java 7开始，expr还可以是字符串（String），但是长整型（long）在目前所有的版本中都是不可以的。</p>
 <h2 id="一个”-java”源文件中是否可以包含多个类（不是内部类）？有什么限制？"><a href="#一个”-java”源文件中是否可以包含多个类（不是内部类）？有什么限制？" class="headerlink" title="一个”.java”源文件中是否可以包含多个类（不是内部类）？有什么限制？"></a><strong>一个”.java”源文件中是否可以包含多个类（不是内部类）？有什么限制？</strong></h2><p>答：可以，但一个源文件中最多只能有一个公开类（public class）而且文件名必须和公开类的类名完全保持一致</p>
 <h2 id="为什么会有面向切面编程（AOP）？"><a href="#为什么会有面向切面编程（AOP）？" class="headerlink" title="为什么会有面向切面编程（AOP）？"></a><strong>为什么会有面向切面编程（AOP）？</strong></h2><p>我们知道Java是一个面向对象（OOP）的语言，但它有一些弊端，比如当我们需要为多个不具有继承关系的对象引入一个公共行为，例如日志、权限验证、事务等功能时，只能在在每个对象里引用公共行为。这样做不便于维护，而且有大量重复代码。AOP的出现弥补了OOP的这点不足</p>
 <h2 id="静态类和静态方法"><a href="#静态类和静态方法" class="headerlink" title="静态类和静态方法"></a><strong>静态类和静态方法</strong></h2><p>如果一个类要被声明为static的，只有一种情况，就是静态内部类。<br>静态内部类实际上与普通类（即类名必须与文件名一样的顶级类）一样，只是静态内部类在某一类的内部定义了而已，既然是类，要想使用就必须实例化。概念上与静态变量、静态方法是不一样的，不要被“静态”两个字迷惑了（不要以为凡是静态的东西就不需要实例化就可以直接使用，静态内部类是有区别），而且只有静态内部类，而没有静态类（顶级类）的概念。</p>

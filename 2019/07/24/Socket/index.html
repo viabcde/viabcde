@@ -4,9 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Svn学习, viabcde">
-    <meta name="description" content="要求：熟悉svn上传代码①在代码所在目录右键②其中http://zt.net.henu.edu.cn 是服务器名，svn是代码仓库的根目录，StartKit是在svn添加的一个代码库③下载代码①创建文件夹 右键checkout
-">
+    <meta name="keywords" content="Socket, viabcde">
+    <meta name="description" content=" 先从服务器端说起。服务器端先初始化Socket，然后与端口绑定(bind)，对端口进行监听(listen)，调用accept阻塞，等待客户端连接。在这时如果有个客户端初始化一个Socket，然后连接服务器(connect)，如果连接成功，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Svn学习 | Made-In-China</title>
+    <title>Socket | Made-In-China</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -120,7 +119,7 @@
         <div class="logo-name">Made-In-China</div>
         <div class="logo-desc">
             
-            写歌的人假正经，听歌的人最无情
+            薛定谔的猫
             
         </div>
     </div>
@@ -271,13 +270,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Svn学习
+                        Socket
                     </div>
                 </div>
             </div>
@@ -299,8 +298,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/svn/" target="_blank">
-                                <span class="chip bg-color">svn</span>
+                            <a href="/tags/Socket/" target="_blank">
+                                <span class="chip bg-color">Socket</span>
                             </a>
                         
                     </div>
@@ -308,13 +307,22 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Socket/" class="post-category" target="_blank">
+                                Socket
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-18
+                    2019-07-24
                 </div>
 
                 
@@ -330,7 +338,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="要求：熟悉svn"><a href="#要求：熟悉svn" class="headerlink" title="要求：熟悉svn"></a><font color="red">要求：熟悉svn</font></h3><p>上传代码<br>①在代码所在目录右键<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/svn1.jpg" alt=""><br>②其中<a href="http://zt.net.henu.edu.cn" target="_blank" rel="noopener">http://zt.net.henu.edu.cn</a> 是服务器名，svn是代码仓库的根目录，StartKit是在svn添加的一个代码库<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/snv2.jpg" alt=""><br>③<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/svn3.jpg" alt=""><br>下载代码<br>①创建文件夹 右键checkout<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/svn4.jpg" alt=""></p>
+                <p> 先从服务器端说起。服务器端先初始化Socket，然后与端口绑定(bind)，对端口进行监听(listen)，调用accept阻塞，等待客户端连接。在这时如果有个客户端初始化一个Socket，然后连接服务器(connect)，如果连接成功，这时客户端与服务器端的连接就建立了。客户端发送数据请求，服务器端接收请求并处理请求，然后把回应数据发送给客户端，客户端读取数据，最后关闭连接，一次交互结束。<br>int - bind - accpet - connect - read/writ - close<br>三次握手：<br>A 建立连接 一次<br>B 确认收到消息，可以连 二次<br>A 确认收到消息，建立连接 三次<br>关闭时四次握手：<br>A 我要关了 一次<br>B 收到，你可以关了 二次<br>B close 三次<br>A 收到，进入time_wait状态 四次</p>
 
             </div>
             <hr>
@@ -478,7 +486,7 @@
                     </span>
                     <a href="http://viabcde.github.io" class="b-link-green">Made-In-China</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/07/18/svn学习/" class="b-link-green">Svn学习</a>
+                    <a href="/2019/07/24/Socket/" class="b-link-green">Socket</a>
                 </p>
             </div>
         </div>
@@ -503,73 +511,29 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/07/18/编程题/">
+                <a href="/2019/07/24/数据库引擎/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.gif" class="responsive-img" alt="编程题">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="数据库引擎">
                         
-                        <span class="card-title">编程题</span>
+                        <span class="card-title">数据库引擎</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">编程题求二进制中1的个数先普及一哈位逻辑运算符的知识  
-
-
-
-OP1
-OP2
-&amp;
-
-
-
-
-0
-0
-0
-
-
-0
-1
-0
-
-
-1
-0
-0
-
-
-1
-1
-1
-
-
-
-同为1时结果才为1  
-
-
-
-OP1
-OP1
-I
-
-
-
-
-0
-0
-0
-
-
-</div>
+                    <div class="summary">ISAM主要设计于主查询辅非更新，读取快不耗很大资源，蛋不支持事务，重要数据需要自己备份MYISAM在ISAM增加了索引和字段管理，还有锁表应对并发，其代价是你需要经常运行OPTIMIZE TABLE命令，来恢复被更新机制所浪费的空间INN</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-18
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-24
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            编程greenhand
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/数据库引擎/" class="post-category" target="_blank">
+                                    数据库引擎
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -577,8 +541,8 @@ I
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/编程题/" target="_blank">
-                        <span class="chip bg-color">编程题</span>
+                    <a href="/tags/数据库引擎/" target="_blank">
+                        <span class="chip bg-color">数据库引擎</span>
                     </a>
                     
                 </div>
@@ -592,27 +556,27 @@ I
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/12/17/2018-12-06-小程序/">
+                <a href="/2019/07/23/数据库优化/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="小程序">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="数据库优化">
                         
-                        <span class="card-title">小程序</span>
+                        <span class="card-title">数据库优化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">程序的组成app.js：小程序的逻辑     必须app.json  ：小程序的公共设置   必须app.wxss：小程序的公共样式表   非必须每个文件夹表示一个页面，一个页面由4个文件组成js：页面逻辑   必须wxml：页面结构   </div>
+                    <div class="summary">使用适当的字段属性多使用枚举和NOTNULL 避免NULL值判断</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/编程/" class="post-category" target="_blank">
-                                    编程
+                            <a href="/categories/数据库优化/" class="post-category" target="_blank">
+                                    数据库优化
                                 </a>
                             
                             
@@ -622,8 +586,8 @@ I
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/基础知识/" target="_blank">
-                        <span class="chip bg-color">基础知识</span>
+                    <a href="/tags/数据库优化/" target="_blank">
+                        <span class="chip bg-color">数据库优化</span>
                     </a>
                     
                 </div>

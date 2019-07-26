@@ -5,7 +5,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Mybatis笔记, viabcde">
-    <meta name="description" content="dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗Dao接口里的方法，是不能重载的，因为是全限名+方法名的保存和寻找策略。Dao接口的工作原理是JDK动态代理，Mybatis运行时会使用JDK动态代理为Dao接口生成代">
+    <meta name="description" content="在mapper中如何传递多个参数?Java的反射机制并不能让框架获取到参数的名字(方法签名中只有参数类型,可以说是为了优化,也可以说设计就是如此,总之名字无意义), 所以MyBatis默认的命名为: param1,param2……如果想给他">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -119,7 +119,7 @@
         <div class="logo-name">Made-In-China</div>
         <div class="logo-desc">
             
-            写歌的人假正经，听歌的人最无情
+            薛定谔的猫
             
         </div>
     </div>
@@ -302,10 +302,6 @@
                                 <span class="chip bg-color">mybatis</span>
                             </a>
                         
-                            <a href="/tags/数据层框架/" target="_blank">
-                                <span class="chip bg-color">数据层框架</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -333,12 +329,30 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗"><a href="#dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗" class="headerlink" title="dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗"></a>dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗</h3><p>Dao接口里的方法，是不能重载的，因为是全限名+方法名的保存和寻找策略。<br>Dao接口的工作原理是JDK动态代理，Mybatis运行时会使用JDK动态代理为Dao接口生成代理proxy对象，代理对象proxy会拦截接口方法，转而执行MappedStatement所代表的sql，然后将sql执行结果返回。</p>
-<h3 id="在mapper中如何传递多个参数"><a href="#在mapper中如何传递多个参数" class="headerlink" title="在mapper中如何传递多个参数?"></a>在mapper中如何传递多个参数?</h3><p>Java的反射机制并不能让框架获取到参数的名字(方法签名中只有参数类型,可以说是为了优化,也可以说设计就是如此,总之名字无意义), 所以MyBatis默认的命名为: param1,param2……<br>如果想给他们指定名称,可以使用 @param 注解:<br>import org.apache.ibatis.annotations.Param;<br>public interface UserMapper {<br>   User selectUser(@Param(“username”) String username,<br>                   @Param(“hashedPassword”) String hashedPassword);<br>}<br>然后,就可以在xml像下面这样使用(推荐封装为一个Map,作为单个参数传递给Mapper):</p>
+                <h3 id="在mapper中如何传递多个参数"><a href="#在mapper中如何传递多个参数" class="headerlink" title="在mapper中如何传递多个参数?"></a>在mapper中如何传递多个参数?</h3><p>Java的反射机制并不能让框架获取到参数的名字(方法签名中只有参数类型,可以说是为了优化,也可以说设计就是如此,总之名字无意义), 所以MyBatis默认的命名为: param1,param2……<br>如果想给他们指定名称,可以使用 @param 注解:<br>import org.apache.ibatis.annotations.Param;<br>public interface UserMapper {<br>   User selectUser(@Param(“username”) String username,<br>                   @Param(“hashedPassword”) String hashedPassword);<br>}<br>然后,就可以在xml像下面这样使用(推荐封装为一个Map,作为单个参数传递给Mapper):</p>
 <p><select id="”selectUser”" resulttype="”User”"><br>  select id, username, hashedPassword<br>  from some_table<br>  where username = #{username}<br>  and hashedPassword = #{hashedPassword}<br></select>  </p>
 <h3 id="Mybatis是如何将sql执行结果封装为目标对象并返回的？"><a href="#Mybatis是如何将sql执行结果封装为目标对象并返回的？" class="headerlink" title="Mybatis是如何将sql执行结果封装为目标对象并返回的？"></a>Mybatis是如何将sql执行结果封装为目标对象并返回的？</h3><p>第一种是使用<resultmap>标签，逐一定义列名和对象属性名之间的映射关系。<br>第二种是使用sql列的别名功能，将列别名书写为对象属性名，比如T_NAME AS NAME，对象属性名一般是name，小写，但是列名不区分大小写，Mybatis会忽略列名大小写，智能找到与之对应对象属性名，你甚至可以写成T_NAME AS NaMe，Mybatis一样可以正常工作。<br>有了列名与属性名的映射关系后，Mybatis通过反射创建对象，同时使用反射给对象的属性逐一赋值并返回，那些找不到映射关系的属性，是无法完成赋值的。</resultmap></p>
 <h3 id="Hibertnate和mybatis的区别"><a href="#Hibertnate和mybatis的区别" class="headerlink" title="Hibertnate和mybatis的区别"></a>Hibertnate和mybatis的区别</h3><p>Hibernate不需要写sql语句，能做到数据库无关性,但学习门槛较高</p>
-
+<h3 id="接口的几种实现方式（sql简单时用注解，一般都用xml）不过也看个人习惯"><a href="#接口的几种实现方式（sql简单时用注解，一般都用xml）不过也看个人习惯" class="headerlink" title="接口的几种实现方式（sql简单时用注解，一般都用xml）不过也看个人习惯"></a>接口的几种实现方式（sql简单时用注解，一般都用xml）不过也看个人习惯</h3><p>xml(namespace和接口全路径一样)和注解（@select @update）</p>
+<h3 id="mybatis的核心处理类"><a href="#mybatis的核心处理类" class="headerlink" title="mybatis的核心处理类"></a>mybatis的核心处理类</h3><p>sqlsession</p>
+<h3 id="Dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗？"><a href="#Dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗？" class="headerlink" title="Dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗？"></a><strong>Dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗？</strong></h3><p>Dao接口即Mapper接口<br>接口的全限名=映射文件中的namespace的值<br>接口的方法名=映射文件中MappedStatement的id值<br>接口方法内的参数=传递给sql的参数<br>Mapper接口是没有实现类的，当调用接口方法时，接口全限名+方法名拼接字符串作为key值，可唯一定位一个MappedStatement<br><strong>举例：</strong><br>在Mybatis中，每一个select、insert、update、delete标签，都会被解析为一个MappedStatement对象。<br>com.mybatis3.mappers.StudentDao.findStudentById，<br>可以唯一找到namespace为com.mybatis3.mappers.StudentDao中id = findStudentById的MappedStatement。<br><strong>注意：</strong><br>Dao接口里的方法，是不能重载的，因为是全限名+方法名的保存和寻找策略。<br><strong>Dao接口的工作原理：</strong><br>JDK动态代理，Mybatis运行时使用JDK动态代理为Dao接口生成代理proxy对象，代理对象proxy会拦截接口方法，转而执行MappedStatement所代表的sql，然后将sql执行结果返回  </p>
+<h3 id="Mybatis动态sql是做什么的？都有哪些动态sql？能简述一下动态sql的执行原理不？"><a href="#Mybatis动态sql是做什么的？都有哪些动态sql？能简述一下动态sql的执行原理不？" class="headerlink" title="Mybatis动态sql是做什么的？都有哪些动态sql？能简述一下动态sql的执行原理不？"></a><strong>Mybatis动态sql是做什么的？都有哪些动态sql？能简述一下动态sql的执行原理不？</strong></h3><p>完成逻辑判断和动态拼接sql的功能。<br>Mybatis提供了9种动态sql标签：trim|where|set|foreach|if|choose|when|otherwise|bind。<br><strong>执行原理</strong><br>使用OGNL从sql参数对象中计算表达式的值，根据表达式的值动态拼接sql，以此来完成动态sql的功能。</p>
+<h1 id="当实体类中的属性名和表中的字段名不一样-，怎么办-？"><a href="#当实体类中的属性名和表中的字段名不一样-，怎么办-？" class="headerlink" title="当实体类中的属性名和表中的字段名不一样 ，怎么办 ？"></a><strong>当实体类中的属性名和表中的字段名不一样 ，怎么办 ？</strong></h1><p>1.在sql中设置别名<br>2.在resultMap中通过属性映射数据库的字段<br><strong>示例</strong><br>第1种： 通过在查询的sql语句中定义字段名的别名，让字段名的别名和实体类的属性名一致</p>
+<pre><code>&lt;select id=”selectorder” parametertype=”int” resultetype=”me.gacl.domain.order”&gt; 
+       select order_id id, order_no orderno ,order_price price form orders where order_id=#{id}; 
+    &lt;/select&gt; 
+</code></pre><p>第2种： 通过<code>&lt;resultMap&gt;</code>来映射字段名和实体类属性名的一一对应的关系</p>
+<pre><code> &lt;select id=&quot;getOrder&quot; parameterType=&quot;int&quot; resultMap=&quot;orderresultmap&quot;&gt;
+        select * from orders where order_id=#{id}
+    &lt;/select&gt;
+   &lt;resultMap type=”me.gacl.domain.order” id=”orderresultmap”&gt; 
+        &lt;!–用id属性来映射主键字段–&gt; 
+        &lt;id property=”id” column=”order_id”&gt; 
+        &lt;!–用result属性来映射非主键字段，property为实体类属性名，column为数据表中的属性–&gt; 
+        &lt;result property = “orderno” column =”order_no”/&gt; 
+        &lt;result property=”price” column=”order_price” /&gt; 
+    &lt;/reslutMap&gt;
+</code></pre>
             </div>
             <hr>
 
@@ -510,17 +524,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/10/29/java学习/">
+                <a href="/2018/10/29/springmvc笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Java学习">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Springmvc笔记">
                         
-                        <span class="card-title">Java学习</span>
+                        <span class="card-title">Springmvc笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">要求：精通IOjava IO 是面向流的，除非使用缓冲区  ，否则不能边读边写java NIO是面向块的，可以动态移动缓冲区中的数据，可边读边写前者一个连接由一个线程处理，后者是多个连接由一个线程处理（更适合一台计算机连接多个网络设备的网络</div>
+                    <div class="summary">什么是Spring MVCSpringMVC是基于java实现的通过MVC模式将视图层、控制层和数据层解耦的框架
+SpringMvc怎么和AJAX相互调用的？加入Jackson.jar
+注解原理都继承自annotation,其具体实现类是通</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -528,7 +544,7 @@
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            viacbde
+                            springmvc
                             
                         </span>
                     </div>
@@ -536,8 +552,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/" target="_blank">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/springmvc/" target="_blank">
+                        <span class="chip bg-color">springmvc</span>
                     </a>
                     
                 </div>
@@ -551,17 +567,19 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/10/29/jsp笔记/">
+                <a href="/2018/10/29/Servlet笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.gif" class="responsive-img" alt="Jsp笔记">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Servlet笔记">
                         
-                        <span class="card-title">Jsp笔记</span>
+                        <span class="card-title">Servlet笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">隐含对象是什么意思？有哪些隐含对象？JSP隐含对象是页面中的一些Java对象，JSP容器让这些Java对象可以为开发者所使用。开发者不用明确的声明就可以直接使用他们。JSP隐含对象也叫做预定义变量。下面列出了JSP页面中的隐含对象：JSP共</div>
+                    <div class="summary">内嵌servlet容器Tomcat jetty等
+获取存储在servlet上下文的对象    &lt;context-param>
+        &lt;param-name>contextConfigLocation&lt;/param</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -569,7 +587,7 @@
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            泥巴巴
+                            Servlet_greenhand
                             
                         </span>
                     </div>
@@ -577,8 +595,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/jsp/" target="_blank">
-                        <span class="chip bg-color">jsp</span>
+                    <a href="/tags/Servlet/" target="_blank">
+                        <span class="chip bg-color">Servlet</span>
                     </a>
                     
                 </div>

@@ -120,7 +120,7 @@ java 中操作字符串都有哪些类String、StringBuffer、StringBuilderStrin
         <div class="logo-name">Made-In-China</div>
         <div class="logo-desc">
             
-            写歌的人假正经，听歌的人最无情
+            薛定谔的猫
             
         </div>
     </div>
@@ -352,6 +352,8 @@ java 中操作字符串都有哪些类String、StringBuffer、StringBuilderStrin
 <h3 id="File类常用方法"><a href="#File类常用方法" class="headerlink" title="File类常用方法"></a>File类常用方法</h3><p>mkdirs renameTo isFile getPath getName</p>
 <h3 id="序列化问题"><a href="#序列化问题" class="headerlink" title="序列化问题"></a>序列化问题</h3><h1 id="为什么序列化对象通常要重写-hashCode-和-equals方法"><a href="#为什么序列化对象通常要重写-hashCode-和-equals方法" class="headerlink" title="为什么序列化对象通常要重写 hashCode 和 equals方法"></a>为什么序列化对象通常要重写 hashCode 和 equals方法</h1><p>2个内容完全一样的对象，在我们“人”看来就是一样的对象，但是计算机不这么认为，为了保证对象在进行比较时候符合人们的思维习惯，所以我们需要重写这2个方法。<br>在向 set 这种集合中添加对象的时候，set 要求对象都是不重复的，这个检查重复的过程，首先是检查对象的 hashCode() 值，如果这个值一致的话再去通过 equals 方法进行比较，如果 equals方法返回true，那么这个对象就不会被加入到 set 当中<br>对象的序列化主要有两种用途：<br>把对象的字节序列永久地保存到硬盘上，通常存放在一个文件中；<br>在网络上传送对象的字节序列。<br>在很多应用中，需要对某些对象进行序列化，让它们离开内存空间，入住物理硬盘，以便长期保存。比如最常见的是Web服务器中的Session对象，当有 10万用户并发访问，就有可能出现10万个Session对象，内存可能吃不消，于是Web容器就会把一些seesion先序列化到硬盘中，等要用了，再把保存在硬盘中的对象还原到内存中。<br>当两个进程在进行远程通信时，彼此可以发送各种类型的数据。无论是何种类型的数据，都会以二进制序列的形式在网络上传送。发送方需要把这个Java对象转换为字节序列，才能在网络上传送；接收方则需要把字节序列再恢复为Java对象  </p>
 <h1 id="为什么要使用SerialversionUID"><a href="#为什么要使用SerialversionUID" class="headerlink" title="为什么要使用SerialversionUID"></a>为什么要使用SerialversionUID</h1><p>如果用户没有自己声明一个serialVersionUID,接口会默认生成一个serialVersionUID<br>但是，如果我们不自己声明时，<br>当我们修改Person类的时候，Person类对应的SerialversionUID也变化了，而序列化和反序列化就是通过对比其SerialversionUID来进行的，一旦SerialversionUID不匹配，反序列化就无法成功。在实际的生产环境中，我们可能会建一系列的中间Object来反序列化我们的pojo，为了解决这个问题，我们就需要在实体类中自定义SerialversionUID<br>不管我们序列化之后如何更改我们的Person（不删除原有字段），最终都可以反序列化成功   </p>
+<h3 id="排序问题"><a href="#排序问题" class="headerlink" title="排序问题"></a><strong>排序问题</strong></h3><p><img src="https://github.com/54321decba/tu/blob/master/2018-09-21/2018092101.png?raw=true" alt=""><br> 对于不同情况，即需要排序的数据的大小n<br> 当n较小时直接使用选择或插入排序<br> 若数据大部分有序的可以选择冒泡或快速排序<br> 但是，要判断是否基本有序的标准很难拿捏，所以…<br> 当n较大时，可以选择堆排序和归并排序等因为它们的时间复杂度为nlogn，从数学的角度来讲，n越大，其递增的速度比n^2慢<br>快些选堆不稳定<br>记忆：堆在北方的方言是坟墓的意思，不慎重考虑，快些选坟墓就不稳定，可能会诈尸！即使2个数是一样的，它还是会做一遍排序操作 </p>
+<h2 id="switch-是否能作用在byte-上，是否能作用在long-上，是否能作用在String上？"><a href="#switch-是否能作用在byte-上，是否能作用在long-上，是否能作用在String上？" class="headerlink" title="switch 是否能作用在byte 上，是否能作用在long 上，是否能作用在String上？"></a><strong>switch 是否能作用在byte 上，是否能作用在long 上，是否能作用在String上？</strong></h2><p>答：在Java 5以前，switch(expr)中，expr只能是byte、short、char、int。从Java 5开始，Java中引入了枚举类型，expr也可以是enum类型，从Java 7开始，expr还可以是字符串（String），但是长整型（long）在目前所有的版本中都是不可以的。</p>
 
             </div>
             <hr>
@@ -524,19 +526,17 @@ java 中操作字符串都有哪些类String、StringBuffer、StringBuilderStrin
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/10/29/Spring笔记/">
+                <a href="/2018/10/29/设计模式笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Spring笔记">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="设计模式笔记">
                         
-                        <span class="card-title">Spring笔记</span>
+                        <span class="card-title">设计模式笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Spring常用的注入方式构造方法注入，setter注入，基于注解的注入
-bean是线程安全的吗bean一般是无状态的，即没有实例变量 不会有线程安全问题如果有实例变量，使用ThreadLocal
-Spring bean的作用域single</div>
+                    <div class="summary">常见的六种设计模式以及应用场景 单例模式:希望在系统中某个类的对象只能存在一个工厂模式：当调用者不需要知道具体实现细节，只需关心接口时策略模式：系统的操作都要有日志记录，通常会把日志记录在数据库里面，方便后续的管理，但是在记录日志到数据库的</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -544,7 +544,7 @@ Spring bean的作用域single</div>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            viacbde
+                            设计模式greenhand
                             
                         </span>
                     </div>
@@ -552,8 +552,8 @@ Spring bean的作用域single</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring/" target="_blank">
-                        <span class="chip bg-color">Spring</span>
+                    <a href="/tags/设计模式/" target="_blank">
+                        <span class="chip bg-color">设计模式</span>
                     </a>
                     
                 </div>
@@ -567,17 +567,19 @@ Spring bean的作用域single</div>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/10/29/java学习/">
+                <a href="/2018/10/29/springmvc笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Java学习">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Springmvc笔记">
                         
-                        <span class="card-title">Java学习</span>
+                        <span class="card-title">Springmvc笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">要求：精通IOjava IO 是面向流的，除非使用缓冲区  ，否则不能边读边写java NIO是面向块的，可以动态移动缓冲区中的数据，可边读边写前者一个连接由一个线程处理，后者是多个连接由一个线程处理（更适合一台计算机连接多个网络设备的网络</div>
+                    <div class="summary">什么是Spring MVCSpringMVC是基于java实现的通过MVC模式将视图层、控制层和数据层解耦的框架
+SpringMvc怎么和AJAX相互调用的？加入Jackson.jar
+注解原理都继承自annotation,其具体实现类是通</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -585,7 +587,7 @@ Spring bean的作用域single</div>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            viacbde
+                            springmvc
                             
                         </span>
                     </div>
@@ -593,8 +595,8 @@ Spring bean的作用域single</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/" target="_blank">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/springmvc/" target="_blank">
+                        <span class="chip bg-color">springmvc</span>
                     </a>
                     
                 </div>

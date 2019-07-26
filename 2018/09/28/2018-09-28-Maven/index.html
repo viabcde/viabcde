@@ -5,7 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Maven, viabcde">
-    <meta name="description" content="Maven库命令行模式安装maven jar包mvn install:install-file -Dfile=C:\Users\Administrator\Desktop\hibernate-c3p0-4.2.1.final.jar -Dg">
+    <meta name="description" content="Maven库可以到这里下载jar包http://repo2.maven.org/maven2/
+可以到这里复制jar包的pom代码http://mvnrepository.com/
+安装配置Maven及其仓库maven程序安装的环境准备1.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -119,7 +121,7 @@
         <div class="logo-name">Made-In-China</div>
         <div class="logo-desc">
             
-            写歌的人假正经，听歌的人最无情
+            薛定谔的猫
             
         </div>
     </div>
@@ -338,8 +340,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Maven库"><a href="#Maven库" class="headerlink" title="Maven库"></a><strong>Maven库</strong></h2><h2 id="命令行模式安装maven-jar包"><a href="#命令行模式安装maven-jar包" class="headerlink" title="命令行模式安装maven jar包"></a><strong>命令行模式安装maven jar包</strong></h2><p>mvn install:install-file -Dfile=C:\Users\Administrator\Desktop\hibernate-c3p0-4.2.1.final.jar -DgroupId=org.hibernate -DartifactId=hibernate-c3p0 -Dversion=4.2.1 -Dpackaging=jar </p>
-<h3 id="可以到这里下载jar包"><a href="#可以到这里下载jar包" class="headerlink" title="可以到这里下载jar包"></a><strong>可以到这里下载jar包</strong></h3><p><a href="http://repo2.maven.org/maven2/" target="_blank" rel="noopener">http://repo2.maven.org/maven2/</a></p>
+                <h2 id="Maven库"><a href="#Maven库" class="headerlink" title="Maven库"></a><strong>Maven库</strong></h2><h3 id="可以到这里下载jar包"><a href="#可以到这里下载jar包" class="headerlink" title="可以到这里下载jar包"></a><strong>可以到这里下载jar包</strong></h3><p><a href="http://repo2.maven.org/maven2/" target="_blank" rel="noopener">http://repo2.maven.org/maven2/</a></p>
 <h3 id="可以到这里复制jar包的pom代码"><a href="#可以到这里复制jar包的pom代码" class="headerlink" title="可以到这里复制jar包的pom代码"></a><strong>可以到这里复制jar包的pom代码</strong></h3><p><a href="http://mvnrepository.com/" target="_blank" rel="noopener">http://mvnrepository.com/</a></p>
 <h2 id="安装配置Maven及其仓库"><a href="#安装配置Maven及其仓库" class="headerlink" title="安装配置Maven及其仓库"></a><strong>安装配置Maven及其仓库</strong></h2><h3 id="maven程序安装的环境准备"><a href="#maven程序安装的环境准备" class="headerlink" title="maven程序安装的环境准备"></a><strong>maven程序安装的环境准备</strong></h3><p>1.maven程序java开发 2.它运行所依赖的jdk<br> <img src="https://github.com/54321decba/tu/blob/master/blog/20180928174.png?raw=true" alt="enter description
 here"><br><img src="https://github.com/54321decba/tu/blob/master/blog/20180928175.png?raw=true" alt="enter description
@@ -589,52 +590,6 @@ here">  </p>
 <h1 id="pom工程"><a href="#pom工程" class="headerlink" title="pom工程"></a>pom工程</h1><p> taotao-parent：<br> taotao-parent是整个项目的父工程，它是一个pom工程。用来做整个项目的版本控制，也就是项目中所有要使用到的jar包的版本都集中由父工程管理。这样你在写其他工程pom文件中maven依赖时就不需要写版本号了。当然所有的项目都要先继承它才行。<br>.taotao-manager：<br>创建taotao-manager用来做聚合工程，它也是一个pom工程。创建四个model分别是taotao-manager-pojo,taotao-manager-dao,taotao-manager-service,taotao-manager-web，同时会自动生成4个独立的maven工程。聚合工程只是用来帮助其他模块构建的工具，本身并没有实质的内容。具体每个工程代码的编写还是在生成的工程中去写。<br> 2.1.使用聚合工程taotao-manager的意义就是：原本这些模块也是一个个独立的工程，现在将它们聚合到taotao-manager中，这样我们构建项目的时候就只要构建taotao-manager一个就行了。我们只要使用maven构建这个聚合工程taotao-manager就行了而不用去操心模块的构建，比如install时只要install taotao-manager就行。总之就是简化操作。正常的编码工作还是在对应的taotao-manager-pojo,taotao-manager-dao,taotao-manager-service,taotao-manager-web。工程中进行的。</p>
 <h1 id="war工程"><a href="#war工程" class="headerlink" title="war工程"></a>war工程</h1><p>1.taotao-rest，taotao-portal这些<br>这些工程都是要部署在服务器上的，所以要打包成war形式。这些工程有的是用户通过浏览器直接访问，有的是通过发布服务被别的工程调用。</p>
 <h1 id="jar工程"><a href="#jar工程" class="headerlink" title="jar工程"></a>jar工程</h1><p>3.taotao-common<br> 这个就是打包成jar的工程。它就是存放一些其他工程都会使用的类，工具类。我们可以在其他工程的pom文件中去引用它，和引用别的jar包没什么区别。</p>
-<h2 id="pom-xml中添加阿里云Maven中央仓库配置"><a href="#pom-xml中添加阿里云Maven中央仓库配置" class="headerlink" title="pom.xml中添加阿里云Maven中央仓库配置"></a><font color="red"><strong>pom.xml中添加阿里云Maven中央仓库配置</strong></font></h2><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>repositories<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 代码库 <span class="token operator">--</span><span class="token operator">></span>
-   <span class="token operator">&lt;</span>repository<span class="token operator">></span>
-      <span class="token operator">&lt;</span>id<span class="token operator">></span>maven<span class="token operator">-</span>ali<span class="token operator">&lt;</span><span class="token operator">/</span>id<span class="token operator">></span>
-      <span class="token operator">&lt;</span>url<span class="token operator">></span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>maven<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>nexus<span class="token operator">/</span>content<span class="token operator">/</span>groups<span class="token operator">/</span><span class="token keyword">public</span><span class="token comment" spellcheck="true">//&lt;/url></span>
-      <span class="token operator">&lt;</span>releases<span class="token operator">></span>
-         <span class="token operator">&lt;</span>enabled<span class="token operator">></span><span class="token boolean">true</span><span class="token operator">&lt;</span><span class="token operator">/</span>enabled<span class="token operator">></span>
-      <span class="token operator">&lt;</span><span class="token operator">/</span>releases<span class="token operator">></span>
-      <span class="token operator">&lt;</span>snapshots<span class="token operator">></span>
-         <span class="token operator">&lt;</span>enabled<span class="token operator">></span><span class="token boolean">true</span><span class="token operator">&lt;</span><span class="token operator">/</span>enabled<span class="token operator">></span>
-         <span class="token operator">&lt;</span>updatePolicy<span class="token operator">></span>always<span class="token operator">&lt;</span><span class="token operator">/</span>updatePolicy<span class="token operator">></span>
-         <span class="token operator">&lt;</span>checksumPolicy<span class="token operator">></span>fail<span class="token operator">&lt;</span><span class="token operator">/</span>checksumPolicy<span class="token operator">></span>
-      <span class="token operator">&lt;</span><span class="token operator">/</span>snapshots<span class="token operator">></span>
-   <span class="token operator">&lt;</span><span class="token operator">/</span>repository<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>repositories<span class="token operator">></span>
-</code></pre>
-<h2 id="在pom文件下配置默认的jdk版本"><a href="#在pom文件下配置默认的jdk版本" class="headerlink" title="在pom文件下配置默认的jdk版本"></a><font color="red"><strong>在pom文件下配置默认的jdk版本</strong></font></h2><pre class=" language-java"><code class="language-java">    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 设置默认的jdk <span class="token operator">--</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>profiles<span class="token operator">></span>
-        <span class="token operator">&lt;</span>profile<span class="token operator">></span>
-            <span class="token operator">&lt;</span>id<span class="token operator">></span>jdk1<span class="token number">.7</span><span class="token operator">&lt;</span><span class="token operator">/</span>id<span class="token operator">></span>
-            <span class="token operator">&lt;</span>activation<span class="token operator">></span>
-                <span class="token operator">&lt;</span>activeByDefault<span class="token operator">></span><span class="token boolean">true</span><span class="token operator">&lt;</span><span class="token operator">/</span>activeByDefault<span class="token operator">></span>
-                <span class="token operator">&lt;</span>jdk<span class="token operator">></span><span class="token number">1.7</span><span class="token operator">&lt;</span><span class="token operator">/</span>jdk<span class="token operator">></span>
-            <span class="token operator">&lt;</span><span class="token operator">/</span>activation<span class="token operator">></span>
-            <span class="token operator">&lt;</span>properties<span class="token operator">></span>
-                <span class="token operator">&lt;</span>maven<span class="token punctuation">.</span>compiler<span class="token punctuation">.</span>source<span class="token operator">></span><span class="token number">1.7</span><span class="token operator">&lt;</span><span class="token operator">/</span>maven<span class="token punctuation">.</span>compiler<span class="token punctuation">.</span>source<span class="token operator">></span>
-                <span class="token operator">&lt;</span>maven<span class="token punctuation">.</span>compiler<span class="token punctuation">.</span>target<span class="token operator">></span><span class="token number">1.7</span><span class="token operator">&lt;</span><span class="token operator">/</span>maven<span class="token punctuation">.</span>compiler<span class="token punctuation">.</span>target<span class="token operator">></span>
-                <span class="token operator">&lt;</span>maven<span class="token punctuation">.</span>compiler<span class="token punctuation">.</span>compilerVersion<span class="token operator">></span><span class="token number">1.7</span><span class="token operator">&lt;</span><span class="token operator">/</span>maven<span class="token punctuation">.</span>compiler<span class="token punctuation">.</span>compilerVersion<span class="token operator">></span>
-            <span class="token operator">&lt;</span><span class="token operator">/</span>properties<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>profile<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>profiles<span class="token operator">></span>
-</code></pre>
-<h2 id="或者"><a href="#或者" class="headerlink" title="或者"></a><font color="red"><strong>或者</strong></font></h2><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>build<span class="token operator">></span>
-  <span class="token operator">&lt;</span>finalName<span class="token operator">></span>comparison<span class="token operator">-</span>data<span class="token operator">-</span>project<span class="token operator">&lt;</span><span class="token operator">/</span>finalName<span class="token operator">></span>
-  <span class="token operator">&lt;</span>plugins<span class="token operator">></span> 
-      <span class="token operator">&lt;</span>plugin<span class="token operator">></span>
-          <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>maven<span class="token punctuation">.</span>plugins<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-          <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>maven<span class="token operator">-</span>compiler<span class="token operator">-</span>plugin<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-          <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">3.5</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-          <span class="token operator">&lt;</span>configuration<span class="token operator">></span>
-              <span class="token operator">&lt;</span>source<span class="token operator">></span><span class="token number">1.8</span><span class="token operator">&lt;</span><span class="token operator">/</span>source<span class="token operator">></span>
-              <span class="token operator">&lt;</span>target<span class="token operator">></span><span class="token number">1.8</span><span class="token operator">&lt;</span><span class="token operator">/</span>target<span class="token operator">></span>
-          <span class="token operator">&lt;</span><span class="token operator">/</span>configuration<span class="token operator">></span>
-      <span class="token operator">&lt;</span><span class="token operator">/</span>plugin<span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>plugins<span class="token operator">></span> 
-<span class="token operator">&lt;</span><span class="token operator">/</span>build<span class="token operator">></span>
-</code></pre>
 
             </div>
             <hr>
