@@ -271,7 +271,7 @@ redis 持久化有几种方式rdb（redis database）和aof（append of file） 
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -339,8 +339,8 @@ redis 持久化有几种方式rdb（redis database）和aof（append of file） 
 <h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>配合关系型数据库做高速缓存<br>缓存高频次访问的数据，降低数据库io<br>分布式架构，做session共享</p>
 <h3 id="redis-和-memecache-有什么区别"><a href="#redis-和-memecache-有什么区别" class="headerlink" title="redis 和 memecache 有什么区别"></a>redis 和 memecache 有什么区别</h3><p>redis能持久化<br>redis支持类型多</p>
 <h3 id="redis是单线程"><a href="#redis是单线程" class="headerlink" title="redis是单线程"></a>redis是单线程</h3><p>因为Redis是基于内存的操作，CPU不是Redis的瓶颈，Redis的瓶颈最有可能是机器内存的大小或者网络带宽。<br>既然单线程容易实现，而且CPU不会成为瓶颈，那就顺理成章地采用单线程的方案了</p>
-<h3 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h3><p>使用锁或者布隆过滤器解决</p>
-<h3 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h3><p>一段时间内大量key失效 从而去数据库查询<br>数据预热：在发生并发前先更新缓存 设置不同的失效时间</p>
+<h3 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h3><p>使用锁,没有锁不能查询<br>缓存更新时间，异步更新<br>布隆过滤器判断key是否合法，不合法不让去数据库查询</p>
+<h3 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h3><p>一段时间内大量key失效 从而去数据库查询<br>双缓存A缓存有失效时间，B没有但要自己做数据预热<br>数据预热：在发生并发前先更新缓存 设置不同的失效时间</p>
 <h3 id="缓存更新"><a href="#缓存更新" class="headerlink" title="缓存更新"></a>缓存更新</h3><p>定时更新 或者请求时发现失效再更新</p>
 <h3 id="Redis支持的Java客户端都有哪些"><a href="#Redis支持的Java客户端都有哪些" class="headerlink" title="Redis支持的Java客户端都有哪些"></a>Redis支持的Java客户端都有哪些</h3><p>Redisson,Jedis，lettuce</p>
 <h3 id="jedis-和-redisson-有哪些区别"><a href="#jedis-和-redisson-有哪些区别" class="headerlink" title="jedis 和 redisson 有哪些区别"></a>jedis 和 redisson 有哪些区别</h3><p>Jedis 只是简单的封装了 Redis 的API库，可以看作是Redis客户端，它的方法和Redis 的命令很类似。Redisson 不仅封装了 redis ，还封装了对更多数据结构的支持，以及锁等功能</p>
@@ -349,6 +349,7 @@ redis 持久化有几种方式rdb（redis database）和aof（append of file） 
 <h3 id="性能问题"><a href="#性能问题" class="headerlink" title="性能问题"></a>性能问题</h3><p>aof持久化时 数据过多 启动慢 消耗CPU和内存 会出现服务暂停</p>
 <h3 id="一张自增表里面总共有-7-条数据，删除了最后-2-条数据，重启-mysql-数据库，又插入了一条数据，此时-id-是几"><a href="#一张自增表里面总共有-7-条数据，删除了最后-2-条数据，重启-mysql-数据库，又插入了一条数据，此时-id-是几" class="headerlink" title="一张自增表里面总共有 7 条数据，删除了最后 2 条数据，重启 mysql 数据库，又插入了一条数据，此时 id 是几"></a>一张自增表里面总共有 7 条数据，删除了最后 2 条数据，重启 mysql 数据库，又插入了一条数据，此时 id 是几</h3><p>6 默认时innodb 最大id时存到内存的 重启后内存清除 最大id变为5 新插入是6<br>如果是myisam 最大id存到文件中 重启后id还是7 新插入是8</p>
 <h3 id="获取数据库版本"><a href="#获取数据库版本" class="headerlink" title="获取数据库版本"></a>获取数据库版本</h3><p>select version()</p>
+<h1 id="redis各种数据格式的使用场景"><a href="#redis各种数据格式的使用场景" class="headerlink" title="redis各种数据格式的使用场景"></a>redis各种数据格式的使用场景</h1><p>key只能是String value Stirng用于关注列表  set用于共同好友</p>
 
             </div>
             <hr>
@@ -521,53 +522,11 @@ redis 持久化有几种方式rdb（redis database）和aof（append of file） 
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/10/29/mysql笔记/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Mysql笔记">
-                        
-                        <span class="card-title">Mysql笔记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">drop,delete与truncate的区别drop时删除表，剩下2个都是删除数据，但是delete要事务提交后生效可回滚而truncate则时立即生效，不可回滚
-mysql 中 in 和 exists 区别。mysql中的in语句是把外</div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            mysql-greenhand
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/mysql/" target="_blank">
-                        <span class="chip bg-color">mysql</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2018/10/29/jsp笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.gif" class="responsive-img" alt="Jsp笔记">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Jsp笔记">
                         
                         <span class="card-title">Jsp笔记</span>
                     </div>
@@ -575,9 +534,9 @@ mysql 中 in 和 exists 区别。mysql中的in语句是把外</div>
                 <div class="card-content article-content">
                     <div class="summary">隐含对象是什么意思？有哪些隐含对象？JSP隐含对象是页面中的一些Java对象，JSP容器让这些Java对象可以为开发者所使用。开发者不用明确的声明就可以直接使用他们。JSP隐含对象也叫做预定义变量。下面列出了JSP页面中的隐含对象：JSP共</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -591,6 +550,52 @@ mysql 中 in 和 exists 区别。mysql中的in语句是把外</div>
                     
                     <a href="/tags/jsp/" target="_blank">
                         <span class="chip bg-color">jsp</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/10/29/2018-10-29-web服务器/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Web服务器">
+                        
+                        <span class="card-title">Web服务器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">Tomcat浏览器发出www.baidu.com 给DNS服务器—-服务器根据浏览器所在地区返回该地区的代理接收浏览器接下来的请求—代理先看自己的缓存有没有对应的资源，没有才请求真正的服务器去数据库里找
+测试某个端口如8080端口是否正在监</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            服务器
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/容器/" target="_blank">
+                        <span class="chip bg-color">容器</span>
+                    </a>
+                    
+                    <a href="/tags/服务器/" target="_blank">
+                        <span class="chip bg-color">服务器</span>
                     </a>
                     
                 </div>

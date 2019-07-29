@@ -6,8 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="SpringBoot笔记, viabcde">
     <meta name="description" content="如何重新加载Spring Boot上的更改，而无需重新启动服务器？devtools
-Springboot启动过程启动类的注解会去扫描带有spring.factories的jar并配置好环境
-更换tomcat容器为jetty在pom.xml中">
+Springboot启动过程前提是需要借助SpringbootApplication注解的力量首先会扫描类路径中有没有特征类来决定是否创建web环境加载Ap">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -272,7 +271,7 @@ Springboot启动过程启动类的注解会去扫描带有spring.factories的jar
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -332,7 +331,7 @@ Springboot启动过程启动类的注解会去扫描带有spring.factories的jar
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="如何重新加载Spring-Boot上的更改，而无需重新启动服务器？"><a href="#如何重新加载Spring-Boot上的更改，而无需重新启动服务器？" class="headerlink" title="如何重新加载Spring Boot上的更改，而无需重新启动服务器？"></a>如何重新加载Spring Boot上的更改，而无需重新启动服务器？</h3><p>devtools</p>
-<h3 id="Springboot启动过程"><a href="#Springboot启动过程" class="headerlink" title="Springboot启动过程"></a>Springboot启动过程</h3><p>启动类的注解会去扫描带有spring.factories的jar并配置好环境</p>
+<h3 id="Springboot启动过程"><a href="#Springboot启动过程" class="headerlink" title="Springboot启动过程"></a>Springboot启动过程</h3><p>前提是需要借助SpringbootApplication注解的力量<br>首先会扫描类路径中有没有特征类来决定是否创建web环境<br>加载ApplicatinContextIniter、ApplicationListener<br>告诉ApplicaitonListener：初始化ok<br>创建加载配置propertySource和profile<br>告诉ApplicationListener：环境ok<br>打印banner<br>创建ApplicaitonContect并借助EnableConfiguration将bean注入<br>执行用户自定义注册的的CommerLinerRunner<br>finish<br>启动类的注解会去扫描带有spring.factories的jar并配置好环境</p>
 <h3 id="更换tomcat容器为jetty"><a href="#更换tomcat容器为jetty" class="headerlink" title="更换tomcat容器为jetty"></a><strong>更换tomcat容器为jetty</strong></h3><p>在pom.xml中编辑</p>
 <pre><code># 01 去除springboot中默认的嵌入式tomcat依赖
 &lt;dependency&gt;
@@ -350,7 +349,7 @@ Springboot启动过程启动类的注解会去扫描带有spring.factories的jar
     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
     &lt;artifactId&gt;spring-boot-starter-jetty&lt;/artifactId&gt;
 &lt;/dependency&gt;
-</code></pre><h3 id="在Spring-Boot启动的时候运行一些特定的代码"><a href="#在Spring-Boot启动的时候运行一些特定的代码" class="headerlink" title="在Spring Boot启动的时候运行一些特定的代码"></a>在Spring Boot启动的时候运行一些特定的代码</h3><p>实现接口 ApplicationRunner或者 CommandLineRunner，这两个接口实现方式一样，它们都只提供了一个run方法。</p>
+</code></pre><h3 id="在Spring-Boot启动的时候运行一些特定的代码比如读取配置文件，数据库连接之类"><a href="#在Spring-Boot启动的时候运行一些特定的代码比如读取配置文件，数据库连接之类" class="headerlink" title="在Spring Boot启动的时候运行一些特定的代码比如读取配置文件，数据库连接之类"></a>在Spring Boot启动的时候运行一些特定的代码比如读取配置文件，数据库连接之类</h3><p>实现接口 ApplicationRunner或者 CommandLineRunner，实现run方法即可<br>@Order注解<br>如果有多个实现类，而你需要他们按一定顺序执行的话，可以在实现类方法上加上@Order注解。@Order(value=整数值)。SpringBoot会按照@Order中的value值从小到大依次执行。<br>Tips<br>如果你发现你的实现类没有按照你的需求执行，请看一下实现类上是否添加了Spring管理的注解（@Component）。</p>
 <h3 id="Spring-Boot-有哪几种读取配置的方式"><a href="#Spring-Boot-有哪几种读取配置的方式" class="headerlink" title="Spring Boot 有哪几种读取配置的方式"></a>Spring Boot 有哪几种读取配置的方式</h3><p>通过 @PropertySource,@Value,@Environment, @ConfigurationProperties </p>
 <h3 id="Spring-Boot-支持哪些日志框架"><a href="#Spring-Boot-支持哪些日志框架" class="headerlink" title="Spring Boot 支持哪些日志框架"></a>Spring Boot 支持哪些日志框架</h3><p>Logging, Log4j2, Lockback 默认是Logback </p>
 <h3 id="指定使用的配置文件"><a href="#指定使用的配置文件" class="headerlink" title="指定使用的配置文件"></a>指定使用的配置文件</h3><p>再建立properties文件，例如application-dev.properties<br>spring.profiles.active: dev即可指定配置文件</p>
@@ -527,17 +526,17 @@ Springboot启动过程启动类的注解会去扫描带有spring.factories的jar
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/10/29/java学习/">
+                <a href="/2018/10/29/mybatis笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Java学习">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Mybatis笔记">
                         
-                        <span class="card-title">Java学习</span>
+                        <span class="card-title">Mybatis笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">要求：精通IO以内存为参照物，如果数据是向内存流动是输入流，反之则是输出流java IO 是面向流的，除非使用缓冲区  ，否则不能边读边写java NIO是面向块的，可以动态移动缓冲区中的数据，可边读边写前者一个连接由一个线程处理，后者是多</div>
+                    <div class="summary">在mapper中如何传递多个参数?Java的反射机制并不能让框架获取到参数的名字(方法签名中只有参数类型,可以说是为了优化,也可以说设计就是如此,总之名字无意义), 所以MyBatis默认的命名为: param1,param2……如果想给他</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -545,7 +544,7 @@ Springboot启动过程启动类的注解会去扫描带有spring.factories的jar
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            java
+                            mybatis
                             
                         </span>
                     </div>
@@ -553,8 +552,8 @@ Springboot启动过程启动类的注解会去扫描带有spring.factories的jar
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/" target="_blank">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/mybatis/" target="_blank">
+                        <span class="chip bg-color">mybatis</span>
                     </a>
                     
                 </div>
@@ -568,17 +567,17 @@ Springboot启动过程启动类的注解会去扫描带有spring.factories的jar
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/10/29/设计模式笔记/">
+                <a href="/2018/10/29/jsp笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="设计模式笔记">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Jsp笔记">
                         
-                        <span class="card-title">设计模式笔记</span>
+                        <span class="card-title">Jsp笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">常见的六种设计模式以及应用场景 单例模式:希望在系统中某个类的对象只能存在一个工厂模式：当调用者不需要知道具体实现细节，只需关心接口时策略模式：系统的操作都要有日志记录，通常会把日志记录在数据库里面，方便后续的管理，但是在记录日志到数据库的</div>
+                    <div class="summary">隐含对象是什么意思？有哪些隐含对象？JSP隐含对象是页面中的一些Java对象，JSP容器让这些Java对象可以为开发者所使用。开发者不用明确的声明就可以直接使用他们。JSP隐含对象也叫做预定义变量。下面列出了JSP页面中的隐含对象：JSP共</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -586,7 +585,7 @@ Springboot启动过程启动类的注解会去扫描带有spring.factories的jar
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            设计模式greenhand
+                            jsp
                             
                         </span>
                     </div>
@@ -594,8 +593,8 @@ Springboot启动过程启动类的注解会去扫描带有spring.factories的jar
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/设计模式/" target="_blank">
-                        <span class="chip bg-color">设计模式</span>
+                    <a href="/tags/jsp/" target="_blank">
+                        <span class="chip bg-color">jsp</span>
                     </a>
                     
                 </div>

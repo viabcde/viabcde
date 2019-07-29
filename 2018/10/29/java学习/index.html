@@ -270,7 +270,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -401,6 +401,7 @@
 <h2 id="线程的生命周期的五种状态"><a href="#线程的生命周期的五种状态" class="headerlink" title="线程的生命周期的五种状态"></a><strong>线程的生命周期的五种状态</strong></h2><p>新建 Thread  t1=new Thread();<br>就绪 start();<br>运行 run()<br>死亡 stop()<br>堵塞<br>正在睡眠：sleep<br>正在等待：wait<br>被另一个线程所阻塞：调用suspend()方法。（调用resume()方法恢复）  </p>
 <h3 id="sleep和wait的区别"><a href="#sleep和wait的区别" class="headerlink" title="sleep和wait的区别"></a><strong>sleep和wait的区别</strong></h3><p>sleep是线程类（Thread）的方法，wait是Object类的方法；<br>sleep不释放对象锁，wait放弃对象锁  </p>
 <h3 id="不能被序列化的数据"><a href="#不能被序列化的数据" class="headerlink" title="不能被序列化的数据"></a>不能被序列化的数据</h3><p>java中static、transient修饰的属性不能被序列化</p>
+<h1 id="java对象的内存布局"><a href="#java对象的内存布局" class="headerlink" title="java对象的内存布局"></a>java对象的内存布局</h1><p>对象头 存储对象的hash码 gc信息 锁信息 引用指针</p>
 
             </div>
             <hr>
@@ -577,7 +578,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Spring笔记">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Spring笔记">
                         
                         <span class="card-title">Spring笔记</span>
                     </div>
@@ -615,19 +616,19 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/10/29/springboot笔记/">
+                <a href="/2018/10/29/Servlet笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="SpringBoot笔记">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Servlet笔记">
                         
-                        <span class="card-title">SpringBoot笔记</span>
+                        <span class="card-title">Servlet笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">如何重新加载Spring Boot上的更改，而无需重新启动服务器？devtools
-Springboot启动过程启动类的注解会去扫描带有spring.factories的jar并配置好环境
-更换tomcat容器为jetty在pom.xml中</div>
+                    <div class="summary">内嵌servlet容器Tomcat jetty等
+获取存储在servlet上下文的对象    &lt;context-param>
+        &lt;param-name>contextConfigLocation&lt;/param</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -635,7 +636,7 @@ Springboot启动过程启动类的注解会去扫描带有spring.factories的jar
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            SpringBoot
+                            Servlet_greenhand
                             
                         </span>
                     </div>
@@ -643,8 +644,8 @@ Springboot启动过程启动类的注解会去扫描带有spring.factories的jar
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/springboot/" target="_blank">
-                        <span class="chip bg-color">springboot</span>
+                    <a href="/tags/Servlet/" target="_blank">
+                        <span class="chip bg-color">Servlet</span>
                     </a>
                     
                 </div>

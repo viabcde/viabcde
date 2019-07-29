@@ -271,7 +271,7 @@ mysql 中 in 和 exists 区别。mysql中的in语句是把外">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -308,6 +308,15 @@ mysql 中 in 和 exists 区别。mysql中的in语句是把外">
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/mysql/" class="post-category" target="_blank">
+                                mysql
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -334,6 +343,8 @@ mysql 中 in 和 exists 区别。mysql中的in语句是把外">
 <h3 id="mysql-中-in-和-exists-区别。"><a href="#mysql-中-in-和-exists-区别。" class="headerlink" title="mysql 中 in 和 exists 区别。"></a>mysql 中 in 和 exists 区别。</h3><p>mysql中的in语句是把外表和内表作hash 连接，而exists语句是对外表作loop循环，每次loop循环再对内表进行查询。<br>如果查询的两个表大小相当，那么用in和exists差别不大。<br>如果两个表中一个较小，一个是大表，则子查询表大的用exists，子查询表小的用in</p>
 <h3 id="mysql上亿记录数据量的数据库如何设计？"><a href="#mysql上亿记录数据量的数据库如何设计？" class="headerlink" title="mysql上亿记录数据量的数据库如何设计？"></a>mysql上亿记录数据量的数据库如何设计？</h3><p>mysql单表存储控制在百万条最好，根据业务的增长量适时分表分库，使用数据库中间件进行数据集组合查询</p>
 <h3 id="mysql支持事务吗？DB存储引擎有哪些？"><a href="#mysql支持事务吗？DB存储引擎有哪些？" class="headerlink" title="mysql支持事务吗？DB存储引擎有哪些？"></a>mysql支持事务吗？DB存储引擎有哪些？</h3><p>MySQL常用的存储引擎为MyISAM、InnoDB、MEMORY、MERGE，其中InnoDB提供事务安全表，其他存储引擎都是非事务安全表。</p>
+<h1 id="mysql-区分大小写不"><a href="#mysql-区分大小写不" class="headerlink" title="mysql 区分大小写不"></a>mysql 区分大小写不</h1><p>除了字段不区分 其他严格区分<br>可以加BINARY解决<br>select * from tb_user where BINARY username =’user’;</p>
+<h1 id="where和on"><a href="#where和on" class="headerlink" title="where和on"></a>where和on</h1><p>where条件不为真不返回 on条件为真或假都会返回 left jion返回左表 right返回右表</p>
 
             </div>
             <hr>
@@ -506,18 +517,17 @@ mysql 中 in 和 exists 区别。mysql中的in语句是把外">
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/10/29/2018-10-29-web服务器/">
+                <a href="/2018/10/29/设计模式笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Web服务器">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="设计模式笔记">
                         
-                        <span class="card-title">Web服务器</span>
+                        <span class="card-title">设计模式笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Tomcat浏览器发出www.baidu.com 给DNS服务器—-服务器根据浏览器所在地区返回该地区的代理接收浏览器接下来的请求—代理先看自己的缓存有没有对应的资源，没有才请求真正的服务器去数据库里找
-测试某个端口如8080端口是否正在监</div>
+                    <div class="summary">常见的六种设计模式以及应用场景 单例模式:希望在系统中某个类的对象只能存在一个工厂模式：当调用者不需要知道具体实现细节，只需关心接口时策略模式：系统的操作都要有日志记录，通常会把日志记录在数据库里面，方便后续的管理，但是在记录日志到数据库的</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -525,7 +535,7 @@ mysql 中 in 和 exists 区别。mysql中的in语句是把外">
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            服务器
+                            设计模式greenhand
                             
                         </span>
                     </div>
@@ -533,12 +543,8 @@ mysql 中 in 和 exists 区别。mysql中的in语句是把外">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/容器/" target="_blank">
-                        <span class="chip bg-color">容器</span>
-                    </a>
-                    
-                    <a href="/tags/服务器/" target="_blank">
-                        <span class="chip bg-color">服务器</span>
+                    <a href="/tags/设计模式/" target="_blank">
+                        <span class="chip bg-color">设计模式</span>
                     </a>
                     
                 </div>
@@ -552,26 +558,30 @@ mysql 中 in 和 exists 区别。mysql中的in语句是把外">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/10/29/redis笔记/">
+                <a href="/2018/10/28/2018-10-28-Docker/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Redis笔记">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Docker">
                         
-                        <span class="card-title">Redis笔记</span>
+                        <span class="card-title">Docker</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">redis内存级别的操作，存取快支持String、集合等数据类型支持事务数据库、缓存和消息中间件
-redis 持久化有几种方式rdb（redis database）和aof（append of file） 第一个时快照文件写入磁盘的 第二个</div>
+                    <div class="summary">Docker的三个概念ImageDocker 镜像和java的类类似，不可改动，只有安装后作为容器（对应类似java的实例）才能改动  
+container容器是Image的一个实例，有点像面向对象里new 一个实例。容器类似于一个轻量级的</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-28
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            redis
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/编程/" class="post-category" target="_blank">
+                                    编程
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -579,12 +589,8 @@ redis 持久化有几种方式rdb（redis database）和aof（append of file） 
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/redis/" target="_blank">
-                        <span class="chip bg-color">redis</span>
-                    </a>
-                    
-                    <a href="/tags/nosql数据库/" target="_blank">
-                        <span class="chip bg-color">nosql数据库</span>
+                    <a href="/tags/Docker/" target="_blank">
+                        <span class="chip bg-color">Docker</span>
                     </a>
                     
                 </div>
