@@ -338,7 +338,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>都知道，索引可以避免全表查询，增加查询速度<br>但是，更新时就会慢，因为破坏的平衡树的结构，系统需要重新建立平衡树<br>索引分为聚簇索引和非聚簇索引<br>聚簇索引是指靠主键获取数据，非聚簇索引指某个字段被复制出来，用于生成索引，查询时通过非聚簇索引查到主键，再通过聚簇索引找到数据<br>覆盖索引指的是把所需要的字段建成复合索引，只需要通过非聚簇索引即可获取数据</p>
+                <p>都知道，索引可以避免全表查询，增加查询速度<br>但是，更新时就会慢，因为破坏的平衡树的结构，系统需要重新建立平衡树<br>索引分为聚簇索引和非聚簇索引<br>聚簇索引是指靠主键获取数据，非聚簇索引指某个字段被复制出来，用于生成索引，查询时通过非聚簇索引查到主键，再通过聚簇索引找到数据<br>覆盖索引指的是把所需要的字段建成复合索引，只需要通过非聚簇索引即可获取数据，不用回表查询</p>
 
             </div>
             <hr>
@@ -521,8 +521,7 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">使用erlang实现的遵循amqp的产品（因为erlang天生是用于高并发 集群的）rabbit中又不同的vhost 避免命名冲突、vhost中又不同类型的exchange(交换机)：direct、headers、topic、fanout
-</div>
+                    <div class="summary">rabbitmq简介使同步变异步（同步只能等方法调用完成才能调用下一个方法 异步直接返回，立即调用下一个方法）流量削峰（减少服务器压力），用来接收消息，不处理消息，设置阈值，当接收到n个请求后，剩下的不发送到服务器，直接返回页面（如：手慢了</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-24

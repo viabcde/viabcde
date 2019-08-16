@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="锁, viabcde">
     <meta name="description" content="上锁就是修改对象头信息 成功则可以访问，不成功则阻塞（分为自旋锁和一直等待唤醒）解锁就是重置对象信息
-可重入锁synchronized是可重入的即在同一个对象中，一个sync方法可以直接读取其他sync方法 其他普通对象无法访问使用重入锁R">
+可重入锁synchronized是可重入的即在同一个对象中，没进入一次锁计数器加一，只有为0时其他对象才能进入，防止其他对象读取同一对象的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -340,7 +340,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>上锁就是修改对象头信息 成功则可以访问，不成功则阻塞（分为自旋锁和一直等待唤醒）<br>解锁就是重置对象信息</p>
-<h1 id="可重入锁"><a href="#可重入锁" class="headerlink" title="可重入锁"></a>可重入锁</h1><p>synchronized是可重入的即在同一个对象中，一个sync方法可以直接读取其他sync方法 其他普通对象无法访问<br>使用重入锁ReentrantLock后就没有这种情况，每次访问或必须在方法里解锁，才不会阻塞其他要访问该锁的线程</p>
+<h1 id="可重入锁"><a href="#可重入锁" class="headerlink" title="可重入锁"></a>可重入锁</h1><p>synchronized是可重入的即在同一个对象中，没进入一次锁计数器加一，只有为0时其他对象才能进入，防止其他对象读取同一对象的其他带有相同锁的sync方法直接调用 即只有当前对象才能再次获取锁 其他不能持有锁阻塞<br>使用重入锁后就没有这种情况，每次访问或必须在方法里解锁，才不会阻塞其他要访问该锁的线程<br>Synchronized和reentranlock都是可重入锁 区别在于renntranlock可以指定公平/非公平锁</p>
 <h1 id="锁的升级"><a href="#锁的升级" class="headerlink" title="锁的升级"></a>锁的升级</h1><p>偏向锁：一个线程，无竞争，每次比较锁标志，不是自己的锁即通过无锁机制竞争，成功则把对象头设为线程ID<br>失败则成为轻量级锁，轻量级锁允许线程等待（不是阻塞，而是不断获取锁）<br>时间不能太长，太长则变为重量级锁</p>
 <p>Xms和Xmx一般设置成1:1比例，原因是避免在GC后调整堆大小带来的压力<br>-Xms等价于-XX:InitialHeapSize,-Xmx等价于-XX:MaxHeapSize。所以他们都是XX类型参数</p>
 <h1 id="atomic"><a href="#atomic" class="headerlink" title="atomic"></a>atomic</h1><p>原子性操作 在变量赋值时会先CAS判断是否被其他线程修改过，即当前值和之前拿来的值是否一致，不一致需要CAS等待后更新，才能赋值</p>
@@ -526,7 +526,7 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Eureka 注册到服务列表叫创建租约 发送心跳叫续约（有效时间30s）Eureka是服务注册中心，但当注册中心集群时，Eureka也做为客户端，向其它注册中心注册自己，同时获取其它注册中心的维护的服务列表，当有新的客户端注册进来时，Eur</div>
+                    <div class="summary">Eureka简介Eureka相当于QQ群的群主 而各个服务提供者就是群成员，成员列表就是服务注册列表Eureka 注册到服务列表叫创建租约 发送心跳叫续约（有效时间30s）Eureka是服务注册中心，但当注册中心集群时，Eureka也做为客</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-28

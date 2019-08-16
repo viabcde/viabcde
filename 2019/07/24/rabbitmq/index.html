@@ -5,8 +5,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Rabbitmq, viabcde">
-    <meta name="description" content="使用erlang实现的遵循amqp的产品（因为erlang天生是用于高并发 集群的）rabbit中又不同的vhost 避免命名冲突、vhost中又不同类型的exchange(交换机)：direct、headers、topic、fanout
-">
+    <meta name="description" content="rabbitmq简介使同步变异步（同步只能等方法调用完成才能调用下一个方法 异步直接返回，立即调用下一个方法）流量削峰（减少服务器压力），用来接收消息，不处理消息，设置阈值，当接收到n个请求后，剩下的不发送到服务器，直接返回页面（如：手慢了">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -339,7 +338,10 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>使用erlang实现的遵循amqp的产品（因为erlang天生是用于高并发 集群的）<br>rabbit中又不同的vhost 避免命名冲突、vhost中又不同类型的exchange(交换机)：direct、headers、topic、fanout<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/rabbitmq.jpg" alt=""></p>
+                <h1 id="rabbitmq简介"><a href="#rabbitmq简介" class="headerlink" title="rabbitmq简介"></a>rabbitmq简介</h1><p>使同步变异步（同步只能等方法调用完成才能调用下一个方法 异步直接返回，立即调用下一个方法）<br>流量削峰（减少服务器压力），用来接收消息，不处理消息，设置阈值，当接收到n个请求后，剩下的不发送到服务器，直接返回页面（如：手慢了！商品已被抢光了！）<br>解耦（订单调用服务和订单处理服务解耦）<br>只要机器内存足够大 消息队列就可以存无限大得信息<br>使用erlang实现的遵循amqp的产品（因为erlang天生是用于高并发 集群的）<br>rabbit中又不同的vhost 避免命名冲突、vhost中又不同类型的exchange(交换机)：direct、headers、topic、fanout<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/rabbitmq.jpg" alt=""></p>
+<h1 id="rabbitmq组件"><a href="#rabbitmq组件" class="headerlink" title="rabbitmq组件"></a>rabbitmq组件</h1><p>消息 交换机（direct topic fanout） 队列 通道<br>交换机根据路由键决定消息发送给哪些队列（路由键在消息的头信息里）</p>
+<h1 id="消息持久化处理"><a href="#消息持久化处理" class="headerlink" title="消息持久化处理"></a>消息持久化处理</h1><p>防止消息接收者中断监听造成消息丢失 可以在队列把autodelete设为false 或者在交换机把autodelete设为false</p>
+<h1 id="消息ACK确认"><a href="#消息ACK确认" class="headerlink" title="消息ACK确认"></a>消息ACK确认</h1><p>如果消费者没有返回确认ack rabbitmq会一直分发 造成内存泄漏 直至内存耗尽<br>解决方法① 在代码上加try catch 处理一下<br>方法② 在配置文件添加rabbitmq重新分发的次数</p>
 
             </div>
             <hr>

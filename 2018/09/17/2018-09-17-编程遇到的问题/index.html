@@ -431,6 +431,23 @@ WARNING: All illegal access operations will be denied in a future release
 <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
 </code></pre>
 <h2 id="当报错Failed-to-read-Class-Path-attribute-from-manifest-of-jar-file-C-Users-Administrator-m2-repository"><a href="#当报错Failed-to-read-Class-Path-attribute-from-manifest-of-jar-file-C-Users-Administrator-m2-repository" class="headerlink" title="当报错Failed to read Class-Path attribute from manifest of jar file:/C:/Users/Administrator/.m2/repository"></a>当报错Failed to read Class-Path attribute from manifest of jar file:/C:/Users/Administrator/.m2/repository</h2><p>到maven仓库将jar包删除再下载即可</p>
+<h2 id="导入项目：The-project-description-file-project-for-‘xxx’-is-missing"><a href="#导入项目：The-project-description-file-project-for-‘xxx’-is-missing" class="headerlink" title="导入项目：The project description file (.project) for ‘xxx’ is missing."></a>导入项目：The project description file (.project) for ‘xxx’ is missing.</h2><p>解决方法： 进入到workspace中，进入到workspace.metadata.plugins\org.eclipse.core.resources.projects  文件夹下，然后将李某不能打开的工程给删除了<br>restartmyeclipse即可解决<br>再不行的话就删了再新建maven moudule重新把src和pom复制一下手动导入吧（最稳的方法）</p>
+<h2 id="插入数据库中文乱码"><a href="#插入数据库中文乱码" class="headerlink" title="插入数据库中文乱码"></a>插入数据库中文乱码</h2><h3 id="传汉字到mysql数据库，显示问号的解决方法"><a href="#传汉字到mysql数据库，显示问号的解决方法" class="headerlink" title="传汉字到mysql数据库，显示问号的解决方法"></a>传汉字到mysql数据库，显示问号的解决方法</h3><p>1、检查jsp显示页面，检查jsp开头有没有设置UTF-8的字符集</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page language<span class="token operator">=</span><span class="token string">"java"</span> contentType<span class="token operator">=</span><span class="token string">"text/html; charset=UTF-8"</span> pageEncoding<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">%</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html PUBLIC <span class="token string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="token string">"http://www.w3.org/TR/html4/loose.dtd"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>html<span class="token operator">></span>
+<span class="token operator">&lt;</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>meta http<span class="token operator">-</span>equiv<span class="token operator">=</span><span class="token string">"Content-Type"</span> content<span class="token operator">=</span><span class="token string">"text/html; charset=UTF-8"</span><span class="token operator">></span>
+</code></pre>
+<p>2、检查后台逻辑代码<br>根据前台展示页面，找到后台代码，<br>一般设置编码有如下几种方式：<br>设置request</p>
+<pre class=" language-java"><code class="language-java">request<span class="token punctuation">.</span><span class="token function">setCharacterEncoding</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>设置response</p>
+<pre class=" language-java"><code class="language-java">response<span class="token punctuation">.</span><span class="token function">setCharacterEncoding</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+response<span class="token punctuation">.</span><span class="token function">setContentType</span><span class="token punctuation">(</span><span class="token string">"text/html;charset=UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+response<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">"Content-Type"</span><span class="token punctuation">,</span><span class="token string">"text/html;charset=UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>3、检查数据库字符集<br>mysql中可以设置数据库字符集，<br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101001.png?raw=true" alt=""><br>也可以设置表的字符集<br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101002.png?raw=true" alt=""><br>4、变更数据库URL<br>在连接数据库的URL属性中添加useUnicode=true&amp;characterEncoding=utf8<br>我直接添加的characterEncoding=utf8<br>最终解决了我的中文乱码问题</p>
 
             </div>
             <hr>

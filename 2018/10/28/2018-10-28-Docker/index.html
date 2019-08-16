@@ -5,8 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Docker, viabcde">
-    <meta name="description" content="Docker的三个概念ImageDocker 镜像和java的类类似，不可改动，只有安装后作为容器（对应类似java的实例）才能改动  
-container容器是Image的一个实例，有点像面向对象里new 一个实例。容器类似于一个轻量级的">
+    <meta name="description" content="容器和虚拟机容器：服务器之间互相隔离，可以有一样的端口虚拟机：可能会有冲突，如果修改虚拟机中的文件可能导致另一个服务宕机，可以有一样服务器，当端口不能一样
+Docker的三个概念ImageDocker 镜像和java的类类似，不可改动，只有">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -339,8 +339,9 @@ container容器是Image的一个实例，有点像面向对象里new 一个实�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Docker的三个概念"><a href="#Docker的三个概念" class="headerlink" title="Docker的三个概念"></a><strong>Docker的三个概念</strong></h2><h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a><strong>Image</strong></h3><p>Docker 镜像和java的类类似，不可改动，只有安装后作为容器（对应类似java的实例）才能改动  </p>
-<h3 id="container"><a href="#container" class="headerlink" title="container"></a><strong>container</strong></h3><p>容器是Image的一个实例，有点像面向对象里new 一个实例。容器类似于一个轻量级的沙盒，Docker利用容器来运行和隔离应用。容器从Image启动时，Docker会在镜像的最上层创建一个可写层，镜像本身保持不变。    </p>
+                <h2 id="容器和虚拟机"><a href="#容器和虚拟机" class="headerlink" title="容器和虚拟机"></a>容器和虚拟机</h2><p>容器：服务器之间互相隔离，可以有一样的端口<br>虚拟机：可能会有冲突，如果修改虚拟机中的文件可能导致另一个服务宕机，可以有一样服务器，当端口不能一样</p>
+<h2 id="Docker的三个概念"><a href="#Docker的三个概念" class="headerlink" title="Docker的三个概念"></a><strong>Docker的三个概念</strong></h2><h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a><strong>Image</strong></h3><p>Docker 镜像和java的类类似，不可改动，只有安装后作为容器（对应类似java的实例）才能改动  </p>
+<h3 id="container-镜像-可写层"><a href="#container-镜像-可写层" class="headerlink" title="container=镜像+可写层"></a><strong>container=镜像+可写层</strong></h3><p>容器是Image的一个实例，有点像面向对象里new 一个实例。容器类似于一个轻量级的沙盒，Docker利用容器来运行和隔离应用。容器从Image启动时，Docker会在镜像的最上层创建一个可写层，镜像本身保持不变。    </p>
 <h3 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a><strong>Repository</strong></h3><p> Docker 仓库是存放镜像的地方。（不要把Docker的仓库和注册服务器Registry混淆注册服务器是存放仓库的地方，每个仓库存放某一类不同标签Tag的镜像。） </p>
 <h2 id="优点：Docker利用容器将资源进行有效隔离"><a href="#优点：Docker利用容器将资源进行有效隔离" class="headerlink" title="优点：Docker利用容器将资源进行有效隔离"></a><strong>优点：Docker利用容器将资源进行有效隔离</strong></h2><p><strong>缺点：安全运营与管理，以及具有保密性、完整性和可用性的通用控件的支持</strong></p>
 <h2 id="docker简介"><a href="#docker简介" class="headerlink" title="docker简介"></a><strong>docker简介</strong></h2><p>虚拟机的虚拟化技术依赖物理CPU和内存，是硬件级别的；<br>docker构建在操作系统上，利用操作系统的containerization技术，所以docker甚至可以在虚拟机上运行。  </p>
@@ -789,30 +790,27 @@ $ docker run -it --volumes-from dataVol ubuntu64 /bin/bash
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/10/29/mysql笔记/">
+                <a href="/2018/10/29/springmvc笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Mysql笔记">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Springmvc笔记">
                         
-                        <span class="card-title">Mysql笔记</span>
+                        <span class="card-title">Springmvc笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">drop,delete与truncate的区别drop时删除表，剩下2个都是删除数据，但是delete要事务提交后生效可回滚而truncate则时立即生效，不可回滚
-mysql 中 in 和 exists 区别。mysql中的in语句是把外</div>
+                    <div class="summary">什么是Spring MVCSpringMVC是基于java实现的通过MVC模式将视图层、控制层和数据层解耦的框架
+SpringMvc怎么和AJAX相互调用的？加入Jackson.jar
+注解原理都继承自annotation,其具体实现类是通</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/mysql/" class="post-category" target="_blank">
-                                    mysql
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            springmvc
                             
                         </span>
                     </div>
@@ -820,8 +818,8 @@ mysql 中 in 和 exists 区别。mysql中的in语句是把外</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mysql/" target="_blank">
-                        <span class="chip bg-color">mysql</span>
+                    <a href="/tags/springmvc/" target="_blank">
+                        <span class="chip bg-color">springmvc</span>
                     </a>
                     
                 </div>

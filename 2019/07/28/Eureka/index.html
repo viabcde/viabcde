@@ -5,7 +5,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Eureka, viabcde">
-    <meta name="description" content="Eureka 注册到服务列表叫创建租约 发送心跳叫续约（有效时间30s）Eureka是服务注册中心，但当注册中心集群时，Eureka也做为客户端，向其它注册中心注册自己，同时获取其它注册中心的维护的服务列表，当有新的客户端注册进来时，Eur">
+    <meta name="description" content="Eureka简介Eureka相当于QQ群的群主 而各个服务提供者就是群成员，成员列表就是服务注册列表Eureka 注册到服务列表叫创建租约 发送心跳叫续约（有效时间30s）Eureka是服务注册中心，但当注册中心集群时，Eureka也做为客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -338,7 +338,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Eureka 注册到服务列表叫创建租约 发送心跳叫续约（有效时间30s）<br>Eureka是服务注册中心，但当注册中心集群时，Eureka也做为客户端，向其它注册中心注册自己，同时获取其它注册中心的维护的服务列表，当有新的客户端注册进来时，Eureka会通知其它的注册中心，异步更新服务列表，达到高可用的目的<br>Eureka Server节点在短时间内丢失过多的客户端时（可能发送了网络故障），那么这个节点将进入自我保护模式，不再注销任何微服务，当网络故障回复后，该节点会自动退出自我保护模式</p>
+                <h3 id="Eureka简介"><a href="#Eureka简介" class="headerlink" title="Eureka简介"></a>Eureka简介</h3><p>Eureka相当于QQ群的群主 而各个服务提供者就是群成员，成员列表就是服务注册列表<br>Eureka 注册到服务列表叫创建租约 发送心跳叫续约（有效时间30s）<br>Eureka是服务注册中心，但当注册中心集群时，Eureka也做为客户端，向其它注册中心注册自己，同时获取其它注册中心的维护的服务列表，当有新的客户端注册进来时，Eureka会通知其它的注册中心，异步更新服务列表，达到高可用的目的<br>Eureka Server节点在短时间内丢失过多的客户端时（可能发送了网络故障），那么这个节点将进入自我保护模式，不再注销任何微服务，当网络故障回复后，该节点会自动退出自我保护模式<br>@EnableDiscoveryClient @EnableEurekaServer</p>
+<h3 id="Eureka高可用"><a href="#Eureka高可用" class="headerlink" title="Eureka高可用"></a>Eureka高可用</h3><p>Eureka两两互相注册，而Client需要配置所有Eureka,因为Eureka是互相注册的，即使一个Eureka down掉 其他Eureka仍然可以提供服务<br><a href="https://blog.csdn.net/tianyaleixiaowu/article/details/78184793" target="_blank" rel="noopener">Eureka集群高可用</a></p>
 
             </div>
             <hr>
@@ -567,7 +568,7 @@
                 </a>
                 <div class="card-content article-content">
                     <div class="summary">上锁就是修改对象头信息 成功则可以访问，不成功则阻塞（分为自旋锁和一直等待唤醒）解锁就是重置对象信息
-可重入锁synchronized是可重入的即在同一个对象中，一个sync方法可以直接读取其他sync方法 其他普通对象无法访问使用重入锁R</div>
+可重入锁synchronized是可重入的即在同一个对象中，没进入一次锁计数器加一，只有为0时其他对象才能进入，防止其他对象读取同一对象的</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-26

@@ -352,7 +352,12 @@
         &lt;result property = “orderno” column =”order_no”/&gt; 
         &lt;result property=”price” column=”order_price” /&gt; 
     &lt;/reslutMap&gt;
-</code></pre>
+</code></pre><h1 id="MyBatis实现一对一有几种方式-具体怎么操作的"><a href="#MyBatis实现一对一有几种方式-具体怎么操作的" class="headerlink" title="MyBatis实现一对一有几种方式?具体怎么操作的"></a>MyBatis实现一对一有几种方式?具体怎么操作的</h1><p>1对1使用associatin 在resultmap中配置<br>1对多使用collection 在resultmap中配置</p>
+<h1 id="MyBatis在核心处理类分别叫什么"><a href="#MyBatis在核心处理类分别叫什么" class="headerlink" title="MyBatis在核心处理类分别叫什么"></a>MyBatis在核心处理类分别叫什么</h1><p>sqlsession</p>
+<h1 id="MyBatis的缓存"><a href="#MyBatis的缓存" class="headerlink" title="MyBatis的缓存"></a>MyBatis的缓存</h1><p>MyBatis的缓存分为一级缓存和二级缓存,一级缓存放在session里面,默认就有,二级缓存放在它的命名空间里,默认是不打开的,使用二级缓存属性类需要实现Serializable序列化接口(可用来保存对象的状态),可在它的映射文件中配置<cache></cache></p>
+<h1 id="Mybatis是如何进行分页的？分页插件的原理是什么？"><a href="#Mybatis是如何进行分页的？分页插件的原理是什么？" class="headerlink" title="Mybatis是如何进行分页的？分页插件的原理是什么？"></a>Mybatis是如何进行分页的？分页插件的原理是什么？</h1><p>1）Mybatis使用RowBounds对象进行分页，也可以直接编写sql实现分页，也可以使用Mybatis的分页插件。</p>
+<p>2）分页插件的原理：实现Mybatis提供的接口，实现自定义插件，在插件的拦截方法内拦截待执行的sql，然后重写sql。</p>
+
             </div>
             <hr>
 
@@ -534,8 +539,8 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">使用微服务的原因每次更改都需要全部重新部署不同服务可以使用不同技术但服务启动快可以按不同服务的需求搭配电脑配置但是，出现bug不好定位，运维成本高 接口调整成本高 不同服务不能公用utils
-Eureka系使用Eureka替代Nginx做服</div>
+                    <div class="summary">配置管理、服务发现、断路器、路由、微代理、事件总线、全局锁、决策竞选、分布式会话
+使用微服务的原因每次更改都需要全部重新部署不同服务可以使用不同技术但服务启动快可以按不同服务的需求搭配电脑配置但是，出现bug不好定位，运维成本高 接口调整成</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -570,26 +575,30 @@ Eureka系使用Eureka替代Nginx做服</div>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/10/29/springboot笔记/">
+                <a href="/2018/10/29/mysql笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="SpringBoot笔记">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Mysql笔记">
                         
-                        <span class="card-title">SpringBoot笔记</span>
+                        <span class="card-title">Mysql笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">如何重新加载Spring Boot上的更改，而无需重新启动服务器？devtools
-Springboot启动过程前提是需要借助SpringbootApplication注解的力量首先会扫描类路径中有没有特征类来决定是否创建web环境加载Ap</div>
+                    <div class="summary">drop,delete与truncate的区别drop时删除表，剩下2个都是删除数据，但是delete要事务提交后生效可回滚而truncate则时立即生效，不可回滚
+mysql 中 in 和 exists 区别。mysql中的in语句是把外</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            SpringBoot
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/mysql/" class="post-category" target="_blank">
+                                    mysql
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -597,8 +606,8 @@ Springboot启动过程前提是需要借助SpringbootApplication注解的力量�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/springboot/" target="_blank">
-                        <span class="chip bg-color">springboot</span>
+                    <a href="/tags/mysql/" target="_blank">
+                        <span class="chip bg-color">mysql</span>
                     </a>
                     
                 </div>

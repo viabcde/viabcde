@@ -5,8 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="SpringCloud, viabcde">
-    <meta name="description" content="使用微服务的原因每次更改都需要全部重新部署不同服务可以使用不同技术但服务启动快可以按不同服务的需求搭配电脑配置但是，出现bug不好定位，运维成本高 接口调整成本高 不同服务不能公用utils
-Eureka系使用Eureka替代Nginx做服">
+    <meta name="description" content="配置管理、服务发现、断路器、路由、微代理、事件总线、全局锁、决策竞选、分布式会话
+使用微服务的原因每次更改都需要全部重新部署不同服务可以使用不同技术但服务启动快可以按不同服务的需求搭配电脑配置但是，出现bug不好定位，运维成本高 接口调整成">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -339,117 +339,12 @@ Eureka系使用Eureka替代Nginx做服">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="使用微服务的原因"><a href="#使用微服务的原因" class="headerlink" title="使用微服务的原因"></a>使用微服务的原因</h3><p>每次更改都需要全部重新部署<br>不同服务可以使用不同技术<br>但服务启动快<br>可以按不同服务的需求搭配电脑配置<br>但是，出现bug不好定位，运维成本高 接口调整成本高 不同服务不能公用utils</p>
-<h3 id="Eureka系"><a href="#Eureka系" class="headerlink" title="Eureka系"></a><strong>Eureka系</strong></h3><p>使用Eureka替代Nginx做服务发现和注册<br><strong>服务注册</strong><br>在服务治理框架中，通常都会构建一个注册中心，每个服务单元向注册中心登记自己提供的服务，包括服务的主机与端口号、服务版本号、通讯协议等一些附加信息。注册中心按照服务名分类组织服务清单<br>同时还需要以心跳检测的方式去监测清单中的服务是否可用，若不可用需要从服务清单中剔除<br> <strong>服务发现</strong><br>在服务治理框架下，服务间的调用不再通过指定具体的实例地址来实现，而是通过服务名发起请求调用实现。服务调用方通过服务名从服务注册中心的服务清单中获取服务实例的列表清单，通过指定的负载均衡策略取出一个服务实例位置来进行服务调用。<br>第二次调用服务时会从缓存里获取，不会到服务提供者获取</p>
-<h2 id="Zuul路由网关"><a href="#Zuul路由网关" class="headerlink" title="Zuul路由网关"></a><strong>Zuul路由网关</strong></h2><h3 id="1-代理："><a href="#1-代理：" class="headerlink" title="1. 代理："></a><strong>1. 代理：</strong></h3><p>Zuul提供外部的请求转发到具体的微服务实例中的服务  </p>
-<h3 id="2-路由："><a href="#2-路由：" class="headerlink" title="2. 路由："></a><strong>2. 路由：</strong></h3><p>Zuul可以对外部访问实现统一的入口  </p>
-<h3 id="3-过滤："><a href="#3-过滤：" class="headerlink" title="3. 过滤："></a><strong>3. 过滤：</strong></h3><p>Zuul可以对外部访问进行干预，如请求校验、服务聚合等  </p>
-<h3 id="4-Zuul需要配合Eureka使用，"><a href="#4-Zuul需要配合Eureka使用，" class="headerlink" title="4. Zuul需要配合Eureka使用，"></a><strong>4. Zuul需要配合Eureka使用，</strong></h3><p>需要在Eureka中注册并获得其他微服务的信息  </p>
-<h3 id="5-理解："><a href="#5-理解：" class="headerlink" title="5. 理解："></a><strong>5. 理解：</strong></h3><p>Zuul就像大楼的保安，可以请他找人（代理），找的人在外面叫什么名字（路由），准不准你进楼（过滤）。因为保安属于物业公司，所以保安要在物业公司注册，所获得的信息也来源于物业公司（与Eureka的关系）。<br> <a href="http://github.com/Netflix/zuul" target="_blank" rel="noopener">Zuul的源码</a>    </p>
-<h3 id="zuul的基本配置"><a href="#zuul的基本配置" class="headerlink" title="zuul的基本配置"></a><strong>zuul的基本配置</strong></h3><p><strong>第一步：构建新的Zuul模块并在pom.xml中加入依赖（Zuul和Eureka必须同时加入）；</strong>  </p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>dependencies<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> zuul路由网关 <span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>cloud<span class="token operator">-</span>starter<span class="token operator">-</span>zuul<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>cloud<span class="token operator">-</span>starter<span class="token operator">-</span>eureka<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> actuator监控 <span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>actuator<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> hystrix容错 <span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>cloud<span class="token operator">-</span>starter<span class="token operator">-</span>hystrix<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>cloud<span class="token operator">-</span>starter<span class="token operator">-</span>config<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 日常标配 <span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>com<span class="token punctuation">.</span>wangcw<span class="token punctuation">.</span>springcloud<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>springclouddemo<span class="token operator">-</span>api<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>version<span class="token operator">></span>$<span class="token punctuation">{</span>project<span class="token punctuation">.</span>version<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>jetty<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>web<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>test<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 热部署插件 <span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>springloaded<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>devtools<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>dependencies<span class="token operator">></span>
-</code></pre>
-<p><strong>第二步：新建application.yml文件并配置（一定要向Eureka注册，因为Zuul本身也是一个微服务）；</strong></p>
-<pre class=" language-java"><code class="language-java">server<span class="token operator">:</span> 
-  port<span class="token operator">:</span> <span class="token number">6001</span>
-spring<span class="token operator">:</span> 
-  application<span class="token operator">:</span>
-    name<span class="token operator">:</span> microservicecloud<span class="token operator">-</span>zuul<span class="token operator">-</span>gateway
-
-eureka<span class="token operator">:</span> 
-  client<span class="token operator">:</span> #客户端注册进eureka服务列表内
-    service<span class="token operator">-</span>url<span class="token operator">:</span> 
-      defaultZone<span class="token operator">:</span> http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>eureka7001<span class="token punctuation">.</span>com<span class="token operator">:</span><span class="token number">7001</span><span class="token operator">/</span>eureka<span class="token punctuation">,</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>eureka7002<span class="token punctuation">.</span>com<span class="token operator">:</span><span class="token number">7002</span><span class="token operator">/</span>eureka
-  instance<span class="token operator">:</span>
-    instance<span class="token operator">-</span>id<span class="token operator">:</span> gateway<span class="token operator">-</span>zull<span class="token operator">-</span><span class="token number">6001</span>
-    prefer<span class="token operator">-</span>ip<span class="token operator">-</span>address<span class="token operator">:</span> <span class="token boolean">true</span> 
-#配置微服务的info信息
-info<span class="token operator">:</span>
-  app<span class="token punctuation">.</span>name<span class="token operator">:</span> wangcw<span class="token operator">-</span>dept<span class="token operator">-</span>provider
-  company<span class="token punctuation">.</span>name<span class="token operator">:</span> www<span class="token punctuation">.</span>amoins<span class="token punctuation">.</span>top
-  build<span class="token punctuation">.</span>artifactId<span class="token operator">:</span> $project<span class="token punctuation">.</span>artifactId$
-  build<span class="token punctuation">.</span>version<span class="token operator">:</span> $project<span class="token punctuation">.</span>version$
-</code></pre>
-<p><strong>第三步： 修改hosts文件（非必须，不过能更好看出效果）</strong></p>
-<pre><code>127.0.0.1        zuul.com
-</code></pre><p><strong>第四步：创建主启动类，并加入@EnableZuulProxy注解</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span><span class="token punctuation">(</span>exclude <span class="token operator">=</span> <span class="token punctuation">{</span>DataSourceAutoConfiguration<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> HibernateJpaAutoConfiguration<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token annotation punctuation">@EnableZuulProxy</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Zuul_6001_App</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>Zuul_6001_App<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p><strong>第五步：启动测试，访问规则：步骤3中指定映射域名 + 端口号 + 微服务名称 + 访问路径。</strong><br>   例子：<a href="http://zuul.com:6001/springclouddemo-provider-dept/provider/dept/list" target="_blank" rel="noopener">http://zuul.com:6001/springclouddemo-provider-dept/provider/dept/list</a><br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101024.png?raw=true" alt=""> </p>
-<h3 id="路由访问映射规则"><a href="#路由访问映射规则" class="headerlink" title="路由访问映射规则"></a><strong>路由访问映射规则</strong></h3><p>服务名映射和统一公共前缀 : 当不想暴露真实的服务名时，可以对服务名进行映射，只需在application.yml中配置即可。配置如下：</p>
-<pre class=" language-java"><code class="language-java">zuul<span class="token operator">:</span>
-   prefix<span class="token operator">:</span> <span class="token operator">/</span>wangcw        #设置统一公共前缀
-   ignored<span class="token operator">-</span>services<span class="token operator">:</span> <span class="token string">"*"</span>  #对外隐藏所有的服务名，可以使用通配符，配置之后通过这个微服务名访问就失效了，外部无法访问，但是微服务内部依然可用
-   routes<span class="token operator">:</span>
-     mydept<span class="token punctuation">.</span>serviceId<span class="token operator">:</span> springclouddemo<span class="token operator">-</span>provider<span class="token operator">-</span>dept
-     mydept<span class="token punctuation">.</span>path<span class="token operator">:</span> <span class="token operator">/</span>zull<span class="token operator">-</span>dept<span class="token operator">/</span><span class="token operator">*</span><span class="token operator">*</span>          # 访问<span class="token operator">/</span>zull<span class="token operator">-</span>dept<span class="token operator">/</span><span class="token operator">*</span>相当于访问微服务【springclouddemo<span class="token operator">-</span>provider<span class="token operator">-</span>dept】
-     #最终访问路径变成了 zuul<span class="token punctuation">.</span>com<span class="token operator">:</span><span class="token number">6001</span><span class="token operator">/</span>wangcw<span class="token operator">/</span>zull<span class="token operator">-</span>dept<span class="token operator">/</span><span class="token operator">*</span> 
-</code></pre>
-<p>经过上述配置，访问路径变成  <a href="http://zuul.com:6001/wangcw/zull-dept/provider/dept/list" target="_blank" rel="noopener">http://zuul.com:6001/wangcw/zull-dept/provider/dept/list</a><br>测试结果：<br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101025.png?raw=true" alt=""><br>注：因为Zuul是针对外部访问管理的，所以配置了隐藏的服务，在系统中其他模块进行服务名访问时依然可以正常运行的。</p>
+                <p>配置管理、服务发现、断路器、路由、微代理、事件总线、全局锁、决策竞选、分布式会话</p>
+<h3 id="使用微服务的原因"><a href="#使用微服务的原因" class="headerlink" title="使用微服务的原因"></a>使用微服务的原因</h3><p>每次更改都需要全部重新部署<br>不同服务可以使用不同技术<br>但服务启动快<br>可以按不同服务的需求搭配电脑配置<br>但是，出现bug不好定位，运维成本高 接口调整成本高 不同服务不能公用utils</p>
 <h2 id="ribbon"><a href="#ribbon" class="headerlink" title="ribbon"></a><strong>ribbon</strong></h2><p>负载均衡：在微服务之前，客户端与服务端之间是存在专门的负载均衡的中间硬件的<br>微服务出现后，把负载均衡的功能以库的方式集成到客户端的进程中称为软负载均衡<br>Eureka自动包含了ribbon 使用之后不需要配置固定的ip+端口 只需要配置好主机名称即可</p>
 <h2 id="Netflix-hystrix"><a href="#Netflix-hystrix" class="headerlink" title="Netflix hystrix"></a><strong>Netflix hystrix</strong></h2><p>想象这样一个情况：一个电子商务网站因为在黑色周五发生过载，因为过多访问负载，在线支付延迟半天都没有响应，用户的支付因为太多并发请求导致响应时间过长，在等待很长时间以后最终失败。这样的错误导致退出购物车的用户重新刷新或者再次尝试支付，更加增加了服务器的负载，如同滚雪球一样爆炸，导致更多长时间等待线程和网络拥塞。<br>hystrix用来设计隔离访问远程系统端点或微服务等，防止级联爆炸式的失败<br>如果它在一段时间内侦测到许多类似的错误，会强迫其以后的多个调用快速失败，也就是不让它们再次访问远程服务器了  </p>
 <h2 id="spring-cloud-config来统一管理配置文件"><a href="#spring-cloud-config来统一管理配置文件" class="headerlink" title="spring cloud config来统一管理配置文件"></a><strong>spring cloud config来统一管理配置文件</strong></h2><p>和Eureka有点你相似，即我们先把配置文件推送到git等服务中，当我们需要配置文件 ConfigClient系统可以通过ConfigServer去获取配置文件</p>
 <h3 id="分布式链路跟踪-Sleuth-与-Zipkin"><a href="#分布式链路跟踪-Sleuth-与-Zipkin" class="headerlink" title="分布式链路跟踪 Sleuth 与 Zipkin"></a><strong>分布式链路跟踪 Sleuth 与 Zipkin</strong></h3><p>随着业务发展，系统拆分导致系统调用链路愈发复杂一个前端请求可能最终需要调用很多次后端服务才能完成，当整个请求变慢或不可用时，我们是无法得知该请求是由某个或某些后端服务引起的，这时就需要解决如何快读定位服务故障点，以对症下药。于是就有了分布式系统调用跟踪的诞生。<br><strong>一般的，一个分布式服务跟踪系统主要由三部分构成</strong><br>数据收集<br>数据存储<br>数据展示<br>每个 trace 中会调用若干个服务，为了记录调用了哪些服务，以及每次调用的消耗时间等信息，在每次调用服务时，埋入一个调用记录，称为一个 span。这样，若干个有序的 span 就组成了一个 trace。<br>附带上 span 中的请求的服务的名称，响应时间，以及请求成功与否等信息，就可以在发生问题的时候，找到异常的服务；根据历史数据，还可以从系统整体层面分析出哪里性能差，定位性能优化的目标。<br>可以用于<br><strong>耗时分析:</strong> 通过 Sleuth 可以很方便的了解到每个采样请求的耗时，从而分析出哪些服务调用比较耗时;<br><strong>可视化错误:</strong> 对于程序未捕捉的异常，可以通过集成 Zipkin 服务界面上看到;<br><strong>链路优化:</strong> 对于调用比较频繁的服务，可以针对这些服务实施一些优化措施。  </p>
-<h2 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h2><p>服务拆分要适可，不是越小越好，太多的话管理和部署比较麻烦<br>团队独立<br>使用的技术独立<br>部署独立<br>前后端分离<br>数据库分离  </p>
 <h2 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h2><h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><p>引入jar包spring-cloud-starter-netfix-eureka-server<br>在SpringBootApplication上加@EnableEurekaServer注解<br>配置yml文件</p>
 <pre class=" language-java"><code class="language-java">server<span class="token operator">:</span>
   port<span class="token operator">:</span> <span class="token number">10086</span>
@@ -481,11 +376,7 @@ spring<span class="token operator">:</span>
      service<span class="token operator">-</span>url<span class="token operator">:</span>
       defaultZone<span class="token operator">:</span> http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">10086</span><span class="token operator">/</span>eureka
 </code></pre>
-<h1 id="在客户端配置服务器心跳："><a href="#在客户端配置服务器心跳：" class="headerlink" title="在客户端配置服务器心跳："></a>在客户端配置服务器心跳：</h1><p>#每隔30s发送一次心跳<br>lease-renewal-interval-in-seconds: 30</p>
-<p>#90s无回复认为服务宕机,但不是立即清除，而是60s之后才清楚<br>lease-expiration-duration-in-seconds: 90</p>
-<h1 id="在客户端配置拉取服务列表的周期"><a href="#在客户端配置拉取服务列表的周期" class="headerlink" title="在客户端配置拉取服务列表的周期"></a>在客户端配置拉取服务列表的周期</h1><p>registry-fetch-interval-seconds: 3</p>
-<h1 id="Eureka的自我保护"><a href="#Eureka的自我保护" class="headerlink" title="Eureka的自我保护"></a>Eureka的自我保护</h1><p>当心跳超过30s比较多时 Eureka会统计，如果成功率低于85%时，会认为是网络不稳定，不剔除服务  </p>
-<h1 id="负载均衡-随机-轮询-哈希"><a href="#负载均衡-随机-轮询-哈希" class="headerlink" title="负载均衡=随机+轮询+哈希"></a>负载均衡=随机+轮询+哈希</h1><h2 id="Zuul服务网关"><a href="#Zuul服务网关" class="headerlink" title="Zuul服务网关"></a>Zuul服务网关</h2><p>在SpringBootapplication启动类的RestTemplate上加注解@EnableZuulProxy<br>配置yml文件 访问Zuul地址 再由Zuul转发到相应的服务器地址</p>
+<h2 id="Zuul服务网关"><a href="#Zuul服务网关" class="headerlink" title="Zuul服务网关"></a>Zuul服务网关</h2><p>在SpringBootapplication启动类的RestTemplate上加注解@EnableZuulProxy<br>配置yml文件 访问Zuul地址 再由Zuul转发到相应的服务器地址</p>
 <pre class=" language-java"><code class="language-java">eureka<span class="token operator">:</span>
   client<span class="token operator">:</span>
     service<span class="token operator">-</span>url<span class="token operator">:</span>
@@ -510,11 +401,7 @@ User user <span class="token operator">=</span> restTemplate<span class="token p
   ConnectionTimeOut<span class="token operator">:</span> <span class="token number">500</span>
   ReadTimeOut<span class="token operator">:</span> <span class="token number">2000</span>
 </code></pre>
-<h2 id="Feign服务调用"><a href="#Feign服务调用" class="headerlink" title="Feign服务调用"></a>Feign服务调用</h2><p>作用：在Ribbon的基础上升级，不用写请求的应用名加映射路径了 包含了Ribbon和Hystrix，所以当引入了Feign包就不需要引入Ribbon和Hystrix了<br>在SpringBootApplication启动类加入@EnableFeignClients注解<br>编写inteface文件 类上就加@FeignClient(“服务应用名”)  或@FeignClient(value = “user-service”,fallback = UserClientFallback.class) UserClientFallback.class必须实现UserClient接口<br>方法写好映射路径<br>在Controller文件注入这个interface即可使用，远程调用时直接interface的类名.interface的方法名即可<br>使用Feign需要手动开启Hystrix<br>如果有多个参数使用如 findById（@RequestParam HashMap map）即可</p>
-<pre><code>feign:
-  hystrix:
-    enabled: true
-</code></pre><h2 id="SpringCloud之Hystix熔断器"><a href="#SpringCloud之Hystix熔断器" class="headerlink" title="SpringCloud之Hystix熔断器"></a>SpringCloud之Hystix熔断器</h2><p>防止一个服务不可用引起的雪崩效应 A请求B 不成功 导致 需要A的C不成功 导致需要 C 的 D不成功 …..<br>占用服务器的有限连接，使连接数越来越少<br>解决：线程隔离 服务降级<br>给每个服务分配独立线程池，只会阻塞自己的线程 并设置超时时长，超过时长给用户返回错误信息，把连接断开  即服务降级<br>在SpringBootApplication启动类加入@SpringCloudApplication注解<br>在yml文件配置等待超时时长：<br>配置失败的信息处理：<br>在Controller文件的类上加@DefaultProperties(defaultFallback=”defaultFallback”),方法上架加@HystrixCommand（commonPropertoes={HystrixProperty(name =”execution.isolation.thread.timeoutInMilliseconds”,value=”3000”)}）注解<br>在Controller文件编写错误返回方法defaultFallback()<br>也可以全局配置而不是针对某一个类<br>在yml文件  </p>
+<h2 id="SpringCloud之Hystix熔断器"><a href="#SpringCloud之Hystix熔断器" class="headerlink" title="SpringCloud之Hystix熔断器"></a>SpringCloud之Hystix熔断器</h2><p>防止一个服务不可用引起的雪崩效应 A请求B 不成功 导致 需要A的C不成功 导致需要 C 的 D不成功 …..<br>占用服务器的有限连接，使连接数越来越少<br>解决：线程隔离 服务降级<br>给每个服务分配独立线程池，只会阻塞自己的线程 并设置超时时长，超过时长给用户返回错误信息，把连接断开  即服务降级<br>在SpringBootApplication启动类加入@SpringCloudApplication注解<br>在yml文件配置等待超时时长：<br>配置失败的信息处理：<br>在Controller文件的类上加@DefaultProperties(defaultFallback=”defaultFallback”),方法上架加@HystrixCommand（commonPropertoes={HystrixProperty(name =”execution.isolation.thread.timeoutInMilliseconds”,value=”3000”)}）注解<br>在Controller文件编写错误返回方法defaultFallback()<br>也可以全局配置而不是针对某一个类<br>在yml文件  </p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">hystrix</span><span class="token punctuation">:</span>
   <span class="token key atrule">command</span><span class="token punctuation">:</span>
     <span class="token key atrule">default</span><span class="token punctuation">:</span>

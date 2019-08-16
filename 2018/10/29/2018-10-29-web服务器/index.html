@@ -381,6 +381,7 @@
 <h3 id="tomcat容器是如何创建servlet类实例？用到了什么原理"><a href="#tomcat容器是如何创建servlet类实例？用到了什么原理" class="headerlink" title="tomcat容器是如何创建servlet类实例？用到了什么原理"></a><strong>tomcat容器是如何创建servlet类实例？用到了什么原理</strong></h3><p>当容器启动时，会读取在webapps目录下所有的web应用中的web.xml文件，然后对 xml文件进行解析，并读取servlet注册信息。然后，将每个应用中注册的servlet类都进行加载，并通过 反射的方式实例化。（有时候也是在第一次请求时实例化）<br>在servlet注册时加上<load-on-startup>1</load-on-startup>如果为正数，则在一开始就实例化，如果不写或为负数，则第一次请求实例化。</p>
 <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Nginx是一款轻量级的Web服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like协议下发行</p>
 <h1 id="Nginx-相对于-Apache-优点："><a href="#Nginx-相对于-Apache-优点：" class="headerlink" title="Nginx 相对于 Apache 优点："></a>Nginx 相对于 Apache 优点：</h1><p>1) 高并发响应，例如 处理静态文件并发 5w/s<br>2) 反向代理。（用于负载均衡）<br>3) 内存和 cpu 占用率低。（为 Apache 的 1/5-1/10）<br>4) 对后端服务有健康检查功能。<br>5) 支持 PHP cgi 方式和 fastcgi 方式。    </p>
+<h1 id="正向-反向代理"><a href="#正向-反向代理" class="headerlink" title="正向/反向代理"></a>正向/反向代理</h1><p>正向代理 客户端明确知道要访问的服务器地址<br>反向代理 客户端不知道要访问的服务器地址</p>
 <h1 id="Nginx与Apache高并发对比"><a href="#Nginx与Apache高并发对比" class="headerlink" title="Nginx与Apache高并发对比"></a>Nginx与Apache高并发对比</h1><p>Nginx 高并发采用 epoll 模型，异步非阻塞，而 Apache 采用的是select 模型<br>Select 特点：select 选择句柄的时候，是<font color="red" size="+2">遍历</font>所有句柄，获取到哪些句柄有事件通知，<font color="blue">效率低</font>。<br>epoll 的特点：epoll 对于句柄事件的选择<font color="pink">非遍历</font>，是事件响应触发的，就是句柄上事<br>件来就马上选择出来，不需要遍历整个句柄链表，因此效率高   </p>
 <h1 id="我是开心的分割线"><a href="#我是开心的分割线" class="headerlink" title="- - - - - -  - - - - - - - - - -我是开心的分割线  - - - - - - - - - -  - - - - - - -"></a>- - - - - -  - - - - - - - - - -我是开心的分割线  - - - - - - - - - -  - - - - - - -</h1><p>在传统的Web项目中，并发量小，用户使用的少。所以在低并发的情况下，用户可以直接访问tomcat服务器，然后tomcat服务器返回消息给用户。比如，我们上传图片：<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/20170612174630569.png" alt=""><br> 当然我们知道，为了解决并发，可以使用负载均衡：也就是我们多增加几个tomcat服务器。当用户访问的时候，请求可以提交到空闲的tomcat服务器上。<br> <img src="http://oostc.oss-cn-shanghai.aliyuncs.com/blog/20170612175104670.png" alt=""><br> 但是这种情况下可能会有一种这样的问题：上传图片操作。我们把图片上传到了tomcat1上了，当我们要访问这个图片的时候，tomcat1正好在工作，所以访问的请求就交给其他的tomcat操作，而tomcat之间的数据没有进行同步，所以就发生了我们要请求的图片找不到。<br>  为了解决这种情况，我们就想出了分布式。我们专门建立一个图片服务器，用来存储图片。这样当我们都把图片上传的时候，不管是哪个服务器接收到图片，都把图片上传到图片服务器。<br>图片服务器上需要安装一个http服务器，可以使用tomcat、apache、nginx。<br><img src="http://oostc.oss-cn-shanghai.aliyuncs.com/blog/20170612175553583.png" alt=""><br> 看到这里大家可能会问，既然我们要选择的是http服务器，为什么不继续使用tomcat，而要使用Nginx？<br>原因如下：nginx常用做静态内容服务和代理服务器（不是你FQ那个代理），直面外来请求转发给后面的应用服务（tomcat，django什么的），tomcat更多用来做做一个应用容器，让java web app跑在里面的东西，对应同级别的有jboss,jetty等东西。  </p>
 <h1 id="正向代理与反向代理"><a href="#正向代理与反向代理" class="headerlink" title="正向代理与反向代理"></a>正向代理与反向代理</h1><p>正向代理指的是类似于电脑发送请求 有路由器代理从客户端指定的url服务器取资源<br>反向代理指的是代理服务器接收客户端统一的url请求 并到有空闲不繁忙的服务器取资源（这里的服务器不固定）</p>
@@ -561,18 +562,18 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/10/29/redis笔记/">
+                <a href="/2018/10/29/java笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Redis笔记">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Java笔记">
                         
-                        <span class="card-title">Redis笔记</span>
+                        <span class="card-title">Java笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">redis内存级别的操作，存取快支持String、集合等数据类型支持事务数据库、缓存和消息中间件
-redis 持久化有几种方式rdb（redis database）和aof（append of file） 第一个时快照文件写入磁盘的 第二个</div>
+                    <div class="summary">Math.round(-1.5) 等于多少？四舍五入的函数，该结果为1
+java 中操作字符串都有哪些类String、StringBuffer、StringBuilderString是final类 StringBuffer是同步的 Stri</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -580,7 +581,7 @@ redis 持久化有几种方式rdb（redis database）和aof（append of file） 
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            redis
+                            java
                             
                         </span>
                     </div>
@@ -588,12 +589,8 @@ redis 持久化有几种方式rdb（redis database）和aof（append of file） 
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/redis/" target="_blank">
-                        <span class="chip bg-color">redis</span>
-                    </a>
-                    
-                    <a href="/tags/nosql数据库/" target="_blank">
-                        <span class="chip bg-color">nosql数据库</span>
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
@@ -607,19 +604,19 @@ redis 持久化有几种方式rdb（redis database）和aof（append of file） 
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/10/29/springmvc笔记/">
+                <a href="/2018/10/29/Servlet笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Springmvc笔记">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Servlet笔记">
                         
-                        <span class="card-title">Springmvc笔记</span>
+                        <span class="card-title">Servlet笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">什么是Spring MVCSpringMVC是基于java实现的通过MVC模式将视图层、控制层和数据层解耦的框架
-SpringMvc怎么和AJAX相互调用的？加入Jackson.jar
-注解原理都继承自annotation,其具体实现类是通</div>
+                    <div class="summary">Servlet简介Servlet之前是CGI即一个请求一个进程，巨慢，后来CGI使用池化技术，先初始化请求，但也治标不治本，最后才出现Servlet,单进程多线程
+内嵌servlet容器Tomcat jetty等
+获取存储在servlet上</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
@@ -627,7 +624,7 @@ SpringMvc怎么和AJAX相互调用的？加入Jackson.jar
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            springmvc
+                            Servlet_greenhand
                             
                         </span>
                     </div>
@@ -635,8 +632,8 @@ SpringMvc怎么和AJAX相互调用的？加入Jackson.jar
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/springmvc/" target="_blank">
-                        <span class="chip bg-color">springmvc</span>
+                    <a href="/tags/Servlet/" target="_blank">
+                        <span class="chip bg-color">Servlet</span>
                     </a>
                     
                 </div>

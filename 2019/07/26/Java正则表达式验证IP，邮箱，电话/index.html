@@ -561,7 +561,7 @@
                 </a>
                 <div class="card-content article-content">
                     <div class="summary">上锁就是修改对象头信息 成功则可以访问，不成功则阻塞（分为自旋锁和一直等待唤醒）解锁就是重置对象信息
-可重入锁synchronized是可重入的即在同一个对象中，一个sync方法可以直接读取其他sync方法 其他普通对象无法访问使用重入锁R</div>
+可重入锁synchronized是可重入的即在同一个对象中，没进入一次锁计数器加一，只有为0时其他对象才能进入，防止其他对象读取同一对象的</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-26
