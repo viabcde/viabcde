@@ -16,7 +16,7 @@
     <title>标签: shiro | Made-In-China</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
@@ -28,14 +28,14 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
-
-<header class="navbar-fixed">
+    <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper container">
+        <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
@@ -46,68 +46,80 @@
             </div>
             
 
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
-<ul class="right">
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
     
-    <li class="hide-on-med-and-down">
-        <a href="/" class="waves-effect waves-light">
-            
-            <i class="fa fa-home"></i>
-            
-            <span>首页</span>
-        </a>
-    </li>
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
     
-    <li class="hide-on-med-and-down">
-        <a href="/tags" class="waves-effect waves-light">
-            
-            <i class="fa fa-tags"></i>
-            
-            <span>标签</span>
-        </a>
-    </li>
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
     
-    <li class="hide-on-med-and-down">
-        <a href="/categories" class="waves-effect waves-light">
-            
-            <i class="fa fa-bookmark"></i>
-            
-            <span>分类</span>
-        </a>
-    </li>
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
     
-    <li class="hide-on-med-and-down">
-        <a href="/archives" class="waves-effect waves-light">
-            
-            <i class="fa fa-archive"></i>
-            
-            <span>归档</span>
-        </a>
-    </li>
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
     
-    <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
-            
-            <i class="fa fa-user-circle-o"></i>
-            
-            <span>关于</span>
-        </a>
-    </li>
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
     
-    <li class="hide-on-med-and-down">
-        <a href="/friends" class="waves-effect waves-light">
-            
-            <i class="fa fa-address-book"></i>
-            
-            <span>友情链接</span>
-        </a>
-    </li>
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
     
-    <li>
-        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
-        </a>
-    </li>
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
 </ul>
 
 <div id="mobile-nav" class="side-nav sidenav">
@@ -128,65 +140,77 @@
 
     <ul class="menu-list mobile-menu-list">
         
-        <li>
-            <a href="/" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-home"></i>
-                
-                首页
-            </a>
+<li class="m-nav-item">
+			
+				<a href="/" class="waves-effect waves-light">
+					
+					<i class="fa-fw fas fa-home"></i>
+					
+					首页
+				</a>
+          
         </li>
         
-        <li>
-            <a href="/tags" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-tags"></i>
-                
-                标签
-            </a>
+<li class="m-nav-item">
+			
+				<a href="/tags" class="waves-effect waves-light">
+					
+					<i class="fa-fw fas fa-tags"></i>
+					
+					标签
+				</a>
+          
         </li>
         
-        <li>
-            <a href="/categories" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-bookmark"></i>
-                
-                分类
-            </a>
+<li class="m-nav-item">
+			
+				<a href="/categories" class="waves-effect waves-light">
+					
+					<i class="fa-fw fas fa-bookmark"></i>
+					
+					分类
+				</a>
+          
         </li>
         
-        <li>
-            <a href="/archives" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-archive"></i>
-                
-                归档
-            </a>
+<li class="m-nav-item">
+			
+				<a href="/archives" class="waves-effect waves-light">
+					
+					<i class="fa-fw fas fa-archive"></i>
+					
+					归档
+				</a>
+          
         </li>
         
-        <li>
-            <a href="/about" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-user-circle-o"></i>
-                
-                关于
-            </a>
+<li class="m-nav-item">
+			
+				<a href="/about" class="waves-effect waves-light">
+					
+					<i class="fa-fw fas fa-user-circle"></i>
+					
+					关于
+				</a>
+          
         </li>
         
-        <li>
-            <a href="/friends" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-address-book"></i>
-                
-                友情链接
-            </a>
+<li class="m-nav-item">
+			
+				<a href="/friends" class="waves-effect waves-light">
+					
+					<i class="fa-fw fas fa-address-book"></i>
+					
+					友情链接
+				</a>
+          
         </li>
         
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/viacbde" class="waves-effect waves-light" target="_blank">
-                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            <a href="https://github.com/viabcde" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
         
@@ -241,7 +265,7 @@
     }
 </style>
 
-<a href="https://github.com/viacbde" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+<a href="https://github.com/viabcde" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewbox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
         <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
@@ -253,29 +277,44 @@
 
 </header>
 
-<div class="bg-cover pd-header about-cover">
+    <div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
                 
-                    Schrödinger
+                Schrödinger
                 
             </div>
 
             <div class="description center-align">
                 
-                    薛定谔的猫
+                <span id="typed"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+                <script>
+                    var typed = new Typed("#typed", {
+                        strings: ['从来没有真正的绝境, 只有心灵的迷途', 'Never really desperate, only the lost of the soul'],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
                 
             </div>
         </div>
     </div>
 </div>
+
+
 <script>
-// 每天切换 banner 图.  Switch banner image every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+    // 每天切换 banner 图.  Switch banner image every day.
+    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
 </script>
+
+
     </div>
 </div>
 
@@ -287,7 +326,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     <div class="card">
         <div class="card-content">
             <div class="tag-title center-align">
-                <i class="fa fa-tags"></i>&nbsp;&nbsp;文章标签
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
             </div>
             <div class="tag-chips">
                 
@@ -300,17 +339,17 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/野史/" title="野史: 1">
+                <a href="/tags/IDE/" title="IDE: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="野史" style="background-color: #F5EEF8;">野史
+                             chip-default " data-tagname="IDE" style="background-color: #F5EEF8;">IDE
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/IDE/" title="IDE: 1">
+                <a href="/tags/野史/" title="野史: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="IDE" style="background-color: #D5F5E3;">IDE
+                             chip-default " data-tagname="野史" style="background-color: #D5F5E3;">野史
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -324,17 +363,17 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/svn/" title="svn: 1">
+                <a href="/tags/UML/" title="UML: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="svn" style="background-color: #FEF9E7;">svn
+                             chip-default " data-tagname="UML" style="background-color: #FEF9E7;">UML
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/UML/" title="UML: 1">
+                <a href="/tags/svn/" title="svn: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="UML" style="background-color: #F8F9F9;">UML
+                             chip-default " data-tagname="svn" style="background-color: #F8F9F9;">svn
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -348,17 +387,17 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/sso/" title="sso: 1">
+                <a href="/tags/测试/" title="测试: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="sso" style="background-color: #D7BDE2;">sso
+                             chip-default " data-tagname="测试" style="background-color: #D7BDE2;">测试
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/测试/" title="测试: 1">
+                <a href="/tags/sso/" title="sso: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="测试" style="background-color: #A3E4D7;">测试
+                             chip-default " data-tagname="sso" style="background-color: #A3E4D7;">sso
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -388,6 +427,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
+                <a href="/tags/HTTP笔记/" title="HTTP笔记: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="HTTP笔记" style="background-color: #FFF;">HTTP笔记
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/Java正则表达式验证IP，邮箱，电话/" title="Java正则表达式验证IP，邮箱，电话: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default " data-tagname="Java正则表达式验证IP，邮箱，电话" style="background-color: #F9EBEA;">Java正则表达式验证IP，邮箱，电话
@@ -404,14 +451,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/HTTP笔记/" title="HTTP笔记: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="HTTP笔记" style="background-color: #FFF;">HTTP笔记
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/servlet/" title="servlet: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default " data-tagname="servlet" style="background-color: #E8F8F5;">servlet
@@ -420,17 +459,17 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/Socket/" title="Socket: 1">
+                <a href="/tags/Servlet/" title="Servlet: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="Socket" style="background-color: #F8C471;">Socket
+                             chip-default " data-tagname="Servlet" style="background-color: #D5F5E3;">Servlet
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/Servlet/" title="Servlet: 1">
+                <a href="/tags/Socket/" title="Socket: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="Servlet" style="background-color: #D5F5E3;">Servlet
+                             chip-default " data-tagname="Socket" style="background-color: #F8C471;">Socket
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -460,14 +499,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/java邮件发送/" title="java邮件发送: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="java邮件发送" style="background-color: #D5F5E3;">java邮件发送
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/java/" title="java: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default " data-tagname="java" style="background-color: #A3E4D7;">java
@@ -476,17 +507,17 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/jsp/" title="jsp: 1">
+                <a href="/tags/java邮件发送/" title="java邮件发送: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="jsp" style="background-color: #85C1E9;">jsp
+                             chip-default " data-tagname="java邮件发送" style="background-color: #D5F5E3;">java邮件发送
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/rabbitmq/" title="rabbitmq: 1">
+                <a href="/tags/jsp/" title="jsp: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="rabbitmq" style="background-color: #85C1E9;">rabbitmq
+                             chip-default " data-tagname="jsp" style="background-color: #85C1E9;">jsp
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -508,22 +539,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/springboot/" title="springboot: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="springboot" style="background-color: #82E0AA;">springboot
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/springmvc/" title="springmvc: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="springmvc" style="background-color: #A3E4D7;">springmvc
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/redis/" title="redis: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default " data-tagname="redis" style="background-color: #82E0AA;">redis
@@ -540,9 +555,25 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/数据库引擎/" title="数据库引擎: 1">
+                <a href="/tags/rabbitmq/" title="rabbitmq: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="数据库引擎" style="background-color: #F9EBEA;">数据库引擎
+                             chip-default " data-tagname="rabbitmq" style="background-color: #85C1E9;">rabbitmq
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/springboot/" title="springboot: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="springboot" style="background-color: #82E0AA;">springboot
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/springmvc/" title="springmvc: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="springmvc" style="background-color: #A3E4D7;">springmvc
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -580,17 +611,17 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/数据库索引/" title="数据库索引: 1">
+                <a href="/tags/数据库引擎/" title="数据库引擎: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="数据库索引" style="background-color: #F9E79F;">数据库索引
+                             chip-default " data-tagname="数据库引擎" style="background-color: #F9EBEA;">数据库引擎
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/锁/" title="锁: 1">
+                <a href="/tags/数据库索引/" title="数据库索引: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="锁" style="background-color: #E8F8F5;">锁
+                             chip-default " data-tagname="数据库索引" style="background-color: #F9E79F;">数据库索引
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -604,9 +635,25 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
+                <a href="/tags/锁/" title="锁: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="锁" style="background-color: #E8F8F5;">锁
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/shiro/" title="shiro: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-active " data-tagname="shiro" style="background-color: #D5F5E3;">shiro
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/试题/" title="试题: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="试题" style="background-color: #F9EBEA;">试题
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -628,26 +675,10 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/试题/" title="试题: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="试题" style="background-color: #F9EBEA;">试题
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/hadoop/" title="hadoop: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default " data-tagname="hadoop" style="background-color: #FFF;">hadoop
                         <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/基础知识/" title="基础知识: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="基础知识" style="background-color: #D5F5E3;">基础知识
-                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -664,6 +695,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     <span class="chip center-align waves-effect waves-light
                              chip-default " data-tagname="服务器" style="background-color: #F9EBEA;">服务器
                         <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/基础知识/" title="基础知识: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="基础知识" style="background-color: #D5F5E3;">基础知识
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -732,17 +771,17 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/project/" title="project: 1">
+                <a href="/tags/数据库/" title="数据库: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="project" style="background-color: #F8F9F9;">project
+                             chip-default " data-tagname="数据库" style="background-color: #F9E79F;">数据库
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/数据库/" title="数据库: 1">
+                <a href="/tags/project/" title="project: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="数据库" style="background-color: #F9E79F;">数据库
+                             chip-default " data-tagname="project" style="background-color: #F8F9F9;">project
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -772,7 +811,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Shiro学习">
+                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Shiro学习">
                             
                             <span class="card-title">Shiro学习</span>
                         </div>
@@ -780,11 +819,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     <div class="card-content article-content">
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-05
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fa fa-user fa-fw"></i>
+                                <i class="fas fa-user fa-fw"></i>
                                 Shiro学习
                                 
                             </span>
@@ -798,45 +837,112 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 </main>
 
 
-<footer class="page-footer bg-color">
+
+
+    <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
-
+            Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            <a href="http://viabcde.github.io" target="_blank">viacbde</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
             
-
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">152.4k</span>&nbsp;字
             
-			
-                <br>
-                
-                <span id="busuanzi_container_site_pv">
-                    <i class="fa fa-heart-o"></i>
-                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>
-                
-                
-                <span id="busuanzi_container_site_uv">
-                    <i class="fa fa-users"></i>
-                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
-                </span>
-                
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            <br>
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/viabcde" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
 
 
     <a href="mailto:437230257@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fa fa-envelope-open"></i>
+        <i class="fas fa-envelope-open"></i>
     </a>
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=437230257" class="tooltipped" data-tooltip="QQ联系我: 437230257" data-position="top" data-delay="50">
-        <i class="fa fa-qq"></i>
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=437230257" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 437230257" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
     </a>
 
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
 
 </div>
     </div>
@@ -845,11 +951,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 <div class="progress-bar"></div>
 
 
-<!-- 搜索遮罩框 -->
+    <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
             <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
         </div>
         <div id="searchResult"></div>
@@ -862,30 +968,83 @@ $(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
-<!-- 回到顶部按钮 -->
+    <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fa fa-angle-up"></i>
+        <i class="fas fa-arrow-up"></i>
     </a>
 </div>
 
 
-<script src="/libs/materialize/materialize.min.js"></script>
-<script src="/libs/masonry/masonry.pkgd.min.js"></script>
-<script src="/libs/aos/aos.js"></script>
-<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-<script src="/js/matery.js"></script>
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-
-    <script src="/libs/others/clicklove.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
+    <!-- Baidu Analytics -->
+
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
 
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: ""
+        });
+        daovoice('update');
+    </script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
 
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"left","width":100,"height":250},"mobile":{"show":true},"search":null,"path":"search.xml","field":"post","log":false});</script></body>
+
 </html>
