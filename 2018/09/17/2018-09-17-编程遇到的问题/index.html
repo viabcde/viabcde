@@ -2,9 +2,9 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java编程出现的错误对应的解决方法, viabcde">
+    <meta name="keywords" content="java编程出现的错误对应的解决方法, Hexo">
     <meta name="description" content="error: could not open  D:\java\jre1.8\lib\amd64\jvm.cfg解决方法：把java的环境变量%JAVA_HOME%/bin上移到最上面
 优化     
 查看网页源代码Ctrl+U
@@ -16,10 +16,10 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java编程出现的错误对应的解决方法 | Made-In-China</title>
+    <title>java编程出现的错误对应的解决方法 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
@@ -28,101 +28,94 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <style type="text/css">
         
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-    
+<meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
-    <header class="navbar-fixed">
+
+<header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Made-In-China</span>
+                    <span class="logo-span">Hexo</span>
                 </a>
             </div>
             
 
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
-  
-  <li class="hide-on-med-and-down nav-item">
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
     
-    <a href="/" class="waves-effect waves-light">
-      
-      <i class="fas fa-home" style="zoom: 0.6;"></i>
-      
-      <span>首页</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
     
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
     
-    <a href="/categories" class="waves-effect waves-light">
-      
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
     
-    <a href="/archives" class="waves-effect waves-light">
-      
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
-      
-      <span>归档</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
-  <li>
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
-    </a>
-  </li>
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
 </ul>
 
 <div id="mobile-nav" class="side-nav sidenav">
@@ -131,10 +124,10 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Made-In-China</div>
+        <div class="logo-name">Hexo</div>
         <div class="logo-desc">
             
-            薛定谔的猫
+            Never really desperate, only the lost of the soul.
             
         </div>
     </div>
@@ -143,77 +136,65 @@
 
     <ul class="menu-list mobile-menu-list">
         
-<li class="m-nav-item">
-			
-				<a href="/" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-home"></i>
-					
-					首页
-				</a>
-          
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
         </li>
         
-<li class="m-nav-item">
-			
-				<a href="/tags" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-tags"></i>
-					
-					标签
-				</a>
-          
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
         </li>
         
-<li class="m-nav-item">
-			
-				<a href="/categories" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-bookmark"></i>
-					
-					分类
-				</a>
-          
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
         </li>
         
-<li class="m-nav-item">
-			
-				<a href="/archives" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-archive"></i>
-					
-					归档
-				</a>
-          
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
         </li>
         
-<li class="m-nav-item">
-			
-				<a href="/about" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-user-circle"></i>
-					
-					关于
-				</a>
-          
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
         </li>
         
-<li class="m-nav-item">
-			
-				<a href="/friends" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-address-book"></i>
-					
-					友情链接
-				</a>
-          
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
         </li>
         
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/viabcde" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            <a href="https://github.com/viacbde" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
         
@@ -268,11 +249,14 @@
     }
 </style>
 
-<a href="https://github.com/viabcde" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewbox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+<a href="https://github.com/viacbde" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
         
@@ -280,7 +264,7 @@
 
 </header>
 
-    
+
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
@@ -297,13 +281,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
-    <div class="container" style="right: 0px;left: 0px;">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+    <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java编程出现的错误对应的解决方法
+                        java编程出现的错误对应的解决方法
                     </div>
                 </div>
             </div>
@@ -313,100 +297,10 @@
 
 
 
-
-<main class="post-container content">
+<main class="container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-<style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
-
-    #articleContent :focus {
-        outline: none;
-    }
-
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
-
-    .toc-widget {
-        padding-left: 20px;
-    }
-
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
-
-    #toc-content ol {
-        padding-left: 10px;
-    }
-
-    #toc-content ol li {
-        padding-left: 10px;
-    }
-
-    #toc-content .toc-link:hover {
-        color: #42b983;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
-
-    #toc-content .is-active-link {
-        color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
-    }
-
-    #floating-toc-btn {
-        position: fixed;
-        right: 15px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
-
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+    <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -415,7 +309,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/操作/">
+                            <a href="/tags/%E6%93%8D%E4%BD%9C/" target="_blank">
                                 <span class="chip bg-color">操作</span>
                             </a>
                         
@@ -425,9 +319,9 @@
                 <div class="col s5 right-align">
                     
                     <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/编程/" class="post-category">
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category" target="_blank">
                                 编程
                             </a>
                         
@@ -438,29 +332,15 @@
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2018-09-17
                 </div>
 
                 
-                    
-                    <div class="info-break-policy">
-                        <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.5k
-                    </div>
-                    
-
-                    
-                    <div class="info-break-policy">
-                        <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        10 分
-                    </div>
-                    
-                
 				
 				
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
@@ -470,27 +350,27 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="error-could-not-open-D-java-jre1-8-lib-amd64-jvm-cfg"><a href="#error-could-not-open-D-java-jre1-8-lib-amd64-jvm-cfg" class="headerlink" title="error: could not open  D:\java\jre1.8\lib\amd64\jvm.cfg"></a>error: could not open  D:\java\jre1.8\lib\amd64\jvm.cfg</h3><p>解决方法：把java的环境变量%JAVA_HOME%/bin上移到最上面</p>
-<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a><strong>优化</strong></h3><p><img src="https://github.com/54321decba/tu/blob/master/2018-09-17/优化1.png?raw=true" alt=""><br><img src="https://github.com/54321decba/tu/blob/master/2018-09-17/显示myeclipse占用的内存.png?raw=true" alt="">     </p>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a><strong>优化</strong></h3><p><img src="https://github.com/54321decba/tu/blob/master/2018-09-17/%E4%BC%98%E5%8C%961.png?raw=true"><br><img src="https://github.com/54321decba/tu/blob/master/2018-09-17/%E6%98%BE%E7%A4%BAmyeclipse%E5%8D%A0%E7%94%A8%E7%9A%84%E5%86%85%E5%AD%98.png?raw=true">     </p>
 <h3 id="查看网页源代码"><a href="#查看网页源代码" class="headerlink" title="查看网页源代码"></a><strong>查看网页源代码</strong></h3><p>Ctrl+U</p>
-<h3 id="测试浏览器是否支持html5访问"><a href="#测试浏览器是否支持html5访问" class="headerlink" title="测试浏览器是否支持html5访问"></a><strong>测试浏览器是否支持html5访问</strong></h3><p><a href="http://html5test.com" target="_blank" rel="noopener">http://html5test.com</a></p>
+<h3 id="测试浏览器是否支持html5访问"><a href="#测试浏览器是否支持html5访问" class="headerlink" title="测试浏览器是否支持html5访问"></a><strong>测试浏览器是否支持html5访问</strong></h3><p><a target="_blank" rel="noopener" href="http://html5test.com/">http://html5test.com</a></p>
 <h3 id="word封面加下划线"><a href="#word封面加下划线" class="headerlink" title="word封面加下划线"></a><strong>word封面加下划线</strong></h3><p> 打好字 ctrl+U 在字后面打空格自动生成下划线<br>在字前面打空格 选中所有空格 ctrl+U  </p>
-<h3 id="邮件服务器的搭建和客户端的安装"><a href="#邮件服务器的搭建和客户端的安装" class="headerlink" title="邮件服务器的搭建和客户端的安装"></a><strong>邮件服务器的搭建和客户端的安装</strong></h3><p>1.安装易邮服务器<br>2.修改自己的域名<br>工具—服务器设置—-修改单域名为自己定义的域名 这里为 shop.com<br>此后注册的账号为<a href="mailto:*@shop.com" target="_blank" rel="noopener">*@shop.com</a><br><img src="https://github.com/54321decba/tu/blob/master/blog/20180928194.png?raw=true" alt="enter description
-here"><br>3.安装foxmail<br>邮箱—-新建账户—- <a href="mailto:**@shop.com" target="_blank" rel="noopener">**@shop.com</a><br>接收邮件服务器设为 localhost<br>发送邮件服务器设为 loaclhost  </p>
+<h3 id="邮件服务器的搭建和客户端的安装"><a href="#邮件服务器的搭建和客户端的安装" class="headerlink" title="邮件服务器的搭建和客户端的安装"></a><strong>邮件服务器的搭建和客户端的安装</strong></h3><p>1.安装易邮服务器<br>2.修改自己的域名<br>工具—服务器设置—-修改单域名为自己定义的域名 这里为 shop.com<br>此后注册的账号为*@shop.com<br><img src="https://github.com/54321decba/tu/blob/master/blog/20180928194.png?raw=true" alt="enter description
+here"><br>3.安装foxmail<br>邮箱—-新建账户—- **@shop.com<br>接收邮件服务器设为 localhost<br>发送邮件服务器设为 loaclhost  </p>
 <h3 id="制作自定义桌面图标教程"><a href="#制作自定义桌面图标教程" class="headerlink" title="制作自定义桌面图标教程"></a><strong>制作自定义桌面图标教程</strong></h3><p>首先 图标要求是256<em>256d的 可以使用PS修改 步骤如下：<br>1.将文件导入PS中<br>2.安装Alt 点击背景<br>3.图像-&gt; 画布大小<br>修改宽高一致<br>4.魔棒工具去除背景<br>5.图像-&gt;图像大小 改为256</em>256<br>6.存储为png?raw=true<br>7.打开greenFish<br>8.导入该png?raw=true图片 直接存储为iso即可  </p>
 <h3 id="WIN10开机卡在了正在准备自动修复"><a href="#WIN10开机卡在了正在准备自动修复" class="headerlink" title="WIN10开机卡在了正在准备自动修复"></a><strong>WIN10开机卡在了正在准备自动修复</strong></h3><p>Win10系统启动到LOGO界面后，强制重启，反复3次左右，至到显示疑难解答，我们点击疑难解答进入；<br>选重置此点电脑。<br>接下来这里，我选择的删除所有内容。这里是准备要格式化系统分区C盘，如果想保留C盘内容建议选择另外一个选项，然后自己研究一下吧。之后出现的选项一定要选【仅限安装了windows驱动】 这个选项，另外一个貌似是整个硬盘格掉了。<br>最后选择初始化。就等着还原吧。对了。提前准备好网卡驱动！</p>
 <h3 id="计算机寻址范围："><a href="#计算机寻址范围：" class="headerlink" title="计算机寻址范围："></a><strong>计算机寻址范围：</strong></h3><p>指的是32位  2的32次方<br>64为 2的64次方  </p>
 <h3 id="关于磁盘"><a href="#关于磁盘" class="headerlink" title="关于磁盘"></a><strong>关于磁盘</strong></h3><p>磁盘中的凹槽每一个存放4kb的内存 当文件内存小与4kb 在磁盘依然是占用4kb的空间 如果文件超过了4kb 则占用8kb的空间 以此类推 每超过 即加4kb<br>存储数据不会每次读取到都存一次   而是先存到缓存中待存到足够大时再一次性存入磁盘<br>当对数据进行增加、删除、修改时 数据在磁盘上不连续 读取时通过指针串联读取<br>指针多次跳转会 毁磁盘  </p>
-<h3 id="配置java环境的原因"><a href="#配置java环境的原因" class="headerlink" title="配置java环境的原因"></a><strong>配置java环境的原因</strong></h3><p><img src="https://github.com/54321decba/tu/blob/master/2018-09-27/2018092705.png?raw=true" alt=""></p>
+<h3 id="配置java环境的原因"><a href="#配置java环境的原因" class="headerlink" title="配置java环境的原因"></a><strong>配置java环境的原因</strong></h3><p><img src="https://github.com/54321decba/tu/blob/master/2018-09-27/2018092705.png?raw=true"></p>
 <h3 id="整除"><a href="#整除" class="headerlink" title="整除"></a><strong>整除</strong></h3><p>如果整数a除以非零整数b，商为整数，余数为零<br>则a能被b整除    </p>
 <h2 id="关于后台传递数据正常，前端页面不显示的bug调试思路"><a href="#关于后台传递数据正常，前端页面不显示的bug调试思路" class="headerlink" title="关于后台传递数据正常，前端页面不显示的bug调试思路"></a>关于后台传递数据正常，前端页面不显示的bug调试思路</h2><p>第一步：在网页按F12—network—点击list.do—respone<br>发现数据能传递到页面，说明后台代码正常<br>第二步：看页面接收数据的代码，和实体的属性名称一致，也没有问题<br>最后在偶然情况下发现，实体类在自动生成setter、getter代码的时候出现bug，如下</p>
 <pre><code>public void setContent(String content) {
         Content = content;
-    }
-</code></pre><p>而不是正常的如下代码</p>
+    }</code></pre>
+<p>而不是正常的如下代码</p>
 <pre><code>public void setContent(String content) {
         this.Content = content;
-    }
-</code></pre><h3 id="java编译版本不匹配"><a href="#java编译版本不匹配" class="headerlink" title="java编译版本不匹配"></a><strong>java编译版本不匹配</strong></h3><p> 进入 windows—proferences—java–compiler设置编译出来的文件使用的格式是 1.7版本的 (设置成多少都行,只要兼容,并且与你项目的编译版本一直就可以,我这里统一设置成1.7)<br> 进入项目–properties—java Compiler 把项目编译版本也设置成 1.7<br> 进入项目–properties—Myeclipse—project Facets设置java文件的版本为 1.7，并打勾。   </p>
+    }</code></pre>
+<h3 id="java编译版本不匹配"><a href="#java编译版本不匹配" class="headerlink" title="java编译版本不匹配"></a><strong>java编译版本不匹配</strong></h3><p> 进入 windows—proferences—java–compiler设置编译出来的文件使用的格式是 1.7版本的 (设置成多少都行,只要兼容,并且与你项目的编译版本一直就可以,我这里统一设置成1.7)<br> 进入项目–properties—java Compiler 把项目编译版本也设置成 1.7<br> 进入项目–properties—Myeclipse—project Facets设置java文件的版本为 1.7，并打勾。   </p>
 <h3 id="Failed-to-execute-goal-org-apache-maven-plugins-maven-war-plugin-2-2-war-default-war"><a href="#Failed-to-execute-goal-org-apache-maven-plugins-maven-war-plugin-2-2-war-default-war" class="headerlink" title="Failed to execute goal org.apache.maven.plugins:maven-war-plugin:2.2:war (default-war)"></a><strong>Failed to execute goal org.apache.maven.plugins:maven-war-plugin:2.2:war (default-war)</strong></h3><p><strong>错误原因</strong><br>Maven默认会去src\main\webapp下去找web.xml，而我们项目经常会改为WebRoot目录代替src\main\webapp目录，那么我们就需要自己重新配置一下web.xml路径；<br>    pom.xml加入如下配置指定我们自己配置web.xml路径   </p>
 <pre><code>&lt;!-- 配置web.xml文件的配置 --&gt;
          &lt;plugin&gt;
@@ -503,26 +383,23 @@ here"><br>3.安装foxmail<br>邮箱—-新建账户—- <a href="mailto:**@shop.
                     &lt;!-- 指定jsp、js、css的路劲 --&gt; 
                     &lt;warSourceDirectory&gt;WebRoot&lt;/warSourceDirectory&gt;
                 &lt;/configuration&gt;
-            &lt;/plugin&gt;
-</code></pre><h3 id="Description-Resource-Path-Location-Type-Archive-for-required-library-‘E-maven-cangku-org-mybatis-mybatis-3-3-0-mybatis-3-3-0-jar’-in-project-‘SSMDemo’-cannot-be-read-or-is-not-a-valid-ZIP-file错误"><a href="#Description-Resource-Path-Location-Type-Archive-for-required-library-‘E-maven-cangku-org-mybatis-mybatis-3-3-0-mybatis-3-3-0-jar’-in-project-‘SSMDemo’-cannot-be-read-or-is-not-a-valid-ZIP-file错误" class="headerlink" title="Description Resource Path Location Type Archive for required library: ‘E:/maven/cangku/org/mybatis/mybatis/3.3.0/mybatis-3.3.0.jar’ in project ‘SSMDemo’ cannot be read or is not a valid ZIP file错误 "></a><strong>Description Resource Path Location Type Archive for required library: ‘E:/maven/cangku/org/mybatis/mybatis/3.3.0/mybatis-3.3.0.jar’ in project ‘SSMDemo’ cannot be read or is not a valid ZIP file错误 </strong></h3><p> 原因：网络问题，maven仓库有jar包，但不全<br> 解决方法：到maven仓库删除和这个jar有关的内容，alt+F5刷新，让maven重新下载完整的jar包即可</p>
+            &lt;/plugin&gt;</code></pre>
+<h3 id="Description-Resource-Path-Location-Type-Archive-for-required-library-‘E-maven-cangku-org-mybatis-mybatis-3-3-0-mybatis-3-3-0-jar’-in-project-‘SSMDemo’-cannot-be-read-or-is-not-a-valid-ZIP-file错误"><a href="#Description-Resource-Path-Location-Type-Archive-for-required-library-‘E-maven-cangku-org-mybatis-mybatis-3-3-0-mybatis-3-3-0-jar’-in-project-‘SSMDemo’-cannot-be-read-or-is-not-a-valid-ZIP-file错误" class="headerlink" title="**Description Resource Path Location Type Archive for required library: ‘E:/maven/cangku/org/mybatis/mybatis/3.3.0/mybatis-3.3.0.jar’ in project ‘SSMDemo’ cannot be read or is not a valid ZIP file错误 **"></a>**Description Resource Path Location Type Archive for required library: ‘E:/maven/cangku/org/mybatis/mybatis/3.3.0/mybatis-3.3.0.jar’ in project ‘SSMDemo’ cannot be read or is not a valid ZIP file错误 **</h3><p> 原因：网络问题，maven仓库有jar包，但不全<br> 解决方法：到maven仓库删除和这个jar有关的内容，alt+F5刷新，让maven重新下载完整的jar包即可</p>
 <h3 id="spring配置异常之Description-Resource-Path-Location-Type-Referenced-file-contains-errors-htt"><a href="#spring配置异常之Description-Resource-Path-Location-Type-Referenced-file-contains-errors-htt" class="headerlink" title="spring配置异常之Description Resource Path Location Type Referenced file contains errors (htt"></a><strong>spring配置异常之Description Resource Path Location Type Referenced file contains errors (htt</strong></h3><p> 解决方法：把spring-beans.xsd<br>改为spring-beans-3.1.xsd</p>
 <h3 id="maven-install时出现的警告"><a href="#maven-install时出现的警告" class="headerlink" title="maven install时出现的警告"></a><strong>maven install时出现的警告</strong></h3><p><strong>报错信息</strong>  </p>
 <pre><code>WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/E:/bos_repository/bos_repository/com/thoughtworks/xstream/xstream/1.3.1/xstream-1.3.1.jar) to field java.util.Properties.defaults
 WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
-</code></pre><p>原因：JDK版本过高，不影响项目运行</p>
+WARNING: All illegal access operations will be denied in a future release</code></pre>
+<p>原因：JDK版本过高，不影响项目运行</p>
 <h1 id="sun-misc-BASE64Encoder报错"><a href="#sun-misc-BASE64Encoder报错" class="headerlink" title="sun.misc.BASE64Encoder报错"></a>sun.misc.BASE64Encoder报错</h1><p>只需要在project build path中先移除JRE System Library，再重新添加库JRE System Library，接着重新编译后就一切正常了</p>
 <h1 id="SpringBoot遇到的问题"><a href="#SpringBoot遇到的问题" class="headerlink" title="SpringBoot遇到的问题"></a>SpringBoot遇到的问题</h1><h1 id="导入项目时出现cannot-find-value的问题"><a href="#导入项目时出现cannot-find-value的问题" class="headerlink" title="导入项目时出现cannot find value的问题"></a><strong>导入项目时出现cannot find value的问题</strong></h1><p>可能的问题：Maven仓库没配置好<br>如果Maven仓库没问题，右键项目—-Maven—reimport</p>
 <h2 id="端口占用问题"><a href="#端口占用问题" class="headerlink" title="端口占用问题"></a><strong>端口占用问题</strong></h2><p>运行独立jar包时可能会出现端口占用问题，springboot的内嵌tomcat的端口8080可能会被oracle (我就是)占用或者 tomcat（默认8080）占用    </p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a><strong>解决方法</strong></h2><p>重新配置内嵌tomcat的端口号步骤如下    </p>
-<ol>
-<li>在resource目录下新建application.properties文件（文件名一定要application.properties因为这个是默认的配置，如果文件名字不是这个则需要手动的添加识别）配置如下图<br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101015.png?raw=true" alt=""> </li>
-</ol>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a><strong>解决方法</strong></h2><p>重新配置内嵌tomcat的端口号步骤如下<br>1.&nbsp;&nbsp;&nbsp;在resource目录下新建application.properties文件（文件名一定要application.properties因为这个是默认的配置，如果文件名字不是这个则需要手动的添加识别）配置如下图<br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101015.png?raw=true"> </p>
 <h3 id="通过命令行设置属性值-启动的应用的端口号"><a href="#通过命令行设置属性值-启动的应用的端口号" class="headerlink" title="通过命令行设置属性值 启动的应用的端口号"></a><strong>通过命令行设置属性值 启动的应用的端口号</strong></h3><p>在命令行运行时，连续的两个减号–就是对application.properties中的属性值进行赋值的标识。<br>java -jar xxx.jar –server.port=8888命令，等价于我们在application.properties中添加属性server.port=8888</p>
 <p><strong>问题：</strong>通过命令行就能更改应用运行的参数很不安全<br><strong>解决方法：</strong>SpringBoot提供了屏蔽命令行访问属性的设置：SpringApplication.setAddCommandLineProperties(false)。 </p>
-<h3 id="编写SpringBoot-demo过程遇到的2个错误"><a href="#编写SpringBoot-demo过程遇到的2个错误" class="headerlink" title="编写SpringBoot demo过程遇到的2个错误"></a><strong>编写SpringBoot demo过程遇到的2个错误</strong></h3><p><strong>错误1</strong><br>创建完成后，如果项目报红色，(1).需要对项目右键-》属性-》Generate Deloyment Desriptor Stub。(2).项目右键-》Maven-》Update Project<br><strong>错误2</strong><br>运行后出现springboot A resource exists with a different case<br><img src="https://github.com/54321decba/tu/blob/master/201811/20181106.png?raw=true" alt=""><br>groupId 和artifactId 和项目名不一致，我这里项目名SpringBootDemo而pom文件中是springbootDemo，所以出现这个错误，修改如上图即可<br><strong>错误3</strong><br>spring boot javax/annotation/ManagedBean : Unsupported major.minor version 51.0<br>原因jdk版本的问题  ，maven自带的jar版本与javax的jar版本不符，我修改为1.6即可解决<br><strong>错误4</strong><br>Establishing SSL connection without server’s identity verification is not recommended<br><strong>解决方法</strong><br>MySQL 5.5.45+, 5.6.26+ and 5.7.6+ 这些版本的数据库需要手动指定SSL是否开启，所以原来的连接字符串：jdbc.url=jdbc:mysql://127.0.0.1:3306/test就不可以了。<br>解决：<br>需要在其后附加useSSL=true或false，使用新的连接字符串：jdbc.url=jdbc:mysql://127.0.0.1:3306/test&amp;useSSL=false问题就解决了</p>
+<h3 id="编写SpringBoot-demo过程遇到的2个错误"><a href="#编写SpringBoot-demo过程遇到的2个错误" class="headerlink" title="编写SpringBoot demo过程遇到的2个错误"></a><strong>编写SpringBoot demo过程遇到的2个错误</strong></h3><p><strong>错误1</strong><br>创建完成后，如果项目报红色，(1).需要对项目右键-》属性-》Generate Deloyment Desriptor Stub。(2).项目右键-》Maven-》Update Project<br><strong>错误2</strong><br>运行后出现springboot A resource exists with a different case<br><img src="https://github.com/54321decba/tu/blob/master/201811/20181106.png?raw=true"><br>groupId 和artifactId 和项目名不一致，我这里项目名SpringBootDemo而pom文件中是springbootDemo，所以出现这个错误，修改如上图即可<br><strong>错误3</strong><br>spring boot javax/annotation/ManagedBean : Unsupported major.minor version 51.0<br>原因jdk版本的问题  ，maven自带的jar版本与javax的jar版本不符，我修改为1.6即可解决<br><strong>错误4</strong><br>Establishing SSL connection without server’s identity verification is not recommended<br><strong>解决方法</strong><br>MySQL 5.5.45+, 5.6.26+ and 5.7.6+ 这些版本的数据库需要手动指定SSL是否开启，所以原来的连接字符串：jdbc.url=jdbc:mysql://127.0.0.1:3306/test就不可以了。<br>解决：<br>需要在其后附加useSSL=true或false，使用新的连接字符串：jdbc.url=jdbc:mysql://127.0.0.1:3306/test&amp;useSSL=false问题就解决了</p>
 <h3 id="Spring-Boot-启动报错Unable-to-start-ServletWebServerApplicationContext-due-to-missing-ServletWebServerFa"><a href="#Spring-Boot-启动报错Unable-to-start-ServletWebServerApplicationContext-due-to-missing-ServletWebServerFa" class="headerlink" title="Spring Boot 启动报错Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFa"></a><strong>Spring Boot 启动报错Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFa</strong></h3><p><strong>错误代码</strong> </p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>SpringApplication<span class="token punctuation">;</span>
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>autoconfigure<span class="token punctuation">.</span>SpringBootApplication<span class="token punctuation">;</span>
@@ -531,8 +408,7 @@ WARNING: All illegal access operations will be denied in a future release
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>HelloController<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>RequestMapping<span class="token punctuation">;</span>
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>RestController<span class="token punctuation">;</span>
 <span class="token annotation punctuation">@RestController</span>
@@ -541,23 +417,21 @@ WARNING: All illegal access operations will be denied in a future release
     <span class="token keyword">public</span> String <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token string">"Hello Spring Boot 2.0!"</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p><strong>原因：</strong><br>使用代码自动提示(Alt+/)时粗心了<code>SpringApplication.run(HelloController.class, args);</code><br>应该改为<code>SpringApplication.run(HelloApplication.class, args);</code></p>
 <h3 id="Springboot版本过低引起的"><a href="#Springboot版本过低引起的" class="headerlink" title="Springboot版本过低引起的"></a>Springboot版本过低引起的</h3><p>redis报错：Error processing condition on org.springframework.boot.autoconfigure.data.redis.RedisAutoCon<br>①换成高版本的，当时是1.4版本 所以低了 换成2.0.5<br>②具体做法</p>
 <pre class=" language-java"><code class="language-java">这个问题是由于springboot的版本问题。
 使用springboot <span class="token number">2</span><span class="token punctuation">.</span>x以上版本的时候，pom<span class="token punctuation">.</span>xml文件中
 <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>redis<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>version<span class="token operator">></span>RELEASE<span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-   <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>redis<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&lt;</span>version<span class="token operator">></span>RELEASE<span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
 应替换为
 <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>redis<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-</code></pre>
+<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>redis<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span></code></pre>
 <h2 id="当报错Failed-to-read-Class-Path-attribute-from-manifest-of-jar-file-C-Users-Administrator-m2-repository"><a href="#当报错Failed-to-read-Class-Path-attribute-from-manifest-of-jar-file-C-Users-Administrator-m2-repository" class="headerlink" title="当报错Failed to read Class-Path attribute from manifest of jar file:/C:/Users/Administrator/.m2/repository"></a>当报错Failed to read Class-Path attribute from manifest of jar file:/C:/Users/Administrator/.m2/repository</h2><p>到maven仓库将jar包删除再下载即可</p>
 <h2 id="导入项目：The-project-description-file-project-for-‘xxx’-is-missing"><a href="#导入项目：The-project-description-file-project-for-‘xxx’-is-missing" class="headerlink" title="导入项目：The project description file (.project) for ‘xxx’ is missing."></a>导入项目：The project description file (.project) for ‘xxx’ is missing.</h2><p>解决方法： 进入到workspace中，进入到workspace.metadata.plugins\org.eclipse.core.resources.projects  文件夹下，然后将李某不能打开的工程给删除了<br>restartmyeclipse即可解决<br>再不行的话就删了再新建maven moudule重新把src和pom复制一下手动导入吧（最稳的方法）</p>
 <h2 id="插入数据库中文乱码"><a href="#插入数据库中文乱码" class="headerlink" title="插入数据库中文乱码"></a>插入数据库中文乱码</h2><h3 id="传汉字到mysql数据库，显示问号的解决方法"><a href="#传汉字到mysql数据库，显示问号的解决方法" class="headerlink" title="传汉字到mysql数据库，显示问号的解决方法"></a>传汉字到mysql数据库，显示问号的解决方法</h3><p>1、检查jsp显示页面，检查jsp开头有没有设置UTF-8的字符集</p>
@@ -565,20 +439,35 @@ WARNING: All illegal access operations will be denied in a future release
 <span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html PUBLIC <span class="token string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="token string">"http://www.w3.org/TR/html4/loose.dtd"</span><span class="token operator">></span>
 <span class="token operator">&lt;</span>html<span class="token operator">></span>
 <span class="token operator">&lt;</span>head<span class="token operator">></span>
-<span class="token operator">&lt;</span>meta http<span class="token operator">-</span>equiv<span class="token operator">=</span><span class="token string">"Content-Type"</span> content<span class="token operator">=</span><span class="token string">"text/html; charset=UTF-8"</span><span class="token operator">></span>
-</code></pre>
+<span class="token operator">&lt;</span>meta http<span class="token operator">-</span>equiv<span class="token operator">=</span><span class="token string">"Content-Type"</span> content<span class="token operator">=</span><span class="token string">"text/html; charset=UTF-8"</span><span class="token operator">></span></code></pre>
 <p>2、检查后台逻辑代码<br>根据前台展示页面，找到后台代码，<br>一般设置编码有如下几种方式：<br>设置request</p>
-<pre class=" language-java"><code class="language-java">request<span class="token punctuation">.</span><span class="token function">setCharacterEncoding</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java">request<span class="token punctuation">.</span><span class="token function">setCharacterEncoding</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>设置response</p>
 <pre class=" language-java"><code class="language-java">response<span class="token punctuation">.</span><span class="token function">setCharacterEncoding</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 response<span class="token punctuation">.</span><span class="token function">setContentType</span><span class="token punctuation">(</span><span class="token string">"text/html;charset=UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-response<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">"Content-Type"</span><span class="token punctuation">,</span><span class="token string">"text/html;charset=UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>3、检查数据库字符集<br>mysql中可以设置数据库字符集，<br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101001.png?raw=true" alt=""><br>也可以设置表的字符集<br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101002.png?raw=true" alt=""><br>4、变更数据库URL<br>在连接数据库的URL属性中添加useUnicode=true&amp;characterEncoding=utf8<br>我直接添加的characterEncoding=utf8<br>最终解决了我的中文乱码问题</p>
-
+response<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">"Content-Type"</span><span class="token punctuation">,</span><span class="token string">"text/html;charset=UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>3、检查数据库字符集<br>mysql中可以设置数据库字符集，<br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101001.png?raw=true"><br>也可以设置表的字符集<br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101002.png?raw=true"><br>4、变更数据库URL<br>在连接数据库的URL属性中添加useUnicode=true&amp;characterEncoding=utf8<br>我直接添加的characterEncoding=utf8<br>最终解决了我的中文乱码问题</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
-            <hr>
+            <hr/>
 
             
             <style>
@@ -679,8 +568,8 @@ response<span class="token punctuation">.</span><span class="token function">set
     <!-- Modal Structure -->
     <div id="rewardModal" class="modal">
         <div class="modal-content">
-            <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">如果您是学生，请不要扫码</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -688,10 +577,10 @@ response<span class="token punctuation">.</span><span class="token function">set
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="如果您并非有点小钱">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="请不要扫码打赏">
                     </div>
                 </div>
             </div>
@@ -710,57 +599,47 @@ response<span class="token punctuation">.</span><span class="token function">set
 
 <div id="article-share">
     
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
-    
-
-    
-
 </div>
 
+<script src="/libs/share/js/social-share.min.js"></script>
 
-            
-
-    <div class="reprint" id="reprint-statement">
-        <p class="reprint-tip">
-            <i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;
-            <span>转载规则</span>
-        </p>
-        
-            <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">
-                    <img alt="" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
-                </a>
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="http://hellohero.51vip.biz" class="b-link-green">Hexo</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/09/17/2018-09-17-%E7%BC%96%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="b-link-green">java编程出现的错误对应的解决方法</a>
+                </p>
             </div>
-            <br>
-            <a href="/2018/09/17/2018-09-17-编程遇到的问题/">
-                    《Java编程出现的错误对应的解决方法》
-            </a> 由
-            <a href="http://viabcde.github.io">
-                bug
-            </a> 采用
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">
-                知识共享署名 4.0 国际许可协议
-            </a>进行许可。
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
-
         </div>
     </div>
 
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: null,
+        id: '2018-09-17T18-45-45',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
     
 
     
@@ -778,32 +657,28 @@ response<span class="token punctuation">.</span><span class="token function">set
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2018/09/18/2018-09-18-Linux/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Linux">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Linux">
                         
                         <span class="card-title">Linux</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Linux
-                        
-                    </div>
+                    <div class="summary">Linux内核的功能软/硬件、内存、文件系统GNU coreutils软件包由三部分构成：用以处理文件、操作文本、管理进程的工具GNU/Linux shell是一种特殊的交互式工具。它为用户提供了启动程序、管理文件系统中的文件以及运行在Li</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-09-18
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-18
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/编程/" class="post-category">
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category" target="_blank">
                                     编程
                                 </a>
                             
@@ -814,7 +689,7 @@ response<span class="token punctuation">.</span><span class="token function">set
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
+                    <a href="/tags/Linux/" target="_blank">
                         <span class="chip bg-color">Linux</span>
                     </a>
                     
@@ -826,33 +701,29 @@ response<span class="token punctuation">.</span><span class="token function">set
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/09/17/2018-09-17-面试/">
+                <a href="/2018/09/17/2018-09-17-%E9%9D%A2%E8%AF%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="未整理">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="未整理">
                         
                         <span class="card-title">未整理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            未整理
-                        
-                    </div>
+                    <div class="summary">纯jsp时代使用jsp接收前台数据并通过action=”registerDeal.jsp”跳转到其他的jsp去对数据进行处理好处：简单，只有jsp,数据库缺点：java逻辑全部都在jsp中，如果要用新的逻辑必须把java的逻辑按jsp重写一</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-17
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/编程/" class="post-category">
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category" target="_blank">
                                     编程
                                 </a>
                             
@@ -863,7 +734,7 @@ response<span class="token punctuation">.</span><span class="token function">set
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/试题/">
+                    <a href="/tags/%E8%AF%95%E9%A2%98/" target="_blank">
                         <span class="chip bg-color">试题</span>
                     </a>
                     
@@ -874,216 +745,58 @@ response<span class="token punctuation">.</span><span class="token function">set
         
     </div>
 </article>
-
 </div>
 
-
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
-
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).slideUp(500);
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).slideDown(500);
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
 
     
 
 </main>
 
 
-
-    <footer class="page-footer bg-color">
+<footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&nbsp;&copy;
-            <span id="year">年份</span>
-            <a href="http://viabcde.github.io" target="_blank">viacbde</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
-            <br>
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
             
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">152.4k</span>&nbsp;字
+
             
-            
-            
-            
-            
-            
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人
-            </span>
-            
-            <br>
-            <span id="sitetime">载入运行时间...</span>
-            <script>
-                function siteTime() {
-                    window.setTimeout("siteTime()", 1000);
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var startYear = "2019";
-                    var startMonth = "6";
-                    var startDate = "28";
-                    var startHour = "0";
-                    var startMinute = "0";
-                    var startSecond = "0";
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth() + 1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                    var diff = t2 - t1;
-                    var diffYears = Math.floor(diff / years);
-                    var diffDays = Math.floor((diff / days) - diffYears * 365);
-                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                        minutes);
-                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                        diffMinutes * minutes) / seconds);
-                    if (startYear == todayYear) {
-                        document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
-                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    } else {
-                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
-                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    }
-                }
-                setInterval(siteTime, 1000);
-            </script>
-            <br>
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/viabcde" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
 
 
     <a href="mailto:437230257@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
+        <i class="fa fa-envelope-open"></i>
     </a>
 
 
 
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=437230257" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 437230257" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=437230257" class="tooltipped" data-tooltip="QQ联系我: 437230257" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
     </a>
-
-
-
-
 
 
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
+        <i class="fa fa-rss"></i>
     </a>
-
 </div>
     </div>
 </footer>
@@ -1091,12 +804,13 @@ response<span class="token punctuation">.</span><span class="token function">set
 <div class="progress-bar"></div>
 
 
-    <!-- 搜索遮罩框 -->
+<!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
@@ -1108,83 +822,30 @@ $(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
-    <!-- 回到顶部按钮 -->
+<!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
+        <i class="fa fa-angle-up"></i>
     </a>
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-    <!-- Baidu Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <!-- Baidu Push -->
 
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
+    <script src="/libs/others/clicklove.js"></script>
 
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
-    
-    
+
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
 
-    
 
-    
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i["DaoVoiceObject"] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            a.charset = "utf-8";
-            m.parentNode.insertBefore(a, m)
-        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
-            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
-        daovoice('init', {
-            app_id: ""
-        });
-        daovoice('update');
-    </script>
-    
-
-    
-
-    
-
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
-    
-    
-
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"left","width":100,"height":250},"mobile":{"show":true},"search":null,"path":"search.xml","field":"post","log":false});</script></body>
-
+</body>
 </html>

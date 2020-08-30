@@ -2,9 +2,9 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hadoop, viabcde">
+    <meta name="keywords" content="hadoop, Hexo">
     <meta name="description" content="文件的每一行是一个键值对 ：第一行从0开始 hello a共占7个，再加回车也占1位，所以是8位；所以第二行从8开始，以此类推
 ETL数据从来源端经过抽取(extract)、交互转换(transform)、加载(load)至目的端的过程
 h">
@@ -15,10 +15,10 @@ h">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hadoop | Made-In-China</title>
+    <title>hadoop | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
@@ -27,101 +27,94 @@ h">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <style type="text/css">
         
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-    
+<meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
-    <header class="navbar-fixed">
+
+<header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Made-In-China</span>
+                    <span class="logo-span">Hexo</span>
                 </a>
             </div>
             
 
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
-  
-  <li class="hide-on-med-and-down nav-item">
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
     
-    <a href="/" class="waves-effect waves-light">
-      
-      <i class="fas fa-home" style="zoom: 0.6;"></i>
-      
-      <span>首页</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
     
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
     
-    <a href="/categories" class="waves-effect waves-light">
-      
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
     
-    <a href="/archives" class="waves-effect waves-light">
-      
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
-      
-      <span>归档</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
-  <li>
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
-    </a>
-  </li>
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
 </ul>
 
 <div id="mobile-nav" class="side-nav sidenav">
@@ -130,10 +123,10 @@ h">
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Made-In-China</div>
+        <div class="logo-name">Hexo</div>
         <div class="logo-desc">
             
-            薛定谔的猫
+            Never really desperate, only the lost of the soul.
             
         </div>
     </div>
@@ -142,77 +135,65 @@ h">
 
     <ul class="menu-list mobile-menu-list">
         
-<li class="m-nav-item">
-			
-				<a href="/" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-home"></i>
-					
-					首页
-				</a>
-          
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
         </li>
         
-<li class="m-nav-item">
-			
-				<a href="/tags" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-tags"></i>
-					
-					标签
-				</a>
-          
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
         </li>
         
-<li class="m-nav-item">
-			
-				<a href="/categories" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-bookmark"></i>
-					
-					分类
-				</a>
-          
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
         </li>
         
-<li class="m-nav-item">
-			
-				<a href="/archives" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-archive"></i>
-					
-					归档
-				</a>
-          
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
         </li>
         
-<li class="m-nav-item">
-			
-				<a href="/about" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-user-circle"></i>
-					
-					关于
-				</a>
-          
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
         </li>
         
-<li class="m-nav-item">
-			
-				<a href="/friends" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-address-book"></i>
-					
-					友情链接
-				</a>
-          
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
         </li>
         
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/viabcde" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            <a href="https://github.com/viacbde" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
         
@@ -267,11 +248,14 @@ h">
     }
 </style>
 
-<a href="https://github.com/viabcde" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewbox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+<a href="https://github.com/viacbde" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
         
@@ -279,7 +263,7 @@ h">
 
 </header>
 
-    
+
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
@@ -296,13 +280,13 @@ h">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
-    <div class="container" style="right: 0px;left: 0px;">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.gif')">
+    <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hadoop
+                        hadoop
                     </div>
                 </div>
             </div>
@@ -312,100 +296,10 @@ h">
 
 
 
-
-<main class="post-container content">
+<main class="container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-<style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
-
-    #articleContent :focus {
-        outline: none;
-    }
-
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
-
-    .toc-widget {
-        padding-left: 20px;
-    }
-
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
-
-    #toc-content ol {
-        padding-left: 10px;
-    }
-
-    #toc-content ol li {
-        padding-left: 10px;
-    }
-
-    #toc-content .toc-link:hover {
-        color: #42b983;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
-
-    #toc-content .is-active-link {
-        color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
-    }
-
-    #floating-toc-btn {
-        position: fixed;
-        right: 15px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
-
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+    <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -414,7 +308,7 @@ h">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hadoop/">
+                            <a href="/tags/hadoop/" target="_blank">
                                 <span class="chip bg-color">hadoop</span>
                             </a>
                         
@@ -424,9 +318,9 @@ h">
                 <div class="col s5 right-align">
                     
                     <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/编程/" class="post-category">
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category" target="_blank">
                                 编程
                             </a>
                         
@@ -437,29 +331,15 @@ h">
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2018-10-08
                 </div>
 
                 
-                    
-                    <div class="info-break-policy">
-                        <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.9k
-                    </div>
-                    
-
-                    
-                    <div class="info-break-policy">
-                        <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        8 分
-                    </div>
-                    
-                
 				
 				
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
@@ -468,7 +348,7 @@ h">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="https://github.com/54321decba/tu/blob/master/2018-10-08/2018100801.png?raw=true" alt=""><br>文件的每一行是一个键值对 ：<br>第一行从0开始 hello a共占7个，再加回车也占1位，所以是8位；<br>所以第二行从8开始，以此类推</p>
+                <p><img src="https://github.com/54321decba/tu/blob/master/2018-10-08/2018100801.png?raw=true"><br>文件的每一行是一个键值对 ：<br>第一行从0开始 hello a共占7个，再加回车也占1位，所以是8位；<br>所以第二行从8开始，以此类推</p>
 <h3 id="ETL"><a href="#ETL" class="headerlink" title="ETL"></a><strong>ETL</strong></h3><p>数据从来源端经过抽取(extract)、交互转换(transform)、加载(load)至目的端的过程</p>
 <h3 id="hadoop生态圈"><a href="#hadoop生态圈" class="headerlink" title="hadoop生态圈"></a><strong>hadoop生态圈</strong></h3><p><img src="https://github.com/54321decba/tu/blob/master/2018-10-08/2018100802.png?raw=true" alt="enter description here">  </p>
 <h3 id="一次性启动hadoop所有服务"><a href="#一次性启动hadoop所有服务" class="headerlink" title="一次性启动hadoop所有服务"></a><strong>一次性启动hadoop所有服务</strong></h3><p>start-all.sh</p>
@@ -482,8 +362,7 @@ h">
 <h3 id="查看hdfs目录下的文件-1"><a href="#查看hdfs目录下的文件-1" class="headerlink" title="查看hdfs目录下的文件"></a><strong>查看hdfs目录下的文件</strong></h3><p>hdfs dfs -ls /</p>
 <h3 id="查看dfs管理命令注释"><a href="#查看dfs管理命令注释" class="headerlink" title="查看dfs管理命令注释"></a><strong>查看dfs管理命令注释</strong></h3><p>hadoop dfsadmin -help</p>
 <h3 id="访问某一文件如tmp受限"><a href="#访问某一文件如tmp受限" class="headerlink" title="访问某一文件如tmp受限"></a><strong>访问某一文件如tmp受限</strong></h3><p>解决方法：Hadoopdfs chmod -R 755   /tmp</p>
-<h2 id="Linux-环境下安装Eclipse"><a href="#Linux-环境下安装Eclipse" class="headerlink" title="Linux 环境下安装Eclipse"></a><strong>Linux 环境下安装Eclipse</strong></h2><h3 id="上传-eclipse-java-mars-2-llinux-gtk-X86-64-tar-gz到目录-soft下"><a href="#上传-eclipse-java-mars-2-llinux-gtk-X86-64-tar-gz到目录-soft下" class="headerlink" title="上传 eclipse-java-mars-2-llinux-gtk-X86_64.tar.gz到目录/soft下"></a><strong>上传 eclipse-java-mars-2-llinux-gtk-X86_64.tar.gz到目录/soft下</strong></h3><h3 id="解压到-usr"><a href="#解压到-usr" class="headerlink" title="解压到/usr"></a><strong>解压到/usr</strong></h3><p>tar -zxvf eclipse-java-mars-2-linux-gtk-X86_64.tar.gz   -C/usr</p>
-<p>##</p>
+<h2 id="Linux-环境下安装Eclipse"><a href="#Linux-环境下安装Eclipse" class="headerlink" title="Linux 环境下安装Eclipse"></a><strong>Linux 环境下安装Eclipse</strong></h2><h3 id="上传-eclipse-java-mars-2-llinux-gtk-X86-64-tar-gz到目录-soft下"><a href="#上传-eclipse-java-mars-2-llinux-gtk-X86-64-tar-gz到目录-soft下" class="headerlink" title="上传 eclipse-java-mars-2-llinux-gtk-X86_64.tar.gz到目录/soft下"></a><strong>上传 eclipse-java-mars-2-llinux-gtk-X86_64.tar.gz到目录/soft下</strong></h3><h3 id="解压到-usr"><a href="#解压到-usr" class="headerlink" title="解压到/usr"></a><strong>解压到/usr</strong></h3><p>tar -zxvf eclipse-java-mars-2-linux-gtk-X86_64.tar.gz   -C/usr<br>##</p>
 <h3 id="进入hadoop目录"><a href="#进入hadoop目录" class="headerlink" title="进入hadoop目录"></a><strong>进入hadoop目录</strong></h3><p>cd $HADOOP_HOME/share/hadoop/hdfs</p>
 <h3 id="拷贝jar到hadoop工程的lib下"><a href="#拷贝jar到hadoop工程的lib下" class="headerlink" title="拷贝jar到hadoop工程的lib下"></a><strong>拷贝jar到hadoop工程的lib下</strong></h3><p>cp hadoop-hdfs-2.4.1.jar   /root/workspace/hadoop/lib/</p>
 <h3 id="将hadoop目录lib下的jar拷贝到java-工程的lib下"><a href="#将hadoop目录lib下的jar拷贝到java-工程的lib下" class="headerlink" title="将hadoop目录lib下的jar拷贝到java 工程的lib下"></a><strong>将hadoop目录lib下的jar拷贝到java 工程的lib下</strong></h3><p>cd $HADOOP_HOME/share/hadoop/hdfs/lib/<br>cp /root/workspace/hadoop/lib/</p>
@@ -492,11 +371,11 @@ h">
 <h3 id="上传大文件，将目录-soft下的jdk7u79-linux-x64-tar-gz上传到hdfs目录下"><a href="#上传大文件，将目录-soft下的jdk7u79-linux-x64-tar-gz上传到hdfs目录下" class="headerlink" title="上传大文件，将目录/soft下的jdk7u79-linux-x64.tar.gz上传到hdfs目录下"></a><strong>上传大文件，将目录/soft下的jdk7u79-linux-x64.tar.gz上传到hdfs目录下</strong></h3><p>hadoop fs  -put/soft/jdk7u79-linux-x64.tar.gz  /<br>查看是否上传成功：hadoop fs -ls  /</p>
 <h3 id="查看hadoop-dataNode信息"><a href="#查看hadoop-dataNode信息" class="headerlink" title="查看hadoop dataNode信息"></a><strong>查看hadoop dataNode信息</strong></h3><p>cd /simple/hadoop-2.4.1/hdfs/data/current/BP*/current/finalized<br>ls -lrt<br><img src="https://github.com/54321decba/tu/blob/master/201811/20181110.png?raw=true" alt="enter description here"><br><img src="https://github.com/54321decba/tu/blob/master/201811/20181111.png?raw=true" alt="enter description here">  </p>
 <h1 id="Hadoop-修改Linux的ip地址"><a href="#Hadoop-修改Linux的ip地址" class="headerlink" title="Hadoop-修改Linux的ip地址"></a>Hadoop-修改Linux的ip地址</h1><p>修改ifcfg-eth0文件即可<br>该文件路径：/etc/sysconfig/network-scripts/ifcfg-eth0  </p>
-<h3 id="方法一：图形化设置IP"><a href="#方法一：图形化设置IP" class="headerlink" title="方法一：图形化设置IP"></a><strong>方法一：图形化设置IP</strong></h3><p>①auto eth0代表第一张物理网卡，如果是eth1就代表第二张网卡<br>点击并编辑它<br><img src="https://github.com/54321decba/tu/blob/master/201812/1.png?raw=true" alt=""><br>②修改IPv4的设置 method（网卡配置方式选择manual即手动配置的意思）<br>添加IP192.168.0.202  子网掩码：255.255.255.0 网关：192.168.0.1<br><img src="https://github.com/54321decba/tu/blob/master/201812/2.png?raw=true" alt=""><br>IP地址分为网络号和主机号2个域的原因：IP数据包在网络传输时，是基于网络而非基于主机，这样即简化了路由表，有能快速定位目标主机所在网络<br>子网掩码的作用：外部网络号通过与子网掩码进行与运算，可以判断与本机网络号是否处于同一个网络<br>网关：192.168.0.1 外部的网络IP<br>本机IP:192.168.0.202,即192.168.0.1的子网，该子网内的主机IP通过与子网掩码与运算来判断是否可以直接相连<br><img src="https://github.com/54321decba/tu/blob/master/201812/3.png?raw=true" alt=""> </p>
-<h3 id="方法二：修改配置文件方式设置IP"><a href="#方法二：修改配置文件方式设置IP" class="headerlink" title="方法二：修改配置文件方式设置IP"></a><strong>方法二：修改配置文件方式设置IP</strong></h3><p>打开终端<br><img src="https://github.com/54321decba/tu/blob/master/201812/4.png?raw=true" alt=""><br>cd /etc/sysconfig/network-scripts<br><img src="https://github.com/54321decba/tu/blob/master/201812/5.png?raw=true" alt=""><br>vim ifcfg-eth0<br><img src="https://github.com/54321decba/tu/blob/master/201812/6.png?raw=true" alt=""><br>修改hwaddr(硬件物理地址)<br>ipaddr(IP地址)<br>netmask(子网掩码)<br>gateway(网关)<br><img src="https://github.com/54321decba/tu/blob/master/201812/7.png?raw=true" alt=""> </p>
-<h3 id="查看配置结果"><a href="#查看配置结果" class="headerlink" title="查看配置结果"></a><strong>查看配置结果</strong></h3><p>ifconfig<br><img src="https://github.com/54321decba/tu/blob/master/201812/8.png?raw=true" alt=""> </p>
-<h1 id="修改主机名和映射关系"><a href="#修改主机名和映射关系" class="headerlink" title="修改主机名和映射关系"></a>修改主机名和映射关系</h1><h3 id="通过计算机名映射到IP地址"><a href="#通过计算机名映射到IP地址" class="headerlink" title="通过计算机名映射到IP地址"></a><strong>通过计算机名映射到IP地址</strong></h3><p>修改主机名，只需要修改network文件即可<br>①<strong>打开终端</strong><br>右键，open in terminal<br>cd /etc/sysconfig  vim network<br><img src="https://github.com/54321decba/tu/blob/master/201812/9.png?raw=true" alt=""><br>②修改内容如下<br><img src="https://github.com/54321decba/tu/blob/master/201812/10.png?raw=true" alt=""><br>修改映射关系，只需要修改host文件即可<br>vim /etc/hosts 修改如下<br><img src="https://github.com/54321decba/tu/blob/master/201812/11.png?raw=true" alt=""><br><strong>注意：重启才能生效</strong><br><img src="https://github.com/54321decba/tu/blob/master/201812/12.png?raw=true" alt=""> </p>
-<h1 id="Hadoop伪分布式配置与测试"><a href="#Hadoop伪分布式配置与测试" class="headerlink" title="Hadoop伪分布式配置与测试"></a>Hadoop伪分布式配置与测试</h1><p>①解压Hadoop的压缩包<br>cd /simple<br>tar -zxvf /simple/soft/hadoop-2.4.1.tar.gz -C /simple/<br>②为hadoop配置好jdk<br>cd /simple/hadoop-2.4.1/etc/hadoop/<br>vi hadoop-env.sh<br>增加内容如下<br>export JAVA_HOME=/simple/jdk1.7.0_79<br><img src="https://github.com/54321decba/tu/blob/master/201812/14.png?raw=true" alt=""><br>③指定hdfs的缺省名称及缺省路径地址和运行时产生文件的存储目录<br>只需要hadoop目录下的core-site.xml文件即可</p>
+<h3 id="方法一：图形化设置IP"><a href="#方法一：图形化设置IP" class="headerlink" title="方法一：图形化设置IP"></a><strong>方法一：图形化设置IP</strong></h3><p>①auto eth0代表第一张物理网卡，如果是eth1就代表第二张网卡<br>点击并编辑它<br><img src="https://github.com/54321decba/tu/blob/master/201812/1.png?raw=true"><br>②修改IPv4的设置 method（网卡配置方式选择manual即手动配置的意思）<br>添加IP192.168.0.202  子网掩码：255.255.255.0 网关：192.168.0.1<br><img src="https://github.com/54321decba/tu/blob/master/201812/2.png?raw=true"><br>IP地址分为网络号和主机号2个域的原因：IP数据包在网络传输时，是基于网络而非基于主机，这样即简化了路由表，有能快速定位目标主机所在网络<br>子网掩码的作用：外部网络号通过与子网掩码进行与运算，可以判断与本机网络号是否处于同一个网络<br>网关：192.168.0.1 外部的网络IP<br>本机IP:192.168.0.202,即192.168.0.1的子网，该子网内的主机IP通过与子网掩码与运算来判断是否可以直接相连<br><img src="https://github.com/54321decba/tu/blob/master/201812/3.png?raw=true"> </p>
+<h3 id="方法二：修改配置文件方式设置IP"><a href="#方法二：修改配置文件方式设置IP" class="headerlink" title="方法二：修改配置文件方式设置IP"></a><strong>方法二：修改配置文件方式设置IP</strong></h3><p>打开终端<br><img src="https://github.com/54321decba/tu/blob/master/201812/4.png?raw=true"><br>cd /etc/sysconfig/network-scripts<br><img src="https://github.com/54321decba/tu/blob/master/201812/5.png?raw=true"><br>vim ifcfg-eth0<br><img src="https://github.com/54321decba/tu/blob/master/201812/6.png?raw=true"><br>修改hwaddr(硬件物理地址)<br>ipaddr(IP地址)<br>netmask(子网掩码)<br>gateway(网关)<br><img src="https://github.com/54321decba/tu/blob/master/201812/7.png?raw=true"> </p>
+<h3 id="查看配置结果"><a href="#查看配置结果" class="headerlink" title="查看配置结果"></a><strong>查看配置结果</strong></h3><p>ifconfig<br><img src="https://github.com/54321decba/tu/blob/master/201812/8.png?raw=true"> </p>
+<h1 id="修改主机名和映射关系"><a href="#修改主机名和映射关系" class="headerlink" title="修改主机名和映射关系"></a>修改主机名和映射关系</h1><h3 id="通过计算机名映射到IP地址"><a href="#通过计算机名映射到IP地址" class="headerlink" title="通过计算机名映射到IP地址"></a><strong>通过计算机名映射到IP地址</strong></h3><p>修改主机名，只需要修改network文件即可<br>①<strong>打开终端</strong><br>右键，open in terminal<br>cd /etc/sysconfig  vim network<br><img src="https://github.com/54321decba/tu/blob/master/201812/9.png?raw=true"><br>②修改内容如下<br><img src="https://github.com/54321decba/tu/blob/master/201812/10.png?raw=true"><br>修改映射关系，只需要修改host文件即可<br>vim /etc/hosts 修改如下<br><img src="https://github.com/54321decba/tu/blob/master/201812/11.png?raw=true"><br><strong>注意：重启才能生效</strong><br><img src="https://github.com/54321decba/tu/blob/master/201812/12.png?raw=true"> </p>
+<h1 id="Hadoop伪分布式配置与测试"><a href="#Hadoop伪分布式配置与测试" class="headerlink" title="Hadoop伪分布式配置与测试"></a>Hadoop伪分布式配置与测试</h1><p>①解压Hadoop的压缩包<br>cd /simple<br>tar -zxvf /simple/soft/hadoop-2.4.1.tar.gz -C /simple/<br>②为hadoop配置好jdk<br>cd /simple/hadoop-2.4.1/etc/hadoop/<br>vi hadoop-env.sh<br>增加内容如下<br>export JAVA_HOME=/simple/jdk1.7.0_79<br><img src="https://github.com/54321decba/tu/blob/master/201812/14.png?raw=true"><br>③指定hdfs的缺省名称及缺省路径地址和运行时产生文件的存储目录<br>只需要hadoop目录下的core-site.xml文件即可</p>
 <pre><code>&lt;!--缺省名称--&gt;
 &lt;property&gt;
     &lt;name&gt;fs.default.name&lt;/name&gt;
@@ -513,8 +392,8 @@ h">
 &lt;property&gt;
     &lt;name&gt;fs.tmp.dir&lt;/name&gt;
     &lt;value&gt;/simple/hadoop-2.4.1/tmp&lt;/value&gt;
-&lt;/property&gt;
-</code></pre><p>④制定HDFS副本的数量，名称和数据的存储路径<br>只需要修改hadoop目录下的hdfs-site.xml文件即可</p>
+&lt;/property&gt;</code></pre>
+<p>④制定HDFS副本的数量，名称和数据的存储路径<br>只需要修改hadoop目录下的hdfs-site.xml文件即可</p>
 <pre><code>&lt;!-- 副本数量--&gt;
 &lt;property&gt;
     &lt;name&gt;dfs.replication&lt;/name&gt;
@@ -532,15 +411,15 @@ h">
     &lt;name&gt;dfs.data.dir&lt;/name&gt;
     &lt;value&gt;/simple/hadoop-2.4.1/hdfs/data&lt;/value&gt;
 &lt;/property&gt;
-
-</code></pre><p>⑤修改文件名称并指定mapred运行在yarn上<br>mv mapred-site.xml.template mapred-site.xml<br>vi mapred.xml修改如下  </p>
+</code></pre>
+<p>⑤修改文件名称并指定mapred运行在yarn上<br>mv mapred-site.xml.template mapred-site.xml<br>vi mapred.xml修改如下  </p>
 <pre><code>&lt;!-- 指定mr运行在yarn上--&gt;
 &lt;property&gt;
     &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
     &lt;value&gt;yarn&lt;/value&gt;
 &lt;/property&gt;
-
-</code></pre><p>⑥指定yarn的老大（ResourceManager）的地址 和reducer获取数据的方式<br>修改yarn-site.xml文件即可<br>vi yarn-site.xml  </p>
+</code></pre>
+<p>⑥指定yarn的老大（ResourceManager）的地址 和reducer获取数据的方式<br>修改yarn-site.xml文件即可<br>vi yarn-site.xml  </p>
 <pre><code>&lt;!-- 指定ResourceManager的地址--&gt;
 &lt;property&gt;
     &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
@@ -552,22 +431,40 @@ h">
     &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
     &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
 &lt;/property&gt;
-
-</code></pre><p>最后，为hadoop配置环境变量<br>修改profile文件即可<br>vi /etc/profile 修改如下<br>HADOOP_HOME=/simple/hadoop-2.4.1<br>export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH<br><img src="https://github.com/54321decba/tu/blob/master/201812/15.png?raw=true" alt=""><br>更新配置文件即可生效  source /etc/profile  </p>
+</code></pre>
+<p>最后，为hadoop配置环境变量<br>修改profile文件即可<br>vi /etc/profile 修改如下<br>HADOOP_HOME=/simple/hadoop-2.4.1<br>export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH<br><img src="https://github.com/54321decba/tu/blob/master/201812/15.png?raw=true"><br>更新配置文件即可生效  source /etc/profile  </p>
 <h3 id="格式化namenode"><a href="#格式化namenode" class="headerlink" title="格式化namenode"></a>格式化namenode</h3><p>hdfs namenode -format<br>或者<br>hadoop namenode -format  </p>
 <h3 id="启动hadoop"><a href="#启动hadoop" class="headerlink" title="启动hadoop"></a>启动hadoop</h3><p>start-dfs.sh  </p>
 <h3 id="启动yarn"><a href="#启动yarn" class="headerlink" title="启动yarn"></a>启动yarn</h3><p>start-yarn.sh</p>
-<h3 id="查看以上是否正常启动"><a href="#查看以上是否正常启动" class="headerlink" title="查看以上是否正常启动"></a>查看以上是否正常启动</h3><p>jps 非正常则stop-all.sh然后重新启动  —–jps jvm process status<br><img src="https://github.com/54321decba/tu/blob/master/201812/16.png?raw=true" alt="">      </p>
-<h3 id="测试hdfs和yarn"><a href="#测试hdfs和yarn" class="headerlink" title="测试hdfs和yarn"></a>测试hdfs和yarn</h3><p><img src="https://github.com/54321decba/tu/blob/master/201812/17.png?raw=true" alt=""><br><img src="https://github.com/54321decba/tu/blob/master/201812/18.png?raw=true" alt="">      </p>
-<h1 id="SSH免密登录"><a href="#SSH免密登录" class="headerlink" title="SSH免密登录"></a>SSH免密登录</h1><p>A发送原始字符串–B公钥加密返回—A私钥解密—A发送字符串<br>B前后字符串比较一致则true  B的公钥是A给的<br>①生产ssh免密登录的密钥<br>ce ~/.ssh<br>ssh-keygen -t rsa 4个回车即可生成<br>②将公钥copy到免密登录的机器（这里copy到自己的机器）<br>ssh-cpoy-id simple02<br><img src="https://github.com/54321decba/tu/blob/master/201812/19.png?raw=true" alt=""><br>③首次登录远程主机<br>ssh simple02<br>第一次需要密码，以后都不用密码</p>
-<h1 id="Linux系统JDK的配置"><a href="#Linux系统JDK的配置" class="headerlink" title="Linux系统JDK的配置"></a>Linux系统JDK的配置</h1><p>①解压JDK的压缩包<br>cd /simple<br>tar -zxvf /simple/soft/jdk-7u79-linux-x64.tar.gz -C /simple/<br>②配置JDK环境变量<br>修改profile文件即可<br>vim /etc/profile<br>加入以下内容<br>JAVA_HOME=/simple/jdk1.7.0_79<br>export PATH=$JAVA_HOME/bin:$PATH<br><img src="https://github.com/54321decba/tu/blob/master/201812/13.png?raw=true" alt=""><br>注意：编辑完成后要刷新配置才能生效  source /etc/profile<br>创建Hello.java文件：touch Hello.java<br>打开编辑文件：vim Hello.java<br>编译和运行与在windows上操作一样  </p>
+<h3 id="查看以上是否正常启动"><a href="#查看以上是否正常启动" class="headerlink" title="查看以上是否正常启动"></a>查看以上是否正常启动</h3><p>jps 非正常则stop-all.sh然后重新启动  —–jps jvm process status<br><img src="https://github.com/54321decba/tu/blob/master/201812/16.png?raw=true">      </p>
+<h3 id="测试hdfs和yarn"><a href="#测试hdfs和yarn" class="headerlink" title="测试hdfs和yarn"></a>测试hdfs和yarn</h3><p><img src="https://github.com/54321decba/tu/blob/master/201812/17.png?raw=true"><br><img src="https://github.com/54321decba/tu/blob/master/201812/18.png?raw=true">      </p>
+<h1 id="SSH免密登录"><a href="#SSH免密登录" class="headerlink" title="SSH免密登录"></a>SSH免密登录</h1><p>A发送原始字符串–B公钥加密返回—A私钥解密—A发送字符串<br>B前后字符串比较一致则true  B的公钥是A给的<br>①生产ssh免密登录的密钥<br>ce ~/.ssh<br>ssh-keygen -t rsa 4个回车即可生成<br>②将公钥copy到免密登录的机器（这里copy到自己的机器）<br>ssh-cpoy-id simple02<br><img src="https://github.com/54321decba/tu/blob/master/201812/19.png?raw=true"><br>③首次登录远程主机<br>ssh simple02<br>第一次需要密码，以后都不用密码</p>
+<h1 id="Linux系统JDK的配置"><a href="#Linux系统JDK的配置" class="headerlink" title="Linux系统JDK的配置"></a>Linux系统JDK的配置</h1><p>①解压JDK的压缩包<br>cd /simple<br>tar -zxvf /simple/soft/jdk-7u79-linux-x64.tar.gz -C /simple/<br>②配置JDK环境变量<br>修改profile文件即可<br>vim /etc/profile<br>加入以下内容<br>JAVA_HOME=/simple/jdk1.7.0_79<br>export PATH=$JAVA_HOME/bin:$PATH<br><img src="https://github.com/54321decba/tu/blob/master/201812/13.png?raw=true"><br>注意：编辑完成后要刷新配置才能生效  source /etc/profile<br>创建Hello.java文件：touch Hello.java<br>打开编辑文件：vim Hello.java<br>编译和运行与在windows上操作一样  </p>
 <h1 id="shell基本命令"><a href="#shell基本命令" class="headerlink" title="shell基本命令"></a>shell基本命令</h1><h2 id="启动hdfs"><a href="#启动hdfs" class="headerlink" title="启动hdfs"></a><strong>启动hdfs</strong></h2><p>start-dfs.sh  </p>
 <h2 id="查看hdfs是否启动"><a href="#查看hdfs是否启动" class="headerlink" title="查看hdfs是否启动"></a><strong>查看hdfs是否启动</strong></h2><p>jps   </p>
 <h2 id="查看shell命令的解释"><a href="#查看shell命令的解释" class="headerlink" title="查看shell命令的解释"></a><strong>查看shell命令的解释</strong></h2><p>hdfs dfs -help  </p>
-<h2 id="本地上传文件到hdfs根目录"><a href="#本地上传文件到hdfs根目录" class="headerlink" title="本地上传文件到hdfs根目录"></a><strong>本地上传文件到hdfs根目录</strong></h2><p>创建文件<br>touch  /simple/1.txt<br>查看并编辑<code>hdfs dfs -cat  /simple/1.txt</code><br>上传到hdfs根目录hdfs dfs -put /simple/1.txt   /<br>在本地修改1.txt后将其merge到hdfs<br>hdfs dfs -appebdToFile   /simple/1.txt   /1.txt<br>删除hdfs的目录类型的文件aa  <code>hdfs dfs -rmr  /aa</code><br>查看hdfs上的文件<code>hdfs dfs -cat /1.txt</code><br>获取hdfs上的文件<code>hdfs dfs -get /1.txt  /simple/1.txt</code><br>hdfs创建目录<code>hdfs dfs -mkdir -p   /aa/bb</code><br>在hdfs创建文件<code>hdfs dfs -touchz   /1.txt</code><br>hdfs上的文件移动<code>hdfs dfs -mv /1.txt  /2.txt</code><br>查看根目录下的所有文件<code>hdsf dfs -ls  /</code><br>把本地文件移动到hdfs<code>hdfs dfs -moveFromLocal   /simple/1.txt   /aa</code><br>修改文件或文件夹所属的用户组<code>hdfs dfs -chgrp -R root  /</code><br>改变文件的权限<code>hdfs dfs -chmod -R 777  /</code><br>改变文件的所有者<code>hdfs dfs -chown -R root:supergroup  /</code><br>查看所有属于管理者的命令<code>hadoop dfsamin -help</code></p>
-
+<h2 id="本地上传文件到hdfs根目录"><a href="#本地上传文件到hdfs根目录" class="headerlink" title="本地上传文件到hdfs根目录"></a><strong>本地上传文件到hdfs根目录</strong></h2><p>创建文件<br>touch  /simple/1.txt<br>查看并编辑<code>hdfs dfs -cat  /simple/1.txt   </code><br>上传到hdfs根目录hdfs dfs -put /simple/1.txt   /<br>在本地修改1.txt后将其merge到hdfs<br>hdfs dfs -appebdToFile   /simple/1.txt   /1.txt<br>删除hdfs的目录类型的文件aa  <code>hdfs dfs -rmr  /aa</code><br>查看hdfs上的文件<code>hdfs dfs -cat /1.txt</code><br>获取hdfs上的文件<code>hdfs dfs -get /1.txt  /simple/1.txt </code><br>hdfs创建目录<code>hdfs dfs -mkdir -p   /aa/bb</code><br>在hdfs创建文件<code>hdfs dfs -touchz   /1.txt</code><br>hdfs上的文件移动<code>hdfs dfs -mv /1.txt  /2.txt</code><br>查看根目录下的所有文件<code>hdsf dfs -ls  /</code><br>把本地文件移动到hdfs<code>hdfs dfs -moveFromLocal   /simple/1.txt   /aa</code><br>修改文件或文件夹所属的用户组<code>hdfs dfs -chgrp -R root  /</code><br>改变文件的权限<code>hdfs dfs -chmod -R 777  /</code><br>改变文件的所有者<code>hdfs dfs -chown -R root:supergroup  /</code><br>查看所有属于管理者的命令<code>hadoop dfsamin -help</code></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
-            <hr>
+            <hr/>
 
             
             <style>
@@ -668,8 +565,8 @@ h">
     <!-- Modal Structure -->
     <div id="rewardModal" class="modal">
         <div class="modal-content">
-            <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">如果您是学生，请不要扫码</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -677,10 +574,10 @@ h">
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="如果您并非有点小钱">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="请不要扫码打赏">
                     </div>
                 </div>
             </div>
@@ -699,57 +596,47 @@ h">
 
 <div id="article-share">
     
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
-    
-
-    
-
 </div>
 
+<script src="/libs/share/js/social-share.min.js"></script>
 
-            
-
-    <div class="reprint" id="reprint-statement">
-        <p class="reprint-tip">
-            <i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;
-            <span>转载规则</span>
-        </p>
-        
-            <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">
-                    <img alt="" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
-                </a>
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="http://hellohero.51vip.biz" class="b-link-green">Hexo</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/10/08/2018-10-08-hadoop/" class="b-link-green">hadoop</a>
+                </p>
             </div>
-            <br>
-            <a href="/2018/10/08/2018-10-08-hadoop/">
-                    《Hadoop》
-            </a> 由
-            <a href="http://viabcde.github.io">
-                hadoop
-            </a> 采用
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">
-                知识共享署名 4.0 国际许可协议
-            </a>进行许可。
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
-
         </div>
     </div>
 
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: null,
+        id: '2018-10-08T18-38-45',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
     
 
     
@@ -767,32 +654,29 @@ h">
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2018/10/28/2018-10-28-Docker/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Docker">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Docker">
                         
                         <span class="card-title">Docker</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            启动docker systemctl start docker
-                        
-                    </div>
+                    <div class="summary">容器和虚拟机容器：服务器之间互相隔离，可以有一样的端口虚拟机：可能会有冲突，如果修改虚拟机中的文件可能导致另一个服务宕机，可以有一样服务器，当端口不能一样
+Docker的三个概念ImageDocker 镜像和java的类类似，不可改动，只有</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-10-28
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-28
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/编程/" class="post-category">
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category" target="_blank">
                                     编程
                                 </a>
                             
@@ -803,7 +687,7 @@ h">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Docker/">
+                    <a href="/tags/Docker/" target="_blank">
                         <span class="chip bg-color">Docker</span>
                     </a>
                     
@@ -815,33 +699,31 @@ h">
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2018/09/28/2018-09-28-Maven/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Maven">
+                        <img src="/medias/featureimages/2.gif" class="responsive-img" alt="Maven">
                         
                         <span class="card-title">Maven</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            maven
-                        
-                    </div>
+                    <div class="summary">Maven库可以到这里下载jar包http://repo2.maven.org/maven2/
+可以到这里复制jar包的pom代码http://mvnrepository.com/
+安装配置Maven及其仓库maven程序安装的环境准备1.</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-28
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-28
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/编程/" class="post-category">
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category" target="_blank">
                                     编程
                                 </a>
                             
@@ -852,7 +734,7 @@ h">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Maven/">
+                    <a href="/tags/Maven/" target="_blank">
                         <span class="chip bg-color">Maven</span>
                     </a>
                     
@@ -863,216 +745,58 @@ h">
         
     </div>
 </article>
-
 </div>
 
-
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
-
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).slideUp(500);
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).slideDown(500);
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
 
     
 
 </main>
 
 
-
-    <footer class="page-footer bg-color">
+<footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&nbsp;&copy;
-            <span id="year">年份</span>
-            <a href="http://viabcde.github.io" target="_blank">viacbde</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
-            <br>
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
             
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">152.4k</span>&nbsp;字
+
             
-            
-            
-            
-            
-            
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人
-            </span>
-            
-            <br>
-            <span id="sitetime">载入运行时间...</span>
-            <script>
-                function siteTime() {
-                    window.setTimeout("siteTime()", 1000);
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var startYear = "2019";
-                    var startMonth = "6";
-                    var startDate = "28";
-                    var startHour = "0";
-                    var startMinute = "0";
-                    var startSecond = "0";
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth() + 1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                    var diff = t2 - t1;
-                    var diffYears = Math.floor(diff / years);
-                    var diffDays = Math.floor((diff / days) - diffYears * 365);
-                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                        minutes);
-                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                        diffMinutes * minutes) / seconds);
-                    if (startYear == todayYear) {
-                        document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
-                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    } else {
-                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
-                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    }
-                }
-                setInterval(siteTime, 1000);
-            </script>
-            <br>
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/viabcde" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
 
 
     <a href="mailto:437230257@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
+        <i class="fa fa-envelope-open"></i>
     </a>
 
 
 
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=437230257" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 437230257" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=437230257" class="tooltipped" data-tooltip="QQ联系我: 437230257" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
     </a>
-
-
-
-
 
 
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
+        <i class="fa fa-rss"></i>
     </a>
-
 </div>
     </div>
 </footer>
@@ -1080,12 +804,13 @@ h">
 <div class="progress-bar"></div>
 
 
-    <!-- 搜索遮罩框 -->
+<!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
@@ -1097,83 +822,30 @@ $(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
-    <!-- 回到顶部按钮 -->
+<!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
+        <i class="fa fa-angle-up"></i>
     </a>
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-    <!-- Baidu Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <!-- Baidu Push -->
 
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
+    <script src="/libs/others/clicklove.js"></script>
 
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
-    
-    
+
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
 
-    
 
-    
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i["DaoVoiceObject"] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            a.charset = "utf-8";
-            m.parentNode.insertBefore(a, m)
-        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
-            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
-        daovoice('init', {
-            app_id: ""
-        });
-        daovoice('update');
-    </script>
-    
-
-    
-
-    
-
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
-    
-    
-
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"left","width":100,"height":250},"mobile":{"show":true},"search":null,"path":"search.xml","field":"post","log":false});</script></body>
-
+</body>
 </html>

@@ -2,9 +2,9 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Shiro学习, viabcde">
+    <meta name="keywords" content="Shiro学习, Hexo">
     <meta name="description" content="&amp;lt;!-- shiro的过滤器 --&gt;
     &amp;lt;filter&gt;
         &amp;lt;filter-name&gt;shiroFilter&amp;lt;/filter-name&gt;
@@ -16,10 +16,10 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Shiro学习 | Made-In-China</title>
+    <title>Shiro学习 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
@@ -28,101 +28,94 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <style type="text/css">
         
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-    
+<meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
-    <header class="navbar-fixed">
+
+<header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Made-In-China</span>
+                    <span class="logo-span">Hexo</span>
                 </a>
             </div>
             
 
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
-  
-  <li class="hide-on-med-and-down nav-item">
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
     
-    <a href="/" class="waves-effect waves-light">
-      
-      <i class="fas fa-home" style="zoom: 0.6;"></i>
-      
-      <span>首页</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
     
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
     
-    <a href="/categories" class="waves-effect waves-light">
-      
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
     
-    <a href="/archives" class="waves-effect waves-light">
-      
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
-      
-      <span>归档</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
-  <li>
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
-    </a>
-  </li>
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
 </ul>
 
 <div id="mobile-nav" class="side-nav sidenav">
@@ -131,10 +124,10 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Made-In-China</div>
+        <div class="logo-name">Hexo</div>
         <div class="logo-desc">
             
-            薛定谔的猫
+            Never really desperate, only the lost of the soul.
             
         </div>
     </div>
@@ -143,77 +136,65 @@
 
     <ul class="menu-list mobile-menu-list">
         
-<li class="m-nav-item">
-			
-				<a href="/" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-home"></i>
-					
-					首页
-				</a>
-          
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
         </li>
         
-<li class="m-nav-item">
-			
-				<a href="/tags" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-tags"></i>
-					
-					标签
-				</a>
-          
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
         </li>
         
-<li class="m-nav-item">
-			
-				<a href="/categories" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-bookmark"></i>
-					
-					分类
-				</a>
-          
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
         </li>
         
-<li class="m-nav-item">
-			
-				<a href="/archives" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-archive"></i>
-					
-					归档
-				</a>
-          
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
         </li>
         
-<li class="m-nav-item">
-			
-				<a href="/about" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-user-circle"></i>
-					
-					关于
-				</a>
-          
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
         </li>
         
-<li class="m-nav-item">
-			
-				<a href="/friends" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-address-book"></i>
-					
-					友情链接
-				</a>
-          
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
         </li>
         
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/viabcde" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            <a href="https://github.com/viacbde" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
         
@@ -268,11 +249,14 @@
     }
 </style>
 
-<a href="https://github.com/viabcde" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewbox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+<a href="https://github.com/viacbde" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
         
@@ -280,7 +264,7 @@
 
 </header>
 
-    
+
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
@@ -297,8 +281,8 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
-    <div class="container" style="right: 0px;left: 0px;">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
@@ -313,100 +297,10 @@
 
 
 
-
-<main class="post-container content">
+<main class="container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-<style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
-
-    #articleContent :focus {
-        outline: none;
-    }
-
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
-
-    .toc-widget {
-        padding-left: 20px;
-    }
-
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
-
-    #toc-content ol {
-        padding-left: 10px;
-    }
-
-    #toc-content ol li {
-        padding-left: 10px;
-    }
-
-    #toc-content .toc-link:hover {
-        color: #42b983;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
-
-    #toc-content .is-active-link {
-        color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
-    }
-
-    #floating-toc-btn {
-        position: fixed;
-        right: 15px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
-
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+    <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -415,7 +309,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/shiro/">
+                            <a href="/tags/shiro/" target="_blank">
                                 <span class="chip bg-color">shiro</span>
                             </a>
                         
@@ -429,29 +323,15 @@
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2018-09-05
                 </div>
 
                 
-                    
-                    <div class="info-break-policy">
-                        <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.3k
-                    </div>
-                    
-
-                    
-                    <div class="info-break-policy">
-                        <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        9 分
-                    </div>
-                    
-                
 				
 				
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
@@ -472,8 +352,7 @@
     <span class="token operator">&lt;</span>filter<span class="token operator">-</span>mapping<span class="token operator">></span>
         <span class="token operator">&lt;</span>filter<span class="token operator">-</span>name<span class="token operator">></span>shiroFilter<span class="token operator">&lt;</span><span class="token operator">/</span>filter<span class="token operator">-</span>name<span class="token operator">></span>
         <span class="token operator">&lt;</span>url<span class="token operator">-</span>pattern<span class="token operator">></span><span class="token operator">/</span><span class="token operator">*</span><span class="token operator">&lt;</span><span class="token operator">/</span>url<span class="token operator">-</span>pattern<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>filter<span class="token operator">-</span>mapping<span class="token operator">></span>
-</code></pre>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>filter<span class="token operator">-</span>mapping<span class="token operator">></span></code></pre>
 <p>ApacheShiro是一个功能强大且易于使用的Java安全框架，提供了认证，授权，加密，和会话管理。</p>
 <p>Shiro有三大核心组件：</p>
 <p><font size="3" color="red">Subject：</font>即当前用户，在权限管理的应用程序里往往需要知道谁能够操作什么，谁拥有操作该程序的权利，shiro中则需要通过Subject来提供基础的当前用户信息，Subject 不仅仅代表某个用户，与当前应用交互的任何东西都是Subject，如网络爬虫等。所有的Subject都要绑定到SecurityManager上，与Subject的交互实际上是被转换为与SecurityManager的交互。</p>
@@ -489,9 +368,8 @@
         User user<span class="token operator">=</span> <span class="token punctuation">(</span>User<span class="token punctuation">)</span> subject<span class="token punctuation">.</span><span class="token function">getPrincipal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         session<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">,</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token string">"index"</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-</code></pre>
-<p>#<br>需要配置SecurityManager  </p>
+    <span class="token punctuation">}</span></code></pre>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>需要配置SecurityManager  </p>
 <pre class=" language-java"><code class="language-java">    <span class="token annotation punctuation">@Bean</span>
     <span class="token keyword">public</span> SecurityManager <span class="token function">securityManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         DefaultWebSecurityManager securityManager <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultWebSecurityManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -503,8 +381,7 @@
         securityManager<span class="token punctuation">.</span><span class="token function">setCacheManager</span><span class="token punctuation">(</span><span class="token function">cacheManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         securityManager<span class="token punctuation">.</span><span class="token function">setSessionManager</span><span class="token punctuation">(</span><span class="token function">sessionManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> securityManager<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-</code></pre>
+    <span class="token punctuation">}</span></code></pre>
 <p>登录的 url<br>登录成功后跳转的 url<br>未授权 url<br>设置免认证 url<br>配置退出过滤器，其中具体的退出代码 Shiro已经替我们实现了<br>除上以外所有 url都必须认证通过才可以访问，未通过认证自动访问 LoginUrl</p>
 <pre class=" language-java"><code class="language-java"> <span class="token keyword">public</span> ShiroFilterFactoryBean <span class="token function">shiroFilterFactoryBean</span><span class="token punctuation">(</span>SecurityManager securityManager<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         ShiroFilterFactoryBean shiroFilterFactoryBean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ShiroFilterFactoryBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        
@@ -535,8 +412,7 @@
         shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token function">setFilterChainDefinitionMap</span><span class="token punctuation">(</span>filterChainDefinitionMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token keyword">return</span> shiroFilterFactoryBean<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-</code></pre>
+    <span class="token punctuation">}</span></code></pre>
 <h1 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h1><p>subject.login会将登录验证处理委托给SecurityManager，SecurityManager会找到注入进来的认证realm接口的实现类，然后进行认证逻辑处理，并返回一个认证结果</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">protected</span> AuthenticationInfo <span class="token function">doGetAuthenticationInfo</span><span class="token punctuation">(</span>AuthenticationToken token<span class="token punctuation">)</span> <span class="token keyword">throws</span> AuthenticationException <span class="token punctuation">{</span>
 
@@ -554,8 +430,7 @@
         <span class="token keyword">if</span> <span class="token punctuation">(</span>User<span class="token punctuation">.</span>STATUS_LOCK<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token function">getStatus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
             <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">LockedAccountException</span><span class="token punctuation">(</span><span class="token string">"账号已被锁定,请联系管理员！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">SimpleAuthenticationInfo</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span> password<span class="token punctuation">,</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-</code></pre>
+    <span class="token punctuation">}</span></code></pre>
 <h3 id="shiro身份验证"><a href="#shiro身份验证" class="headerlink" title="shiro身份验证"></a>shiro身份验证</h3><p>在shiro中，用户需要提供principals （身份）和credentials（证明）给shiro，从而应用能验证用户身份：<br>principals：身份，即主体的标识属性，可以是任何东西，如用户名、邮箱等，唯一即可。一个主体可以有多个principals，但只有一个Primary principals，一般是用户名/密码/手机号。<br>credentials：证明/凭证，即只有主体知道的安全值，如密码/数字证书等。<br>最常见的principals和credentials组合就是用户名/密码了。<br>例如在AuthenticationToken 就只提供了两个方法，分别获取身份和凭证。AuthenticationToken 的使用的实现一般就是UsernamePasswordToken，但是可以自定义实现，例如JWT token。</p>
 <h1 id="授权"><a href="#授权" class="headerlink" title="授权　　　　　　"></a>授权　　　　　　</h1><p>Shiro 支持三种方式的授权：<br>编程式：通过写if/else 授权代码块完成：</p>
 <pre class=" language-java"><code class="language-java">Subject subject <span class="token operator">=</span> SecurityUtils<span class="token punctuation">.</span><span class="token function">getSubject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -563,19 +438,16 @@
 <span class="token comment" spellcheck="true">//有权限</span>
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
 <span class="token comment" spellcheck="true">//无权限</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>注解式：通过在执行的Java方法上放置相应的注解完成：</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RequiresRoles</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 <span class="token comment" spellcheck="true">//有权限</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>JSP/GSP 标签：在JSP/GSP 页面通过相应的标签完成：</p>
 <pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>shiro<span class="token operator">:</span>hasRole name<span class="token operator">=</span><span class="token string">"admin"</span><span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">!</span>— 有权限—<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>shiro<span class="token operator">:</span>hasRole<span class="token operator">></span>
-</code></pre>
+<span class="token operator">&lt;</span><span class="token operator">/</span>shiro<span class="token operator">:</span>hasRole<span class="token operator">></span></code></pre>
 <h2 id="shiro-permission-ini"><a href="#shiro-permission-ini" class="headerlink" title="shiro-permission.ini"></a>shiro-permission.ini</h2><pre class=" language-java"><code class="language-java">#用户
 <span class="token punctuation">[</span>users<span class="token punctuation">]</span>
 #用户zhang的密码是<span class="token number">123</span>，此用户具有role1和role2两个角色
@@ -589,8 +461,7 @@ role1<span class="token operator">=</span>user<span class="token operator">:</sp
 #角色role2对资源user拥有create、delete权限
 role2<span class="token operator">=</span>user<span class="token operator">:</span>create<span class="token punctuation">,</span>user<span class="token operator">:</span>delete
 #角色role3对资源user拥有create权限
-role3<span class="token operator">=</span>user<span class="token operator">:</span>create
-</code></pre>
+role3<span class="token operator">=</span>user<span class="token operator">:</span>create</code></pre>
 <h1 id="权限标识符号规则："><a href="#权限标识符号规则：" class="headerlink" title="权限标识符号规则："></a>权限标识符号规则：</h1><p>资源:操作:实例(中间使用半角:分隔)<br>user：create:01  表示对用户资源的01实例进行create操作。<br>user:create：表示对用户资源进行create操作，相当于<code>user:create:*，</code>对所有用户资源实例进行create操作。<br><code>user ： * ： 01</code>  表示对用户资源实例01进行所有操作。</p>
 <pre class=" language-java"><code class="language-java">    <span class="token keyword">protected</span> AuthorizationInfo <span class="token function">doGetAuthorizationInfo</span><span class="token punctuation">(</span>PrincipalCollection principal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         User user <span class="token operator">=</span> <span class="token punctuation">(</span>User<span class="token punctuation">)</span> SecurityUtils<span class="token punctuation">.</span><span class="token function">getSubject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPrincipal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -608,19 +479,15 @@ role3<span class="token operator">=</span>user<span class="token operator">:</sp
         Set<span class="token operator">&lt;</span>String<span class="token operator">></span> permissionSet <span class="token operator">=</span> permissionList<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>Menu<span class="token operator">:</span><span class="token operator">:</span>getPerms<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span>Collectors<span class="token punctuation">.</span><span class="token function">toSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         simpleAuthorizationInfo<span class="token punctuation">.</span><span class="token function">setStringPermissions</span><span class="token punctuation">(</span>permissionSet<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> simpleAuthorizationInfo<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-</code></pre>
-<p><a href="http://www.cnblogs.com/qlqwjy/p/7253839.html" target="_blank" rel="noopener">详情参考</a></p>
+    <span class="token punctuation">}</span></code></pre>
+<p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/qlqwjy/p/7253839.html">详情参考</a></p>
 <h2 id="①"><a href="#①" class="headerlink" title="①"></a>①</h2><p>传统的jsp页面js获取项目路径的写法：  </p>
-<pre class=" language-java"><code class="language-java">var contextPath <span class="token operator">=</span> <span class="token string">'${pageContext.request.getContextPath()}'</span><span class="token punctuation">;</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java">var contextPath <span class="token operator">=</span> <span class="token string">'${pageContext.request.getContextPath()}'</span><span class="token punctuation">;</span></code></pre>
 <p>使用thymeleaf是这样获取的：  </p>
 <pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>script th<span class="token operator">:</span>inline<span class="token operator">=</span><span class="token string">"javascript"</span><span class="token operator">></span>     
         var context <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>@<span class="token punctuation">{</span><span class="token operator">/</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>      
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-</code></pre>
-<h2 id="②"><a href="#②" class="headerlink" title="②"></a>②</h2><pre class=" language-java"><code class="language-java">       $MB<span class="token punctuation">.</span><span class="token function">n_warning</span><span class="token punctuation">(</span>r<span class="token punctuation">.</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<h2 id="②"><a href="#②" class="headerlink" title="②"></a>②</h2><pre class=" language-java"><code class="language-java">       $MB<span class="token punctuation">.</span><span class="token function">n_warning</span><span class="token punctuation">(</span>r<span class="token punctuation">.</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>解析：已有编写好的js文件里有</p>
 <pre class=" language-java"><code class="language-java">var $MB <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
@@ -632,35 +499,48 @@ role3<span class="token operator">=</span>user<span class="token operator">:</sp
         <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 <p>所以直接调用<code>$MB.n_warning(r.msg);</code>即可</p>
-<h1 id="③"><a href="#③" class="headerlink" title="③"></a>③</h1><pre class=" language-java"><code class="language-java"> $loginButton<span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token string">"登录"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*修改按钮的内容为：登陆*/</span>
-</code></pre>
+<h1 id="③"><a href="#③" class="headerlink" title="③"></a>③</h1><pre class=" language-java"><code class="language-java"> $loginButton<span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token string">"登录"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*修改按钮的内容为：登陆*/</span></code></pre>
 <h1 id="④"><a href="#④" class="headerlink" title="④"></a>④</h1><p>忽略大小写比较，因为有的加密是大写 有的是转小写，所以统一忽略大小写  </p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">!</span>code<span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>sessionCode<span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token operator">!</span>code<span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>sessionCode<span class="token punctuation">)</span></code></pre>
 <h1 id="⑤"><a href="#⑤" class="headerlink" title="⑤"></a>⑤</h1><p>转为小写</p>
-<pre class=" language-java"><code class="language-java">username<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java">username<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 <h1 id="⑥-系统的学习赛罗（shiro）"><a href="#⑥-系统的学习赛罗（shiro）" class="headerlink" title="⑥ 系统的学习赛罗（shiro）"></a>⑥ 系统的学习赛罗（shiro）</h1><p>使用最频繁的<code>*</code>：基于url的权限管理（不使用shiro）：控制用户能访问且只能访问的系统资源</p>
-<h2 id="用户认证"><a href="#用户认证" class="headerlink" title="用户认证"></a>用户认证</h2><p>账号密码；指纹，刷脸等<br>认证思路：<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/shiro1.jpg" alt=""></p>
+<h2 id="用户认证"><a href="#用户认证" class="headerlink" title="用户认证"></a>用户认证</h2><p>账号密码；指纹，刷脸等<br>认证思路：<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/shiro1.jpg"></p>
 <h2 id="用户授权"><a href="#用户授权" class="headerlink" title="用户授权"></a>用户授权</h2><p>认证通过后对资源的控制</p>
 <h1 id="⑦关键对象"><a href="#⑦关键对象" class="headerlink" title="⑦关键对象"></a>⑦关键对象</h1><p>subject,可以是用户的操作，或程序调用<br>principal，身份信息如账号等<br>cridential，凭证信息如密码等<br>授权思路：<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/shiro.jpg" alt=" "></p>
 <h1 id="⑧"><a href="#⑧" class="headerlink" title="⑧"></a>⑧</h1><p>角色的出现时方便一键设置多个权限，不需要一一配置  ，对资源的打包<br>主体（账号、密码）  </p>
 <pre class=" language-合并"><code class="language-合并">资源（资源名称、访问地址）      
-权限（权限名称、资源id）  
-</code></pre>
+权限（权限名称、资源id）  </code></pre>
 <p>权限（权限名称、资源名称、资源访问地址）<br>角色（角色名称）<br>角色和权限关系（角色id、权限id）<br>主体和角色关系（主体id、角色id）  </p>
 <h1 id="⑨"><a href="#⑨" class="headerlink" title="⑨"></a>⑨</h1><p>基于角色的控制：问题在于每次增加角色时需要在原来的代码增加对某个资源这个新角色可以访问<br>基于资源的控制：当新角色增加时，只需要配置权限即可</p>
 <h1 id="⑩"><a href="#⑩" class="headerlink" title="⑩"></a>⑩</h1><p>粗粒度权限：各种类型的按钮，用户操作等 可以使用Springmvc的拦截器拦截操作请求的url  建议使用优秀的框架 因为有共性可以抽取<br>细粒度权限：某个具体页面的增加按钮等 某部长只能看该部门的员工 框架级别不可抽取，没有共性，所以只能在业务层传入部门id 根据id差、查员工 建议在业务层进行逻辑处理</p>
-<h1 id=""><a href="#" class="headerlink" title=" "></a> </h1><p>关于级联删除的2种方法<br>（不建议）1.在数据库设置好级联外键关系，程序里删除主表，由数据库帮我们自动删除副表<br>2.在业务层先删除副表，在删除主表</p>
-<p>#<br>用户认证时，根据用户id获取该用户权限范围的url和菜单,将url的list和菜单的list存在session中</p>
+<h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1><p>关于级联删除的2种方法<br>（不建议）1.在数据库设置好级联外键关系，程序里删除主表，由数据库帮我们自动删除副表<br>2.在业务层先删除副表，在删除主表</p>
+<h1 id="-2"><a href="#-2" class="headerlink" title=""></a></h1><p>用户认证时，根据用户id获取该用户权限范围的url和菜单,将url的list和菜单的list存在session中</p>
 <h1 id="shiro认证流程：（掌握）"><a href="#shiro认证流程：（掌握）" class="headerlink" title="shiro认证流程：（掌握）"></a>shiro认证流程：（掌握）</h1><p>1、subject(主体)请求认证，调用subject.login(token)<br>2、SecurityManager (安全管理器)执行认证<br>3、SecurityManager通过ModularRealmAuthenticator进行认证。<br>4、ModularRealmAuthenticator将token传给realm，realm根据token中用户信息从数据库查询用户信息（包括身份和凭证）<br>5、realm如果查询不到用户给ModularRealmAuthenticator返回null，ModularRealmAuthenticator抛出异常（用户不存在）<br>6、realm如果查询到用户给ModularRealmAuthenticator返回AuthenticationInfo(认证信息)<br>7、ModularRealmAuthenticator拿着AuthenticationInfo(认证信息)去进行凭证（密码 ）比对。如果一致则认证通过，如果不致抛出异常（凭证错误）。</p>
 <h1 id="授权流程"><a href="#授权流程" class="headerlink" title="授权流程"></a>授权流程</h1><p>1、对subject进行授权，调用方法isPermitted（”permission串”）<br>2、SecurityManager执行授权，通过ModularRealmAuthorizer执行授权<br>3、ModularRealmAuthorizer执行realm（自定义的CustomRealm）从数据库查询权限数据调用realm的授权方法：doGetAuthorizationInfo<br>4、realm从数据库查询权限数据，返回ModularRealmAuthorizer<br>5、ModularRealmAuthorizer调用PermissionResolver进行权限串比对<br>6、如果比对后，isPermitted中”permission串”在realm查询到权限数据中，说明用户访问permission串有权限，否则 没有权限，抛出异常。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
-            <hr>
+            <hr/>
 
             
             <style>
@@ -761,8 +641,8 @@ role3<span class="token operator">=</span>user<span class="token operator">:</sp
     <!-- Modal Structure -->
     <div id="rewardModal" class="modal">
         <div class="modal-content">
-            <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">如果您是学生，请不要扫码</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -770,10 +650,10 @@ role3<span class="token operator">=</span>user<span class="token operator">:</sp
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="如果您并非有点小钱">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="请不要扫码打赏">
                     </div>
                 </div>
             </div>
@@ -792,57 +672,47 @@ role3<span class="token operator">=</span>user<span class="token operator">:</sp
 
 <div id="article-share">
     
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
-    
-
-    
-
 </div>
 
+<script src="/libs/share/js/social-share.min.js"></script>
 
-            
-
-    <div class="reprint" id="reprint-statement">
-        <p class="reprint-tip">
-            <i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;
-            <span>转载规则</span>
-        </p>
-        
-            <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">
-                    <img alt="" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
-                </a>
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="http://hellohero.51vip.biz" class="b-link-green">Hexo</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/09/05/2018-09-05-shiro/" class="b-link-green">Shiro学习</a>
+                </p>
             </div>
-            <br>
-            <a href="/2018/09/05/2018-09-05-shiro/">
-                    《Shiro学习》
-            </a> 由
-            <a href="http://viabcde.github.io">
-                Shiro学习
-            </a> 采用
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">
-                知识共享署名 4.0 国际许可协议
-            </a>进行许可。
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
-
         </div>
     </div>
 
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: null,
+        id: '2018-09-05T09-09-52',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
     
 
     
@@ -860,32 +730,29 @@ role3<span class="token operator">=</span>user<span class="token operator">:</sp
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/09/17/2018-09-17-java总结/">
+                <a href="/2018/09/17/2018-09-17-java%E6%80%BB%E7%BB%93/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Java总结">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="java总结">
                         
-                        <span class="card-title">Java总结</span>
+                        <span class="card-title">java总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            有三件事一去不复返,时间/机会/说出去的话
-                        
-                    </div>
+                    <div class="summary">Object类的常用方法 clone equals  toString wait() notify()   notifyAll()  finalize()//当垃圾回收器确定不存在对该对象的更多引用时，由对象的垃圾回收器调用此方法。
+常用的</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-09-17
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-17
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/编程/" class="post-category">
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category" target="_blank">
                                     编程
                                 </a>
                             
@@ -896,7 +763,7 @@ role3<span class="token operator">=</span>user<span class="token operator">:</sp
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/基础知识/">
+                    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" target="_blank">
                         <span class="chip bg-color">基础知识</span>
                     </a>
                     
@@ -908,31 +775,29 @@ role3<span class="token operator">=</span>user<span class="token operator">:</sp
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/07/18/2018-07-18-svn学习/">
+                <a href="/2018/07/18/2018-07-18-svn%E5%AD%A6%E4%B9%A0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Svn学习">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="svn学习">
                         
-                        <span class="card-title">Svn学习</span>
+                        <span class="card-title">svn学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            svn学习
-                        
-                    </div>
+                    <div class="summary">要求：熟悉svn上传代码①在代码所在目录右键②其中http://zt.net.henu.edu.cn 是服务器名，svn是代码仓库的根目录，StartKit是在svn添加的一个代码库③下载代码①创建文件夹 右键checkout
+
+     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-07-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-18
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
+                            <i class="fa fa-user fa-fw"></i>
                             SVN
                             
                         </span>
@@ -941,7 +806,7 @@ role3<span class="token operator">=</span>user<span class="token operator">:</sp
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/svn/">
+                    <a href="/tags/svn/" target="_blank">
                         <span class="chip bg-color">svn</span>
                     </a>
                     
@@ -952,216 +817,58 @@ role3<span class="token operator">=</span>user<span class="token operator">:</sp
         
     </div>
 </article>
-
 </div>
 
-
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
-
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).slideUp(500);
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).slideDown(500);
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
 
     
 
 </main>
 
 
-
-    <footer class="page-footer bg-color">
+<footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&nbsp;&copy;
-            <span id="year">年份</span>
-            <a href="http://viabcde.github.io" target="_blank">viacbde</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
-            <br>
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
             
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">152.4k</span>&nbsp;字
+
             
-            
-            
-            
-            
-            
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人
-            </span>
-            
-            <br>
-            <span id="sitetime">载入运行时间...</span>
-            <script>
-                function siteTime() {
-                    window.setTimeout("siteTime()", 1000);
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var startYear = "2019";
-                    var startMonth = "6";
-                    var startDate = "28";
-                    var startHour = "0";
-                    var startMinute = "0";
-                    var startSecond = "0";
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth() + 1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                    var diff = t2 - t1;
-                    var diffYears = Math.floor(diff / years);
-                    var diffDays = Math.floor((diff / days) - diffYears * 365);
-                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                        minutes);
-                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                        diffMinutes * minutes) / seconds);
-                    if (startYear == todayYear) {
-                        document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
-                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    } else {
-                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
-                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    }
-                }
-                setInterval(siteTime, 1000);
-            </script>
-            <br>
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/viabcde" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
 
 
     <a href="mailto:437230257@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
+        <i class="fa fa-envelope-open"></i>
     </a>
 
 
 
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=437230257" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 437230257" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=437230257" class="tooltipped" data-tooltip="QQ联系我: 437230257" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
     </a>
-
-
-
-
 
 
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
+        <i class="fa fa-rss"></i>
     </a>
-
 </div>
     </div>
 </footer>
@@ -1169,12 +876,13 @@ role3<span class="token operator">=</span>user<span class="token operator">:</sp
 <div class="progress-bar"></div>
 
 
-    <!-- 搜索遮罩框 -->
+<!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
@@ -1186,83 +894,30 @@ $(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
-    <!-- 回到顶部按钮 -->
+<!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
+        <i class="fa fa-angle-up"></i>
     </a>
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-    <!-- Baidu Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <!-- Baidu Push -->
 
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
+    <script src="/libs/others/clicklove.js"></script>
 
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
-    
-    
+
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
 
-    
 
-    
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i["DaoVoiceObject"] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            a.charset = "utf-8";
-            m.parentNode.insertBefore(a, m)
-        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
-            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
-        daovoice('init', {
-            app_id: ""
-        });
-        daovoice('update');
-    </script>
-    
-
-    
-
-    
-
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
-    
-    
-
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"left","width":100,"height":250},"mobile":{"show":true},"search":null,"path":"search.xml","field":"post","log":false});</script></body>
-
+</body>
 </html>
