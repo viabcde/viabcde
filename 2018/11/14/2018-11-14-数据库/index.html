@@ -4,10 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="数据库, ABCDE">
-    <meta name="description" content="数据库设计の4个阶段需求分析（不用解释）概念设计（ER图）逻辑设计（关系表）物理设计（存储方法的选择，加索引 聚簇等）
-模式、外模式、内模式模式：数据的名称、类型、取值范围等  外模式：用户可见的试图  内模式：物理存储方法和存储结构
-SQ">
+    <meta name="keywords" content="数据库, ABCD">
+    <meta name="description" content="abcde">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,27 +13,25 @@ SQ">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
     <title>数据库 | ABCDE</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-    <style type="text/css">
-        
-        code[class*="language-"], pre[class*="language-"] {
-            white-space: pre !important;
-        }
-        
-    </style>
 
-    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="/libs/jquery/jquery.min.js"></script>
+
 <meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="ABCDE" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
  
     <style type="text/css" lang="css">
@@ -170,12 +166,7 @@ SQ">
 })()
 </script>
  
-
 <body>
- <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
-<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
-<script type="text/javascript" src="/js/fireworks.js"></script>
-
     
         <div id="loading-container">
              <p class="loading-text">嘘~  正在从服务器偷取页面 . . . </p> 
@@ -188,91 +179,186 @@ SQ">
              </div>
         </div>
     
-
-
-
-<header class="navbar-fixed">
+    <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/2,gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">ABCDE</span>
                 </a>
             </div>
             
 
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
-<ul class="right">
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
     
-    <li class="hide-on-med-and-down">
-        <a href="/" class="waves-effect waves-light">
-            
-            <i class="fa fa-home"></i>
-            
-            <span>首页</span>
-        </a>
-    </li>
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
     
-    <li class="hide-on-med-and-down">
-        <a href="/tags" class="waves-effect waves-light">
-            
-            <i class="fa fa-tags"></i>
-            
-            <span>标签</span>
-        </a>
-    </li>
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
     
-    <li class="hide-on-med-and-down">
-        <a href="/categories" class="waves-effect waves-light">
-            
-            <i class="fa fa-bookmark"></i>
-            
-            <span>分类</span>
-        </a>
-    </li>
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
     
-    <li class="hide-on-med-and-down">
-        <a href="/archives" class="waves-effect waves-light">
-            
-            <i class="fa fa-archive"></i>
-            
-            <span>归档</span>
-        </a>
-    </li>
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
     
-    <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
-            
-            <i class="fa fa-user-circle-o"></i>
-            
-            <span>关于</span>
-        </a>
-    </li>
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
     
-    <li class="hide-on-med-and-down">
-        <a href="/friends" class="waves-effect waves-light">
-            
-            <i class="fa fa-address-book"></i>
-            
-            <span>友情链接</span>
-        </a>
-    </li>
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
     
-    <li>
-        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/sponsor" class="waves-effect waves-light">
+      
+      <i class="fa fa-credit-card" style="zoom: 0.6;"></i>
+      
+      <span>赞助墙</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/navigate" class="waves-effect waves-light">
+      
+      <i class="fas fa-location-arrow" style="zoom: 0.6;"></i>
+      
+      <span>导航</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友人帐</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
         </a>
-    </li>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
 </ul>
+
 
 <div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/2,gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">ABCDE</div>
         <div class="logo-desc">
@@ -286,70 +372,171 @@ SQ">
 
     <ul class="menu-list mobile-menu-list">
         
-        <li>
-            <a href="/" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-home"></i>
-                
-                首页
-            </a>
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
         </li>
         
-        <li>
-            <a href="/tags" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-tags"></i>
-                
-                标签
-            </a>
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
         </li>
         
-        <li>
-            <a href="/categories" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-bookmark"></i>
-                
-                分类
-            </a>
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
         </li>
         
-        <li>
-            <a href="/archives" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-archive"></i>
-                
-                归档
-            </a>
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
         </li>
         
-        <li>
-            <a href="/about" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-user-circle-o"></i>
-                
-                关于
-            </a>
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
         </li>
         
-        <li>
-            <a href="/friends" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-address-book"></i>
-                
-                友情链接
-            </a>
+        <li class="m-nav-item">
+	  
+		<a href="/sponsor" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-credit-card"></i>
+			
+			赞助墙
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/navigate" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-location-arrow"></i>
+			
+			导航
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友人帐
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
         </li>
         
         
         <li><div class="divider"></div></li>
         <li>
             <a href="https://github.com/viacbde" class="waves-effect waves-light" target="_blank">
-                <i class="fa fa-github-square fa-fw"></i>Fork Me
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
         
     </ul>
 </div>
+
 
         </div>
 
@@ -414,7 +601,7 @@ SQ">
 
 </header>
 
-
+    
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
@@ -431,19 +618,18 @@ SQ">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
-    <div class="container">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <div class="description center-align post-title">
-                        数据库
-                    </div>
+                    <h1 class="description center-align post-title">数据库</h1>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 
 
@@ -459,11 +645,11 @@ SQ">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/mysql/" target="_blank">
+                            <a href="/tags/mysql/">
                                 <span class="chip bg-color">mysql</span>
                             </a>
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" target="_blank">
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
                                 <span class="chip bg-color">数据库</span>
                             </a>
                         
@@ -473,9 +659,9 @@ SQ">
                 <div class="col s5 right-align">
                     
                     <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category" target="_blank">
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
                                 编程
                             </a>
                         
@@ -485,33 +671,25 @@ SQ">
             </div>
 
             <div class="post-info">
+                
                 <div class="post-date info-break-policy">
-                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2018-11-14
                 </div>
+                
 
                 
-                    
-                    <div class="info-break-policy">
-                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        17.6k
-                    </div>
-                    
 
-                    
-                    <div class="info-break-policy">
-                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        72 分
-                    </div>
-                    
                 
-				
-				
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    17.6k
+                </div>
+                
+
+                
+
+                
             </div>
         </div>
         <hr class="clearfix">
@@ -528,79 +706,79 @@ SQ">
 <h3 id="MYSQL-的擅长领域–查询"><a href="#MYSQL-的擅长领域–查询" class="headerlink" title="MYSQL 的擅长领域–查询"></a>MYSQL 的擅长领域–查询</h3><p>mysql他们当时的主要客户是数据仓库，MySQL 最擅长的是查询性能，而不是事务处理（需要借助第三方存储引擎）<br>后来才有存储引擎InnoDB（支持事务和行级锁)。</p>
 <h3 id="在数据库中查询语句速度很慢，如何优化？"><a href="#在数据库中查询语句速度很慢，如何优化？" class="headerlink" title="在数据库中查询语句速度很慢，如何优化？"></a>在数据库中查询语句速度很慢，如何优化？</h3><p>1.建索引 2.减少表之间的关联 3.优化sql，尽量让sql很快定位数据，不要让sql做全表查询4.简化查询字段，没用的字段不要，已经对返回结果的控制，尽量返回少量数据 5.尽量用PreparedStatement来查询，不要用Statement</p>
 <h3 id="传汉字到mysql数据库，显示问号的解决方法"><a href="#传汉字到mysql数据库，显示问号的解决方法" class="headerlink" title="传汉字到mysql数据库，显示问号的解决方法"></a>传汉字到mysql数据库，显示问号的解决方法</h3><p>1、检查jsp显示页面，检查jsp开头有没有设置UTF-8的字符集</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page language<span class="token operator">=</span><span class="token string">"java"</span> contentType<span class="token operator">=</span><span class="token string">"text/html; charset=UTF-8"</span> pageEncoding<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">%</span><span class="token operator">></span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page language<span class="token operator">=</span><span class="token string">"java"</span> contentType<span class="token operator">=</span><span class="token string">"text/html; charset=UTF-8"</span> pageEncoding<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">%</span><span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html PUBLIC <span class="token string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="token string">"http://www.w3.org/TR/html4/loose.dtd"</span><span class="token operator">></span>
 <span class="token operator">&lt;</span>html<span class="token operator">></span>
 <span class="token operator">&lt;</span>head<span class="token operator">></span>
-<span class="token operator">&lt;</span>meta http<span class="token operator">-</span>equiv<span class="token operator">=</span><span class="token string">"Content-Type"</span> content<span class="token operator">=</span><span class="token string">"text/html; charset=UTF-8"</span><span class="token operator">></span></code></pre>
+<span class="token operator">&lt;</span>meta http<span class="token operator">-</span>equiv<span class="token operator">=</span><span class="token string">"Content-Type"</span> content<span class="token operator">=</span><span class="token string">"text/html; charset=UTF-8"</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>2、检查后台逻辑代码<br>根据前台展示页面，找到后台代码，<br>一般设置编码有如下几种方式：<br>设置request</p>
-<pre class=" language-java"><code class="language-java">request<span class="token punctuation">.</span><span class="token function">setCharacterEncoding</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java">request<span class="token punctuation">.</span><span class="token function">setCharacterEncoding</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>设置response</p>
-<pre class=" language-java"><code class="language-java">response<span class="token punctuation">.</span><span class="token function">setCharacterEncoding</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java">response<span class="token punctuation">.</span><span class="token function">setCharacterEncoding</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 response<span class="token punctuation">.</span><span class="token function">setContentType</span><span class="token punctuation">(</span><span class="token string">"text/html;charset=UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-response<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">"Content-Type"</span><span class="token punctuation">,</span><span class="token string">"text/html;charset=UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>3、检查数据库字符集<br>mysql中可以设置数据库字符集，<br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101001.png?raw=true"><br>也可以设置表的字符集<br><img src="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101002.png?raw=true"><br>4、变更数据库URL<br>在连接数据库的URL属性中添加useUnicode=true&amp;characterEncoding=utf8<br>我直接添加的characterEncoding=utf8<br>最终解决了我的中文乱码问题</p>
-<h3 id="SQL语句示例"><a href="#SQL语句示例" class="headerlink" title="SQL语句示例"></a><font color="red">SQL语句示例</font></h3><h3 id="去除重复记录"><a href="#去除重复记录" class="headerlink" title="去除重复记录"></a><strong>去除重复记录</strong></h3><pre class=" language-java"><code class="language-java">Select Distinct mgr From offices  </code></pre>
-<h3 id="不等于"><a href="#不等于" class="headerlink" title="不等于"></a><strong>不等于</strong></h3><pre class=" language-java"><code class="language-java">Select city<span class="token punctuation">,</span>mgr from offices  
-    Where mgr<span class="token operator">&lt;</span><span class="token operator">></span><span class="token number">108</span></code></pre>
+response<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">"Content-Type"</span><span class="token punctuation">,</span><span class="token string">"text/html;charset=UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>3、检查数据库字符集<br>mysql中可以设置数据库字符集，<br><img src="/2,gif" data-original="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101001.png?raw=true"><br>也可以设置表的字符集<br><img src="/2,gif" data-original="https://github.com/54321decba/tu/blob/master/2018-10-10/2018101002.png?raw=true"><br>4、变更数据库URL<br>在连接数据库的URL属性中添加useUnicode=true&amp;characterEncoding=utf8<br>我直接添加的characterEncoding=utf8<br>最终解决了我的中文乱码问题</p>
+<h3 id="SQL语句示例"><a href="#SQL语句示例" class="headerlink" title="SQL语句示例"></a><font color="red">SQL语句示例</font></h3><h3 id="去除重复记录"><a href="#去除重复记录" class="headerlink" title="去除重复记录"></a><strong>去除重复记录</strong></h3><pre class="line-numbers language-java"><code class="language-java">Select Distinct mgr From offices  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="不等于"><a href="#不等于" class="headerlink" title="不等于"></a><strong>不等于</strong></h3><pre class="line-numbers language-java"><code class="language-java">Select city<span class="token punctuation">,</span>mgr from offices  
+    Where mgr<span class="token operator">&lt;</span><span class="token operator">></span><span class="token number">108</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="IN"><a href="#IN" class="headerlink" title="IN"></a><strong>IN</strong></h3><p>列出1990-01的每个星期三的订单  </p>
-<pre class=" language-java"><code class="language-java">Select Order_Num<span class="token punctuation">,</span>Order_Date<span class="token punctuation">,</span>Amount  
+<pre class="line-numbers language-java"><code class="language-java">Select Order_Num<span class="token punctuation">,</span>Order_Date<span class="token punctuation">,</span>Amount  
     From Orders  
     Where Order_Date <span class="token function">In</span><span class="token punctuation">(</span><span class="token string">'04-Jan-90'</span><span class="token punctuation">,</span><span class="token string">'11-Jan-90'</span><span class="token punctuation">,</span>
-    <span class="token string">'18-Jan-90'</span><span class="token punctuation">,</span><span class="token string">'25-Jan-90'</span><span class="token punctuation">)</span></code></pre>
-<h3 id="NOT"><a href="#NOT" class="headerlink" title="NOT"></a><strong>NOT</strong></h3><pre class=" language-java"><code class="language-java">Select <span class="token operator">*</span> From Student
-    Where Not id <span class="token operator">></span> <span class="token number">009</span></code></pre>
+    <span class="token string">'18-Jan-90'</span><span class="token punctuation">,</span><span class="token string">'25-Jan-90'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="NOT"><a href="#NOT" class="headerlink" title="NOT"></a><strong>NOT</strong></h3><pre class="line-numbers language-java"><code class="language-java">Select <span class="token operator">*</span> From Student
+    Where Not id <span class="token operator">></span> <span class="token number">009</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="Order-By"><a href="#Order-By" class="headerlink" title="Order By"></a><strong>Order By</strong></h3><p>先按地区首字母升序/降序排列，再在有相同地区的按城市首字母排列</p>
-<pre class=" language-java"><code class="language-java">Select City<span class="token punctuation">,</span>Region<span class="token punctuation">,</span>Sales
+<pre class="line-numbers language-java"><code class="language-java">Select City<span class="token punctuation">,</span>Region<span class="token punctuation">,</span>Sales
     From Offides
-Order By Region<span class="token punctuation">,</span>City Asc<span class="token operator">/</span>Desc</code></pre>
+Order By Region<span class="token punctuation">,</span>City Asc<span class="token operator">/</span>Desc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>如果查询的结果字段是组合字段 可以用序号代替  </p>
-<pre class=" language-java"><code class="language-java">Select City<span class="token punctuation">,</span>Region<span class="token punctuation">,</span><span class="token punctuation">(</span>Sales<span class="token operator">-</span>Targer<span class="token punctuation">)</span>
+<pre class="line-numbers language-java"><code class="language-java">Select City<span class="token punctuation">,</span>Region<span class="token punctuation">,</span><span class="token punctuation">(</span>Sales<span class="token operator">-</span>Targer<span class="token punctuation">)</span>
     From Offices  
-Order By <span class="token number">3</span> Desc</code></pre>
+Order By <span class="token number">3</span> Desc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>这里用3代替(Sales-Targer)</p>
 <h3 id="union"><a href="#union" class="headerlink" title="union"></a><strong>union</strong></h3><p>在2个查询中间 加 union 表示默认去除重复<br>union all 表示不去除重复<br>union 后排序 在第二个查询结果中指定排序规则</p>
-<pre class=" language-java"><code class="language-java">Select Mfr_Id<span class="token punctuation">,</span>Product_Id
+<pre class="line-numbers language-java"><code class="language-java">Select Mfr_Id<span class="token punctuation">,</span>Product_Id
     From Products
 Where Price<span class="token operator">></span><span class="token number">2000</span>
 Union all
 Select Distinct Mfr<span class="token punctuation">,</span>Product
     From Orders
 Where Amount<span class="token operator">></span><span class="token number">3000</span>
-Order By <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span></code></pre>
+Order By <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>多表联合(如果查询结果不去重则无执行顺序，需要去重则必须先执行括号内的)</p>
-<pre class=" language-java"><code class="language-java">Select <span class="token operator">*</span> From A
+<pre class="line-numbers language-java"><code class="language-java">Select <span class="token operator">*</span> From A
 <span class="token function">Union</span><span class="token punctuation">(</span>
     Select <span class="token operator">*</span> From B
     Union
         Select <span class="token operator">*</span> From C
-<span class="token punctuation">)</span></code></pre>
-<h3 id="汇总查询"><a href="#汇总查询" class="headerlink" title="汇总查询"></a><strong>汇总查询</strong></h3><pre class=" language-java"><code class="language-java">Select <span class="token function">AVG</span><span class="token punctuation">(</span>Sales<span class="token punctuation">)</span> From Salesreps
-<span class="token function">Sum</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token function">Min</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token function">Max</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token function">Count</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token function">Count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span></code></pre>
+<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="汇总查询"><a href="#汇总查询" class="headerlink" title="汇总查询"></a><strong>汇总查询</strong></h3><pre class="line-numbers language-java"><code class="language-java">Select <span class="token function">AVG</span><span class="token punctuation">(</span>Sales<span class="token punctuation">)</span> From Salesreps
+<span class="token function">Sum</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token function">Min</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token function">Max</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token function">Count</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token function">Count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="group-by-指定字段"><a href="#group-by-指定字段" class="headerlink" title="group by 指定字段"></a><strong>group by 指定字段</strong></h3><p>按指定字段分组 通常和Having搭配使用</p>
-<pre class=" language-java"><code class="language-java">Select Sno
+<pre class="line-numbers language-java"><code class="language-java">Select Sno
 From SC
 Group by Sno
-Having <span class="token function">Count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">3</span></code></pre>
-<h3 id="Join"><a href="#Join" class="headerlink" title="Join"></a><strong>Join</strong></h3><pre class=" language-java"><code class="language-java">SELECT 课程名称<span class="token punctuation">,</span><span class="token function">AVG</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>平均分<span class="token punctuation">,</span><span class="token function">MAX</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>最高分<span class="token punctuation">,</span><span class="token function">MIN</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>最低分
+Having <span class="token function">Count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Join"><a href="#Join" class="headerlink" title="Join"></a><strong>Join</strong></h3><pre class="line-numbers language-java"><code class="language-java">SELECT 课程名称<span class="token punctuation">,</span><span class="token function">AVG</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>平均分<span class="token punctuation">,</span><span class="token function">MAX</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>最高分<span class="token punctuation">,</span><span class="token function">MIN</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>最低分
 FROM 选课 JOIN 课程 ON 选课<span class="token punctuation">.</span>课程编号<span class="token operator">=</span>课程<span class="token punctuation">.</span>课程编号
-GROUP BY 课程名称</code></pre>
+GROUP BY 课程名称<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="1NF"><a href="#1NF" class="headerlink" title="1NF"></a><strong>1NF</strong></h3><p>属性具有原子性</p>
 <h3 id="2NF"><a href="#2NF" class="headerlink" title="2NF"></a><strong>2NF</strong></h3><p>能根据主键得到表中的其他属性<br>如果是联合主键则必须是根据联合主键得到表的其他属性 而不能只是联合主键其中的一个属性得到表中的其他属性</p>
 <h3 id="3NF"><a href="#3NF" class="headerlink" title="3NF"></a><strong>3NF</strong></h3><p>除主键外 表中的非主键属性不能根据非主键属性得到</p>
 <h3 id="BCNF"><a href="#BCNF" class="headerlink" title="BCNF"></a><strong>BCNF</strong></h3><p>非主键属性不能根据非主键属性得到 主键属性也不能根据非主键属性得到<br>性能不行时 第一反应是再试一次<br>第二反应是优化一下SQL<br>第三反应是调大buffer pool<br>实在不行就面向搜索引擎编程了  </p>
 <h3 id="并发控制的主要手段：乐观悲观锁"><a href="#并发控制的主要手段：乐观悲观锁" class="headerlink" title="并发控制的主要手段：乐观悲观锁"></a>并发控制的主要手段：乐观悲观锁</h3><p>悲观锁：假定会发生并发冲突，屏蔽一切可能违反数据完整性的操作<br>乐观锁：假设不会发生并发冲突，只在提交操作时检查是否违反数据完整性。</p>
 <h3 id="建表"><a href="#建表" class="headerlink" title="建表"></a><strong>建表</strong></h3><p>示例1创建院系表<br>在建立表的同时，必须定义表名，列，以及列的数据类型和大小    ，还有列的完整性约束NOT NULL等，表的完整性约束   </p>
-<pre class=" language-java"><code class="language-java">create table 院系<span class="token punctuation">(</span>
+<pre class="line-numbers language-java"><code class="language-java">create table 院系<span class="token punctuation">(</span>
 编号 INT<span class="token punctuation">,</span>
 名称 <span class="token function">CHAR</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>CONSTRAINT 名称 NOT NULL UNIQUE<span class="token punctuation">,</span>
 负责人 <span class="token function">CHAR</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 办公地点 <span class="token function">CHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-CONSTRAINT 编号 PRIMARY <span class="token function">KEY</span> <span class="token punctuation">(</span>编号<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+CONSTRAINT 编号 PRIMARY <span class="token function">KEY</span> <span class="token punctuation">(</span>编号<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>笔记：CONSTRAINT表示对字段的约束<br>Constraint+约束名称+约束条件</p>
 <h3 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a><strong>修改表</strong></h3><p>添加一个字段<br>alter table student add (classid number(2));<br>修改一个字段的长度<br>alter table student modify (xm varchar2(30));<br>修改字段的类型或是名字（不能有数据） 不建议做<br>alter table student modify (xm char(30));<br>删除一个字段 不建议做(删了之后，顺序就变了。加就没问题，应该是加在后面)<br>alter table student drop column sal;<br>修改表的名字 很少有这种需求<br>rename student to stu;    </p>
 <h3 id="创建还原点"><a href="#创建还原点" class="headerlink" title="创建还原点"></a><strong>创建还原点</strong></h3><p>delete from student; –删除所有记录，表结构还在，写日志，可以恢复的，速度慢。<br>–delete的数据可以恢复。<br>savepoint a; –创建保存点<br>delete from student;<br>rollback to a; –恢复到保存点<br>一个有经验的dba，在确保完成无误的情况下要定期创建还原点。<br>示例2创建学生表  </p>
-<pre class=" language-java"><code class="language-java">create table 学生
+<pre class="line-numbers language-java"><code class="language-java">create table 学生
 <span class="token punctuation">(</span>
 学号 <span class="token function">CHAR</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span>CONSTRAINT 学号 PRIMARY KEY<span class="token punctuation">,</span>
 院系  AS <span class="token function">CONVERT</span><span class="token punctuation">(</span>INT<span class="token punctuation">,</span><span class="token function">SUBSTRING</span><span class="token punctuation">(</span>学号<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>PERSISTED CONSTRAINT 院系 NOT NULL<span class="token punctuation">,</span>
@@ -609,9 +787,9 @@ CONSTRAINT 院系key FOREIGN <span class="token function">KEY</span> <span class
 性别 <span class="token function">CHAR</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>CONSTRAINT 性别 <span class="token function">CHECK</span><span class="token punctuation">(</span>性别 <span class="token function">IN</span><span class="token punctuation">(</span><span class="token string">'男'</span><span class="token punctuation">,</span><span class="token string">'女'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 生源 <span class="token function">CHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 状态 <span class="token function">CHAR</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>CONSTRAINT 状态 <span class="token function">CHECK</span><span class="token punctuation">(</span>状态 <span class="token function">IN</span><span class="token punctuation">(</span><span class="token string">'正常'</span><span class="token punctuation">,</span><span class="token string">'留学'</span><span class="token punctuation">,</span><span class="token string">'休学'</span><span class="token punctuation">,</span><span class="token string">'退学'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token punctuation">)</span></code></pre>
+<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>笔记：  这里写成别名院系key 而不直接写字段名 防止名称和其他表名混淆<br>FOREIGN KEY (院系) REFERENCES 院系(编号)<br>第一个院系是外码，第二个院系是被参照表，编号是被参照列<br>自身表中的属性来自于其他表的主码，该属性就是外码，自身是参照关系，其他关系是被参照关系。<br>院系 AS CONVERT(INT,SUBSTRING(学号,3,2))PERSISTED<br>(院系为计算列（AS CONVERT()PERSISTED）,INT 输出数据类型，SUBSTRING(),取学号的从第3个字符始的2个字符)<br>CHECK(性别 IN(‘男’,’女’))  取值必须为男或者女<br>示例2创建选课表</p>
-<pre class=" language-java"><code class="language-java">create table 选课
+<pre class="line-numbers language-java"><code class="language-java">create table 选课
 <span class="token punctuation">(</span>
 学号 <span class="token function">CHAR</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 CONSTRAINT 学号key FOREIGN <span class="token function">KEY</span><span class="token punctuation">(</span>学号<span class="token punctuation">)</span>REFERENCES 学生<span class="token punctuation">(</span>学号<span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -619,56 +797,56 @@ CONSTRAINT 学号key FOREIGN <span class="token function">KEY</span><span class=
 CONSTRAINT 课程编号key FOREIGN <span class="token function">KEY</span><span class="token punctuation">(</span>课程编号<span class="token punctuation">)</span>REFERENCES 课程<span class="token punctuation">(</span>课程编号<span class="token punctuation">)</span><span class="token punctuation">,</span>
 考试成绩 INT CONSTRAINT 考试成绩 <span class="token function">CHECK</span><span class="token punctuation">(</span>考试成绩 BETWEEN <span class="token number">0</span> AND <span class="token number">100</span><span class="token punctuation">)</span>DEFAULT NULL
 CONSTRAINT sno_cno PRIMARY <span class="token function">KEY</span><span class="token punctuation">(</span>学号<span class="token punctuation">,</span>课程编号<span class="token punctuation">)</span>
-<span class="token punctuation">)</span></code></pre>
+<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>笔记：DEFAULT NULL  默认空值</p>
 <h3 id="问题：直接删除不了列？"><a href="#问题：直接删除不了列？" class="headerlink" title="问题：直接删除不了列？"></a>问题：直接删除不了列？</h3><p>解决方法：删除时，因为默认是RESTRICT 如果被其他约束引用，要先删除约束，如果选择CASCADE，则不需要。</p>
 <h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a><strong>插入数据</strong></h3><p>插入院系表的第1个元组(记录)</p>
-<pre class=" language-java"><code class="language-java">INSERT INTO  院系<span class="token punctuation">(</span>编号<span class="token punctuation">,</span>名称<span class="token punctuation">,</span>负责人<span class="token punctuation">,</span>办公地点<span class="token punctuation">)</span>
-<span class="token function">VALUES</span><span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">,</span><span class="token string">'信息管理学院'</span><span class="token punctuation">,</span><span class="token string">'李嘉'</span><span class="token punctuation">,</span><span class="token string">'教一楼3层'</span><span class="token punctuation">)</span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java">INSERT INTO  院系<span class="token punctuation">(</span>编号<span class="token punctuation">,</span>名称<span class="token punctuation">,</span>负责人<span class="token punctuation">,</span>办公地点<span class="token punctuation">)</span>
+<span class="token function">VALUES</span><span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">,</span><span class="token string">'信息管理学院'</span><span class="token punctuation">,</span><span class="token string">'李嘉'</span><span class="token punctuation">,</span><span class="token string">'教一楼3层'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>或者</p>
-<pre class=" language-java"><code class="language-java">INSERT INTO 院系
+<pre class="line-numbers language-java"><code class="language-java">INSERT INTO 院系
 <span class="token function">VALUES</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span><span class="token string">'经济管理学院'</span><span class="token punctuation">,</span><span class="token string">'吴鸿忠'</span><span class="token punctuation">,</span><span class="token string">'教三楼4层'</span><span class="token punctuation">)</span>
 问题：怎么添加多条记录？解决方法示例：
 insert into <span class="token function">tableName</span><span class="token punctuation">(</span>字段<span class="token number">1</span><span class="token punctuation">,</span> 字段<span class="token number">2</span><span class="token punctuation">,</span> 字段<span class="token number">3</span><span class="token punctuation">)</span>
 select val1<span class="token punctuation">,</span>val2<span class="token punctuation">,</span>val3
 union all
 select val1<span class="token punctuation">,</span>val2<span class="token punctuation">,</span>val3
-union all。。。</code></pre>
+union all。。。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>查询所有学生信息，先按生源升序排序、再按学号升序排序。 </p>
-<pre class=" language-java"><code class="language-java">SELECT <span class="token operator">*</span>
+<pre class="line-numbers language-java"><code class="language-java">SELECT <span class="token operator">*</span>
 FROM 学生
-ORDER BY 生源 ASC<span class="token punctuation">,</span>学号 ASC </code></pre>
+ORDER BY 生源 ASC<span class="token punctuation">,</span>学号 ASC <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>从选课表中查询考试成绩最高的3条选课信息。</p>
-<pre class=" language-java"><code class="language-java">SELECT TOP <span class="token number">3</span><span class="token operator">*</span> 
+<pre class="line-numbers language-java"><code class="language-java">SELECT TOP <span class="token number">3</span><span class="token operator">*</span> 
 FROM 选课
-ORDER BY 考试成绩 DESC</code></pre>
+ORDER BY 考试成绩 DESC<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>从选课表中查询考试成绩在前15%的选课记录信息，如果随后有成绩并列的记录也一起列出。 </p>
-<pre class=" language-java"><code class="language-java">SELECT TOP 15PERCENT<span class="token operator">*</span>
+<pre class="line-numbers language-java"><code class="language-java">SELECT TOP 15PERCENT<span class="token operator">*</span>
 FROM 选课
-ORDER BY 考试成绩 DESC</code></pre>
+ORDER BY 考试成绩 DESC<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>查询考试成绩在90分以上（含）的学生的学号、姓名、相应的课程名称和考试成绩(使用CROSS JOIN连接完成查询)。</p>
-<pre class=" language-java"><code class="language-java">SELECT 学生<span class="token punctuation">.</span>学号<span class="token punctuation">,</span>姓名<span class="token punctuation">,</span>课程名称<span class="token punctuation">,</span>考试成绩 
+<pre class="line-numbers language-java"><code class="language-java">SELECT 学生<span class="token punctuation">.</span>学号<span class="token punctuation">,</span>姓名<span class="token punctuation">,</span>课程名称<span class="token punctuation">,</span>考试成绩 
 from 学生 
 left join 选课 <span class="token function">on</span> <span class="token punctuation">(</span>学生<span class="token punctuation">.</span>学号<span class="token operator">=</span>选课<span class="token punctuation">.</span>学号<span class="token punctuation">)</span> 
 left join 课程 <span class="token function">on</span> <span class="token punctuation">(</span>选课<span class="token punctuation">.</span>课程编号<span class="token operator">=</span>课程<span class="token punctuation">.</span>课程编号<span class="token punctuation">)</span> 
-where 考试成绩<span class="token operator">>=</span> <span class="token number">90</span></code></pre>
+where 考试成绩<span class="token operator">>=</span> <span class="token number">90</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>查询各门课程考试成绩的平均分、最高分和最低分。 </p>
-<pre class=" language-java"><code class="language-java">SELECT 课程名称<span class="token punctuation">,</span><span class="token function">AVG</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>平均分<span class="token punctuation">,</span><span class="token function">MAX</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>最高分<span class="token punctuation">,</span><span class="token function">MIN</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>最低分
+<pre class="line-numbers language-java"><code class="language-java">SELECT 课程名称<span class="token punctuation">,</span><span class="token function">AVG</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>平均分<span class="token punctuation">,</span><span class="token function">MAX</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>最高分<span class="token punctuation">,</span><span class="token function">MIN</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>最低分
 FROM 选课 
 JOIN 课程 ON 选课<span class="token punctuation">.</span>课程编号<span class="token operator">=</span>课程<span class="token punctuation">.</span>课程编号
-GROUP BY 课程名称</code></pre>
+GROUP BY 课程名称<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>查询专业基础课平均分大于等于60分的各门课程考试成绩的平均分、最高分和最低分。</p>
-<pre class=" language-java"><code class="language-java">SELECT 课程名称<span class="token punctuation">,</span><span class="token function">AVG</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>平均分<span class="token punctuation">,</span><span class="token function">MAX</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>最高分<span class="token punctuation">,</span><span class="token function">MIN</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>最低分
+<pre class="line-numbers language-java"><code class="language-java">SELECT 课程名称<span class="token punctuation">,</span><span class="token function">AVG</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>平均分<span class="token punctuation">,</span><span class="token function">MAX</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>最高分<span class="token punctuation">,</span><span class="token function">MIN</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span>最低分
 FROM 选课 
 JOIN 课程 ON 选课<span class="token punctuation">.</span>课程编号<span class="token operator">=</span>课程<span class="token punctuation">.</span>课程编号 
 WHERE 课程性质<span class="token operator">=</span><span class="token string">'专业基础'</span>
 GROUP BY 课程名称
-HAVING <span class="token function">AVG</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span><span class="token operator">>=</span><span class="token number">60</span></code></pre>
+HAVING <span class="token function">AVG</span><span class="token punctuation">(</span>考试成绩<span class="token punctuation">)</span><span class="token operator">>=</span><span class="token number">60</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>查询所有专业基础课的信息，并计算其总学时。</p>
-<pre class=" language-java"><code class="language-java">CREATE VIEW 课程_总学时<span class="token punctuation">(</span>总学时<span class="token punctuation">)</span>
+<pre class="line-numbers language-java"><code class="language-java">CREATE VIEW 课程_总学时<span class="token punctuation">(</span>总学时<span class="token punctuation">)</span>
 AS
 SELECT <span class="token function">SUM</span><span class="token punctuation">(</span>学时<span class="token punctuation">)</span>总学时
-FROM 课程</code></pre>
+FROM 课程<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <article>
 <div id="article_content" class="article_content clearfix csdn-tracking-statistics" data-pid="blog" data-mod="popu_307" data-dsm="post">
 <div class="markdown_views">
@@ -1254,14 +1432,14 @@ select sal*13+nvl(comm, 0)*13 "年薪" , ename, comm from emp;
 使用nvl函数来处理
 ### **如何连接字符串(||)**
 
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> ename <span class="token operator">||</span> <span class="token string">' is a '</span> <span class="token operator">||</span> job <span class="token keyword">from</span> emp<span class="token punctuation">;</span></code></pre>
-<h3 id="如何查找1982-1-1后入职的员工？"><a href="#如何查找1982-1-1后入职的员工？" class="headerlink" title="如何查找1982.1.1后入职的员工？"></a><strong>如何查找1982.1.1后入职的员工？</strong></h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> ename<span class="token punctuation">,</span>hiredate <span class="token keyword">from</span> emp <span class="token keyword">where</span> hiredate <span class="token operator">></span><span class="token string">'1-1 月-1982'</span><span class="token punctuation">;</span></code></pre>
-<h3 id="如何使用like操作符"><a href="#如何使用like操作符" class="headerlink" title="如何使用like操作符"></a><strong>如何使用like操作符</strong></h3><pre class=" language-shell"><code class="language-shell">%：表示0到多个字符 _：表示任意单个字符</code></pre>
-<h2 id="问题：如何显示首字符为s的员工姓名和工资？"><a href="#问题：如何显示首字符为s的员工姓名和工资？" class="headerlink" title="问题：如何显示首字符为s的员工姓名和工资？"></a><strong>问题：如何显示首字符为s的员工姓名和工资？</strong></h2><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> ename<span class="token punctuation">,</span>sal <span class="token keyword">from</span> emp <span class="token keyword">where</span> ename <span class="token operator">like</span> <span class="token string">'s%'</span><span class="token punctuation">;</span></code></pre>
-<h2 id="如何显示第三个字符为大写o的所有员工的姓名和工资？"><a href="#如何显示第三个字符为大写o的所有员工的姓名和工资？" class="headerlink" title="如何显示第三个字符为大写o的所有员工的姓名和工资？"></a><strong>如何显示第三个字符为大写o的所有员工的姓名和工资？</strong></h2><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> ename<span class="token punctuation">,</span>sal <span class="token keyword">from</span> emp <span class="token keyword">where</span> ename <span class="token operator">like</span> <span class="token string">'__o%'</span><span class="token punctuation">;</span></code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> ename <span class="token operator">||</span> <span class="token string">' is a '</span> <span class="token operator">||</span> job <span class="token keyword">from</span> emp<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="如何查找1982-1-1后入职的员工？"><a href="#如何查找1982-1-1后入职的员工？" class="headerlink" title="如何查找1982.1.1后入职的员工？"></a><strong>如何查找1982.1.1后入职的员工？</strong></h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> ename<span class="token punctuation">,</span>hiredate <span class="token keyword">from</span> emp <span class="token keyword">where</span> hiredate <span class="token operator">></span><span class="token string">'1-1 月-1982'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="如何使用like操作符"><a href="#如何使用like操作符" class="headerlink" title="如何使用like操作符"></a><strong>如何使用like操作符</strong></h3><pre class="line-numbers language-shell"><code class="language-shell">%：表示0到多个字符 _：表示任意单个字符<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="问题：如何显示首字符为s的员工姓名和工资？"><a href="#问题：如何显示首字符为s的员工姓名和工资？" class="headerlink" title="问题：如何显示首字符为s的员工姓名和工资？"></a><strong>问题：如何显示首字符为s的员工姓名和工资？</strong></h2><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> ename<span class="token punctuation">,</span>sal <span class="token keyword">from</span> emp <span class="token keyword">where</span> ename <span class="token operator">like</span> <span class="token string">'s%'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="如何显示第三个字符为大写o的所有员工的姓名和工资？"><a href="#如何显示第三个字符为大写o的所有员工的姓名和工资？" class="headerlink" title="如何显示第三个字符为大写o的所有员工的姓名和工资？"></a><strong>如何显示第三个字符为大写o的所有员工的姓名和工资？</strong></h2><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> ename<span class="token punctuation">,</span>sal <span class="token keyword">from</span> emp <span class="token keyword">where</span> ename <span class="token operator">like</span> <span class="token string">'__o%'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="如何显示empno为7844-7839-123-456的雇员情况？"><a href="#如何显示empno为7844-7839-123-456的雇员情况？" class="headerlink" title="如何显示empno为7844,7839,123,456的雇员情况？"></a><strong>如何显示empno为7844,7839,123,456的雇员情况？</strong></h2><p>select * from emp where empno in (7844, 7839, 123, 456);     </p>
 <h2 id="如何显示没有上级的雇员的情况？"><a href="#如何显示没有上级的雇员的情况？" class="headerlink" title="如何显示没有上级的雇员的情况？"></a><strong>如何显示没有上级的雇员的情况？</strong></h2><p>错误写法：select * from emp where mgr = ‘’;<br>正确写法：select * from emp where mgr is null;<br>查询工资高于500或者是岗位为manager的雇员，同时还要满足他们的姓名首字母为大写的J？<br>select * from emp where (sal &gt; 500 or job = ‘MANAGER’) and ename like ‘J%’;<br>使用列的别名排序<br>问题：按年薪排序   </p>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> ename<span class="token punctuation">,</span> <span class="token punctuation">(</span>sal<span class="token operator">+</span>nvl<span class="token punctuation">(</span>comm<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">12</span> <span class="token string">"年薪"</span> <span class="token keyword">from</span> emp <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token string">"年薪"</span> <span class="token keyword">asc</span><span class="token punctuation">;</span></code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> ename<span class="token punctuation">,</span> <span class="token punctuation">(</span>sal<span class="token operator">+</span>nvl<span class="token punctuation">(</span>comm<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">12</span> <span class="token string">"年薪"</span> <span class="token keyword">from</span> emp <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token string">"年薪"</span> <span class="token keyword">asc</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>备注：别名需要使用“”号圈中,英文不需要“”号  </p>
 <h2 id="最高工资那个人是谁？"><a href="#最高工资那个人是谁？" class="headerlink" title="最高工资那个人是谁？"></a><strong>最高工资那个人是谁？</strong></h2><p>错误写法：select ename, sal from emp where sal=max(sal);<br>正确写法：select ename, sal from emp where sal=(select max(sal) from emp);<br>注意：select ename, max(sal) from emp;这语句执行的时候会报错，说ora-00937：非单组分组函数。因为max是分组函数，而ename不是分组函数…….<br>但是select min(sal), max(sal) from emp;这句是可以执行的。因为min和max都是分组函数，就是说：如果列里面有一个分组函数，其它的都必须是分组函数，否则就出错。这是语法规定的<br>group by 用于对查询的结果分组统计，<br>having 子句用于限制分组显示结果。   </p>
 <h2 id="问题：如何显示每个部门的平均工资和最高工资？"><a href="#问题：如何显示每个部门的平均工资和最高工资？" class="headerlink" title="问题：如何显示每个部门的平均工资和最高工资？"></a><strong>问题：如何显示每个部门的平均工资和最高工资？</strong></h2><p>select avg(sal), max(sal), deptno from emp group by deptno;<br>（注意：这里暗藏了一点，如果你要分组查询的话，分组的字段deptno一定要出现在查询的列表里面，否则会报错。因为分组的字段都不出现的话，就没办法分组了）   </p>
@@ -1276,7 +1454,7 @@ select sal*13+nvl(comm, 0)*13 "年薪" , ename, comm from emp;
 <h2 id="如何显示高于自己部门平均工资的员工的信息"><a href="#如何显示高于自己部门平均工资的员工的信息" class="headerlink" title="如何显示高于自己部门平均工资的员工的信息"></a><strong>如何显示高于自己部门平均工资的员工的信息</strong></h2><p>SELECT e.ename, e.deptno, e.sal, ds.mysal<br>FROM emp e, (SELECT deptno, AVG(sal) mysal FROM emp GROUP by deptno) ds<br>WHERE e.deptno = ds.deptno AND e.sal &gt; ds.mysal;<br><strong>注意：</strong>给表取别名的时候，不能加as；但是给列取别名，是可以加as的  </p>
 <h2 id="用查询结果创建新表"><a href="#用查询结果创建新表" class="headerlink" title="用查询结果创建新表"></a><strong>用查询结果创建新表</strong></h2><p>CREATE TABLE mytable (id, name, sal, job, deptno) as SELECT empno, ename, sal, job, deptno FROM emp;</p>
 <h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a><strong>分页</strong></h3><p>根据rowid来分</p>
-<pre class=" language-java"><code class="language-java">SELECT <span class="token operator">*</span>
+<pre class="line-numbers language-java"><code class="language-java">SELECT <span class="token operator">*</span>
   FROM EMP
  WHERE ROWID <span class="token function">IN</span>
        <span class="token punctuation">(</span>SELECT RID
@@ -1297,7 +1475,7 @@ SELECT <span class="token operator">*</span>
                   <span class="token function">FROM</span> <span class="token punctuation">(</span>SELECT ROWID RID<span class="token punctuation">,</span> EMPNO FROM EMP ORDER BY EMPNO DESC<span class="token punctuation">)</span>
                  WHERE ROWNUM <span class="token operator">&lt;=</span> <span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">5</span> <span class="token operator">+</span> <span class="token number">5</span> <span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">--</span>每页显示几条
          WHERE RN <span class="token operator">></span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token operator">--</span>当前页数
- ORDER BY EMPNO DESC<span class="token punctuation">;</span></code></pre>
+ ORDER BY EMPNO DESC<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a><strong>事务</strong></h2><p>设置只读事务: set transaction read only;</p>
 <h3 id="导出表"><a href="#导出表" class="headerlink" title="导出表"></a><strong>导出表</strong></h3><p>在导入和导出的时候，要到oracle目录的bin目录下<br>C:\Users\jiqinlin&gt;cd D:\dev\oracle\product\10.2.0\db_1\bin<br>C:\Users\jiqinlin&gt;d:<br>D:\dev\oracle\product\10.2.0\db_1\bin&gt;exp userid=scott/oracle@orcl tables=(emp) file=d:\emp.dmp </p>
 <h3 id="一、字符函数"><a href="#一、字符函数" class="headerlink" title="一、字符函数"></a><strong>一、字符函数</strong></h3><p>字符函数是oracle中最常用的函数，我们来看看有哪些字符函数：<br>lower(char)：将字符串转化为小写的格式。<br>upper(char)：将字符串转化为大写的格式。<br>length(char)：返回字符串的长度。<br>substr(char, m, n)：截取字符串的子串，n代表取n个字符的意思，不是代表取到第n个<br>replace(char1, search_string, replace_string)<br>instr(C1,C2,I,J) –&gt;判断某字符或字符串是否存在，存在返回出现的位置的索引，否则返回小于1;在一个字符串中搜索指定的字符,返回发现指定的字符的位置;<br>C1 被搜索的字符串<br>C2 希望搜索的字符串<br>I 搜索的开始位置,默认为1<br>J 出现的位置,默认为1   </p>
@@ -1306,28 +1484,28 @@ SELECT <span class="token operator">*</span>
 <h3 id="二、数学函数"><a href="#二、数学函数" class="headerlink" title="二、数学函数"></a><strong>二、数学函数</strong></h3><p>数学函数的输入参数和返回值的数据类型都是数字类型的。数学函数包括cos，cosh，exp，ln, log，sin，sinh，sqrt，tan，tanh，acos，asin，atan，round等<br>我们讲最常用的：<br><code>round(n,[m])</code> 该函数用于执行四舍五入，<br>如果省掉m，则四舍五入到整数。<br>如果m是正数，则四舍五入到小数点的m位后。<br>如果m是负数，则四舍五入到小数点的m位前。<br>eg、SELECT round(23.75123) FROM dual; –返回24<br>SELECT round(23.75123, -1) FROM dual; –返回20<br>SELECT round(27.75123, -1) FROM dual; –返回30<br>SELECT round(23.75123, -3) FROM dual; –返回0<br>SELECT round(23.75123, 1) FROM dual; –返回23.8<br>SELECT round(23.75123, 2) FROM dual; –返回23.75<br>SELECT round(23.75123, 3) FROM dual; –返回23.751<br><code>trunc(n,[m])</code> 该函数用于截取数字。<br>如果省掉m，就截去小数部分，<br>如果m是正数就截取到小数点的m位后，<br>如果m是负数，则截取到小数点的前m位。<br>eg、SELECT trunc(23.75123) FROM dual; –返回23<br>SELECT trunc(23.75123, -1) FROM dual; –返回20<br>SELECT trunc(27.75123, -1) FROM dual; –返回20<br>SELECT trunc(23.75123, -3) FROM dual; –返回0<br>SELECT trunc(23.75123, 1) FROM dual; –返回23.7<br>SELECT trunc(23.75123, 2) FROM dual; –返回23.75<br>SELECT trunc(23.75123, 3) FROM dual; –返回23.751<br>mod(m,n)取余函数<br>eg、select mod(10,2) from dual; –返回0<br>SELECT MOD(10,3) FROM dual; –返回1<br>floor(n) 返回小于或是等于n的最大整数<br>ceil(n) 返回大于或是等于n的最小整数<br>eg、SELECT ceil(24.56) from dual; –返回25<br>SELECT floor(24.56) from dual; –返回24<br>abs(n) 返回数字n的绝对值<br>对数字的处理，在财务系统或银行系统中用的最多，不同的处理方法，对财务报表有不同的结果                </p>
 <h3 id="三、日期函数"><a href="#三、日期函数" class="headerlink" title="三、日期函数"></a><strong>三、日期函数</strong></h3><p>日期函数用于处理date类型的数据。默认情况下日期格式是dd-mon-yy 即“12-7 月-12”<br>(1)sysdate 返回系统时间<br>eg、SQL&gt; select sysdate from dual;<br>(2)oracle add_months函数<br>oracle add_months(time,months)函数可以得到某一时间之前或之后n个月的时间<br>eg、select add_months(sysdate,-6) from dual; –该查询的结果是当前时间半年前的时间<br>select add_months(sysdate,6) from dual; –该查询的结果是当前时间半年后的时间<br>(3)last_day(d)：返回指定日期所在月份的最后一天   </p>
 <h3 id="问题：查找已经入职8个月多的员工"><a href="#问题：查找已经入职8个月多的员工" class="headerlink" title="问题：查找已经入职8个月多的员工"></a><strong>问题：查找已经入职8个月多的员工</strong></h3><p>SQL&gt; select * from emp where sysdate&gt;=add_months(hiredate,8);<br>问题：显示满10年服务年限的员工的姓名和受雇日期。</p>
-<pre class=" language-java"><code class="language-java">select ename<span class="token punctuation">,</span> hiredate from emp where sysdate<span class="token operator">>=</span><span class="token function">add_months</span><span class="token punctuation">(</span>hiredate<span class="token punctuation">,</span><span class="token number">12</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java">select ename<span class="token punctuation">,</span> hiredate from emp where sysdate<span class="token operator">>=</span><span class="token function">add_months</span><span class="token punctuation">(</span>hiredate<span class="token punctuation">,</span><span class="token number">12</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>问题：对于每个员工，显示其加入公司的天数。<br>SQL&gt; select floor(sysdate-hiredate) “入职天数”,ename from emp;<br>或者<br>SQL&gt; select trunc(sysdate-hiredate) “入职天数”,ename from emp;<br>问题：找出各月倒数第3天受雇的所有员工。<br>SQL&gt; select hiredate,ename from emp where last_day(hiredate)-2=hiredate;<br>四、转换函数<br>转换函数用于将数据类型从一种转为另外一种。在某些情况下，oracle server允许值的数据类型和实际的不一样，这时oracle server会隐含的转化数据类型<br>比如：<br>create table t1(id int);<br>insert into t1 values(‘10’);–这样oracle会自动的将’10’ –&gt;10<br>create table t2 (id varchar2(10));<br>insert into t2 values(1); –这样oracle就会自动的将1 –&gt;’1’；<br>我们要说的是尽管oracle可以进行隐含的数据类型的转换，但是它并不适应所有的情况，为了提高程序的可靠性，我们应该使用转换函数进行转换。<br>to_char()函数<br>你可以使用select ename, hiredate, sal from emp where deptno = 10;显示信息，可是，在某些情况下，这个并不能满足你的需求。<br>问题：日期是否可以显示 时/分/秒<br>SQL&gt; select ename, to_char(hiredate, ‘yyyy-mm-dd hh24:mi:ss’) from emp;<br>问题：薪水是否可以显示指定的货币符号<br>SQL&gt;<br>yy：两位数字的年份 2004–&gt;04<br>yyyy：四位数字的年份 2004年<br>mm：两位数字的月份 8 月–&gt;08<br>dd：两位数字的天 30 号–&gt;30<br>hh24： 8点–&gt;20<br>hh12：8点–&gt;08<br>mi、ss–&gt;显示分钟\秒<br>9：显示数字，并忽略前面0<br>0：显示数字，如位数不足，则用0补齐<br>.：在指定位置显示小数点<br>,：在指定位置显示逗号<br>$：在数字前加美元<br>L：在数字前面加本地货币符号<br>C：在数字前面加国际货币符号<br>G：在指定位置显示组分隔符、<br>D：在指定位置显示小数点符号(.)</p>
-<h2 id="问题：显示薪水的时候，把本地货币单位加在前面"><a href="#问题：显示薪水的时候，把本地货币单位加在前面" class="headerlink" title="问题：显示薪水的时候，把本地货币单位加在前面"></a><strong>问题：显示薪水的时候，把本地货币单位加在前面</strong></h2><pre class=" language-moonscript"><code class="language-moonscript">SQL> select ename, to_char(hiredate, 'yyyy-mm-dd hh24:mi:ss'), to_char(sal,'L99999.99') from emp;</code></pre>
+<h2 id="问题：显示薪水的时候，把本地货币单位加在前面"><a href="#问题：显示薪水的时候，把本地货币单位加在前面" class="headerlink" title="问题：显示薪水的时候，把本地货币单位加在前面"></a><strong>问题：显示薪水的时候，把本地货币单位加在前面</strong></h2><pre class="line-numbers language-moonscript"><code class="language-moonscript">SQL> select ename, to_char(hiredate, 'yyyy-mm-dd hh24:mi:ss'), to_char(sal,'L99999.99') from emp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>问题：显示1980年入职的所有员工<br>SQL&gt; select * from emp where to_char(hiredate, ‘yyyy’)=1980;<br>问题：显示所有12月份入职的员工<br>SQL&gt; select * from emp where to_char(hiredate, ‘mm’)=12;<br>to_date()函数<br>函数to_date用于将字符串转换成date类型的数据。</p>
-<h2 id="问题：能否按照中国人习惯的方式年—月—日添加日期。"><a href="#问题：能否按照中国人习惯的方式年—月—日添加日期。" class="headerlink" title="问题：能否按照中国人习惯的方式年—月—日添加日期。"></a><strong>问题：能否按照中国人习惯的方式年—月—日添加日期。</strong></h2><pre class=" language-java"><code class="language-java">eg、SELECT <span class="token function">to_date</span><span class="token punctuation">(</span><span class="token string">'2012-02-18 09:25:30'</span><span class="token punctuation">,</span><span class="token string">'yyyy-mm-dd hh24:mi:ss'</span><span class="token punctuation">)</span> FROM dual<span class="token punctuation">;</span></code></pre>
+<h2 id="问题：能否按照中国人习惯的方式年—月—日添加日期。"><a href="#问题：能否按照中国人习惯的方式年—月—日添加日期。" class="headerlink" title="问题：能否按照中国人习惯的方式年—月—日添加日期。"></a><strong>问题：能否按照中国人习惯的方式年—月—日添加日期。</strong></h2><pre class="line-numbers language-java"><code class="language-java">eg、SELECT <span class="token function">to_date</span><span class="token punctuation">(</span><span class="token string">'2012-02-18 09:25:30'</span><span class="token punctuation">,</span><span class="token string">'yyyy-mm-dd hh24:mi:ss'</span><span class="token punctuation">)</span> FROM dual<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>五、sys_context()系统函数<br>1)terminal：当前会话客户所对应的终端的标示符，如计算机名<br>2)language: 语言<br>3)db_name： 当前数据库名称<br>4)nls_date_format： 当前会话客户所对应的日期格式<br>5)session_user： 当前会话客户所对应的数据库用户名<br>6)current_schema： 当前会话客户所对应的默认方案名<br>7)host： 返回数据库所在主机的名称<br>通过该函数，可以查询一些重要信息，比如你正在使用哪个数据库？<br>select sys_context(‘USERENV’,’db_name’) from dual;<br>注意：USERENV是固定的，不能改的，db_name可以换成其它,<br>eg、select sys_context(‘USERENV’,’language’) from dual;<br>select sys_context(‘USERENV’,’current_schema’) from dual;<br>索引是用于加速数据存取的数据对象。合理的使用索引可以大大降低i/o次数，从而提高数据访问性能<br><strong>使用原则</strong><br>1)、在大表上建立索引才有意义<br>2)、在where子句或是连接条件上经常引用的列上建立索引<br>3)、索引的层次不要超过4层<br>系统会用更多的硬盘和内存空间来保存索引，而且在更新数据时，为了数据和索引的一致性，会花费更多时间更新索引<br>所以，少用的字段尽量不加索引   </p>
-<pre class=" language-java"><code class="language-java">B<span class="token operator">*</span>树索引建立在重复值很少的列上，而位图索引则建立在重复值很多、不同值相对固定的列上  </code></pre>
-<h3 id="单列索引"><a href="#单列索引" class="headerlink" title="单列索引"></a><strong>单列索引</strong></h3><pre class=" language-java"><code class="language-java">create index 索引名 on 表名<span class="token punctuation">(</span>列名<span class="token punctuation">)</span><span class="token punctuation">;</span>
-eg、create index nameIndex on <span class="token function">custor</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java">B<span class="token operator">*</span>树索引建立在重复值很少的列上，而位图索引则建立在重复值很多、不同值相对固定的列上  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="单列索引"><a href="#单列索引" class="headerlink" title="单列索引"></a><strong>单列索引</strong></h3><pre class="line-numbers language-java"><code class="language-java">create index 索引名 on 表名<span class="token punctuation">(</span>列名<span class="token punctuation">)</span><span class="token punctuation">;</span>
+eg、create index nameIndex on <span class="token function">custor</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="复合索引"><a href="#复合索引" class="headerlink" title="复合索引"></a><strong>复合索引</strong></h3><p>复合索引是基于两列或是多列的索引。在同一张表上可以有多个索引，但是要求列的组合必须不同，比如：<br>create index emp_idx1 on emp(ename, job);<br>create index emp_idx1 on emp(job, ename);<br>以上这两个索引是两个不同的索引。    </p>
 <h3 id="登录时遇到：ORA-28009：connection-as-SYS-should-be-as-SYSDBA-OR-SYSOPER"><a href="#登录时遇到：ORA-28009：connection-as-SYS-should-be-as-SYSDBA-OR-SYSOPER" class="headerlink" title="登录时遇到：ORA-28009：connection as SYS should be as SYSDBA OR SYSOPER"></a><strong>登录时遇到：ORA-28009：connection as SYS should be as SYSDBA OR SYSOPER</strong></h3><p>解决方法：<br>例如我的oracle 密码为 Oracle12c 输入口令应该填 Oracle12c as sysdba<br>记住中间有空格  </p>
 <h3 id="在查询字段为null的记录时注意"><a href="#在查询字段为null的记录时注意" class="headerlink" title="在查询字段为null的记录时注意"></a><strong>在查询字段为null的记录时注意</strong></h3><p>使用is null  /  is not null 而不是 = null   </p>
-<pre class=" language-java"><code class="language-java">select <span class="token operator">*</span> from student where birthday is null<span class="token punctuation">;</span>   </code></pre>
+<pre class="line-numbers language-java"><code class="language-java">select <span class="token operator">*</span> from student where birthday is null<span class="token punctuation">;</span>   <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="不用记的"><a href="#不用记的" class="headerlink" title="不用记的"></a>不用记的</h3><h1 id="mysql遇到的问题"><a href="#mysql遇到的问题" class="headerlink" title="mysql遇到的问题"></a><font size="10" color="red">mysql遇到的问题</font></h1><h3 id="mysql启动正常但是访问时还是报错：-ERROR-2003-HY000-Can’t-connect-to-MySQL-server-on-‘localhost’-10061"><a href="#mysql启动正常但是访问时还是报错：-ERROR-2003-HY000-Can’t-connect-to-MySQL-server-on-‘localhost’-10061" class="headerlink" title="mysql启动正常但是访问时还是报错： ERROR 2003 (HY000): Can’t connect to MySQL server on ‘localhost’ (10061"></a><strong>mysql启动正常但是访问时还是报错： ERROR 2003 (HY000): Can’t connect to MySQL server on ‘localhost’ (10061</strong></h3><p>mysql以管理员身份在cmd命令行启动&nbsp;<br>net start mysql —&gt;启动成功<br>右键计算机 服务 启动 mysql 成功<br>但是就是在 执行 mysql -uroot -p 是报错，错误如下<br>报错：win7 ERROR 2003 (HY000): Can’t connect to MySQL server on ‘localhost’ (10061<br>后来发现原来是自己host文件里面，localhost 没有指向：127.0.0.1<br>修改host文件，mysql成功连接  </p>
 <h3 id="启动mysql"><a href="#启动mysql" class="headerlink" title="启动mysql"></a><strong>启动mysql</strong></h3><p>net start mysql<br>cmd 切换到指定路径：比如切换到D盘  直接输入D：即可 然后输入指定目录如：D:\java\mysql-5.7.24-winx64\bin<br>cd mysql bin目录(C:\Program Files\MySQL\MySQL Server 5.1\bin)<br>mysql -u root -p<br>输入密码<br>Source e:/library.sql;<br>Show databases;<br>Use library;<br>Show tables;   </p>
-<h3 id="查看数据库的隔离级别"><a href="#查看数据库的隔离级别" class="headerlink" title="查看数据库的隔离级别"></a><strong>查看数据库的隔离级别</strong></h3><pre class=" language-java"><code class="language-java"> show global variables like <span class="token string">'tx_isolation'</span><span class="token punctuation">;</span></code></pre>
+<h3 id="查看数据库的隔离级别"><a href="#查看数据库的隔离级别" class="headerlink" title="查看数据库的隔离级别"></a><strong>查看数据库的隔离级别</strong></h3><pre class="line-numbers language-java"><code class="language-java"> show global variables like <span class="token string">'tx_isolation'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="AUTO-INCREMENT-42"><a href="#AUTO-INCREMENT-42" class="headerlink" title="AUTO_INCREMENT=42"></a><strong>AUTO_INCREMENT=42</strong></h3><p>指定序号的初始值为42，即从42开始递增</p>
 <h3 id="查看mysql数据库的密码"><a href="#查看mysql数据库的密码" class="headerlink" title="查看mysql数据库的密码"></a>查看mysql数据库的密码</h3><p>先停止mysql服务<br>①进入mysql的bin目录执行 mysqld –skip-grant-tables<br>②重新开个窗口进入bin输入mysql<br>③show databases;<br>④use mysql；<br>⑤show tables;<br>⑥select user,host,password from user;    其中的authentication_string就是密码</p>
 <h3 id="MYSQL-无法启动"><a href="#MYSQL-无法启动" class="headerlink" title="MYSQL 无法启动"></a>MYSQL 无法启动</h3><p>有人说把my.ini文件删除即可 这里对我的问题无效<br>我的解决方法是：把data文件夹的文件全部删除 再重新到 bin目录初始化 命令是：<code>mysqld --initialize</code></p>
 <h3 id="换新的mysql"><a href="#换新的mysql" class="headerlink" title="换新的mysql"></a>换新的mysql</h3><p>先移除，命令是<code>mysqld remove</code><br>再初始化即可</p>
-<h3 id="第一次装mysql-怎么知道密码及修改"><a href="#第一次装mysql-怎么知道密码及修改" class="headerlink" title="第一次装mysql 怎么知道密码及修改"></a>第一次装mysql 怎么知道密码及修改</h3><p>上图：<br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/mysql1.png"><br><img src="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/mysql2.png"><br>可以看到临时密码：&lt;a5F34))PqMb<br>使用cmd命令行工具，用临时密码登录，进行修改密码<br>命令：mysql -u root -p<br>修改密码的命令 <code>set password for root@localhost = password('123');</code></p>
-<h3 id="测试数据库连接"><a href="#测试数据库连接" class="headerlink" title="测试数据库连接"></a>测试数据库连接</h3><pre class=" language-java"><code class="language-java">创建表
+<h3 id="第一次装mysql-怎么知道密码及修改"><a href="#第一次装mysql-怎么知道密码及修改" class="headerlink" title="第一次装mysql 怎么知道密码及修改"></a>第一次装mysql 怎么知道密码及修改</h3><p>上图：<br><img src="/2,gif" data-original="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/mysql1.png"><br><img src="/2,gif" data-original="https://oostc.oss-cn-shanghai.aliyuncs.com/blog/mysql2.png"><br>可以看到临时密码：&lt;a5F34))PqMb<br>使用cmd命令行工具，用临时密码登录，进行修改密码<br>命令：mysql -u root -p<br>修改密码的命令 <code>set password for root@localhost = password('123');</code></p>
+<h3 id="测试数据库连接"><a href="#测试数据库连接" class="headerlink" title="测试数据库连接"></a>测试数据库连接</h3><pre class="line-numbers language-java"><code class="language-java">创建表
 create table <span class="token function">Employee</span><span class="token punctuation">(</span>
     id <span class="token keyword">int</span> primary key<span class="token punctuation">,</span>
     name <span class="token function">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -1366,7 +1544,7 @@ create table <span class="token function">Employee</span><span class="token punc
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="关系表R"><a href="#关系表R" class="headerlink" title="关系表R"></a><strong>关系表R</strong></h3><table>
 <thead>
 <tr>
@@ -1488,7 +1666,7 @@ create table <span class="token function">Employee</span><span class="token punc
 <h3 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h3><h3 id="文件与数据库对比"><a href="#文件与数据库对比" class="headerlink" title="文件与数据库对比"></a><strong>文件与数据库对比</strong></h3><p>文件不安全 查询功能单一 不利于查询<br>数据库按一定的规律存储数据 可用于海量数据的存储</p>
 <h3 id="数据库的选择"><a href="#数据库的选择" class="headerlink" title="数据库的选择"></a><strong>数据库的选择</strong></h3><p>成本 功能多与少 并发量大不大 安全要求高不高</p>
 <h2 id="jdbc"><a href="#jdbc" class="headerlink" title="jdbc"></a><strong>jdbc</strong></h2><p>jdbc是规范，而hibernate是对jdbc的进一步封装，如写不同sql语句的jdbc层，只需要面对hibernate层面编程即可 </p>
-<h3 id="java使用jdbc连接mysql数据库"><a href="#java使用jdbc连接mysql数据库" class="headerlink" title="java使用jdbc连接mysql数据库"></a><strong>java使用jdbc连接mysql数据库</strong></h3><pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>Connection<span class="token punctuation">;</span>
+<h3 id="java使用jdbc连接mysql数据库"><a href="#java使用jdbc连接mysql数据库" class="headerlink" title="java使用jdbc连接mysql数据库"></a><strong>java使用jdbc连接mysql数据库</strong></h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>Connection<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>Driver<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>DriverManager<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Properties<span class="token punctuation">;</span>
@@ -1556,11 +1734,11 @@ create table <span class="token function">Employee</span><span class="token punc
         Connection conn <span class="token operator">=</span> DriverManager<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> user<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="JDBCTemplate"><a href="#JDBCTemplate" class="headerlink" title="JDBCTemplate"></a><strong>JDBCTemplate</strong></h2><p>在使用JDBC时，必须自己来管理数据库资源如：获取PreparedStatement，设置SQL语句参数，关闭连接等步骤。<br>JDBCTemplate处理了资源的建立和释放，即Statement的建立和执行，只需提供SQL语句和占位符的值，得到封装好的查询结果集    </p>
 <h3 id="在JDBCTemplate中执行SQL语句的方法大致分为3类"><a href="#在JDBCTemplate中执行SQL语句的方法大致分为3类" class="headerlink" title="在JDBCTemplate中执行SQL语句的方法大致分为3类"></a><strong>在JDBCTemplate中执行SQL语句的方法大致分为3类</strong></h3><p>execute ：可以执行所有SQL语句，一般用于执行DDL语句。<br>update ：用于执行 INSERT 、 UPDATE 、 DELETE 等DML语句。<br>queryXxx ：用于DQL数据查询语句。  </p>
 <h3 id="C3P0基于配置文件实现连接池"><a href="#C3P0基于配置文件实现连接池" class="headerlink" title="C3P0基于配置文件实现连接池"></a><strong>C3P0基于配置文件实现连接池</strong></h3><p><strong>准备C3P0连接池</strong><br>导入依赖的jar包<br> &nbsp; spring-beans-4.1.2.RELEASE.jar<br> &nbsp; spring-core-4.1.2.RELEASE.jar<br> &nbsp; spring-jdbc-4.1.2.RELEASE.jar<br> &nbsp; spring-tx-4.1.2.RELEASE.jar<br> &nbsp; com.springsource.org.apache.commons.logging-1.1.1.jar<br><strong>创建 JdbcTemplate 对象，传入连接池对象</strong><br><strong>调用 execute 、 update 、 queryXxx 等方法</strong><br>public JdbcTemplate(DataSource dataSource)<br><strong>创建JdbcTemplate对象，方便执行SQL语句</strong><br>public void execute(final String sql)<br>execute可以执行所有SQL语句，因为没有返回值，一般用于执行DDL语句。  </p>
-<h2 id="JBDCTemplate执行DDL语句示例"><a href="#JBDCTemplate执行DDL语句示例" class="headerlink" title="JBDCTemplate执行DDL语句示例"></a><strong>JBDCTemplate执行DDL语句示例</strong></h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token punctuation">{</span>
+<h2 id="JBDCTemplate执行DDL语句示例"><a href="#JBDCTemplate执行DDL语句示例" class="headerlink" title="JBDCTemplate执行DDL语句示例"></a><strong>JBDCTemplate执行DDL语句示例</strong></h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token punctuation">{</span>
  <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
  <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 创建表的SQL语句</span>
  <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> String sql <span class="token operator">=</span> <span class="token string">"CREATE TABLE product("</span>
@@ -1573,9 +1751,9 @@ create table <span class="token function">Employee</span><span class="token punc
      <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//调用execute执行DDL语句</span>
  <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>jdbcTemplate<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a><strong>使用步骤</strong></h3><p>1.创建JdbcTemplate对象<br>2.编写SQL语句<br>3.使用JdbcTemplate对象的update方法进行增删改  </p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token keyword">final</span> String sql<span class="token punctuation">)</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token keyword">final</span> String sql<span class="token punctuation">)</span>
 用于执行INSERT、UPDATE、DELETE等DML语句。
 JdbcTemplate的update方法用于执行DML语句。
 同时还可以在SQL语句中使用<span class="token operator">?</span>占位符，在update方法的Object<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> args可变参数中传入对应的参数。
@@ -1609,43 +1787,43 @@ JdbcTemplate的update方法用于执行DML语句。
  <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>String sql <span class="token operator">=</span> <span class="token string">"DELETE FROM product WHERE pid=?;"</span><span class="token punctuation">;</span>
  <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token keyword">int</span> i <span class="token operator">=</span> jdbcTemplate<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>sql<span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
  <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"影响的行数: "</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="JDBCTemplate实现查询"><a href="#JDBCTemplate实现查询" class="headerlink" title="JDBCTemplate实现查询"></a><strong>JDBCTemplate实现查询</strong></h3><p>queryXxx ：用于DQL数据查询语句<br>public int queryForInt(String sql)<br>执行查询语句，返回一个int类型的值。<br>public long queryForLong(String sql)<br>执行查询语句，返回一个long类型的数据。<br>public &nbsp;T queryForObject(String sql, Class requiredType)<br>执行查询语句，返回一个指定类型的数据。<br>public Map queryForMap(String sql)<br>执行查询语句，将一条记录放到一个Map中。<br>其中键是字符串的列名，值是Object类型<br>注：如果返回多条记录会出现异常<br>public List&gt; queryForList(String sql)<br>执行查询语句，返回一个List集合，List中存放的是Map类型的数据。  </p>
 <ol>
 <li>创建JdbcTemplate对象  </li>
 <li>编写查询的SQL语句  </li>
 <li>使用JdbcTemplate对象的queryXxx 方法  </li>
-<li>输出结果  <h3 id="queryForInt"><a href="#queryForInt" class="headerlink" title="queryForInt"></a><strong>queryForInt</strong></h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test02</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+<li>输出结果  <h3 id="queryForInt"><a href="#queryForInt" class="headerlink" title="queryForInt"></a><strong>queryForInt</strong></h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test02</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token comment" spellcheck="true">// String sql = "SELECT COUNT(*) FROM product;";</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>String sql <span class="token operator">=</span> <span class="token string">"SELECT pid FROM product WHERE price=18888;"</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>JdbcTemplate jdbcTemplate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JdbcTemplate</span><span class="token punctuation">(</span>DataSourceUtils<span class="token punctuation">.</span><span class="token function">getDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token keyword">int</span> forInt <span class="token operator">=</span> jdbcTemplate<span class="token punctuation">.</span><span class="token function">queryForInt</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>forInt<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="queryForLong"><a href="#queryForLong" class="headerlink" title="queryForLong"></a><strong>queryForLong</strong></h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test03</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="queryForLong"><a href="#queryForLong" class="headerlink" title="queryForLong"></a><strong>queryForLong</strong></h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test03</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>String sql <span class="token operator">=</span> <span class="token string">"SELECT COUNT(*) FROM product;"</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token comment" spellcheck="true">// String sql = "SELECT pid FROM product WHERE price=18888;";</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>JdbcTemplate jdbcTemplate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JdbcTemplate</span><span class="token punctuation">(</span>DataSourceUtils<span class="token punctuation">.</span><span class="token function">getDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token keyword">long</span> forLong <span class="token operator">=</span> jdbcTemplate<span class="token punctuation">.</span><span class="token function">queryForLong</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>forLong<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="queryForObject"><a href="#queryForObject" class="headerlink" title="queryForObject"></a><strong>queryForObject</strong></h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test04</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="queryForObject"><a href="#queryForObject" class="headerlink" title="queryForObject"></a><strong>queryForObject</strong></h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test04</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
 String sql <span class="token operator">=</span> <span class="token string">"SELECT pname FROM product WHERE price=7777;"</span><span class="token punctuation">;</span>
 JdbcTemplate jdbcTemplate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JdbcTemplate</span><span class="token punctuation">(</span>DataSourceUtils<span class="token punctuation">.</span><span class="token function">getDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>
 String str <span class="token operator">=</span> jdbcTemplate<span class="token punctuation">.</span><span class="token function">queryForObject</span><span class="token punctuation">(</span>sql<span class="token punctuation">,</span> String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="queryForMap"><a href="#queryForMap" class="headerlink" title="queryForMap"></a><strong>queryForMap</strong></h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test05</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="queryForMap"><a href="#queryForMap" class="headerlink" title="queryForMap"></a><strong>queryForMap</strong></h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test05</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>String sql <span class="token operator">=</span> <span class="token string">"SELECT * FROM product WHERE pid=?;"</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>JdbcTemplate jdbcTemplate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JdbcTemplate</span><span class="token punctuation">(</span>DataSourceUtils<span class="token punctuation">.</span><span class="token function">getDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>Map map <span class="token operator">=</span> jdbcTemplate<span class="token punctuation">.</span><span class="token function">queryForMap</span><span class="token punctuation">(</span>sql<span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 <pre><code>### **queryForList**
@@ -1664,7 +1842,7 @@ public static void test06() throws Exception {
 <p>查询1条记录封装成自定义的类  </p>
 <h3 id="JDBC操作数据库"><a href="#JDBC操作数据库" class="headerlink" title="JDBC操作数据库"></a><strong>JDBC操作数据库</strong></h3><p>工具准备：Mysql（数据库）、 MyEclipse（开发工具）、Navicat（数据库管理工具）<br>JDBC编程步骤<br>·加载驱动程序:class.forName(driverClass);<br>    加载Mysql驱动<br>        Class.forName(“com.mysql.jdbc.driver”)<br>    加载Oracle驱动<br>        Class.forName(“oracle.jdbc.driver.OracleDriver”)<br>·获得数据库连接：<br>    DriverManager.getConnection(“jdbc.mysql://127.0.0.1:3306/imooc”,”root”,”root”);<br>    ==&gt;参数为(URL,usename, password)  </p>
 <p>·创建Statement对象:<br>    conn.createStatement();  </p>
-<pre class=" language-java"><code class="language-java">        Connection connection <span class="token operator">=</span> null<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java">        Connection connection <span class="token operator">=</span> null<span class="token punctuation">;</span>
         Statement statement <span class="token operator">=</span> null<span class="token punctuation">;</span>
         ResultSet resultSet <span class="token operator">=</span> null<span class="token punctuation">;</span>
         <span class="token keyword">try</span> <span class="token punctuation">{</span>
@@ -1722,7 +1900,7 @@ public static void test06() throws Exception {
                     e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
                 <span class="token punctuation">}</span>
             <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span></code></pre>
+        <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1746,14 +1924,50 @@ public static void test06() throws Exception {
             <hr/>
 
             
-            <style>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/mysql/">
+                                    <span class="chip bg-color">mysql</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">数据库</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
     #reward {
         margin: 40px 0;
         text-align: center;
     }
 
     #reward .reward-link {
-        font-size: 1.88rem;
+        font-size: 1.4rem;
+        line-height: 38px;
     }
 
     #reward .btn-floating:hover {
@@ -1839,12 +2053,12 @@ public static void test06() throws Exception {
 </style>
 
 <div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
 
     <!-- Modal Structure -->
     <div id="rewardModal" class="modal">
         <div class="modal-content">
-            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
             <h4 class="reward-title">如果您是学生，请不要扫码</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
@@ -1853,10 +2067,10 @@ public static void test06() throws Exception {
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="如果您并非有点小钱">
+                        <img src="/2,gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="请不要扫码打赏">
+                        <img src="/2,gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1869,28 +2083,8 @@ public static void test06() throws Exception {
         $('.tabs').tabs();
     });
 </script>
+
             
-
-            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-
-<div id="article-share">
-    
-    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
-    
-</div>
-
-<script src="/libs/share/js/social-share.min.js"></script>
-
-            <div class="reprint">
-                <p>
-                    <span class="reprint-tip">
-                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
-                    </span>
-                    <a href="http://hellohero.51vip.biz" class="b-link-green">ABCDE</a>
-                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/14/2018-11-14-%E6%95%B0%E6%8D%AE%E5%BA%93/" class="b-link-green">数据库</a>
-                </p>
-            </div>
         </div>
     </div>
 
@@ -2229,35 +2423,39 @@ img.vimg:hover {
 
     
 
+    
+
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2018/11/22/2018-11-22-%E5%89%8D%E7%AB%AF/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="页面">
+                        <img src="/2,gif" data-original="/medias/featureimages/5.jpg" class="responsive-img" alt="页面">
                         
                         <span class="card-title">页面</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">jquery中datagrid中getSelected和getSelections的用法说明data是table表格的某一列的id选中一行：  
-var get = $("#dg").datagrid("getSelected");
-获取列</div>
+                    <div class="summary block-with-text">
+                        
+                            做中学而非学后做
+                        
+                    </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-11-22
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category" target="_blank">
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
                                     编程
                                 </a>
                             
@@ -2268,7 +2466,7 @@ var get = $("#dg").datagrid("getSelected");
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/" target="_blank">
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
                         <span class="chip bg-color">前端</span>
                     </a>
                     
@@ -2280,30 +2478,33 @@ var get = $("#dg").datagrid("getSelected");
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2018/10/29/2018-10-29-SpringCloud/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="SpringCloud">
+                        <img src="/2,gif" data-original="/medias/featureimages/8.jpg" class="responsive-img" alt="SpringCloud">
                         
                         <span class="card-title">SpringCloud</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">配置管理、服务发现、断路器、路由、微代理、事件总线、全局锁、决策竞选、分布式会话
-使用微服务的原因每次更改都需要全部重新部署不同服务可以使用不同技术但服务启动快可以按不同服务的需求搭配电脑配置但是，出现bug不好定位，运维成本高 接口调整成</div>
+                    <div class="summary block-with-text">
+                        
+                            六经注我，我注六经
+                        
+                    </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-10-29
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category" target="_blank">
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
                                     编程
                                 </a>
                             
@@ -2314,7 +2515,7 @@ var get = $("#dg").datagrid("getSelected");
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SpringCloud/" target="_blank">
+                    <a href="/tags/SpringCloud/">
                         <span class="chip bg-color">SpringCloud</span>
                     </a>
                     
@@ -2325,7 +2526,71 @@ var get = $("#dg").datagrid("getSelected");
         
     </div>
 </article>
+
 </div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: ABCDE<br />'
+            + '文章作者: shydie<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
 
 
     
@@ -2333,53 +2598,128 @@ var get = $("#dg").datagrid("getSelected");
 </main>
 
 
-<footer class="page-footer bg-color">
-    <div class="container row center-align">
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
-            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
-
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">shydie</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
             
-                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">165.3k</span>
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">165.3k</span>&nbsp;字
             
-
             
-			
-                <br>
-                
-                <span id="busuanzi_container_site_pv">
-                    <i class="fa fa-heart-o"></i>
-                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>
-                
-                
-                <span id="busuanzi_container_site_uv">
-                    <i class="fa fa-users"></i>
-                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
-                </span>
-                
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
 
 
     <a href="mailto:437230257@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fa fa-envelope-open"></i>
+        <i class="fas fa-envelope-open"></i>
     </a>
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=437230257" class="tooltipped" data-tooltip="QQ联系我: 437230257" data-position="top" data-delay="50">
-        <i class="fa fa-qq"></i>
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=437230257" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 437230257" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
     </a>
+
+
+
+
 
 
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fa fa-rss"></i>
+        <i class="fas fa-rss"></i>
     </a>
+
 </div>
     </div>
 </footer>
@@ -2387,11 +2727,11 @@ var get = $("#dg").datagrid("getSelected");
 <div class="progress-bar"></div>
 
 
-<!-- 搜索遮罩框 -->
+    <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
             <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
@@ -2402,31 +2742,78 @@ var get = $("#dg").datagrid("getSelected");
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
 });
 </script>
-<!-- 回到顶部按钮 -->
+
+    <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fa fa-angle-up"></i>
+        <i class="fas fa-arrow-up"></i>
     </a>
 </div>
 
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+}
+</script>
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
 
-<script src="/libs/materialize/materialize.min.js"></script>
-<script src="/libs/masonry/masonry.pkgd.min.js"></script>
-<script src="/libs/aos/aos.js"></script>
-<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-<script src="/js/matery.js"></script>
+    <!-- Baidu Analytics -->
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Baidu Push -->
 
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
 
-
-
+    
+    
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
 
+    
 
-</body>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+
 </html>
